@@ -1,7 +1,5 @@
 # The URL the site will be built for
-# IMPORTANT: Update this with your actual domain before deployment
-# Example: "https://ccclub.college.edu" or "https://ccclub.github.io"
-base_url = "https://ccclub.example.com"
+base_url = "https://Shanu-Kumawat.github.io/cc-website/"
 
 # Site title - appears in browser tab and header
 title = "Computer Coding Club"
@@ -75,9 +73,8 @@ nav = [
 ]
 
 # GitHub edit URL for "Edit this page" button
-# IMPORTANT: Update with your actual repository URL before deployment
 # Example: "https://github.com/YourOrg/cc-website/edit/main"
-edit_url = "https://github.com/your-org/cc-website/edit/main"
+edit_url = "https://github.com/Shanu-Kumawat/cc-website/edit/main/"
 
 # Logo Configuration
 [extra.logo]

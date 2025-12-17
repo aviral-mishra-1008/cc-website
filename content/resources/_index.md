@@ -3,7 +3,7 @@ title = "Resources"
 description = "Curated learning materials, tools, and resources for your tech journey"
 sort_by = "weight"
 weight = 7
-template = "section.html"
+template = "resources.html"
 
 [extra]
 badge = "UPDATED"
