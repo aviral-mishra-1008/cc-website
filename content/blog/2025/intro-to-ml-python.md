@@ -5,6 +5,7 @@ description = "Start your ML journey with Python, NumPy, and scikit-learn. Learn
 
 [taxonomies]
 tags = ["python", "machine-learning", "ai", "tutorial"]
+categories = ["tutorial"]
 
 [extra]
 author = "Amit Kumar"

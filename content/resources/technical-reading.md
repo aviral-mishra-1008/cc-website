@@ -1,6 +1,7 @@
 +++
 title = "Technical Reading"
-weight = 8
+description = "Blogs, newsletters, and publications for developers"
+weight = 14
 +++
 
 # Technical Reading

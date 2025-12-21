@@ -3,6 +3,7 @@ title = "Events 2025"
 description = "Computer Coding Club events organized in 2025"
 sort_by = "date"
 template = "section.html"
+weight = 2
 
 [extra]
 badge = "NEW"

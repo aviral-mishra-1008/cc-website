@@ -5,6 +5,7 @@ description = "A practical comparison of CSS Grid and Flexbox with real-world ex
 
 [taxonomies]
 tags = ["css", "frontend", "web-development", "design"]
+categories = ["comparison"]
 
 [extra]
 author = "Sneha Patel"

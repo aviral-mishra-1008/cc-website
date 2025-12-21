@@ -1,6 +1,7 @@
 +++
 title = "Development Tools"
-weight = 7
+description = "Essential tools for modern software development"
+weight = 8
 +++
 
 # Development Tools

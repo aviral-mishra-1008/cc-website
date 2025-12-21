@@ -1,6 +1,7 @@
 +++
 title = "Open Source"
-weight = 10
+description = "Getting started with open source contribution"
+weight = 7
 +++
 
 # Open Source

@@ -59,7 +59,7 @@
             <input type="text" id="blog-search-input" placeholder="Search articles..." class="input input-bordered w-full pl-10" />
         </div>
         <div class="mt-2 text-sm text-gray-500">
-            💡 Tip: Browse by tag using the tag badges below each article, or visit <a href="/tags" class="link link-hover">all tags</a>
+            💡 Tip: Browse by <a href="/categories" class="link link-hover">category</a> or <a href="/tags" class="link link-hover">tag</a> using the badges below each article
         </div>
     </div>
 
@@ -98,11 +98,19 @@
                         </div>
 
                         <div class="flex flex-wrap gap-2 mb-3">
+                            {# Display Categories first #}
+                            {% if page.taxonomies.categories %}
+                                {% for category in page.taxonomies.categories %}
+                                    {% set cat_slug = category | slugify %}
+                                    <a href="/categories/{{ cat_slug }}" class="badge badge-primary badge-sm" title="View all posts in category '{{ category }}'">{{ category }}</a>
+                                {% endfor %}
+                            {% endif %}
+                            
                             {# Display Tags as navigation links to taxonomy pages #}
                             {% if page.taxonomies.tags %}
                                 {% for tag in page.taxonomies.tags %}
                                     {% set tag_slug = tag | slugify %}
-                                    <a href="/tags/{{ tag_slug }}" class="badge badge-ghost badge-outline badge-sm hover:badge-primary transition-colors" title="View all posts tagged '{{ tag }}'">#{{ tag }}</a>
+                                    <a href="/tags/{{ tag_slug }}" class="badge badge-ghost badge-outline badge-sm hover:badge-primary transition-colors" title="View all posts tagged '{{ tag }}'">{{ tag }}</a>
                                 {% endfor %}
                             {% endif %}
                         </div>

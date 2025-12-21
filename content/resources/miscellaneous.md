@@ -1,5 +1,6 @@
 +++
 title = "Miscellaneous"
+description = "Other useful tools and resources for developers"
 weight = 15
 +++
 

@@ -5,6 +5,7 @@ description = "Learn Docker basics, create Dockerfiles, and deploy containerized
 
 [taxonomies]
 tags = ["docker", "devops", "cloud", "tutorial"]
+categories = ["tutorial"]
 
 [extra]
 author = "Vikram Reddy"

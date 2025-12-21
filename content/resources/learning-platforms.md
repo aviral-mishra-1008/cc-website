@@ -1,6 +1,7 @@
 +++
 title = "Learning Platforms"
-weight = 1
+description = "Online learning platforms and course providers"
+weight = 10
 +++
 
 # Learning Platforms

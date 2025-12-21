@@ -1,6 +1,7 @@
 +++
 title = "Interview Preparation"
-weight = 9
+description = "Resources for technical interview preparation"
+weight = 3
 +++
 
 # Interview Preparation

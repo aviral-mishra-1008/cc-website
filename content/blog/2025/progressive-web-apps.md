@@ -5,6 +5,7 @@ description = "Create fast, reliable, and engaging web apps that work offline us
 
 [taxonomies]
 tags = ["pwa", "javascript", "web-development", "mobile"]
+categories = ["guide"]
 
 [extra]
 author = "Karthik Nair"

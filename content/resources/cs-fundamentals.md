@@ -1,6 +1,7 @@
 +++
 title = "CS Fundamentals"
-weight = 3
+description = "Computer science fundamentals and theoretical concepts"
+weight = 1
 +++
 
 # Computer Science Fundamentals

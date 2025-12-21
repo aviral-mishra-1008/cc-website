@@ -1,6 +1,7 @@
 +++
 title = "Cloud & DevOps"
-weight = 6
+description = "Cloud platforms, DevOps tools, and deployment resources"
+weight = 5
 +++
 
 # Cloud & DevOps

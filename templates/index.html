@@ -13,6 +13,8 @@
         {{ macros_head::head(config=config, page=page, section=false, current_url=config.base_url) }}
     {% elif section is defined %}
         {{ macros_head::head(config=config, page=false, section=section, current_url=config.base_url) }}
+    {% else %}
+        {{ macros_head::head(config=config, page=false, section=false, current_url=config.base_url) }}
     {% endif %}
     {% block extra_head %}{% endblock extra_head %}
     {# Custom CSS for Font Awesome fix #}

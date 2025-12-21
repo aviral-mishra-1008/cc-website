@@ -5,6 +5,7 @@ description = "Understand the differences between GraphQL and REST APIs with rea
 
 [taxonomies]
 tags = ["graphql", "rest", "api", "backend"]
+categories = ["comparison"]
 
 [extra]
 author = "Rohan Malhotra"

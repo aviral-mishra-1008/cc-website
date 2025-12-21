@@ -1,6 +1,7 @@
 +++
 title = "Cybersecurity"
-weight = 13
+description = "Security tools, best practices, and ethical hacking resources"
+weight = 11
 +++
 
 # Cybersecurity

@@ -1,6 +1,7 @@
 +++
 title = "Design Resources"
-weight = 14
+description = "UI/UX design tools, assets, and learning materials"
+weight = 12
 +++
 
 # Design Resources

@@ -1,5 +1,6 @@
 +++
 title = "Competitive Programming"
+description = "Platforms and resources for competitive coding"
 weight = 2
 +++
 

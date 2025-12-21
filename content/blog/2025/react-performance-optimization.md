@@ -5,6 +5,7 @@ description = "Boost your React app's performance with these proven optimization
 
 [taxonomies]
 tags = ["react", "performance", "javascript", "optimization"]
+categories = ["guide"]
 
 [extra]
 author = "Meera Iyer"

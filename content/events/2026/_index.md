@@ -6,7 +6,6 @@ template = "section.html"
 weight = 1
 
 [extra]
-year = 2026
 badge = "UPCOMING"
 +++
 

@@ -16,6 +16,7 @@ description = "Learn React Hooks from scratch with practical examples. This begi
 # Tags: specific technologies, concepts (use lowercase, hyphenated)
 [taxonomies]
 tags = ["react", "javascript", "web-development", "frontend", "tutorial"]
+categories = ["tutorial"]
 
 # Author information
 # TODO: Replace with actual author details

@@ -5,6 +5,7 @@ description = "Master Git workflows, branching strategies, and commit convention
 
 [taxonomies]
 tags = ["git", "collaboration", "development-tools", "best-practices"]
+categories = ["guide"]
 
 [extra]
 author = "Priya Sharma"

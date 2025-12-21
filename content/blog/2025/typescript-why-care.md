@@ -5,6 +5,7 @@ description = "Discover how TypeScript's type system can catch bugs early, impro
 
 [taxonomies]
 tags = ["typescript", "javascript", "web-development", "tutorial"]
+categories = ["opinion"]
 
 [extra]
 author = "Anjali Verma"

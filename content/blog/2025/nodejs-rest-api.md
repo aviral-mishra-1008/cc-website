@@ -5,6 +5,7 @@ description = "Learn how to build a robust REST API using Node.js, Express, and 
 
 [taxonomies]
 tags = ["nodejs", "backend", "api", "express", "tutorial"]
+categories = ["tutorial"]
 
 [extra]
 author = "Rahul Singh"

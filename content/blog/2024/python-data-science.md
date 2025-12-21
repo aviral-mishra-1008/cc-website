@@ -5,6 +5,7 @@ description = "Begin your data science journey with Python, pandas, and matplotl
 
 [taxonomies]
 tags = ["python", "data-science", "tutorial", "beginner"]
+categories = ["tutorial"]
 
 [extra]
 author = "Ankit Sharma"

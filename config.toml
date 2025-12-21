@@ -26,10 +26,11 @@ generate_feeds = true
 generate_sitemap = true
 
 # Enable taxonomies for categorizing content
-# Currently using only "tags" for blog posts
-# Categories were removed for simplicity - tags are sufficient
+# tags: specific technologies, topics (e.g., "react", "python", "tutorial")
+# categories: broad content types (e.g., "guide", "news", "project")
 taxonomies = [
-    {name = "tags", feed = true},
+    {name = "tags", feed = true, paginate_by = 10},
+    {name = "categories", paginate_by = 10},
 ]
 
 [markdown]

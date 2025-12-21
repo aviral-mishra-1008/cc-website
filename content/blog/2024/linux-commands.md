@@ -5,6 +5,7 @@ description = "Essential Linux terminal commands for developers. Master the comm
 
 [taxonomies]
 tags = ["linux", "terminal", "devops", "productivity"]
+categories = ["guide"]
 
 [extra]
 author = "Pradeep Singh"

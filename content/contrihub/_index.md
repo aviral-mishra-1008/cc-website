@@ -4,6 +4,7 @@ description = "Celebrating open source contributions through our annual ContriHu
 sort_by = "weight"
 template = "contrihub_index.html"
 weight = 4
+
 [extra]
 toc_expand = false
 +++

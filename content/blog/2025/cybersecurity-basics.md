@@ -5,6 +5,7 @@ description = "Essential security practices to protect your applications from co
 
 [taxonomies]
 tags = ["cybersecurity", "security", "web-development", "best-practices"]
+categories = ["guide"]
 
 [extra]
 author = "Deepak Singh"

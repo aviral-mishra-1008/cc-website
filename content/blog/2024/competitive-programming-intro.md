@@ -5,6 +5,7 @@ description = "Start your competitive programming journey. Learn algorithms, pra
 
 [taxonomies]
 tags = ["competitive-programming", "algorithms", "dsa", "interview"]
+categories = ["guide"]
 
 [extra]
 author = "Neha Gupta"

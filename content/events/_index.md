@@ -1,7 +1,7 @@
 +++
 title = "Events"
 description = "Workshops, hackathons, competitions, and meetups organized by Computer Coding Club"
-sort_by = "date"
+sort_by = "weight"
 weight = 3
 template = "events.html"
 

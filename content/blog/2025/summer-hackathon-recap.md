@@ -5,6 +5,7 @@ description = "A detailed recap of our Summer Hackathon 2025 - 150 participants,
 
 [taxonomies]
 tags = ["hackathon", "events", "community", "projects"]
+categories = ["news"]
 
 [extra]
 author = "Priya Mehra"

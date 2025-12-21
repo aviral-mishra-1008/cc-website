@@ -5,6 +5,7 @@ description = "Master asynchronous JavaScript with async/await syntax. Say goodb
 
 [taxonomies]
 tags = ["javascript", "async", "web-development", "tutorial"]
+categories = ["tutorial"]
 
 [extra]
 author = "Sanjay Kumar"

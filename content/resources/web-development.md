@@ -1,5 +1,6 @@
 +++
 title = "Web Development"
+description = "Frontend, backend, and full-stack web development resources"
 weight = 4
 +++
 

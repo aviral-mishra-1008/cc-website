@@ -1,6 +1,7 @@
 +++
 title = "Mobile Development"
-weight = 12
+description = "iOS, Android, and cross-platform mobile development"
+weight = 9
 +++
 
 # Mobile Development

@@ -1,6 +1,7 @@
 +++
 title = "Practice Projects"
-weight = 11
+description = "Project ideas and practice platforms for hands-on learning"
+weight = 13
 +++
 
 # Practice Projects

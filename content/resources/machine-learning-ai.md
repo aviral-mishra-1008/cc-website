@@ -1,6 +1,7 @@
 +++
 title = "Machine Learning & AI"
-weight = 5
+description = "Machine learning, AI, and data science resources"
+weight = 6
 +++
 
 # Machine Learning & AI
