@@ -1,0 +1,4 @@
+User-agent: *
+Disallow:
+Allow: /
+Sitemap: https://Shanu-Kumawat.github.io/cc-website/sitemap.xml
