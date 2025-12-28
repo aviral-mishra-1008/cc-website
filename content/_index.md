@@ -12,7 +12,6 @@ version = "2025"
 title = "Computer Coding Club"
 badge = "🚀 Learn, Build, and Grow Together"
 description = "Join a vibrant community of passionate coders, innovators, and tech enthusiasts. We organize workshops, hackathons, coding competitions, and contribute to open source projects that make a difference."
-image = "/images/hero-background.jpg"
 cta_buttons = [
     { text = "Join Us", url = "/about", style = "primary" },
     { text = "Explore Blog", url = "/blog", style = "secondary" },
