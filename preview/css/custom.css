@@ -813,3 +813,315 @@
   src: url(../fonts/fa-regular-400.woff2) format("woff2");
 }
 
+/* ============================================
+   FOOTER STYLING - DARK THEME
+   ============================================
+*/
+
+/* Footer Main Container */
+[data-theme="night"] .site-footer,
+[data-theme="night"] .footer {
+  background: #0E0604 !important;
+  background-image: radial-gradient(circle at bottom, #3d1414 0%, #050202 70%) !important;
+  color: #FAECEC !important;
+  padding: 4rem 4rem 2rem !important;
+  border-top: 1px solid oklch(0.25 0.04 20) !important;
+  margin-top: 4rem !important;
+}
+
+/* Light theme footer */
+.site-footer,
+.footer {
+  background: #f5f5f5 !important;
+  background-image: radial-gradient(circle at bottom, #e0e0e0 0%, #eeeeee 70%) !important;
+  color: #333333 !important;
+  padding: 4rem 4rem 2rem !important;
+  border-top: 1px solid #d0d0d0 !important;
+  margin-top: 4rem !important;
+}
+
+/* Light theme text colors */
+.footer-col h3,
+.footer h3 {
+  font-size: 1.5rem !important;
+  margin-bottom: 1rem !important;
+  color: #C2293D !important;
+  background: none !important;
+  -webkit-text-fill-color: #C2293D !important;
+}
+
+.footer-col h4,
+.footer h4 {
+  font-size: 1.1rem !important;
+  margin-bottom: 1.2rem !important;
+  color: #333333 !important;
+  font-weight: 700 !important;
+  background: none !important;
+  -webkit-text-fill-color: #333333 !important;
+}
+
+.footer-col p,
+.footer p {
+  color: #666666 !important;
+  font-size: 0.9rem !important;
+  line-height: 1.6 !important;
+  margin-bottom: 0.8rem !important;
+}
+
+.footer-logo-container {
+  display: flex !important;
+  align-items: center !important;
+  gap: 1rem !important;
+  margin-bottom: 1rem !important;
+}
+
+.footer-logo {
+  height: 40px !important;
+  width: auto !important;
+}
+
+.footer-col ul,
+.footer ul {
+  list-style: none !important;
+}
+
+.footer-col ul li,
+.footer ul li {
+  margin-bottom: 0.8rem !important;
+}
+
+.footer-col ul li a,
+.footer ul li a {
+  color: #666666 !important;
+  text-decoration: none !important;
+  font-size: 0.9rem !important;
+  transition: color 0.3s ease !important;
+}
+
+.footer-col ul li a:hover,
+.footer ul li a:hover {
+  color: #C2293D !important;
+}
+
+.footer-col i,
+.footer i {
+  margin-right: 0.5rem !important;
+  vertical-align: middle !important;
+  color: #C2293D !important;
+}
+
+.social-links {
+  display: flex !important;
+  gap: 1rem !important;
+  margin-bottom: 1rem !important;
+}
+
+.social-links a {
+  color: #666666 !important;
+  font-size: 1.5rem !important;
+  transition: color 0.3s ease !important;
+}
+
+.social-links a:hover {
+  color: #C2293D !important;
+}
+
+.footer-content {
+  display: grid !important;
+  grid-template-columns: 1.5fr 1fr 1fr 1fr !important;
+  gap: 3rem !important;
+  margin-bottom: 3rem !important;
+}
+
+.footer-bottom {
+  border-top: 1px solid #d0d0d0 !important;
+  padding-top: 2rem !important;
+  text-align: center !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  gap: 0 !important;
+}
+
+.footer-bottom p {
+  color: #666666 !important;
+  font-size: 0.85rem !important;
+}
+
+.footer-bottom a {
+  color: #C2293D !important;
+  text-decoration: none !important;
+  transition: color 0.3s ease !important;
+}
+
+.footer-bottom a:hover {
+  color: #D63850 !important;
+}
+
+.footer-made-with {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 0.3rem !important;
+}
+
+.footer-made-with i {
+  color: #C2293D !important;
+  margin: 0 !important;
+}
+
+/* ============================================
+   DARK THEME OVERRIDES
+   ============================================
+*/
+
+/* Footer Main Container - Dark Theme */
+[data-theme="night"] .footer-content {
+  display: grid !important;
+  grid-template-columns: 1.5fr 1fr 1fr 1fr !important;
+  gap: 3rem !important;
+  margin-bottom: 3rem !important;
+}
+
+/* Footer Column Headings */
+[data-theme="night"] .footer-col h3,
+[data-theme="night"] .footer h3 {
+  font-size: 1.5rem !important;
+  margin-bottom: 1rem !important;
+  color: #FFC758 !important;
+  background: none !important;
+  -webkit-text-fill-color: #FFC758 !important;
+}
+
+[data-theme="night"] .footer-col h4,
+[data-theme="night"] .footer h4 {
+  font-size: 1.1rem !important;
+  margin-bottom: 1.2rem !important;
+  color: #FAECEC !important;
+  font-weight: 700 !important;
+  background: none !important;
+  -webkit-text-fill-color: #FAECEC !important;
+}
+
+/* Footer Paragraphs */
+[data-theme="night"] .footer-col p,
+[data-theme="night"] .footer p {
+  color: rgba(250, 236, 236, 0.7) !important;
+  font-size: 0.9rem !important;
+  line-height: 1.6 !important;
+  margin-bottom: 0.8rem !important;
+}
+
+/* Footer Logo Container */
+[data-theme="night"] .footer-logo-container {
+  display: flex !important;
+  align-items: center !important;
+  gap: 1rem !important;
+  margin-bottom: 1rem !important;
+}
+
+[data-theme="night"] .footer-logo {
+  height: 40px !important;
+  width: auto !important;
+}
+
+/* Footer Lists */
+[data-theme="night"] .footer-col ul,
+[data-theme="night"] .footer ul {
+  list-style: none !important;
+}
+
+[data-theme="night"] .footer-col ul li,
+[data-theme="night"] .footer ul li {
+  margin-bottom: 0.8rem !important;
+}
+
+[data-theme="night"] .footer-col ul li a,
+[data-theme="night"] .footer ul li a {
+  color: rgba(250, 236, 236, 0.7) !important;
+  text-decoration: none !important;
+  font-size: 0.9rem !important;
+  transition: color 0.3s ease !important;
+}
+
+[data-theme="night"] .footer-col ul li a:hover,
+[data-theme="night"] .footer ul li a:hover {
+  color: #FFC758 !important;
+}
+
+/* Footer Icons */
+[data-theme="night"] .footer-col i,
+[data-theme="night"] .footer i {
+  margin-right: 0.5rem !important;
+  vertical-align: middle !important;
+  color: #FFC758 !important;
+}
+
+/* Social Links */
+[data-theme="night"] .social-links {
+  display: flex !important;
+  gap: 1rem !important;
+  margin-bottom: 1rem !important;
+}
+
+[data-theme="night"] .social-links a {
+  color: rgba(250, 236, 236, 0.7) !important;
+  font-size: 1.5rem !important;
+  transition: color 0.3s ease !important;
+}
+
+[data-theme="night"] .social-links a:hover {
+  color: #FFC758 !important;
+}
+
+/* Footer Bottom */
+[data-theme="night"] .footer-bottom {
+  border-top: 1px solid oklch(0.25 0.04 20) !important;
+  padding-top: 2rem !important;
+  text-align: center !important;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 0.5rem !important;
+}
+
+[data-theme="night"] .footer-bottom p {
+  color: rgba(250, 236, 236, 0.7) !important;
+  font-size: 0.85rem !important;
+}
+
+[data-theme="night"] .footer-bottom a {
+  color: #FFC758 !important;
+  text-decoration: none !important;
+  transition: color 0.3s ease !important;
+}
+
+[data-theme="night"] .footer-bottom a:hover {
+  color: #FFD580 !important;
+}
+
+/* Responsive Design for Footer */
+@media (max-width: 900px) {
+  .footer-content {
+    grid-template-columns: 1fr 1fr !important;
+  }
+}
+
+@media (max-width: 600px) {
+  .footer-content {
+    grid-template-columns: 1fr !important;
+    text-align: center !important;
+  }
+  
+  .footer-logo-container {
+    justify-content: center !important;
+  }
+  
+  .social-links {
+    justify-content: center !important;
+  }
+  
+  .site-footer,
+  .footer {
+    padding: 3rem 2rem 2rem !important;
+  }
+}
