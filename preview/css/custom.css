@@ -1300,103 +1300,12 @@
   }
 }
 
-/* ============================================
-   THEME TOGGLE BUTTON - MOBILE FIX
-   ============================================
-*/
-
-/* Force theme toggle to be visible on all screen sizes */
-.navbar .theme-controller-container,
-.navbar li:has(.theme-controller) {
-  display: flex !important;
+/* Theme toggle adjustments */
+.navbar .swap.swap-rotate {
+  display: inline-grid;
+  place-content: center;
 }
 
-/* Ensure the swap/toggle button is visible on mobile */
-.navbar .swap.swap-rotate,
-.navbar label.swap {
-  display: inline-flex !important;
-  align-items: center;
-  justify-content: center;
-}
-
-/* Mobile-specific adjustments for theme toggle */
-@media (max-width: 1024px) {
-  /* Make theme toggle visible on mobile */
-  .navbar .menu-horizontal {
-    display: flex !important;
-    align-items: center;
-    gap: 0.5rem;
-  }
-  
-  /* Adjust theme toggle button size for mobile */
-  .navbar .swap.swap-rotate {
-    width: 44px;
-    height: 44px;
-    min-height: 44px;
-    padding: 0.5rem;
-  }
-  
-  .navbar .swap svg {
-    width: 20px;
-    height: 20px;
-  }
-}
-
-/* Extra small screens */
-@media (max-width: 640px) {
-  .navbar .swap.swap-rotate {
-    width: 40px;
-    height: 40px;
-    min-height: 40px;
-    padding: 0.4rem;
-  }
-  
-  .navbar .swap svg {
-    width: 18px;
-    height: 18px;
-  }
-}
-
-/* Alternative: Fixed floating theme toggle for mobile only */
-.mobile-theme-toggle {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  z-index: 9999;
-  width: 56px;
-  height: 56px;
-  border-radius: 50%;
-  display: none; /* Hidden by default */
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-  border: none;
-  outline: none;
-}
-
-/* Show mobile toggle only on small screens if desired */
-@media (max-width: 1024px) {
-  .mobile-theme-toggle {
-    display: flex;
-  }
-}
-
-/* Light theme button */
-.mobile-theme-toggle {
-  background: linear-gradient(135deg, #C2293D 0%, #D63850 100%);
-  color: #FFFFFF;
-}
-
-.mobile-theme-toggle:hover {
-  transform: scale(1.1);
-  box-shadow: 0 6px 20px rgba(194, 41, 61, 0.3);
-}
-
-.mobile-theme-toggle:active {
-  transform: scale(0.95);
-}
 
 /* Dark theme button */
 [data-theme="night"] .mobile-theme-toggle {
