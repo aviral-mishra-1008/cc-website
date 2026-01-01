@@ -824,7 +824,7 @@
   background: #0E0604 !important;
   background-image: radial-gradient(circle at bottom, #3d1414 0%, #050202 70%) !important;
   color: #FAECEC !important;
-  padding: 4rem 4rem 2rem !important;
+  padding: 4rem 2rem 2rem !important;
   border-top: 1px solid oklch(0.25 0.04 20) !important;
   margin-top: 4rem !important;
 }
@@ -835,7 +835,7 @@
   background: #f5f5f5 !important;
   background-image: radial-gradient(circle at bottom, #e0e0e0 0%, #eeeeee 70%) !important;
   color: #333333 !important;
-  padding: 4rem 4rem 2rem !important;
+  padding: 4rem 2rem 2rem !important;
   border-top: 1px solid #d0d0d0 !important;
   margin-top: 4rem !important;
 }
@@ -878,11 +878,14 @@
 .footer-logo {
   height: 40px !important;
   width: auto !important;
+  max-width: 100% !important;
 }
 
 .footer-col ul,
 .footer ul {
   list-style: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
 }
 
 .footer-col ul li,
@@ -896,6 +899,7 @@
   text-decoration: none !important;
   font-size: 0.9rem !important;
   transition: color 0.3s ease !important;
+  display: inline-block !important;
 }
 
 .footer-col ul li a:hover,
@@ -914,6 +918,7 @@
   display: flex !important;
   gap: 1rem !important;
   margin-bottom: 1rem !important;
+  flex-wrap: wrap !important;
 }
 
 .social-links a {
@@ -931,6 +936,9 @@
   grid-template-columns: 1.5fr 1fr 1fr 1fr !important;
   gap: 3rem !important;
   margin-bottom: 3rem !important;
+  max-width: 1400px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
 }
 
 .footer-bottom {
@@ -940,12 +948,16 @@
   display: flex !important;
   flex-direction: column !important;
   align-items: center !important;
-  gap: 0 !important;
+  gap: 0.5rem !important;
+  max-width: 1400px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
 }
 
 .footer-bottom p {
   color: #666666 !important;
   font-size: 0.85rem !important;
+  margin: 0.25rem 0 !important;
 }
 
 .footer-bottom a {
@@ -963,6 +975,7 @@
   align-items: center !important;
   justify-content: center !important;
   gap: 0.3rem !important;
+  flex-wrap: wrap !important;
 }
 
 .footer-made-with i {
@@ -981,6 +994,9 @@
   grid-template-columns: 1.5fr 1fr 1fr 1fr !important;
   gap: 3rem !important;
   margin-bottom: 3rem !important;
+  max-width: 1400px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
 }
 
 /* Footer Column Headings */
@@ -1023,12 +1039,15 @@
 [data-theme="night"] .footer-logo {
   height: 40px !important;
   width: auto !important;
+  max-width: 100% !important;
 }
 
 /* Footer Lists */
 [data-theme="night"] .footer-col ul,
 [data-theme="night"] .footer ul {
   list-style: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
 }
 
 [data-theme="night"] .footer-col ul li,
@@ -1042,6 +1061,7 @@
   text-decoration: none !important;
   font-size: 0.9rem !important;
   transition: color 0.3s ease !important;
+  display: inline-block !important;
 }
 
 [data-theme="night"] .footer-col ul li a:hover,
@@ -1062,6 +1082,7 @@
   display: flex !important;
   gap: 1rem !important;
   margin-bottom: 1rem !important;
+  flex-wrap: wrap !important;
 }
 
 [data-theme="night"] .social-links a {
@@ -1082,11 +1103,15 @@
   display: flex !important;
   flex-direction: column !important;
   gap: 0.5rem !important;
+  max-width: 1400px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
 }
 
 [data-theme="night"] .footer-bottom p {
   color: rgba(250, 236, 236, 0.7) !important;
   font-size: 0.85rem !important;
+  margin: 0.25rem 0 !important;
 }
 
 [data-theme="night"] .footer-bottom a {
@@ -1099,29 +1124,358 @@
   color: #FFD580 !important;
 }
 
-/* Responsive Design for Footer */
-@media (max-width: 900px) {
-  .footer-content {
+/* ============================================
+   RESPONSIVE DESIGN FOR FOOTER - IMPROVED
+   ============================================
+*/
+
+/* Tablets and smaller laptops (1024px and below) */
+@media (max-width: 1024px) {
+  .site-footer,
+  .footer,
+  [data-theme="night"] .site-footer,
+  [data-theme="night"] .footer {
+    padding: 3rem 2rem 2rem !important;
+  }
+
+  .footer-content,
+  [data-theme="night"] .footer-content {
     grid-template-columns: 1fr 1fr !important;
+    gap: 2.5rem !important;
   }
 }
 
-@media (max-width: 600px) {
-  .footer-content {
-    grid-template-columns: 1fr !important;
-    text-align: center !important;
-  }
-  
-  .footer-logo-container {
-    justify-content: center !important;
-  }
-  
-  .social-links {
-    justify-content: center !important;
-  }
-  
+/* Small tablets (768px and below) */
+@media (max-width: 768px) {
   .site-footer,
-  .footer {
-    padding: 3rem 2rem 2rem !important;
+  .footer,
+  [data-theme="night"] .site-footer,
+  [data-theme="night"] .footer {
+    padding: 2.5rem 1.5rem 1.5rem !important;
+  }
+
+  .footer-content,
+  [data-theme="night"] .footer-content {
+    grid-template-columns: 1fr !important;
+    gap: 2rem !important;
+    text-align: left !important;
+  }
+
+  .footer-col h3,
+  .footer h3,
+  [data-theme="night"] .footer-col h3,
+  [data-theme="night"] .footer h3 {
+    font-size: 1.3rem !important;
+  }
+
+  .footer-col h4,
+  .footer h4,
+  [data-theme="night"] .footer-col h4,
+  [data-theme="night"] .footer h4 {
+    font-size: 1rem !important;
+  }
+
+  .footer-logo-container,
+  [data-theme="night"] .footer-logo-container {
+    justify-content: flex-start !important;
+  }
+
+  .social-links,
+  [data-theme="night"] .social-links {
+    justify-content: flex-start !important;
   }
 }
+
+/* Mobile phones (600px and below) */
+@media (max-width: 600px) {
+  .site-footer,
+  .footer,
+  [data-theme="night"] .site-footer,
+  [data-theme="night"] .footer {
+    padding: 2rem 1.25rem 1.5rem !important;
+    margin-top: 2rem !important;
+  }
+
+  .footer-content,
+  [data-theme="night"] .footer-content {
+    gap: 2rem !important;
+    margin-bottom: 2rem !important;
+  }
+
+  .footer-col,
+  [data-theme="night"] .footer-col {
+    padding-bottom: 1.5rem !important;
+    border-bottom: 1px solid rgba(200, 200, 200, 0.2) !important;
+  }
+
+  .footer-col:last-child,
+  [data-theme="night"] .footer-col:last-child {
+    border-bottom: none !important;
+    padding-bottom: 0 !important;
+  }
+
+  .footer-col h3,
+  .footer h3,
+  [data-theme="night"] .footer-col h3,
+  [data-theme="night"] .footer h3 {
+    font-size: 1.2rem !important;
+  }
+
+  .footer-col h4,
+  .footer h4,
+  [data-theme="night"] .footer-col h4,
+  [data-theme="night"] .footer h4 {
+    font-size: 0.95rem !important;
+    margin-bottom: 1rem !important;
+  }
+
+  .footer-col p,
+  .footer p,
+  [data-theme="night"] .footer-col p,
+  [data-theme="night"] .footer p {
+    font-size: 0.85rem !important;
+  }
+
+  .footer-col ul li a,
+  .footer ul li a,
+  [data-theme="night"] .footer-col ul li a,
+  [data-theme="night"] .footer ul li a {
+    font-size: 0.85rem !important;
+  }
+
+  .social-links,
+  [data-theme="night"] .social-links {
+    gap: 1.25rem !important;
+  }
+
+  .social-links a,
+  [data-theme="night"] .social-links a {
+    font-size: 1.35rem !important;
+  }
+
+  .footer-bottom,
+  [data-theme="night"] .footer-bottom {
+    padding-top: 1.5rem !important;
+  }
+
+  .footer-bottom p,
+  [data-theme="night"] .footer-bottom p {
+    font-size: 0.8rem !important;
+  }
+
+  .footer-made-with,
+  [data-theme="night"] .footer-made-with {
+    font-size: 0.8rem !important;
+  }
+}
+
+/* Extra small phones (400px and below) */
+@media (max-width: 400px) {
+  .site-footer,
+  .footer,
+  [data-theme="night"] .site-footer,
+  [data-theme="night"] .footer {
+    padding: 1.5rem 1rem 1.25rem !important;
+  }
+
+  .footer-content,
+  [data-theme="night"] .footer-content {
+    gap: 1.5rem !important;
+  }
+
+  .footer-col h3,
+  .footer h3,
+  [data-theme="night"] .footer-col h3,
+  [data-theme="night"] .footer h3 {
+    font-size: 1.1rem !important;
+  }
+
+  .footer-logo {
+    height: 32px !important;
+  }
+
+  .social-links a,
+  [data-theme="night"] .social-links a {
+    font-size: 1.2rem !important;
+  }
+}
+
+/* ============================================
+   THEME TOGGLE BUTTON - MOBILE FIX
+   ============================================
+*/
+
+/* Force theme toggle to be visible on all screen sizes */
+.navbar .theme-controller-container,
+.navbar li:has(.theme-controller) {
+  display: flex !important;
+}
+
+/* Ensure the swap/toggle button is visible on mobile */
+.navbar .swap.swap-rotate,
+.navbar label.swap {
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Mobile-specific adjustments for theme toggle */
+@media (max-width: 1024px) {
+  /* Make theme toggle visible on mobile */
+  .navbar .menu-horizontal {
+    display: flex !important;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  
+  /* Adjust theme toggle button size for mobile */
+  .navbar .swap.swap-rotate {
+    width: 44px;
+    height: 44px;
+    min-height: 44px;
+    padding: 0.5rem;
+  }
+  
+  .navbar .swap svg {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+/* Extra small screens */
+@media (max-width: 640px) {
+  .navbar .swap.swap-rotate {
+    width: 40px;
+    height: 40px;
+    min-height: 40px;
+    padding: 0.4rem;
+  }
+  
+  .navbar .swap svg {
+    width: 18px;
+    height: 18px;
+  }
+}
+
+/* Alternative: Fixed floating theme toggle for mobile only */
+.mobile-theme-toggle {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 9999;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  display: none; /* Hidden by default */
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  border: none;
+  outline: none;
+}
+
+/* Show mobile toggle only on small screens if desired */
+@media (max-width: 1024px) {
+  .mobile-theme-toggle {
+    display: flex;
+  }
+}
+
+/* Light theme button */
+.mobile-theme-toggle {
+  background: linear-gradient(135deg, #C2293D 0%, #D63850 100%);
+  color: #FFFFFF;
+}
+
+.mobile-theme-toggle:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 20px rgba(194, 41, 61, 0.3);
+}
+
+.mobile-theme-toggle:active {
+  transform: scale(0.95);
+}
+
+/* Dark theme button */
+[data-theme="night"] .mobile-theme-toggle {
+  background: linear-gradient(135deg, #FFC758 0%, #FFD580 100%);
+  color: #0E0604;
+}
+
+[data-theme="night"] .mobile-theme-toggle:hover {
+  box-shadow: 0 6px 20px rgba(255, 199, 88, 0.4);
+}
+
+/* Icon styling */
+.mobile-theme-toggle i,
+.mobile-theme-toggle svg {
+  font-size: 24px;
+  width: 24px;
+  height: 24px;
+  transition: transform 0.3s ease;
+}
+
+/* Hide sun in light mode, show moon */
+.mobile-theme-toggle .swap-off {
+  display: block;
+}
+
+.mobile-theme-toggle .swap-on {
+  display: none;
+}
+
+/* Hide moon in dark mode, show sun */
+[data-theme="night"] .mobile-theme-toggle .swap-off {
+  display: none;
+}
+
+[data-theme="night"] .mobile-theme-toggle .swap-on {
+  display: block;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  .mobile-theme-toggle {
+    width: 52px;
+    height: 52px;
+    bottom: 20px;
+    right: 20px;
+  }
+
+  .mobile-theme-toggle i,
+  .mobile-theme-toggle svg {
+    font-size: 22px;
+    width: 22px;
+    height: 22px;
+  }
+}
+
+@media (max-width: 400px) {
+  .mobile-theme-toggle {
+    width: 48px;
+    height: 48px;
+    bottom: 16px;
+    right: 16px;
+  }
+
+  .mobile-theme-toggle i,
+  .mobile-theme-toggle svg {
+    font-size: 20px;
+    width: 20px;
+    height: 20px;
+  }
+}
+
+/* Ensure button doesn't interfere with footer */
+.mobile-theme-toggle {
+  margin-bottom: env(safe-area-inset-bottom, 0);
+}
+
+/* Accessibility */
+.mobile-theme-toggle:focus {
+  outline: 2px solid #FFC758;
+  outline-offset: 2px;
+}
+
