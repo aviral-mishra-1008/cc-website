@@ -613,42 +613,13 @@ document.addEventListener('DOMContentLoaded', function() {
     <div class="mt-8">
         <h2 class="text-2xl font-bold mb-6 flex items-center gap-2">
             📅 Upcoming Events
-            <span class="text-sm font-normal text-gray-500">(1)</span>
+            <span class="text-sm font-normal text-gray-500">(0)</span>
         </h2>
         
         
-            <div class="grid gap-6 md:grid-cols-2">
-                
-                 
-                    <a href="&#x2F;cc-website&#x2F;preview&#x2F;events&#x2F;2026&#x2F;docker-kubernetes-workshop&#x2F;" class="card bg-base-200 shadow-xl border border-gray-500/15 transition hover:border-primary hover:shadow-2xl overflow-hidden group h-full flex flex-col">
-                        <div class="card-body flex-grow">
-                            <div class="flex justify-between items-start">
-                                <h3 class="card-title group-hover:text-primary transition-colors text-xl">
-                                    Docker &amp; Kubernetes Fundamentals Workshop
-                                </h3>
-                                
-                                    <div class="badge badge-secondary shrink-0">UPCOMING</div>
-                                
-                            </div>
-                            
-                            <div class="flex flex-col gap-2 text-sm text-gray-500 mt-3 mb-4">
-                                <span class="flex items-center gap-2">
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" /></svg>
-                                    January 05, 2026
-                                </span>
-                                
-                            </div>
-                            
-                            <p class="text-base-content/80 line-clamp-3 mb-4">
-                                Hands-on workshop covering containerization with Docker and orchestration with Kubernetes. Beginner-friendly!
-                            </p>
-                            
-                            <div class="mt-auto pt-4">
-                                <span class="btn btn-primary btn-sm w-full">Register Now</span>
-                            </div>
-                        </div>
-                    </a>
-                
+            <div class="alert bg-base-200 border-gray-500/15">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="stroke-info shrink-0 w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                <span>No upcoming events scheduled at the moment. Check back soon!</span>
             </div>
         
     </div>
@@ -670,17 +641,54 @@ document.addEventListener('DOMContentLoaded', function() {
                 
                 
                     
-                
+                        
                     
                 
                     
                 
                     
                 
+                    
                 
+                    
+                
+                
+                
+                    <div class="collapse collapse-arrow bg-base-200 border border-gray-500/15">
+                        <input type="checkbox" /> 
+                        <div class="collapse-title text-xl font-medium flex justify-between items-center">
+                            <span>2026 Events</span>
+                            <span class="badge badge-sm">1</span>
+                        </div>
+                        <div class="collapse-content">
+                            <div class="grid gap-4 pt-4">
+                                
+                                    <a href="&#x2F;cc-website&#x2F;preview&#x2F;events&#x2F;2026&#x2F;docker-kubernetes-workshop&#x2F;" class="flex flex-col md:flex-row md:items-center justify-between gap-4 p-4 rounded-lg hover:bg-base-300 transition border border-transparent hover:border-gray-500/20">
+                                        <div>
+                                            <h3 class="font-bold text-lg hover:text-primary transition-colors">
+                                                Docker &amp; Kubernetes Fundamentals Workshop
+                                            </h3>
+                                            <div class="text-sm text-gray-500 mt-1 flex gap-3">
+                                                <span>January 05</span>
+                                                
+                                            </div>
+                                        </div>
+                                        <div class="flex items-center gap-3">
+                                            
+                                                <div class="badge badge-outline text-xs">UPCOMING</div>
+                                            
+                                            <span class="text-xs text-gray-400">View Recap →</span>
+                                        </div>
+                                    </a>
+                                
+                            </div>
+                        </div>
+                    </div>
                 
             
                 
+                
+                    
                 
                     
                         
@@ -753,6 +761,8 @@ document.addEventListener('DOMContentLoaded', function() {
                     
                 
                     
+                
+                    
                         
                     
                 
@@ -817,6 +827,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 
             
                 
+                
+                    
                 
                     
                 
