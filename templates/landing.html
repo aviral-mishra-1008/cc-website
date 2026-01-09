@@ -51,6 +51,82 @@
         </div>
     {% endif %}
 
+    {# Events Carousel Section - Animated Image Slider #}
+    {% if section.extra.events_carousel %}
+    <div class="events-carousel-section">
+        <div class="events-grid">
+            <div>
+                <div class="events-image-container" id="eventsImageContainer"></div>
+            </div>
+            <div class="events-content">
+                <div class="events-text-content" id="eventsTextContent">
+                    <h3 id="eventName"></h3>
+                    <p class="events-designation" id="eventDesignation"></p>
+                    <p class="events-quote" id="eventQuote"></p>
+                </div>
+                <div class="events-controls">
+                    <button id="eventPrevBtn" aria-label="Previous event">
+                        <svg class="arrow-left" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+                        </svg>
+                    </button>
+                    <button id="eventNextBtn" aria-label="Next event">
+                        <svg class="arrow-right" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Inject events data for JavaScript -->
+        <script>
+            window.eventsCarouselData = [
+                {% for event in section.extra.events_carousel %}
+                {
+                    name: "{{ event.name }}",
+                    type: "{{ event.type }}",
+                    description: "{{ event.description }}",
+                    image: "{{ get_url(path=config.extra.image_base_url ~ '/' ~ event.image) }}"
+                }{% if not loop.last %},{% endif %}
+                {% endfor %}
+            ];
+        </script>
+    </div>
+    {% endif %}
+
+    {# Roadmaps Scroll Section - Horizontal Scroll Animation #}
+    {% set roadmaps_section = get_section(path="roadmaps/_index.md") %}
+    {% if roadmaps_section and roadmaps_section.pages %}
+    <div class="roadmaps-scroll-wrapper">
+        <div class="roadmaps-sticky-container">
+            <div class="roadmaps-intro-text">
+                <div class="roadmaps-title">Learning Roadmaps</div>
+                <p class="roadmaps-subtitle">Scroll down to explore structured learning paths</p>
+            </div>
+
+            <div class="roadmaps-viewport">
+                <div class="roadmaps-slider-track" id="roadmapsSliderTrack">
+                    {% for roadmap in roadmaps_section.pages %}
+                    {% if roadmap.extra.carousel_image %}
+                    <div class="roadmap-card">
+                        <img src="{{ get_url(path=config.extra.image_base_url ~ '/' ~ roadmap.extra.carousel_image) }}" alt="{{ roadmap.extra.carousel_title | default(value=roadmap.title) }}">
+                        <div class="roadmap-card-content">
+                            <h3>{{ roadmap.extra.carousel_title | default(value=roadmap.title) }}</h3>
+                            <p>{{ roadmap.extra.carousel_description | default(value=roadmap.description) }}</p>
+                            <a href="{{ roadmap.permalink | safe }}" class="roadmap-btn-action">Start Learning</a>
+                        </div>
+                    </div>
+                    {% endif %}
+                    {% endfor %}
+                </div>
+            </div>
+
+            <div class="roadmaps-scroll-indicator">Scroll Down</div>
+        </div>
+    </div>
+    {% endif %}
+
     {# Feature Grid - Ashen Minimal Design #}
     {# Support both extra.features_section.features (new) and extra.features (legacy) for backward compatibility #}
     {% set features = section.extra.features_section.features | default(value=section.extra.features) %}
@@ -245,3 +321,11 @@
         </div>
     {% endif %}
 {% endblock content %}
+
+{% block js_body %}
+    {{ super() }}
+    <!-- Events Carousel JavaScript -->
+    <script src="{{ get_url(path='js/events-carousel.js') | safe }}"></script>
+    <!-- Roadmaps Scroll JavaScript -->
+    <script src="{{ get_url(path='js/roadmaps-scroll.js') | safe }}"></script>
+{% endblock js_body %}

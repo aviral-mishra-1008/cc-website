@@ -18,6 +18,37 @@ cta_buttons = [
     { text = "Explore Blog", url = "/blog", style = "secondary" },
 ]
 
+# Events Carousel Section - Showcase upcoming and featured events
+[[extra.events_carousel]]
+name = "Winter Hackathon 2025"
+type = "48-Hour Coding Marathon | Dec 20-22"
+description = "Join us for our biggest coding event of the year! Build innovative solutions for social good, compete for ₹1,00,000 in prizes, and connect with industry mentors from top tech companies. Free food, swag, and amazing learning opportunities await!"
+image = "events/winter-hackathon-2025.jpg"
+
+[[extra.events_carousel]]
+name = "Docker & Kubernetes Workshop"
+type = "Hands-on Workshop | Jan 15, 2026"
+description = "Master containerization and orchestration technologies that power modern cloud infrastructure. Learn Docker fundamentals, Kubernetes deployments, and best practices from industry experts. Includes hands-on labs with real-world projects."
+image = "events/docker-workshop.jpg"
+
+[[extra.events_carousel]]
+name = "Summer Hackathon 2025"
+type = "Past Event | Aug 22-24, 2025"
+description = "A massive success with 150 participants and 30 teams! Students built incredible projects addressing real-world challenges. Winners received ₹1L in prizes and multiple projects received industry interest. Check out the amazing projects our community built!"
+image = "events/summer-hackathon-2025.jpg"
+
+[[extra.events_carousel]]
+name = "ContriHub 2025"
+type = "Open Source Celebration | Coming Soon"
+description = "Our annual open source event where beginners learn to contribute to real projects in a supportive environment. Past participants have gone on to become maintainers of popular open source libraries. No experience required - just bring your enthusiasm!"
+image = "events/contrihub-2025.jpg"
+
+[[extra.events_carousel]]
+name = "AI/ML Workshop Series"
+type = "Weekly Sessions | Every Saturday"
+description = "Dive deep into Machine Learning and Artificial Intelligence with our comprehensive workshop series. From basics of NumPy and Pandas to building neural networks with TensorFlow. Perfect for beginners and intermediate learners."
+image = "events/ai-ml-workshop.jpg"
+
 # Features Section - Highlight what CC Club offers
 [extra.features_section]
 title = "What We Offer"

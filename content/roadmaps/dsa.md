@@ -8,6 +8,10 @@ difficulty = "Beginner to Advanced"
 estimated_time = "4-8 months"
 prerequisites = "Basic programming knowledge in any language"
 badge = "UPDATED"
+# Landing page carousel
+carousel_image = "roadmaps/dsa-fundamentals.jpg"
+carousel_title = "DSA Fundamentals"
+carousel_description = "Master data structures and algorithms from basics to competitive programming. Structured path covering arrays, trees, graphs, dynamic programming, and advanced algorithms."
 +++
 
 # Data Structures & Algorithms Roadmap
