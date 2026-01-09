@@ -573,6 +573,176 @@ document.addEventListener('DOMContentLoaded', function() {
 
     
     
+    <div class="events-carousel-section">
+        <div class="events-grid">
+            <div>
+                <div class="events-image-container" id="eventsImageContainer"></div>
+            </div>
+            <div class="events-content">
+                <div class="events-text-content" id="eventsTextContent">
+                    <h3 id="eventName"></h3>
+                    <p class="events-designation" id="eventDesignation"></p>
+                    <p class="events-quote" id="eventQuote"></p>
+                </div>
+                <div class="events-controls">
+                    <button id="eventPrevBtn" aria-label="Previous event">
+                        <svg class="arrow-left" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+                        </svg>
+                    </button>
+                    <button id="eventNextBtn" aria-label="Next event">
+                        <svg class="arrow-right" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Inject events data for JavaScript -->
+        <script>
+            window.eventsCarouselData = [
+                
+                {
+                    name: "Winter Hackathon 2025",
+                    type: "48-Hour Coding Marathon | Dec 20-22",
+                    description: "Join us for our biggest coding event of the year! Build innovative solutions for social good, compete for ₹1,00,000 in prizes, and connect with industry mentors from top tech companies. Free food, swag, and amazing learning opportunities await!",
+                    image: "/cc-website/preview/images/events/winter-hackathon-2025.jpg"
+                },
+                
+                {
+                    name: "Docker &amp; Kubernetes Workshop",
+                    type: "Hands-on Workshop | Jan 15, 2026",
+                    description: "Master containerization and orchestration technologies that power modern cloud infrastructure. Learn Docker fundamentals, Kubernetes deployments, and best practices from industry experts. Includes hands-on labs with real-world projects.",
+                    image: "/cc-website/preview/images/events/docker-workshop.jpg"
+                },
+                
+                {
+                    name: "Summer Hackathon 2025",
+                    type: "Past Event | Aug 22-24, 2025",
+                    description: "A massive success with 150 participants and 30 teams! Students built incredible projects addressing real-world challenges. Winners received ₹1L in prizes and multiple projects received industry interest. Check out the amazing projects our community built!",
+                    image: "/cc-website/preview/images/events/summer-hackathon-2025.jpg"
+                },
+                
+                {
+                    name: "ContriHub 2025",
+                    type: "Open Source Celebration | Coming Soon",
+                    description: "Our annual open source event where beginners learn to contribute to real projects in a supportive environment. Past participants have gone on to become maintainers of popular open source libraries. No experience required - just bring your enthusiasm!",
+                    image: "/cc-website/preview/images/events/contrihub-2025.jpg"
+                },
+                
+                {
+                    name: "AI&#x2F;ML Workshop Series",
+                    type: "Weekly Sessions | Every Saturday",
+                    description: "Dive deep into Machine Learning and Artificial Intelligence with our comprehensive workshop series. From basics of NumPy and Pandas to building neural networks with TensorFlow. Perfect for beginners and intermediate learners.",
+                    image: "/cc-website/preview/images/events/ai-ml-workshop.jpg"
+                }
+                
+            ];
+        </script>
+    </div>
+    
+
+    
+    
+    
+    <div class="roadmaps-scroll-wrapper">
+        <div class="roadmaps-sticky-container">
+            <div class="roadmaps-intro-text">
+                <div class="roadmaps-title">Learning Roadmaps</div>
+                <p class="roadmaps-subtitle">Scroll down to explore structured learning paths</p>
+            </div>
+
+            <div class="roadmaps-viewport">
+                <div class="roadmaps-slider-track" id="roadmapsSliderTrack">
+                    
+                    
+                    <div class="roadmap-card">
+                        <img src="/cc-website/preview/images/roadmaps/web-development.jpg" alt="Web Development">
+                        <div class="roadmap-card-content">
+                            <h3>Web Development</h3>
+                            <p>Become a full-stack developer with our comprehensive roadmap. Learn HTML, CSS, JavaScript, React, Node.js, databases, and deployment strategies step by step.</p>
+                            <a href="/cc-website/preview/roadmaps/web-development/" class="roadmap-btn-action">Start Learning</a>
+                        </div>
+                    </div>
+                    
+                    
+                    
+                    <div class="roadmap-card">
+                        <img src="/cc-website/preview/images/roadmaps/dsa-fundamentals.jpg" alt="DSA Fundamentals">
+                        <div class="roadmap-card-content">
+                            <h3>DSA Fundamentals</h3>
+                            <p>Master data structures and algorithms from basics to competitive programming. Structured path covering arrays, trees, graphs, dynamic programming, and advanced algorithms.</p>
+                            <a href="/cc-website/preview/roadmaps/dsa/" class="roadmap-btn-action">Start Learning</a>
+                        </div>
+                    </div>
+                    
+                    
+                    
+                    <div class="roadmap-card">
+                        <img src="/cc-website/preview/images/roadmaps/machine-learning.jpg" alt="Machine Learning">
+                        <div class="roadmap-card-content">
+                            <h3>Machine Learning</h3>
+                            <p>Journey from Python basics to building production ML models. Cover mathematics, algorithms, frameworks like TensorFlow and PyTorch, and real-world applications.</p>
+                            <a href="/cc-website/preview/roadmaps/machine-learning/" class="roadmap-btn-action">Start Learning</a>
+                        </div>
+                    </div>
+                    
+                    
+                    
+                    <div class="roadmap-card">
+                        <img src="/cc-website/preview/images/roadmaps/open-source.jpg" alt="Open Source">
+                        <div class="roadmap-card-content">
+                            <h3>Open Source</h3>
+                            <p>Learn how to contribute to open source projects effectively. From finding good first issues to becoming a maintainer - practical guidance for your journey.</p>
+                            <a href="/cc-website/preview/roadmaps/open-source/" class="roadmap-btn-action">Start Learning</a>
+                        </div>
+                    </div>
+                    
+                    
+                    
+                    <div class="roadmap-card">
+                        <img src="/cc-website/preview/images/roadmaps/interview-prep.jpg" alt="Interview Prep">
+                        <div class="roadmap-card-content">
+                            <h3>Interview Prep</h3>
+                            <p>Comprehensive preparation guide for technical interviews at top companies. Practice problems, system design, behavioral questions, and insider tips from alumni.</p>
+                            <a href="/cc-website/preview/roadmaps/interview-prep/" class="roadmap-btn-action">Start Learning</a>
+                        </div>
+                    </div>
+                    
+                    
+                    
+                    <div class="roadmap-card">
+                        <img src="/cc-website/preview/images/roadmaps/mobile-development.jpg" alt="Mobile Development">
+                        <div class="roadmap-card-content">
+                            <h3>Mobile Development</h3>
+                            <p>Master iOS and Android development. Learn native development with Swift&#x2F;Kotlin or cross-platform with React Native and Flutter.</p>
+                            <a href="/cc-website/preview/roadmaps/mobile-development/" class="roadmap-btn-action">Start Learning</a>
+                        </div>
+                    </div>
+                    
+                    
+                    
+                    <div class="roadmap-card">
+                        <img src="/cc-website/preview/images/roadmaps/devops.jpg" alt="DevOps &amp; Cloud">
+                        <div class="roadmap-card-content">
+                            <h3>DevOps &amp; Cloud</h3>
+                            <p>Learn DevOps practices, cloud platforms (AWS, Azure, GCP), Docker, Kubernetes, CI&#x2F;CD pipelines, and infrastructure as code.</p>
+                            <a href="/cc-website/preview/roadmaps/devops/" class="roadmap-btn-action">Start Learning</a>
+                        </div>
+                    </div>
+                    
+                    
+                </div>
+            </div>
+
+            <div class="roadmaps-scroll-indicator">Scroll Down</div>
+        </div>
+    </div>
+    
+
+    
+    
     
     
         <div class="py-20 md:py-40 relative">
@@ -1562,6 +1732,16 @@ document.addEventListener('DOMContentLoaded', function() {
                             
                                 <li ><a class="hover:no-underline" href="/cc-website/preview/roadmaps/dsa">Data Structures &amp; Algorithms Roadmap</a></li>
                             
+                                <li ><a class="hover:no-underline" href="/cc-website/preview/roadmaps/machine-learning">Machine Learning Roadmap</a></li>
+                            
+                                <li ><a class="hover:no-underline" href="/cc-website/preview/roadmaps/open-source">Open Source Contribution Roadmap</a></li>
+                            
+                                <li ><a class="hover:no-underline" href="/cc-website/preview/roadmaps/interview-prep">Technical Interview Preparation</a></li>
+                            
+                                <li ><a class="hover:no-underline" href="/cc-website/preview/roadmaps/mobile-development">Mobile App Development Roadmap</a></li>
+                            
+                                <li ><a class="hover:no-underline" href="/cc-website/preview/roadmaps/devops">DevOps &amp; Cloud Engineering Roadmap</a></li>
+                            
                             
                         </ul>
                     </details>
@@ -1660,6 +1840,7 @@ document.addEventListener('DOMContentLoaded', function() {
         </script>
     </div>
 
+    
     
         <script type="text/javascript" src="/cc-website/preview/goyo.js"></script>
         
@@ -1767,5 +1948,10 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         </script>
     
+    <!-- Events Carousel JavaScript -->
+    <script src="/cc-website/preview/js/events-carousel.js"></script>
+    <!-- Roadmaps Scroll JavaScript -->
+    <script src="/cc-website/preview/js/roadmaps-scroll.js"></script>
+
 </body>
 </html>
