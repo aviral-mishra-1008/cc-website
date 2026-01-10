@@ -4,7 +4,7 @@
  * Features: Smooth animations, progress bar, keyboard/mouse controls, autoplay
  */
 
-(function() {
+(function () {
     'use strict';
 
     // Wait for DOM to be fully loaded
@@ -63,7 +63,7 @@
                 const isActive = index === active;
                 const distance = Math.abs(index - active);
                 const zIndex = isActive ? 40 : (eventsData.length + 2 - distance);
-                
+
                 if (isActive) {
                     img.style.opacity = '1';
                     img.style.scale = '1';
@@ -73,13 +73,13 @@
                     const rotation = randomRotate();
                     const offset = (index - active) * 15;
                     const blur = Math.min(distance * 2, 5);
-                    
+
                     img.style.opacity = Math.max(0.4, 1 - distance * 0.2);
                     img.style.scale = Math.max(0.85, 1 - distance * 0.05);
                     img.style.transform = `translateZ(-${distance * 100}px) translateX(${offset}px) rotate(${rotation}deg)`;
                     img.style.filter = `brightness(${0.7 + distance * 0.05}) blur(${blur}px)`;
                 }
-                
+
                 img.style.zIndex = zIndex;
                 img.style.transition = isTransitioning ? 'all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1)' : 'none';
             });
@@ -112,14 +112,14 @@
             textContent.style.animation = 'none';
             textContent.style.opacity = '0';
             textContent.style.transform = 'translateY(20px)';
-            
+
             setTimeout(() => {
                 nameEl.textContent = eventsData[active].name;
                 designationEl.textContent = eventsData[active].type;
                 animateText(eventsData[active].description);
                 updateCounter();
                 updateProgressBar();
-                
+
                 // Trigger animation
                 textContent.style.animation = 'fadeInUp 0.6s ease-out forwards';
             }, 100);
@@ -133,30 +133,30 @@
         function handleNext() {
             if (isTransitioning) return;
             isTransitioning = true;
-            
+
             active = (active + 1) % eventsData.length;
             updateImages();
             updateContent();
-            
+
             setTimeout(() => {
                 isTransitioning = false;
             }, 600);
-            
+
             resetAutoplay();
         }
 
         function handlePrev() {
             if (isTransitioning) return;
             isTransitioning = true;
-            
+
             active = (active - 1 + eventsData.length) % eventsData.length;
             updateImages();
             updateContent();
-            
+
             setTimeout(() => {
                 isTransitioning = false;
             }, 600);
-            
+
             resetAutoplay();
         }
 
@@ -176,16 +176,20 @@
         });
 
         // Pause autoplay on hover
-        const section = document.querySelector('.events-carousel-section');
-        if (section) {
-            section.addEventListener('mouseenter', () => {
-                clearTimeout(autoplayTimeout);
-            });
-            
-            section.addEventListener('mouseleave', () => {
-                resetAutoplay();
-            });
-        }
+        // Pause autoplay on hover over images or text only
+        const hoverTargets = [imageContainer, textContent];
+
+        hoverTargets.forEach(target => {
+            if (target) {
+                target.addEventListener('mouseenter', () => {
+                    clearTimeout(autoplayTimeout);
+                });
+
+                target.addEventListener('mouseleave', () => {
+                    resetAutoplay();
+                });
+            }
+        });
 
         // Touch/swipe support
         let touchStartX = 0;
