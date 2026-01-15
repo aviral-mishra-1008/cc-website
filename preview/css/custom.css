@@ -293,7 +293,7 @@
 [data-theme="night"] .hero-background,
 [data-theme="night"] .relative.min-h-screen.flex.items-center.justify-center {
   background: linear-gradient(135deg,
-      #2D0F13 0%,
+      #282d0f 0%,
       #3A1218 20%,
       #42151D 40%,
       #3D141B 60%,
@@ -2408,6 +2408,47 @@
     display: block;
     min-width: 20vw;
     height: 1px;
+}
+
+/* Sidebar transparency - force override DaisyUI */
+[data-theme="night"] .drawer-side > div {
+    background-color: transparent !important;
+    background: transparent !important;
+    opacity: 1 !important;
+}
+
+[data-theme="night"] .drawer-side > div[class*="thin-scrollbar"] {
+    background-color: transparent !important;
+}
+
+/* Remove any background from drawer-side itself */
+[data-theme="night"] .drawer-side {
+    background-color: transparent !important;
+}
+
+.drawer-overlay {
+  background-color: transparent !important;
+}
+
+/* Dark overlay on main content when sidebar opens */
+.drawer-toggle:checked ~ .drawer-content main {
+    position: relative;
+}
+
+.drawer-toggle:checked ~ .drawer-content main::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.3);
+    pointer-events: none;
+    z-index: 10;
+}
+
+.drawer-toggle:checked ~ .drawer-content * {
+    pointer-events: none !important;
 }
 
 
