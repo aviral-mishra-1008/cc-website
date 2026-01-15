@@ -2409,3 +2409,630 @@
     min-width: 20vw;
     height: 1px;
 }
+
+
+
+
+/* ============================================
+   ROADMAP CARDS - UPDATED DIFFICULTY & BUTTON STYLES
+   ============================================ */
+
+/* Dark Theme - Difficulty Badge (Red with Glow) */
+[data-theme="night"] .difficulty-badge {
+    background: linear-gradient(135deg, #C2293D 0%, #8B0000 100%) !important;
+    color: #FFFFFF !important;
+    border: 2px solid #FF0000 !important;
+    box-shadow: 0 0 20px rgba(255, 0, 0, 0.5), 
+                0 0 40px rgba(194, 41, 61, 0.3),
+                inset 0 1px 0 rgba(255, 255, 255, 0.2) !important;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+    font-weight: 700 !important;
+    padding: 8px 20px !important;
+    border-radius: 8px !important;
+    transition: all 0.3s ease;
+}
+
+[data-theme="night"] .difficulty-badge:hover {
+    box-shadow: 0 0 30px rgba(255, 0, 0, 0.7), 
+                0 0 50px rgba(194, 41, 61, 0.4),
+                inset 0 1px 0 rgba(255, 255, 255, 0.2) !important;
+    transform: scale(1.05);
+}
+
+/* Light Theme - Difficulty Badge (Blue with Glow) */
+[data-theme="light"] .difficulty-badge,
+[data-theme="lofi"] .difficulty-badge {
+    background: linear-gradient(135deg, #1976D2 0%, #0D47A1 100%) !important;
+    color: #FFFFFF !important;
+    border: 2px solid #0052CC !important;
+    box-shadow: 0 0 20px rgba(25, 118, 210, 0.5), 
+                0 0 40px rgba(13, 71, 161, 0.3),
+                inset 0 1px 0 rgba(255, 255, 255, 0.2) !important;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+    font-weight: 700 !important;
+    padding: 8px 20px !important;
+    border-radius: 8px !important;
+    transition: all 0.3s ease;
+}
+
+[data-theme="light"] .difficulty-badge:hover,
+[data-theme="lofi"] .difficulty-badge:hover {
+    box-shadow: 0 0 30px rgba(25, 118, 210, 0.7), 
+                0 0 50px rgba(13, 71, 161, 0.4),
+                inset 0 1px 0 rgba(255, 255, 255, 0.2) !important;
+    transform: scale(1.05);
+}
+
+/* Dark Theme - Start Learning Button (Golden with thick glowing border) */
+[data-theme="night"] .start-btn {
+    background: linear-gradient(135deg, #dca73d 0%, #e0b152 100%) !important;
+    color: #0E0604 !important;
+    border: 3px solid #ebb343 !important;
+    box-shadow: 0 0 25px rgba(255, 199, 88, 0.6), 
+                0 0 50px rgba(255, 199, 88, 0.4),
+                0 8px 20px rgba(255, 199, 88, 0.3),
+                inset 0 1px 0 rgba(255, 255, 255, 0.3) !important;
+    font-weight: 800 !important;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+[data-theme="night"] .start-btn::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(
+        45deg,
+        transparent 30%,
+        rgba(255, 255, 255, 0.3) 50%,
+        transparent 70%
+    );
+    transform: rotate(45deg);
+    animation: shimmer 3s infinite;
+}
+
+@keyframes shimmer {
+    0% {
+        transform: translateX(-100%) translateY(-100%) rotate(45deg);
+    }
+    100% {
+        transform: translateX(100%) translateY(100%) rotate(45deg);
+    }
+}
+
+[data-theme="night"] .start-btn:hover {
+    transform: translateY(-4px) scale(1.05) !important;
+    box-shadow: 0 0 35px rgba(255, 199, 88, 0.8), 
+                0 0 70px rgba(255, 199, 88, 0.5),
+                0 12px 30px rgba(255, 199, 88, 0.4),
+                inset 0 1px 0 rgba(255, 255, 255, 0.4) !important;
+    border-color: #FFD580 !important;
+    background: linear-gradient(135deg, #FFD580 0%, #FFECA5 100%) !important;
+}
+
+[data-theme="night"] .start-btn:active {
+    transform: translateY(-2px) scale(1.02) !important;
+}
+
+/* Light Theme - Start Learning Button (Blue with thick glowing border) */
+[data-theme="light"] .start-btn,
+[data-theme="lofi"] .start-btn {
+    background: linear-gradient(135deg, #1976D2 0%, #2196F3 100%) !important;
+    color: #FFFFFF !important;
+    border: 3px solid #1976D2 !important;
+    box-shadow: 0 0 25px rgba(25, 118, 210, 0.6), 
+                0 0 50px rgba(25, 118, 210, 0.4),
+                0 8px 20px rgba(25, 118, 210, 0.3),
+                inset 0 1px 0 rgba(255, 255, 255, 0.3) !important;
+    font-weight: 800 !important;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+[data-theme="light"] .start-btn::before,
+[data-theme="lofi"] .start-btn::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(
+        45deg,
+        transparent 30%,
+        rgba(255, 255, 255, 0.4) 50%,
+        transparent 70%
+    );
+    transform: rotate(45deg);
+    animation: shimmer 3s infinite;
+}
+
+[data-theme="light"] .start-btn:hover,
+[data-theme="lofi"] .start-btn:hover {
+    transform: translateY(-4px) scale(1.05) !important;
+    box-shadow: 0 0 35px rgba(25, 118, 210, 0.8), 
+                0 0 70px rgba(25, 118, 210, 0.5),
+                0 12px 30px rgba(25, 118, 210, 0.4),
+                inset 0 1px 0 rgba(255, 255, 255, 0.4) !important;
+    border-color: #2196F3 !important;
+    background: linear-gradient(135deg, #2196F3 0%, #42A5F5 100%) !important;
+}
+
+[data-theme="light"] .start-btn:active,
+[data-theme="lofi"] .start-btn:active {
+    transform: translateY(-2px) scale(1.02) !important;
+}
+
+/* Ensure button text and icon remain visible */
+[data-theme="night"] .start-btn span,
+[data-theme="light"] .start-btn span,
+[data-theme="lofi"] .start-btn span {
+    position: relative;
+    z-index: 1;
+}
+
+/* ============================================
+   LIGHT THEME - ROADMAP CARD STYLING
+   ============================================ */
+
+/* Light theme - Card title gradient (blue) */
+[data-theme="light"] .roadmap-card-content h2,
+[data-theme="lofi"] .roadmap-card-content h2 {
+    background: linear-gradient(90deg, #003687 0%, #0052CC 25%, #0E3386 50%, #001C3E 75%, #4169E1 100%) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    background-clip: text !important;
+    color: transparent !important;
+}
+
+/* Light theme - Card border (blue) */
+[data-theme="light"] .roadmap-card-content,
+[data-theme="lofi"] .roadmap-card-content {
+    border-color: #1976D2 !important;
+}
+
+[data-theme="light"] .roadmap-card-link:hover .roadmap-card-content,
+[data-theme="lofi"] .roadmap-card-link:hover .roadmap-card-content {
+    border-color: #1976D2 !important;
+    box-shadow: 0 15px 40px rgba(25, 118, 210, 0.3), 
+                0 0 0 2px rgba(25, 118, 210, 0.4), 
+                0 0 40px rgba(25, 118, 210, 0.25) !important;
+}
+
+/* Light theme - Card background */
+[data-theme="light"] .roadmap-card-content,
+[data-theme="lofi"] .roadmap-card-content {
+    background: rgba(255, 255, 255, 0.95) !important;
+}
+
+/* Light theme - Tile and line colors for hover animation */
+body.light {
+    --card-shine-opacity: .3;
+    --card-shine-gradient: conic-gradient(from 225deg at 50% 50%, rgba(135, 206, 250, 0) 0deg, #87CEEB 25deg, #E0F7FF 285deg, #B0E5FC 345deg, rgba(135, 206, 250, 0) 360deg);
+    --card-line-color: #D3D3D3;
+    --card-tile-color: rgba(135, 206, 250, 0.15);
+}
+
+/* Light theme - Override line color to light grey */
+[data-theme="light"] .card .background .line:before,
+[data-theme="light"] .card .background .line:after,
+[data-theme="lofi"] .card .background .line:before,
+[data-theme="lofi"] .card .background .line:after {
+    background-color: #D3D3D3 !important;
+}
+
+/* Light theme - Sky blue tiles on hover */
+[data-theme="light"] .card .background .tiles .tile,
+[data-theme="lofi"] .card .background .tiles .tile {
+    background-color: rgba(135, 206, 250, 0.15) !important;
+}
+
+/* Light theme - Time badge */
+[data-theme="light"] .time-badge,
+[data-theme="lofi"] .time-badge {
+    background: rgba(25, 118, 210, 0.1) !important;
+    color: #1976D2 !important;
+    border: 1px solid rgba(25, 118, 210, 0.3);
+}
+
+/* Light theme - Description text */
+[data-theme="light"] .roadmap-card-content .description,
+[data-theme="lofi"] .roadmap-card-content .description {
+    color: #424242 !important;
+}
+
+/* Light theme - Difficulty label text */
+[data-theme="light"] .difficulty-group > span,
+[data-theme="lofi"] .difficulty-group > span {
+    color: #a09b9b !important;
+}
+
+/* Light theme - Icon colors */
+[data-theme="light"] .roadmap-card-content i,
+[data-theme="lofi"] .roadmap-card-content i {
+    color: #1976D2 !important;
+}
+
+/* Enhanced glow on card hover */
+[data-theme="night"] .roadmap-card-link:hover .start-btn {
+    box-shadow: 0 0 40px rgba(255, 199, 88, 0.9), 
+                0 0 80px rgba(255, 199, 88, 0.6),
+                0 15px 35px rgba(255, 199, 88, 0.5),
+                inset 0 1px 0 rgba(255, 255, 255, 0.4) !important;
+}
+
+[data-theme="light"] .roadmap-card-link:hover .start-btn,
+[data-theme="lofi"] .roadmap-card-link:hover .start-btn {
+    box-shadow: 0 0 40px rgba(25, 118, 210, 0.9), 
+                0 0 80px rgba(25, 118, 210, 0.6),
+                0 15px 35px rgba(25, 118, 210, 0.5),
+                inset 0 1px 0 rgba(255, 255, 255, 0.4) !important;
+}
+
+/* Pulse animation for extra attention */
+@keyframes pulse-glow {
+    0%, 100% {
+        box-shadow: 0 0 25px rgba(255, 199, 88, 0.6), 
+                    0 0 50px rgba(255, 199, 88, 0.4);
+    }
+    50% {
+        box-shadow: 0 0 35px rgba(255, 199, 88, 0.8), 
+                    0 0 70px rgba(255, 199, 88, 0.6);
+    }
+}
+
+@keyframes pulse-glow-blue {
+    0%, 100% {
+        box-shadow: 0 0 25px rgba(25, 118, 210, 0.6), 
+                    0 0 50px rgba(25, 118, 210, 0.4);
+    }
+    50% {
+        box-shadow: 0 0 35px rgba(25, 118, 210, 0.8), 
+                    0 0 70px rgba(25, 118, 210, 0.6);
+    }
+}
+
+/* Optional: Add subtle pulse to difficulty badge */
+[data-theme="night"] .difficulty-badge {
+    animation: pulse-glow-red 2s ease-in-out infinite;
+}
+
+[data-theme="light"] .difficulty-badge,
+[data-theme="lofi"] .difficulty-badge {
+    animation: pulse-glow-blue 2s ease-in-out infinite;
+}
+
+@keyframes pulse-glow-red {
+    0%, 100% {
+        box-shadow: 0 0 20px rgba(255, 0, 0, 0.5), 
+                    0 0 40px rgba(194, 41, 61, 0.3);
+    }
+    50% {
+        box-shadow: 0 0 30px rgba(255, 0, 0, 0.7), 
+                    0 0 50px rgba(194, 41, 61, 0.4);
+    }
+}
+
+/* ============================================
+   RESPONSIVE DESIGN FOR ROADMAP CARDS
+   ============================================ */
+
+/* Tablets and smaller laptops (1024px and below) */
+@media (max-width: 1024px) {
+    .roadmap-card-content {
+        padding: 8px !important;
+    }
+
+    .card-header {
+        flex-direction: column;
+        align-items: flex-start !important;
+        gap: 12px !important;
+        margin-bottom: 20px !important;
+    }
+
+    .title-group h2 {
+        font-size: 2rem !important;
+    }
+
+    .roadmap-icon {
+        font-size: 2.5rem !important;
+    }
+
+    .time-badge {
+        align-self: flex-start;
+    }
+
+    .description {
+        font-size: 1rem !important;
+        margin-bottom: 32px !important;
+        max-width: 100% !important;
+    }
+
+    .card-footer {
+        flex-direction: column;
+        align-items: flex-start !important;
+        gap: 20px !important;
+    }
+
+    .difficulty-group {
+        flex-wrap: wrap;
+    }
+
+    .start-btn-wrapper {
+        width: 100%;
+    }
+
+    .start-btn {
+        width: 100%;
+        justify-content: center;
+        padding: 14px 24px !important;
+        font-size: 1rem !important;
+    }
+}
+
+/* Small tablets (768px and below) */
+@media (max-width: 768px) {
+    .roadmap-card-content {
+        padding: 24px !important;
+    }
+
+    .card-header {
+        margin-bottom: 16px !important;
+    }
+
+    .title-group {
+        gap: 12px !important;
+    }
+
+    .title-group h2 {
+        font-size: 1.75rem !important;
+    }
+
+    .roadmap-icon {
+        font-size: 2rem !important;
+    }
+
+    .time-badge {
+        padding: 6px 12px !important;
+        font-size: 0.8rem !important;
+    }
+
+    .description {
+        font-size: 0.95rem !important;
+        margin-bottom: 24px !important;
+        line-height: 1.5 !important;
+    }
+
+    .difficulty-group {
+        font-size: 0.9rem !important;
+        gap: 8px !important;
+    }
+
+    .difficulty-badge {
+        padding: 6px 16px !important;
+        font-size: 0.85rem !important;
+    }
+
+    .start-btn {
+        padding: 12px 20px !important;
+        font-size: 0.95rem !important;
+        gap: 8px !important;
+    }
+
+    /* Reduce glow effects on smaller screens */
+    [data-theme="night"] .start-btn {
+        box-shadow: 0 0 15px rgba(255, 199, 88, 0.5), 
+                    0 0 30px rgba(255, 199, 88, 0.3),
+                    0 6px 15px rgba(255, 199, 88, 0.2),
+                    inset 0 1px 0 rgba(255, 255, 255, 0.3) !important;
+    }
+
+    [data-theme="light"] .start-btn,
+    [data-theme="lofi"] .start-btn {
+        box-shadow: 0 0 15px rgba(25, 118, 210, 0.5), 
+                    0 0 30px rgba(25, 118, 210, 0.3),
+                    0 6px 15px rgba(25, 118, 210, 0.2),
+                    inset 0 1px 0 rgba(255, 255, 255, 0.3) !important;
+    }
+
+    [data-theme="night"] .difficulty-badge {
+        box-shadow: 0 0 15px rgba(255, 0, 0, 0.4), 
+                    0 0 30px rgba(194, 41, 61, 0.2),
+                    inset 0 1px 0 rgba(255, 255, 255, 0.2) !important;
+    }
+
+    [data-theme="light"] .difficulty-badge,
+    [data-theme="lofi"] .difficulty-badge {
+        box-shadow: 0 0 15px rgba(25, 118, 210, 0.4), 
+                    0 0 30px rgba(13, 71, 161, 0.2),
+                    inset 0 1px 0 rgba(255, 255, 255, 0.2) !important;
+    }
+}
+
+/* Mobile phones (600px and below) */
+@media (max-width: 600px) {
+    .roadmap-card-content {
+        padding: 20px !important;
+        border-width: 3px !important;
+    }
+
+    .card-header {
+        margin-bottom: 12px !important;
+        gap: 10px !important;
+    }
+
+    .title-group {
+        flex-direction: column;
+        align-items: flex-start !important;
+        gap: 8px !important;
+    }
+
+    .title-group h2 {
+        font-size: 1.5rem !important;
+        line-height: 1.2 !important;
+    }
+
+    .roadmap-icon {
+        font-size: 1.75rem !important;
+    }
+
+    .time-badge {
+        padding: 5px 10px !important;
+        font-size: 0.75rem !important;
+    }
+
+    .description {
+        font-size: 0.9rem !important;
+        margin-bottom: 20px !important;
+    }
+
+    .card-footer {
+        gap: 16px !important;
+    }
+
+    .difficulty-group {
+        font-size: 0.85rem !important;
+        gap: 6px !important;
+        flex-direction: column;
+        align-items: flex-start !important;
+    }
+
+    .difficulty-group > span {
+        margin-bottom: 4px;
+    }
+
+    .difficulty-badge {
+        padding: 5px 14px !important;
+        font-size: 0.8rem !important;
+        border-radius: 6px !important;
+    }
+
+    .start-btn {
+        padding: 12px 20px !important;
+        font-size: 0.9rem !important;
+        border-width: 2px !important;
+    }
+
+    /* Further reduce animations on mobile for performance */
+    .wobble-outer,
+    .wobble-inner {
+        transition: transform 0.2s ease-out !important;
+    }
+
+    /* Disable pulse animations on mobile to save battery */
+    [data-theme="night"] .difficulty-badge,
+    [data-theme="light"] .difficulty-badge,
+    [data-theme="lofi"] .difficulty-badge {
+        animation: none !important;
+    }
+}
+
+/* Extra small phones (400px and below) */
+@media (max-width: 400px) {
+    .roadmap-card-content {
+        padding: 16px !important;
+    }
+
+    .title-group h2 {
+        font-size: 1.25rem !important;
+    }
+
+    .roadmap-icon {
+        font-size: 1.5rem !important;
+    }
+
+    .time-badge {
+        padding: 4px 8px !important;
+        font-size: 0.7rem !important;
+    }
+
+    .description {
+        font-size: 0.85rem !important;
+        margin-bottom: 16px !important;
+    }
+
+    .difficulty-group {
+        font-size: 0.8rem !important;
+    }
+
+    .difficulty-badge {
+        padding: 4px 12px !important;
+        font-size: 0.75rem !important;
+    }
+
+    .start-btn {
+        padding: 10px 16px !important;
+        font-size: 0.85rem !important;
+        gap: 6px !important;
+    }
+
+    .start-btn span:last-child {
+        font-size: 1.2rem;
+    }
+
+    /* Minimal shadows on very small screens */
+    [data-theme="night"] .start-btn {
+        box-shadow: 0 0 10px rgba(255, 199, 88, 0.4), 
+                    0 4px 10px rgba(255, 199, 88, 0.2) !important;
+    }
+
+    [data-theme="light"] .start-btn,
+    [data-theme="lofi"] .start-btn {
+        box-shadow: 0 0 10px rgba(25, 118, 210, 0.4), 
+                    0 4px 10px rgba(25, 118, 210, 0.2) !important;
+    }
+
+    [data-theme="night"] .difficulty-badge {
+        box-shadow: 0 0 10px rgba(255, 0, 0, 0.3), 
+                    inset 0 1px 0 rgba(255, 255, 255, 0.15) !important;
+    }
+
+    [data-theme="light"] .difficulty-badge,
+    [data-theme="lofi"] .difficulty-badge {
+        box-shadow: 0 0 10px rgba(25, 118, 210, 0.3), 
+                    inset 0 1px 0 rgba(255, 255, 255, 0.15) !important;
+    }
+}
+
+/* Landscape orientation optimizations */
+@media (max-height: 600px) and (orientation: landscape) {
+    .roadmap-card-content {
+        padding: 16px !important;
+    }
+
+    .card-header {
+        margin-bottom: 12px !important;
+    }
+
+    .description {
+        margin-bottom: 16px !important;
+        line-height: 1.4 !important;
+    }
+
+    .card-footer {
+        gap: 12px !important;
+    }
+}
+
+/* Touch device optimizations */
+@media (hover: none) and (pointer: coarse) {
+    .start-btn:active {
+        transform: scale(0.98) !important;
+    }
+
+    .difficulty-badge:active {
+        transform: scale(0.98) !important;
+    }
+
+    /* Reduce hover effects on touch devices */
+    .roadmap-card-link:hover .roadmap-card-content {
+        transform: none !important;
+    }
+}
