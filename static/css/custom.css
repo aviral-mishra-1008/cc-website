@@ -1,7 +1,129 @@
-/* * Computer Coding Club - Dark Theme
- * Color Palette: Burgundy, Dark Brown, Gold accents
- * Based on: #FAECEC (light), #0E0604 (darkest), #491E27 (burgundy), #C2293D (red), #FFC758 (gold)
- */
+/* ============================================
+   TYPEWRITER TEXT - UPDATED THEME GRADIENTS
+   ============================================ */
+
+.typewriter-text {
+    font-weight: 700;
+    display: inline;
+    /* Default / Night Theme: Gold-to-Amber Gradient (Matches Footer h3) */
+    background: linear-gradient(90deg, #DA7138 0%, #EC9E6E 33%, #ECB163 66%, #ECC475 100%);
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    background-clip: text !important;
+}
+
+.typewriter-cursor {
+    color: #FFC758; /* Gold cursor for night */
+    font-weight: 300;
+    animation: blink 0.7s infinite;
+    margin-left: 2px;
+}
+
+@keyframes blink {
+    0%, 50% { opacity: 1; }
+    51%, 100% { opacity: 0; }
+}
+
+/* Light/Lofi Theme Typewriter: Blue Gradient (Matches Footer h3) */
+[data-theme="light"] .typewriter-text,
+[data-theme="lofi"] .typewriter-text {
+    background: linear-gradient(90deg, #003687 0%, #0052CC 25%, #0E3386 50%, #4169E1 100%);
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    background-clip: text !important;
+}
+
+[data-theme="light"] .typewriter-cursor,
+[data-theme="lofi"] .typewriter-cursor {
+    color: #1976D2; /* Blue cursor for light */
+}
+
+/* ============================================
+   HERO SECTION - THEME SYNCED BACKGROUNDS
+   ============================================ */
+
+/* 1. Base Structure */
+.hero-section {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    z-index: 1;
+}
+
+/* 2. Night Theme: Deep Burgundy Gradient (EXACT MATCH TO FOOTER) */
+[data-theme="night"] .hero-section {
+    background: linear-gradient(135deg,
+      #2D0F13 0%,
+      #3A1218 20%,
+      #42151D 40%,
+      #3D141B 60%,
+      #351319 80%,
+      #2B0E11 100%) !important;
+}
+
+/* Night Theme Radial Glow Effect Overlay */
+[data-theme="night"] .hero-section::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 800px;
+    height: 800px;
+    background: radial-gradient(ellipse at center,
+      rgba(194, 41, 61, 0.25) 0%,
+      rgba(120, 30, 45, 0.15) 30%,
+      rgba(73, 30, 39, 0.08) 50%,
+      transparent 70%);
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* 3. Light/Lofi Theme: Sky Blue Gradient (EXACT MATCH TO FOOTER) */
+[data-theme="light"] .hero-section,
+[data-theme="lofi"] .hero-section {
+    background: linear-gradient(135deg,
+      #FAFBFD 0%,
+      #F5F8FC 20%,
+      #EEF4FB 40%,
+      #E8F1FA 60%,
+      #E3F0F9 80%,
+      #DFF0F9 100%) !important;
+}
+
+/* 4. Background Image (Blended) */
+.hero-bg-image {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.2 !important; /* Lowered for better blend with theme gradients */
+    z-index: -1;
+    pointer-events: none;
+    mix-blend-mode: overlay; /* Allows the burgundy or blue to tint the image */
+}
+
+/* 5. Contrast Overlay (Vignette) */
+.hero-section::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at center, transparent 0%, rgba(14, 6, 4, 0.4) 100%);
+    z-index: 2;
+    pointer-events: none;
+}
+
+/* 6. Content Priority */
+.hero-section > * {
+    position: relative;
+    z-index: 10;
+}
+
+
 /* ============================================
    NAVBAR ACTIVE LINK STYLES - UPDATED
    ============================================
@@ -2195,7 +2317,6 @@
 [data-theme="lofi"] .event-image:hover {
     box-shadow: 0 15px 40px rgba(25, 118, 210, 0.2);
 }
-
 /* ============================================
    ROADMAPS SCROLL SECTION - Horizontal Scroll Animation
    ============================================
@@ -2211,18 +2332,28 @@
     height: 300vh;
     position: relative;
     margin-bottom: 100px; /* Add space before footer */
-    /* Background handled by parent landing-top-section */
-    z-index: 1;
+    background: radial-gradient(ellipse 900px 700px at 15% 20%, rgba(255, 199, 88, 0.06) 0%, transparent 40%),
+                radial-gradient(ellipse 800px 600px at 85% 80%, rgba(194, 41, 61, 0.05) 0%, transparent 45%),
+                radial-gradient(ellipse 700px 500px at 50% 50%, rgba(236, 158, 110, 0.03) 0%, transparent 50%);
 }
 
-/* Light theme roadmaps - transparent to show parent background */
+/* Light theme - Roadmaps Section */
+[data-theme="light"] .roadmaps-scroll-wrapper,
+[data-theme="lofi"] .roadmaps-scroll-wrapper {
+    background: radial-gradient(ellipse 900px 700px at 15% 20%, rgba(25, 118, 210, 0.08) 0%, transparent 40%),
+                radial-gradient(ellipse 800px 600px at 85% 80%, rgba(13, 71, 161, 0.06) 0%, transparent 45%),
+                radial-gradient(ellipse 700px 500px at 50% 50%, rgba(25, 118, 210, 0.04) 0%, transparent 50%);
+}
+
 [data-theme="light"] .roadmaps-sticky-container,
 [data-theme="lofi"] .roadmaps-sticky-container {
-    background: transparent;
+    background: linear-gradient(135deg, rgba(232, 241, 247, 0.6) 0%, rgba(240, 245, 250, 0.5) 100%);
 }
 
 [data-theme="light"] .roadmaps-title,
-[data-theme="lofi"] .roadmaps-title {
+[data-theme="light"] .roadmap-card-content h3,
+[data-theme="lofi"] .roadmaps-title,
+[data-theme="lofi"] .roadmap-card-content h3 {
     background: linear-gradient(90deg, #003687 0%, #0052CC 25%, #0E3386 50%, #001C3E 75%, #4169E1 100%) !important;
     -webkit-background-clip: text !important;
     -webkit-text-fill-color: transparent !important;
@@ -2230,54 +2361,47 @@
 }
 
 [data-theme="light"] .roadmaps-subtitle,
-[data-theme="lofi"] .roadmaps-subtitle {
+[data-theme="light"] .roadmap-card-content p,
+[data-theme="lofi"] .roadmaps-subtitle,
+[data-theme="lofi"] .roadmap-card-content p {
     color: #0E0604 !important;
-    opacity: 0.8;
 }
 
-/* Light theme - Roadmap cards */
 [data-theme="light"] .roadmap-card,
 [data-theme="lofi"] .roadmap-card {
-    background: rgba(255, 255, 255, 0.98);
-    border: 1px solid rgba(0, 0, 0, 0.06);
-    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
+    background: rgba(255, 255, 255, 0.92);
+    border: 1.5px solid rgba(25, 118, 210, 0.25);
+    box-shadow: 0 10px 30px rgba(25, 118, 210, 0.1);
 }
 
 [data-theme="light"] .roadmap-card:hover,
 [data-theme="lofi"] .roadmap-card:hover {
-    border-color: rgba(0, 0, 0, 0.1);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    border-color: rgba(25, 118, 210, 0.5);
+    box-shadow: 0 25px 60px rgba(25, 118, 210, 0.18);
 }
 
-[data-theme="light"] .roadmap-card-content h3,
-[data-theme="lofi"] .roadmap-card-content h3 {
-    color: #1a1a1a !important;
-    -webkit-text-fill-color: #1a1a1a !important;
-    background: none !important;
-}
-
-[data-theme="light"] .roadmap-card-content p,
-[data-theme="lofi"] .roadmap-card-content p {
-    color: rgba(0, 0, 0, 0.6) !important;
+[data-theme="light"] .roadmap-card::after,
+[data-theme="lofi"] .roadmap-card::after {
+    background: #E8F1F7;
+    border-color: #1976D2;
+    box-shadow: 0 0 15px rgba(25, 118, 210, 0.3);
 }
 
 [data-theme="light"] .roadmaps-viewport::before,
 [data-theme="lofi"] .roadmaps-viewport::before {
-    display: none;
+    background: rgba(25, 118, 210, 0.2);
 }
 
 [data-theme="light"] .roadmap-btn-action,
 [data-theme="lofi"] .roadmap-btn-action {
-    background: transparent;
-    color: #1a1a1a;
-    border: 1px solid rgba(0, 0, 0, 0.15);
+    background: linear-gradient(135deg, #1976D2 0%, #0D47A1 100%);
+    color: #FAECEC;
 }
 
 [data-theme="light"] .roadmap-btn-action:hover,
 [data-theme="lofi"] .roadmap-btn-action:hover {
-    background: rgba(0, 0, 0, 0.05);
-    border-color: rgba(0, 0, 0, 0.2);
-    box-shadow: none;
+    background: linear-gradient(135deg, #0D47A1 0%, #1976D2 100%);
+    box-shadow: 0 15px 40px rgba(25, 118, 210, 0.3);
 }
 
 .roadmaps-sticky-container {
@@ -2291,7 +2415,7 @@
     align-items: center;
     overflow: hidden;
     padding: 20px;
-    background: transparent; /* Transparent to show parent background */
+    background: linear-gradient(135deg, rgba(45, 15, 19, 0.3) 0%, rgba(58, 18, 24, 0.2) 100%);
 }
 
 .roadmaps-intro-text {
@@ -2311,12 +2435,13 @@
     -webkit-background-clip: text !important;
     -webkit-text-fill-color: transparent !important;
     background-clip: text !important;
+    animation: titleSlide 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
 .roadmaps-subtitle {
     color: #FAECEC;
     font-size: 18px;
-    opacity: 0.9;
+    animation: slideUp 0.8s ease-out 0.2s both;
 }
 
 .roadmaps-viewport {
@@ -2326,13 +2451,22 @@
     overflow: visible;
 }
 
-/* Timeline hidden for cleaner look */
+/* The horizontal timeline */
 .roadmaps-viewport::before {
-    display: none;
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: rgba(255, 199, 88, 0.2);
+    z-index: 0;
+    transform: translateY(-100px);
 }
 
 .roadmaps-slider-track {
     display: flex;
+    align-items: flex-start; /* ADD THIS: Forces all cards to align at the top */
     gap: var(--roadmap-gap);
     padding-left: 15vw;
     padding-right: 15vw;
@@ -2341,99 +2475,98 @@
     transition: transform 0.1s linear;
 }
 
-/* ============================================
-   ROADMAP CARDS - Minimal Professional Design
-   ============================================ */
-
 .roadmap-card {
     min-width: var(--roadmap-card-width);
     max-width: var(--roadmap-card-width);
-    background: rgba(18, 18, 20, 0.95);
+    background: rgba(20, 20, 20, 0.8);
     backdrop-filter: blur(20px);
-    border-radius: 16px;
-    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.12);
-    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 24px; /* This is already here */
+    overflow: hidden;    /* ADD THIS: Ensures bottom corners are clipped */
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    border: 1.5px solid rgba(255, 199, 88, 0.3);
     position: relative;
-    transition: all 0.3s ease;
+    transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
     flex-shrink: 0;
-    overflow: hidden;
+    animation: slideUp 0.6s ease-out;
 }
 
 .roadmap-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
-    border-color: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 199, 88, 0.8);
+    transform: translateY(-15px) scale(1.05);
+    box-shadow: 0 40px 80px rgba(255, 199, 88, 0.4), 0 0 30px rgba(194, 41, 61, 0.2);
 }
 
-/* Remove timeline connection point for cleaner look */
+/* Timeline connection point */
 .roadmap-card::after {
-    display: none;
+    content: '';
+    position: absolute;
+    top: -62px;
+    left: 50%;
+    width: 16px;
+    height: 16px;
+    background: #0E0604;
+    border: 4px solid #FFC758;
+    border-radius: 50%;
+    transform: translateX(-50%);
+    box-shadow: 0 0 20px rgba(255, 199, 88, 0.5);
 }
 
 .roadmap-card img {
     width: 100%;
-    height: 200px;
+    height: 180px;
     object-fit: cover;
-    transition: transform 0.4s ease;
+    border-top-left-radius: 24px;
+    border-top-right-radius: 24px;
+    opacity: 1;
+    transition: all 0.4s ease;
 }
 
 .roadmap-card:hover img {
-    transform: scale(1.03);
+    opacity: 1;
+    brightness: 1.1);
 }
 
 .roadmap-card-content {
-    padding: 24px;
+    padding: 20px;
 }
 
 .roadmap-card-content h3 {
-    margin: 0 0 12px 0;
-    font-size: 1.25rem;
-    font-weight: 600;
-    color: #FFFFFF;
-    background: none !important;
-    -webkit-background-clip: unset !important;
-    -webkit-text-fill-color: #FFFFFF !important;
-    background-clip: unset !important;
-    letter-spacing: -0.02em;
+    margin: 0 0 5px 0;
+    font-size: 1.3rem;
+    background: linear-gradient(90deg, #DA7138 0%, #EC9E6E 33%, #ECB163 66%, #ECC475 100%) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    background-clip: text !important;
 }
 
 .roadmap-card-content p {
-    color: rgba(255, 255, 255, 0.6);
-    line-height: 1.6;
-    margin-bottom: 20px;
+    color: #FAECEC;
+    line-height: 1.5;
+    margin-bottom: 15px;
+    opacity: 0.9;
     font-size: 14px;
-    font-weight: 400;
 }
 
 .roadmap-btn-action {
-    padding: 10px 20px;
-    background: transparent;
+    padding: 12px 24px;
+    background: linear-gradient(135deg, #540404 0%, #360c0a 100%);
     color: #FFFFFF;
-    border-radius: 8px;
+    border-radius: 12px;
     text-decoration: none;
-    font-weight: 500;
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    transition: all 0.2s ease;
+    font-weight: 700;
+    display: inline-block;
+    transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
     font-size: 14px;
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    border: 2px solid transparent;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
 }
 
 .roadmap-btn-action:hover {
-    background: rgba(255, 255, 255, 0.1);
-    border-color: rgba(255, 255, 255, 0.3);
-    transform: none;
-    box-shadow: none;
-}
-
-.roadmap-btn-action::after {
-    content: '→';
-    transition: transform 0.2s ease;
-}
-
-.roadmap-btn-action:hover::after {
-    transform: translateX(4px);
+    transform: translateY(-4px);
+    box-shadow: 0 15px 40px rgba(255, 0, 0, 0.5);
+    background: linear-gradient(135deg, #FF0000 0%, #E63946 100%);
+    border-color: #FFFFFF;
 }
 
 
@@ -2688,6 +2821,7 @@
 
 
 
+
 /* ============================================
    ROADMAP CARDS - UPDATED DIFFICULTY & BUTTON STYLES
    ============================================ */
@@ -2707,12 +2841,26 @@
     transition: all 0.3s ease;
 }
 
+/* 1. Difficulty Badge: Force Red Hover (No Grey) */
 [data-theme="night"] .difficulty-badge:hover {
-    box-shadow: 0 0 30px rgba(255, 0, 0, 0.7), 
+    /* Uses the specific Red/Burgundy from your branding */
+    background: linear-gradient(135deg, #C2293D 0%, #8B0000 100%) !important;
+    
+    /* Ensure text stays white and sharp */
+    color: #FFFFFF !important;
+    
+    /* Vibrant Red Border with Glow */
+    border: 1.5px solid #FF0000 !important;
+    
+    /* High-intensity Red Bloom Effect */
+    box-shadow: 0 0 25px rgba(255, 0, 0, 0.6), 
                 0 0 50px rgba(194, 41, 61, 0.4),
                 inset 0 1px 0 rgba(255, 255, 255, 0.2) !important;
-    transform: scale(1.05);
+    
+    transform: translateY(-2px) scale(1.05);
+    cursor: default;
 }
+
 
 /* Light Theme - Difficulty Badge (Blue with Glow) */
 [data-theme="light"] .difficulty-badge,
@@ -2780,78 +2928,7 @@
     }
 }
 
-[data-theme="night"] .start-btn:hover {
-    transform: translateY(-4px) scale(1.05) !important;
-    box-shadow: 0 0 35px rgba(255, 199, 88, 0.8), 
-                0 0 70px rgba(255, 199, 88, 0.5),
-                0 12px 30px rgba(255, 199, 88, 0.4),
-                inset 0 1px 0 rgba(255, 255, 255, 0.4) !important;
-    border-color: #FFD580 !important;
-    background: linear-gradient(135deg, #FFD580 0%, #FFECA5 100%) !important;
-}
 
-[data-theme="night"] .start-btn:active {
-    transform: translateY(-2px) scale(1.02) !important;
-}
-
-/* Light Theme - Start Learning Button (Blue with thick glowing border) */
-[data-theme="light"] .start-btn,
-[data-theme="lofi"] .start-btn {
-    background: linear-gradient(135deg, #1976D2 0%, #2196F3 100%) !important;
-    color: #FFFFFF !important;
-    border: 3px solid #1976D2 !important;
-    box-shadow: 0 0 25px rgba(25, 118, 210, 0.6), 
-                0 0 50px rgba(25, 118, 210, 0.4),
-                0 8px 20px rgba(25, 118, 210, 0.3),
-                inset 0 1px 0 rgba(255, 255, 255, 0.3) !important;
-    font-weight: 800 !important;
-    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
-    transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
-    position: relative;
-    overflow: hidden;
-}
-
-[data-theme="light"] .start-btn::before,
-[data-theme="lofi"] .start-btn::before {
-    content: '';
-    position: absolute;
-    top: -50%;
-    left: -50%;
-    width: 200%;
-    height: 200%;
-    background: linear-gradient(
-        45deg,
-        transparent 30%,
-        rgba(255, 255, 255, 0.4) 50%,
-        transparent 70%
-    );
-    transform: rotate(45deg);
-    animation: shimmer 3s infinite;
-}
-
-[data-theme="light"] .start-btn:hover,
-[data-theme="lofi"] .start-btn:hover {
-    transform: translateY(-4px) scale(1.05) !important;
-    box-shadow: 0 0 35px rgba(25, 118, 210, 0.8), 
-                0 0 70px rgba(25, 118, 210, 0.5),
-                0 12px 30px rgba(25, 118, 210, 0.4),
-                inset 0 1px 0 rgba(255, 255, 255, 0.4) !important;
-    border-color: #2196F3 !important;
-    background: linear-gradient(135deg, #2196F3 0%, #42A5F5 100%) !important;
-}
-
-[data-theme="light"] .start-btn:active,
-[data-theme="lofi"] .start-btn:active {
-    transform: translateY(-2px) scale(1.02) !important;
-}
-
-/* Ensure button text and icon remain visible */
-[data-theme="night"] .start-btn span,
-[data-theme="light"] .start-btn span,
-[data-theme="lofi"] .start-btn span {
-    position: relative;
-    z-index: 1;
-}
 
 /* ============================================
    LIGHT THEME - ROADMAP CARD STYLING
@@ -3312,40 +3389,6 @@ body.light {
     }
 }
 
-/* ============================================
-   Typewriter Animation Styles
-   ============================================ */
-
-.typewriter-text {
-    color: #FFC758;
-    font-weight: 600;
-    display: inline;
-}
-
-.typewriter-cursor {
-    color: #FFC758;
-    font-weight: 300;
-    animation: blink 0.7s infinite;
-    margin-left: 2px;
-}
-
-@keyframes blink {
-    0%, 50% {
-        opacity: 1;
-    }
-    51%, 100% {
-        opacity: 0;
-    }
-}
-
-/* Light theme adjustments */
-[data-theme="light"] .typewriter-text {
-    color: #DA7138;
-}
-
-[data-theme="light"] .typewriter-cursor {
-    color: #DA7138;
-}
 
 /* ============================================
    Roadmap Page Card Redesign
@@ -3389,11 +3432,23 @@ body.light {
     gap: 0.5rem !important;
 }
 
-.start-btn:hover {
-    background: rgba(249, 177, 77, 0.1) !important;
-    border-color: rgba(249, 177, 77, 0.7) !important;
-    box-shadow: none !important;
-    transform: translateX(4px) !important;
+[data-theme="night"] .start-btn:hover {
+    /* Vibrant Golden-Yellow Gradient */
+    background: linear-gradient(135deg, #FFC758 0%, #E29E00 100%) !important;
+    
+    /* Contrast color for text: Dark Maroon/Black looks best on Yellow */
+    color: #0E0604 !important;
+    
+    /* White border keeps it sharp against the dark background */
+    border: 3px solid #FFFFFF !important; 
+    
+    /* Intense Yellow/Gold Glow */
+    box-shadow: 0 0 35px rgba(255, 199, 88, 0.8), 
+                0 15px 40px rgba(226, 158, 0, 0.5),
+                inset 0 1px 0 rgba(255, 255, 255, 0.4) !important;
+    
+    /* Interaction lift */
+    transform: translateY(-4px) scale(1.02);
 }
 
 .start-btn span:last-child {
@@ -3721,4 +3776,821 @@ main article .mt-8.pt-6 a:hover {
 [data-theme="light"] main article .mt-8.pt-6 a:hover,
 [data-theme="lofi"] main article .mt-8.pt-6 a:hover {
     color: rgba(0, 0, 0, 0.7);
+}
+/* ============================================
+   ROADMAP CARDS - ENHANCED STYLING
+   ============================================ */
+
+/* Timeline Line */
+.roadmaps-viewport::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: rgba(226, 158, 0, 0.2); 
+    z-index: 0;
+    transform: translateY(-100px);
+}
+
+.roadmap-card {
+    min-width: var(--roadmap-card-width);
+    max-width: var(--roadmap-card-width);
+    /* Changed from dark grey to a deep burgundy-tinted black */
+    background: rgba(26, 10, 12, 0.85); 
+    backdrop-filter: blur(20px);
+    border-radius: 24px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    /* Border shifted from orange-gold to a muted maroon-gold blend */
+    border: 1.5px solid rgba(139, 45, 58, 0.4); 
+    position: relative;
+    transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+    flex-shrink: 0;
+    animation: slideUp 0.6s ease-out;
+}
+
+/* Entire Card Hover - Dark Theme */
+.roadmap-card:hover {
+    border-color: rgba(226, 158, 0, 0.8);
+    transform: translateY(-15px) scale(1.05);
+    box-shadow: 0 40px 80px rgba(226, 158, 0, 0.3);
+}
+
+/* Trigger Button Hover state when Card is Hovered */
+.roadmap-card:hover .roadmap-btn-action {
+    transform: translateY(-4px);
+    box-shadow: 0 15px 40px rgba(226, 158, 0, 0.4);
+    background: #FFB400; 
+}
+
+/* Timeline Node */
+.roadmap-card::after {
+    content: '';
+    position: absolute;
+    top: -62px;
+    left: 50%;
+    width: 16px;
+    height: 16px;
+    background: #0E0604;
+    border: 4px solid #E29E00; 
+    border-radius: 50%;
+    transform: translateX(-50%);
+    box-shadow: 0 0 20px rgba(226, 158, 0, 0.5);
+    transition: all 0.4s ease;
+}
+
+.roadmap-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-top-left-radius: 24px;
+    border-top-right-radius: 24px;
+}
+
+.roadmap-card-content h3 {
+    margin: 0 0 5px 0;
+    font-size: 1.3rem;
+    background: linear-gradient(90deg, #DA7138 0%, #E29E00 100%) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+}
+
+.roadmap-card-content p {
+    color: #FAECEC;
+    opacity: 0.9;
+    font-size: 14px;
+}
+
+/* ============================================
+   ROADMAP BUTTON - THEME AWARE COLORS
+   ============================================ */
+/* ============================================
+   ROADMAP BUTTON - TEXT COLOR FIX
+   ============================================ */
+
+/* 1. DARK THEME (Night Mode) 
+   Targeting both the button and any text inside it
+*/
+[data-theme="night"] .roadmap-btn-action,
+[data-theme="night"] .roadmap-btn-action span,
+[data-theme="night"] .roadmap-btn-action * {
+    color: #4D0000 !important; /* Deep Maroon */
+    background-clip: unset !important;
+    -webkit-background-clip: unset !important;
+    -webkit-text-fill-color: #4D0000 !important;
+}
+
+[data-theme="night"] .roadmap-btn-action {
+    padding: 12px 24px;
+    background: linear-gradient(135deg, #E29E00 0%, #C68A00 100%) !important;
+    border-radius: 12px;
+    text-decoration: none;
+    font-weight: 800; 
+    display: inline-block;
+    transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+    font-size: 14px;
+    border: 1px solid rgba(77, 0, 0, 0.2);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    text-align: center;
+}
+
+/* 2. LIGHT & LOFI THEMES
+   Targeting both the button and any text inside it
+*/
+[data-theme="light"] .roadmap-btn-action,
+[data-theme="lofi"] .roadmap-btn-action,
+[data-theme="light"] .roadmap-btn-action span,
+[data-theme="lofi"] .roadmap-btn-action span,
+[data-theme="light"] .roadmap-btn-action *,
+[data-theme="lofi"] .roadmap-btn-action * {
+    color: #FFFFFF !important; /* Pure White */
+    -webkit-text-fill-color: #FFFFFF !important;
+}
+
+[data-theme="light"] .roadmap-btn-action,
+[data-theme="lofi"] .roadmap-btn-action {
+    background: linear-gradient(135deg, #1976D2 0%, #0D47A1 100%) !important;
+    border: none !important;
+}
+
+/* 3. HOVER LOGIC 
+   Triggering button changes when the entire card is hovered
+*/
+[data-theme="night"] .roadmap-card:hover .roadmap-btn-action {
+    background: #FFB400 !important; 
+    transform: translateY(-4px);
+    box-shadow: 0 15px 40px rgba(226, 158, 0, 0.4) !important;
+}
+
+[data-theme="light"] .roadmap-card:hover .roadmap-btn-action,
+[data-theme="lofi"] .roadmap-card:hover .roadmap-btn-action {
+    background: #1565C0 !important;
+    box-shadow: 0 10px 25px rgba(25, 118, 210, 0.5) !important;
+}
+/* ============================================
+   FOOTER STYLING - DARK THEME
+   ============================================
+*/
+
+/* Footer Main Container */
+[data-theme="night"] .site-footer,
+[data-theme="night"] .footer {
+  background: #0E0604;
+  background-image: radial-gradient(circle at bottom, #3d1414 0%, #050202 70%);
+  color: #FAECEC;
+  padding: 2rem 2rem 1rem;
+  /* Reduced padding */
+  border-top: 1px solid oklch(0.25 0.04 20);
+  margin-top: 0;
+  /* Removed top margin */
+}
+
+/* Light theme footer */
+.site-footer,
+.footer {
+  background: #f5f5f5;
+  background-image: radial-gradient(circle at bottom, #e0e0e0 0%, #eeeeee 70%);
+  color: #333333;
+  padding: 2rem 2rem 1rem;
+  /* Reduced padding */
+  border-top: 1px solid #d0d0d0;
+  margin-top: 0;
+  /* Removed top margin */
+}
+
+/* Light theme text colors */
+.footer-col h3,
+.footer h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  /* Reduced margin */
+  color: #1976D2;
+  background: none;
+  -webkit-text-fill-color: #1976D2;
+}
+
+.footer-col h4,
+.footer h4 {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+  /* Reduced margin */
+  color: #333333;
+  font-weight: 700;
+  background: none;
+  -webkit-text-fill-color: #333333;
+}
+
+.footer-col p,
+.footer p {
+  color: #666666;
+  font-size: 0.9rem;
+  line-height: 1.4;
+  /* Reduced line height */
+  margin-bottom: 0.5rem;
+  /* Reduced margin */
+}
+
+.footer-logo-container {
+  display: flex;
+  align-items: center;
+  /* Fix alignment */
+  gap: 0.75rem;
+  margin-bottom: 0.5rem;
+}
+
+.footer-logo {
+  height: 40px;
+  width: auto;
+  max-width: 100%;
+  margin-top: calc(var(--spacing)*12);
+  /* Removed hover animation */
+}
+
+.footer-col ul,
+.footer ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-col ul li,
+.footer ul li {
+  margin-bottom: 0.4rem;
+  /* Reduced margin */
+}
+
+.footer-col ul li a,
+.footer ul li a {
+  color: #666666;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: color 0.3s ease;
+  display: inline-block;
+}
+
+.footer-col ul li a:hover,
+.footer ul li a:hover {
+  color: #125293;
+  transform: translateX(3px);
+  /* Subtle hover animation */
+}
+
+.footer-col i,
+.footer i {
+  margin-right: 0.5rem;
+  vertical-align: middle;
+  color: #1976D2;
+}
+
+.social-links {
+  display: flex;
+  gap: 0.75rem;
+  margin-bottom: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.social-links a {
+  color: #666666;
+  font-size: 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.social-links a:hover {
+  color: #C2293D;
+  transform: translateY(-2px);
+  /* Subtle hover animation */
+}
+
+.footer-content {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr 1fr;
+  gap: 1.5rem;
+  /* Reduced gap */
+  margin-bottom: 1.5rem;
+  /* Reduced margin */
+  max-width: 1400px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.footer-bottom {
+  border-top: 1px solid #d0d0d0;
+  padding-top: 1rem;
+  /* Reduced padding */
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+  max-width: 1400px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.footer-bottom p {
+  color: #666666;
+  font-size: 0.85rem;
+  margin: 0.25rem 0;
+}
+
+.footer-bottom a {
+  color: #C2293D;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-bottom a:hover {
+  color: #D63850;
+}
+
+.footer-made-with {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.3rem;
+  flex-wrap: wrap;
+}
+
+.footer-made-with i {
+  color: #C2293D;
+  margin: 0;
+}
+
+/* ============================================
+   DARK THEME OVERRIDES
+   ============================================
+*/
+
+/* Footer Main Container - Dark Theme */
+[data-theme="night"] .footer-content {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr 1fr;
+  gap: 1.5rem;
+  /* Reduced gap */
+  margin-bottom: 2rem;
+  max-width: 1400px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Footer Column Headings */
+[data-theme="night"] .footer-col h3,
+[data-theme="night"] .footer h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: #FFC758;
+  background: none;
+  -webkit-text-fill-color: #FFC758;
+}
+
+[data-theme="night"] .footer-col h4,
+[data-theme="night"] .footer h4 {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+  color: #FAECEC;
+  font-weight: 700;
+  background: none;
+  -webkit-text-fill-color: #FAECEC;
+}
+
+/* Footer Paragraphs */
+[data-theme="night"] .footer-col p,
+[data-theme="night"] .footer p {
+  color: rgba(250, 236, 236, 0.7);
+  font-size: 0.9rem;
+  line-height: 1.4;
+  margin-bottom: 0.5rem;
+}
+
+/* Footer Logo Container */
+[data-theme="night"] .footer-logo-container {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.5rem;
+}
+
+[data-theme="night"] .footer-logo {
+  height: 40px;
+  width: auto;
+  max-width: 100%;
+}
+
+/* Footer Lists */
+[data-theme="night"] .footer-col ul,
+[data-theme="night"] .footer ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+[data-theme="night"] .footer-col ul li,
+[data-theme="night"] .footer ul li {
+  margin-bottom: 0.4rem;
+}
+
+[data-theme="night"] .footer-col ul li a,
+[data-theme="night"] .footer ul li a {
+  color: rgba(250, 236, 236, 0.7);
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+
+[data-theme="night"] .footer-col ul li a:hover,
+[data-theme="night"] .footer ul li a:hover {
+  color: #FFC758;
+  transform: translateX(3px);
+}
+
+/* Footer Icons */
+[data-theme="night"] .footer-col i,
+[data-theme="night"] .footer i {
+  margin-right: 0.5rem;
+  vertical-align: middle;
+  color: #FFC758;
+}
+
+/* Social Links */
+[data-theme="night"] .social-links {
+  display: flex;
+  gap: 0.75rem;
+  margin-bottom: 0.5rem;
+  flex-wrap: wrap;
+}
+
+[data-theme="night"] .social-links a {
+  color: rgba(250, 236, 236, 0.7);
+  font-size: 1.5rem;
+  transition: all 0.3s ease;
+}
+
+[data-theme="night"] .social-links a:hover {
+  color: #FFC758;
+  transform: translateY(-2px);
+}
+
+/* Footer Bottom */
+[data-theme="night"] .footer-bottom {
+  border-top: 1px solid oklch(0.25 0.04 20);
+  padding-top: 2rem;
+  padding-bottom: 0.5rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  max-width: 1400px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+[data-theme="night"] .footer-bottom p {
+  color: rgba(250, 236, 236, 0.7);
+  font-size: 0.85rem;
+  margin: 0.25rem 0;
+}
+
+[data-theme="night"] .footer-bottom a {
+  color: #FFC758;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+[data-theme="night"] .footer-bottom a:hover {
+  color: #FFD580;
+}
+
+/* ============================================
+   RESPONSIVE DESIGN FOR FOOTER - IMPROVED
+   ============================================
+*/
+
+/* Tablets and smaller laptops (1024px and below) */
+@media (max-width: 1024px) {
+
+  .site-footer,
+  .footer,
+  [data-theme="night"] .site-footer,
+  [data-theme="night"] .footer {
+    padding: 2rem 1.5rem 1rem;
+  }
+
+  .footer-content,
+  [data-theme="night"] .footer-content {
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+}
+
+/* Small tablets (768px and below) */
+@media (max-width: 768px) {
+
+  .site-footer,
+  .footer,
+  [data-theme="night"] .site-footer,
+  [data-theme="night"] .footer {
+    padding: 1.5rem 1rem 1rem;
+  }
+
+  .footer-content,
+  [data-theme="night"] .footer-content {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    text-align: left;
+  }
+
+  .footer-col h3,
+  .footer h3,
+  [data-theme="night"] .footer-col h3,
+  [data-theme="night"] .footer h3 {
+    font-size: 1.3rem;
+  }
+
+  .footer-col h4,
+  .footer h4,
+  [data-theme="night"] .footer-col h4,
+  [data-theme="night"] .footer h4 {
+    font-size: 1rem;
+  }
+
+  .footer-logo-container,
+  [data-theme="night"] .footer-logo-container {
+    justify-content: flex-start;
+  }
+
+  .social-links,
+  [data-theme="night"] .social-links {
+    justify-content: flex-start;
+  }
+}
+
+/* Mobile phones (600px and below) */
+@media (max-width: 600px) {
+
+  .site-footer,
+  .footer,
+  [data-theme="night"] .site-footer,
+  [data-theme="night"] .footer {
+    padding: 1.5rem 1rem 1rem;
+    margin-top: 0;
+  }
+
+  .footer-content,
+  [data-theme="night"] .footer-content {
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .footer-col,
+  [data-theme="night"] .footer-col {
+    padding-bottom: 1rem;
+    border-bottom: 1px solid rgba(200, 200, 200, 0.2);
+  }
+
+  .footer-col:last-child,
+  [data-theme="night"] .footer-col:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+
+  .footer-col h3,
+  .footer h3,
+  [data-theme="night"] .footer-col h3,
+  [data-theme="night"] .footer h3 {
+    font-size: 1.2rem;
+  }
+
+  .footer-col h4,
+  .footer h4,
+  [data-theme="night"] .footer-col h4,
+  [data-theme="night"] .footer h4 {
+    font-size: 0.95rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .footer-col p,
+  .footer p,
+  [data-theme="night"] .footer-col p,
+  [data-theme="night"] .footer p {
+    font-size: 0.85rem;
+  }
+
+  .footer-col ul li a,
+  .footer ul li a,
+  [data-theme="night"] .footer-col ul li a,
+  [data-theme="night"] .footer ul li a {
+    font-size: 0.85rem;
+  }
+
+  .social-links,
+  [data-theme="night"] .social-links {
+    gap: 1rem;
+  }
+
+  .social-links a,
+  [data-theme="night"] .social-links a {
+    font-size: 1.35rem;
+  }
+
+  .footer-bottom,
+  [data-theme="night"] .footer-bottom {
+    padding-top: 1rem;
+  }
+
+  .footer-bottom p,
+  [data-theme="night"] .footer-bottom p {
+    font-size: 0.8rem;
+  }
+
+  .footer-made-with,
+  [data-theme="night"] .footer-made-with {
+    font-size: 0.8rem;
+  }
+}
+
+/* Extra small phones (400px and below) */
+@media (max-width: 400px) {
+
+  .site-footer,
+  .footer,
+  [data-theme="night"] .site-footer,
+  [data-theme="night"] .footer {
+    padding: 1.25rem 0.75rem 1rem;
+  }
+
+  .footer-content,
+  [data-theme="night"] .footer-content {
+    gap: 1.25rem;
+  }
+
+  .footer-col h3,
+  .footer h3,
+  [data-theme="night"] .footer-col h3,
+  [data-theme="night"] .footer h3 {
+    font-size: 1.1rem;
+  }
+
+  .footer-logo {
+    height: 32px;
+  }
+
+  .social-links a,
+  [data-theme="night"] .social-links a {
+    font-size: 1.2rem;
+  }
+}
+
+/* Theme toggle adjustments */
+.navbar .swap.swap-rotate {
+  display: inline-grid;
+  place-content: center;
+}
+
+
+/* Dark theme button */
+[data-theme="night"] .mobile-theme-toggle {
+  background: linear-gradient(135deg, #FFC758 0%, #FFD580 100%);
+  color: #0E0604;
+}
+
+[data-theme="night"] .mobile-theme-toggle:hover {
+  box-shadow: 0 6px 20px rgba(255, 199, 88, 0.4);
+}
+
+/* Icon styling */
+.mobile-theme-toggle i,
+.mobile-theme-toggle svg {
+  font-size: 24px;
+  width: 24px;
+  height: 24px;
+  transition: transform 0.3s ease;
+}
+
+/* Hide sun in light mode, show moon */
+.mobile-theme-toggle .swap-off {
+  display: block;
+}
+
+.mobile-theme-toggle .swap-on {
+  display: none;
+}
+
+/* Hide moon in dark mode, show sun */
+[data-theme="night"] .mobile-theme-toggle .swap-off {
+  display: none;
+}
+
+[data-theme="night"] .mobile-theme-toggle .swap-on {
+  display: block;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  .mobile-theme-toggle {
+    width: 52px;
+    height: 52px;
+    bottom: 20px;
+    right: 20px;
+  }
+
+  .mobile-theme-toggle i,
+  .mobile-theme-toggle svg {
+    font-size: 22px;
+    width: 22px;
+    height: 22px;
+  }
+}
+
+@media (max-width: 400px) {
+  .mobile-theme-toggle {
+    width: 48px;
+    height: 48px;
+    bottom: 16px;
+    right: 16px;
+  }
+
+  .mobile-theme-toggle i,
+  .mobile-theme-toggle svg {
+    font-size: 20px;
+    width: 20px;
+    height: 20px;
+  }
+}
+
+/* Ensure button doesn't interfere with footer */
+.mobile-theme-toggle {
+  margin-bottom: env(safe-area-inset-bottom, 0);
+}
+
+/* Accessibility */
+.mobile-theme-toggle:focus {
+  outline: 2px solid #FFC758;
+  outline-offset: 2px;
+}
+
+/* ============================================
+   FOOTER STYLING - THEME AWARE GRADIENTS
+   ============================================ */
+
+/* 1. LIGHT THEME FOOTER (Default) 
+   Blue shades: Sky blue to Off-white
+*/
+.site-footer,
+.footer {
+    background: #FAFBFD; /* Base light */
+    background-image: radial-gradient(circle at bottom, #E3F0F9 0%, #FAFBFD 70%);
+    color: #1a1a1a;
+    padding: 4rem 2rem 2rem;
+    border-top: 1px solid rgba(25, 118, 210, 0.1);
+    margin-top: 0;
+}
+
+/* Light theme text and link adjustments */
+.footer h3 {
+    color: #1976D2 !important;
+}
+
+.footer-col h4 {
+    color: rgba(25, 118, 210, 0.6) !important;
+}
+
+.footer-col ul li a:hover {
+    color: #1976D2 !important;
+}
+
+.footer-bottom {
+    border-top: 1px solid rgba(25, 118, 210, 0.1);
+}
+
+
+/* 2. DARK THEME FOOTER 
+   Red/Burgundy shades: Deep Wine to Darkest Brown
+*/
+[data-theme="night"] .site-footer,
+[data-theme="night"] .footer {
+    background: #0E0604;
+    background-image: radial-gradient(circle at bottom, #3d1414 0%, #050202 70%);
+    color: #FAECEC;
+    border-top: 1px solid oklch(0.25 0.04 20);
+}
+
+[data-theme="night"] .footer-col h3,
+[data-theme="night"] .footer h3 {
+    color: #FFC758 !important;
+}
+
+[data-theme="night"] .footer-col h4 {
+    color: #FAECEC !important;
+    opacity: 0.6;
+}
+
+[data-theme="night"] .footer-col ul li a:hover {
+    color: #FFC758 !important;
+}
+
+[data-theme="night"] .footer-bottom {
+    border-top: 1px solid oklch(0.25 0.04 20);
 }
