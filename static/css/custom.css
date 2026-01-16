@@ -1070,9 +1070,326 @@
 }
 
 /* ============================================
-   FOOTER STYLING - DARK THEME
-   ============================================
-*/
+   IMPACT PAGE - Minimal Professional Design
+   ============================================ */
+
+/* Stats Grid */
+.stat.bg-base-200 {
+  background: rgba(255, 255, 255, 0.98);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  border-radius: 12px;
+  padding: 1.25rem;
+  transition: all 0.2s ease;
+}
+
+.stat.bg-base-200:hover {
+  border-color: rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+}
+
+.stat .stat-title {
+  color: rgba(0, 0, 0, 0.45);
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+}
+
+.stat .stat-value {
+  color: #1a1a1a;
+  font-weight: 600;
+  font-size: 1.75rem;
+  letter-spacing: -0.02em;
+}
+
+.stat .stat-figure {
+  color: rgba(0, 0, 0, 0.15) !important;
+}
+
+.stat .stat-figure i {
+  font-size: 1.5rem;
+}
+
+/* Impact page cards */
+.space-y-20 .card.bg-base-200 {
+  background: rgba(255, 255, 255, 0.98);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+  transition: all 0.2s ease;
+}
+
+.space-y-20 .card.bg-base-200:hover {
+  border-color: rgba(0, 0, 0, 0.1);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+  transform: translateY(-2px);
+}
+
+.space-y-20 .card-body {
+  padding: 1.5rem;
+}
+
+.space-y-20 .card-title {
+  color: #1a1a1a;
+  font-size: 1.1rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.space-y-20 .card .text-gray-400,
+.space-y-20 .card .text-gray-500 {
+  color: rgba(0, 0, 0, 0.5) !important;
+}
+
+/* Section headings */
+.space-y-20 h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #1a1a1a;
+  letter-spacing: -0.02em;
+}
+
+/* Badges */
+.space-y-20 .badge-outline {
+  background: transparent;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  color: rgba(0, 0, 0, 0.6);
+  font-size: 0.7rem;
+  font-weight: 500;
+  border-radius: 4px;
+}
+
+/* Links */
+.space-y-20 .link-primary,
+.space-y-20 .text-primary {
+  color: #4169E1 !important;
+  font-weight: 500;
+}
+
+/* Awards trophy icon */
+.space-y-20 .text-yellow-500 {
+  color: rgba(0, 0, 0, 0.2) !important;
+}
+
+/* Initiatives icon */
+.space-y-20 .card .text-primary.text-2xl {
+  color: rgba(0, 0, 0, 0.15) !important;
+}
+
+/* Impact by Numbers section */
+.space-y-20 .text-3xl.font-bold.text-primary {
+  color: #1a1a1a !important;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+/* Divider */
+.space-y-20 .divider {
+  opacity: 0.1;
+}
+
+/* CTA Section */
+.space-y-20 .bg-base-200.rounded-xl {
+  background: rgba(0, 0, 0, 0.02);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.space-y-20 .bg-base-200.rounded-xl h2 {
+  color: #1a1a1a;
+}
+
+.space-y-20 .bg-base-200.rounded-xl .text-gray-400 {
+  color: rgba(0, 0, 0, 0.5) !important;
+}
+
+/* CTA Buttons */
+.space-y-20 .btn-primary {
+  background: #1a1a1a;
+  border: none;
+  color: #fff;
+  font-weight: 500;
+  font-size: 0.85rem;
+  border-radius: 8px;
+}
+
+.space-y-20 .btn-primary:hover {
+  background: #333;
+}
+
+.space-y-20 .btn-outline {
+  background: transparent;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  color: #1a1a1a;
+  font-weight: 500;
+  font-size: 0.85rem;
+  border-radius: 8px;
+}
+
+.space-y-20 .btn-outline:hover {
+  background: rgba(0, 0, 0, 0.05);
+  border-color: rgba(0, 0, 0, 0.2);
+  color: #1a1a1a;
+}
+
+.space-y-20 .btn-ghost {
+  color: rgba(0, 0, 0, 0.6);
+  font-weight: 500;
+  font-size: 0.85rem;
+}
+
+.space-y-20 .btn-ghost:hover {
+  background: rgba(0, 0, 0, 0.05);
+  color: #1a1a1a;
+}
+
+/* Year dropdown */
+.dropdown .btn-outline {
+  background: transparent;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  color: rgba(0, 0, 0, 0.6);
+  font-size: 0.8rem;
+  font-weight: 500;
+  border-radius: 6px;
+}
+
+.dropdown .btn-outline:hover {
+  background: rgba(0, 0, 0, 0.05);
+  border-color: rgba(0, 0, 0, 0.15);
+}
+
+.dropdown-content.menu {
+  background: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+
+/* Dark theme - Impact page */
+[data-theme="night"] .stat.bg-base-200 {
+  background: rgba(18, 18, 20, 0.95);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+[data-theme="night"] .stat.bg-base-200:hover {
+  border-color: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+[data-theme="night"] .stat .stat-title {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+[data-theme="night"] .stat .stat-value {
+  color: #ffffff;
+}
+
+[data-theme="night"] .stat .stat-figure {
+  color: rgba(255, 255, 255, 0.1) !important;
+}
+
+[data-theme="night"] .space-y-20 .card.bg-base-200 {
+  background: rgba(18, 18, 20, 0.95);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+[data-theme="night"] .space-y-20 .card.bg-base-200:hover {
+  border-color: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+}
+
+[data-theme="night"] .space-y-20 .card-title {
+  color: #ffffff;
+}
+
+[data-theme="night"] .space-y-20 .card .text-gray-400,
+[data-theme="night"] .space-y-20 .card .text-gray-500 {
+  color: rgba(255, 255, 255, 0.5) !important;
+}
+
+[data-theme="night"] .space-y-20 h2 {
+  color: #ffffff;
+}
+
+[data-theme="night"] .space-y-20 .badge-outline {
+  border-color: rgba(255, 255, 255, 0.15);
+  color: rgba(255, 255, 255, 0.6);
+}
+
+[data-theme="night"] .space-y-20 .link-primary,
+[data-theme="night"] .space-y-20 .text-primary {
+  color: #FFC758 !important;
+}
+
+[data-theme="night"] .space-y-20 .text-yellow-500 {
+  color: rgba(255, 255, 255, 0.15) !important;
+}
+
+[data-theme="night"] .space-y-20 .card .text-primary.text-2xl {
+  color: rgba(255, 255, 255, 0.1) !important;
+}
+
+[data-theme="night"] .space-y-20 .text-3xl.font-bold.text-primary {
+  color: #ffffff !important;
+}
+
+[data-theme="night"] .space-y-20 .bg-base-200.rounded-xl {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+[data-theme="night"] .space-y-20 .bg-base-200.rounded-xl h2 {
+  color: #ffffff;
+}
+
+[data-theme="night"] .space-y-20 .bg-base-200.rounded-xl .text-gray-400 {
+  color: rgba(255, 255, 255, 0.5) !important;
+}
+
+[data-theme="night"] .space-y-20 .btn-primary {
+  background: #ffffff;
+  color: #0a0a0a;
+}
+
+[data-theme="night"] .space-y-20 .btn-primary:hover {
+  background: rgba(255, 255, 255, 0.9);
+}
+
+[data-theme="night"] .space-y-20 .btn-outline {
+  border-color: rgba(255, 255, 255, 0.15);
+  color: #ffffff;
+}
+
+[data-theme="night"] .space-y-20 .btn-outline:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+[data-theme="night"] .space-y-20 .btn-ghost {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+[data-theme="night"] .space-y-20 .btn-ghost:hover {
+  background: rgba(255, 255, 255, 0.05);
+  color: #ffffff;
+}
+
+[data-theme="night"] .dropdown .btn-outline {
+  border-color: rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.6);
+}
+
+[data-theme="night"] .dropdown .btn-outline:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.15);
+}
+
+[data-theme="night"] .dropdown-content.menu {
+  background: #1a1a1a;
+  border-color: rgba(255, 255, 255, 0.08);
+}
+
+/* ============================================
+   FOOTER STYLING
+   ============================================ */
 
 /* ============================================
    FOOTER - Minimal Professional Design
