@@ -1,65 +1,57 @@
 {% extends "index.html" %}
 
 {% block content %}
-    {# Hero Section - Ashen Minimalist Style #}
-    {% if section.extra.hero %}
-        <div class="relative min-h-screen flex items-center justify-center text-center overflow-hidden">
-            <!-- Subtle Animated Background -->
-            <div class="absolute inset-0">
-                <div class="absolute inset-0 hero-background"></div>
-                <div class="absolute inset-0 opacity-20">
-                    <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-gradient-to-r from-gray-500/10 to-slate-500/10 rounded-full filter blur-3xl animate-pulse"></div>
-                    <div class="absolute top-3/4 right-1/4 w-80 h-80 bg-gradient-to-r from-slate-500/10 to-gray-400/10 rounded-full filter blur-3xl animate-pulse delay-2000"></div>
+    {# Combined Hero + Events wrapper for unified background #}
+    <div class="landing-top-section">
+        {# Shared background decorations #}
+        <div class="landing-bg-decoration"></div>
+        <div class="landing-glow-orb landing-glow-orb-1"></div>
+        <div class="landing-glow-orb landing-glow-orb-2"></div>
+        <div class="landing-glow-orb landing-glow-orb-3"></div>
+
+        {# Hero Section #}
+        {% if section.extra.hero %}
+            <div class="hero-section relative min-h-screen flex items-center justify-center text-center">
+                <div class="relative z-10 p-8 max-w-6xl mx-auto">
+                    <h1 class="text-6xl md:text-8xl font-black tracking-tight mb-8">
+                        <span class="hero-title">
+                            {% if section.extra.hero.title %}{{ section.extra.hero.title }}{% else %}Welcome to Goyo!{% endif %}
+                        </span>
+                    </h1>
+                    <p class="max-w-3xl mx-auto text-xl md:text-2xl hero-description mb-12 leading-relaxed font-light">
+                        Devoted to <span id="typewriter" class="typewriter-text"></span><span class="typewriter-cursor">|</span>
+                    </p>
+                    {% if section.extra.hero.cta_buttons %}
+                        <div class="flex justify-center gap-6 flex-wrap">
+                            {% for button in section.extra.hero.cta_buttons %}
+                                <a href="{{ button.url | safe }}"
+                                   class="group relative px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 transform hover:scale-105
+                                          {% if button.style == 'primary' %}
+                                            hero-cta-primary
+                                          {% else %}
+                                            hero-cta-secondary
+                                          {% endif %}">
+                                    <span class="relative z-10">{{ button.text }}</span>
+                                    {% if button.style == 'primary' %}
+                                    <div class="absolute inset-0 rounded-lg bg-gradient-to-r from-slate-500 to-gray-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                                    {% endif %}
+                                </a>
+                            {% endfor %}
+                        </div>
+                    {% endif %}
                 </div>
-                {% if section.extra.hero.image %}
-                <img src="{{ get_url(path=config.extra.image_base_url ~ '/' ~ section.extra.hero.image) }}" alt="Hero Background" class="w-full h-full rounded-none object-cover object-center opacity-10">
-                {% endif %}
             </div>
-            <div class="relative z-10 p-8 max-w-6xl mx-auto">            
-                <h1 class="text-6xl md:text-8xl font-black tracking-tight mb-8">
-                    <span class="hero-title">
-                        {% if section.extra.hero.title %}{{ section.extra.hero.title }}{% else %}Welcome to Goyo!{% endif %}
-                    </span>
-                </h1>
-                <p class="max-w-3xl mx-auto text-xl md:text-2xl hero-description mb-12 leading-relaxed font-light">
-                    Devoted to <span id="typewriter" class="typewriter-text"></span><span class="typewriter-cursor">|</span>
-                </p>
-                {% if section.extra.hero.cta_buttons %}
-                    <div class="flex justify-center gap-6 flex-wrap">
-                        {% for button in section.extra.hero.cta_buttons %}
-                            <a href="{{ button.url | safe }}"
-                               class="group relative px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 transform hover:scale-105
-                                      {% if button.style == 'primary' %}
-                                        hero-cta-primary
-                                      {% else %}
-                                        hero-cta-secondary
-                                      {% endif %}">
-                                <span class="relative z-10">{{ button.text }}</span>
-                                {% if button.style == 'primary' %}
-                                <div class="absolute inset-0 rounded-lg bg-gradient-to-r from-slate-500 to-gray-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                                {% endif %}
-                            </a>
-                        {% endfor %}
-                    </div>
-                {% endif %}
+        {% endif %}
+
+        {# Events Carousel Section #}
+        {% if section.extra.events_carousel %}
+        <div class="events-carousel-section">
+            <div class="events-intro-text">
+                <div class="events-section-title">Club Events</div>
+                <p class="events-section-subtitle">Participate in the thrill, earn the glory, and enjoy the vibe</p>
             </div>
-        </div>
-    {% endif %}
 
-    {# Events Carousel Section - Animated Image Slider #}
-{% if section.extra.events_carousel %}
-<div class="events-carousel-section">
-    {# Background decorative elements #}
-    <div class="events-bg-decoration"></div>
-    <div class="events-glow-orb events-glow-orb-1"></div>
-    <div class="events-glow-orb events-glow-orb-2"></div>
-
-    <div class="events-intro-text">
-        <div class="events-section-title">Club Events</div>
-        <p class="events-section-subtitle">Participate in the thrill, earn the glory, and enjoy the vibe</p>
-    </div>
-
-    <div class="events-grid">
+            <div class="events-grid">
         <div class="events-image-wrapper">
             <div class="events-image-frame">
                 <div class="events-image-container" id="eventsImageContainer"></div>
@@ -111,38 +103,41 @@
         ];
     </script>
 </div>
-{% endif %}
+        {% endif %}
 
-    {# Roadmaps Scroll Section - Horizontal Scroll Animation #}
-    {% set roadmaps_section = get_section(path="roadmaps/_index.md") %}
-    {% if roadmaps_section and roadmaps_section.pages %}
-    <div class="roadmaps-scroll-wrapper">
-        <div class="roadmaps-sticky-container">
-            <div class="roadmaps-intro-text">
-                <div class="roadmaps-title">Learning Roadmaps</div>
-                <p class="roadmaps-subtitle">Explore structured learning paths</p>
-            </div>
-
-            <div class="roadmaps-viewport">
-                <div class="roadmaps-slider-track" id="roadmapsSliderTrack">
-                    {% for roadmap in roadmaps_section.pages %}
-                    {% if roadmap.extra.carousel_image %}
-                    <div class="roadmap-card">
-                        <img src="{{ get_url(path=config.extra.image_base_url ~ '/' ~ roadmap.extra.carousel_image) }}" alt="{{ roadmap.extra.carousel_title | default(value=roadmap.title) }}">
-                        <div class="roadmap-card-content">
-                            <h3>{{ roadmap.extra.carousel_title | default(value=roadmap.title) }}</h3>
-                            <p>{{ roadmap.extra.carousel_description | default(value=roadmap.description) }}</p>
-                            <a href="{{ roadmap.permalink | safe }}" class="roadmap-btn-action">Start Learning</a>
-                        </div>
-                    </div>
-                    {% endif %}
-                    {% endfor %}
+        {# Roadmaps Scroll Section - Horizontal Scroll Animation #}
+        {% set roadmaps_section = get_section(path="roadmaps/_index.md") %}
+        {% if roadmaps_section and roadmaps_section.pages %}
+        <div class="roadmaps-scroll-wrapper">
+            <div class="roadmaps-sticky-container">
+                <div class="roadmaps-intro-text">
+                    <div class="roadmaps-title">Learning Roadmaps</div>
+                    <p class="roadmaps-subtitle">Explore structured learning paths</p>
                 </div>
-            </div>
 
+                <div class="roadmaps-viewport">
+                    <div class="roadmaps-slider-track" id="roadmapsSliderTrack">
+                        {% for roadmap in roadmaps_section.pages %}
+                        {% if roadmap.extra.carousel_image %}
+                        <div class="roadmap-card">
+                            <img src="{{ get_url(path=config.extra.image_base_url ~ '/' ~ roadmap.extra.carousel_image) }}" alt="{{ roadmap.extra.carousel_title | default(value=roadmap.title) }}">
+                            <div class="roadmap-card-content">
+                                <h3>{{ roadmap.extra.carousel_title | default(value=roadmap.title) }}</h3>
+                                <p>{{ roadmap.extra.carousel_description | default(value=roadmap.description) }}</p>
+                                <a href="{{ roadmap.permalink | safe }}" class="roadmap-btn-action">Start Learning</a>
+                            </div>
+                        </div>
+                        {% endif %}
+                        {% endfor %}
+                    </div>
+                </div>
+
+            </div>
         </div>
+        {% endif %}
+
     </div>
-    {% endif %}
+    {# End of landing-top-section wrapper (Hero + Events + Roadmaps) #}
 
     <!-- {# Feature Grid - Ashen Minimal Design #}
     {# Support both extra.features_section.features (new) and extra.features (legacy) for backward compatibility #}
