@@ -1,0 +1,44 @@
+@charset "UTF-8";
+
+/* ============================================
+   TYPOGRAPHY
+   ============================================
+*/
+
+/* Headings and titles - Gradient from orange to yellow */
+[data-theme="night"] h1,
+[data-theme="night"] h2,
+[data-theme="night"] h3,
+[data-theme="night"] h4,
+[data-theme="night"] h5,
+[data-theme="night"] h6 {
+    background: linear-gradient(90deg, #DA7138 0%, #EC9E6E 33%, #ECB163 66%, #ECC475 100%) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    background-clip: text !important;
+    color: transparent !important;
+}
+
+/* All text content - Light pink/beige #FAECEC */
+[data-theme="night"] p,
+[data-theme="night"] span,
+[data-theme="night"] div,
+[data-theme="night"] .prose,
+[data-theme="night"] .text-gray-500,
+[data-theme="night"] .text-gray-400 {
+    color: #FAECEC !important;
+}
+
+/* Card titles specifically - Gradient */
+[data-theme="night"] .card-title {
+    background: linear-gradient(90deg, #DA7138 0%, #EC9E6E 33%, #ECB163 66%, #ECC475 100%) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    background-clip: text !important;
+    color: transparent !important;
+}
+
+/* Text with primary color class - Gold */
+[data-theme="night"] .text-primary {
+    color: #FFC758 !important;
+}
