@@ -1175,12 +1175,31 @@ document.addEventListener('DOMContentLoaded', function() {
         transition: all 0.3s ease;
     }
 
-    body.light {
-        --card-shine-opacity: .3;
-        --card-shine-gradient: conic-gradient(from 225deg at 50% 50%, rgba(249, 177, 77, 0) 0deg, #f9b14d 25deg, #FFF5E6 285deg, #FFFFFF 345deg, rgba(249, 177, 77, 0) 360deg);
-        --card-line-color: #E9E9E7;
-        --card-tile-color: rgba(249, 177, 77, 0.08);
-    }
+  /* Light theme - Grid lines (gray) */
+body.light {
+    --card-line-color: #9E9E9E; /* Gray lines */
+    --card-tile-color: rgba(135, 206, 250, 0.15); /* Sky blue tiles */
+}
+
+/* For data-theme attribute version */
+[data-theme="light"] body,
+[data-theme="lofi"] body {
+    --card-line-color: #9E9E9E;
+    --card-tile-color: rgba(135, 206, 250, 0.15);
+}
+
+/* Additional specific overrides for light theme */
+[data-theme="light"] .card .background .line:before,
+[data-theme="light"] .card .background .line:after,
+[data-theme="lofi"] .card .background .line:before,
+[data-theme="lofi"] .card .background .line:after {
+    background-color: #9E9E9E; /* Gray lines */
+}
+
+[data-theme="light"] .card .background .tiles .tile,
+[data-theme="lofi"] .card .background .tiles .tile {
+    background-color: rgba(135, 206, 250, 0.15); /* Sky blue tiles */
+}
 
     body.toggle .wobble-container * {
         transition-duration: 0s !important;

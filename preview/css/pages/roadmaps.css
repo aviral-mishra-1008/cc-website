@@ -213,9 +213,15 @@
 }
 
 /* Light theme - Card border (blue) */
+[data-theme="night"] .roadmap-card-content {
+    border-color: #ad7f13 !important;
+    border-width: 10px;
+}
+/* Light theme - Card border (blue) */
 [data-theme="light"] .roadmap-card-content,
 [data-theme="lofi"] .roadmap-card-content {
     border-color: #1976D2 !important;
+    border-width: 10px;
     box-shadow: 0 10px 30px rgba(25, 118, 210, 0.15), 0 0 0 2px rgba(25, 118, 210, 0.2);
 }
 
@@ -696,7 +702,7 @@
 
     .roadmap-card {
         min-width: 260px;
-        max-width: 260px;
+        max-width: 220px;
     }
 
     .roadmap-card img {
@@ -709,58 +715,67 @@
 
     .roadmap-card-content p {
         font-size: 13px;
+        
         margin-bottom: 12px;
     }
 
     /* Card content adjustment */
     .roadmap-card-content {
-        padding: 20px !important;
-        border-width: 3px !important;
+padding: 12px 16px 16px 16px !important; /* Tightened top padding */
+        border-width: 10px !important;
     }
 
-    .card-header {
-        margin-bottom: 12px !important;
-        gap: 10px !important;
-    }
-
-    .title-group {
-        flex-direction: column;
-        align-items: flex-start !important;
+  .card-header {
+        margin-top: 0 !important;    /* Force title to the top */
+        margin-bottom: 8px !important; /* Tighten space below header */
         gap: 8px !important;
     }
+/* 3. Reduce gap between icon and heading */
+    .title-group {
+        gap: 8px !important;
+        margin-bottom: 0 !important;
+    }
 
-    .title-group h2 {
-        font-size: 1.5rem !important;
-        line-height: 1.2 !important;
+  .title-group h2 {
+        font-size: 1.4rem !important; /* Adjusted for better fit */
+        line-height: 1.1 !important;
+        margin: 0 !important;
     }
 
     .roadmap-icon {
         font-size: 1.75rem !important;
     }
 
-    .time-badge {
-        padding: 5px 10px !important;
+.time-badge {
+        padding: 8px 10px !important;
         font-size: 0.75rem !important;
+        /* Increase distance from the title above it */
+        margin-top: 12px !important; 
+        /* Ensure it sits on its own line if the title is long */
+        display: inline-flex !important; 
+        align-self: flex-start !important;
     }
 
+   /* 5. Pull description closer to header */
     .description {
-        font-size: 0.9rem !important;
-        margin-bottom: 20px !important;
+        font-size: 0.85rem !important;
+        margin-top: 4px !important;   /* Reduce gap above description */
+        margin-bottom: 16px !important;
     }
 
     .card-footer {
-        gap: 16px !important;
+        gap: 10px !important;
     }
 
     .difficulty-group {
         font-size: 0.85rem !important;
-        gap: 6px !important;
+        gap: 10px !important;
         flex-direction: column;
         align-items: flex-start !important;
     }
 
     .difficulty-group>span {
-        margin-bottom: 4px;
+        margin-bottom: 6px;
     }
 
     .difficulty-badge {
