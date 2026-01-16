@@ -515,39 +515,47 @@ document.addEventListener('DOMContentLoaded', function() {
                 <main class="prose w-full mx-auto">
                     
     
-    <div class="landing-top-section">
-        
-        <div class="landing-bg-decoration"></div>
-        <div class="landing-glow-orb landing-glow-orb-1"></div>
-        <div class="landing-glow-orb landing-glow-orb-2"></div>
-        <div class="landing-glow-orb landing-glow-orb-3"></div>
-
-        
-        
-            <div class="hero-section relative min-h-screen flex items-center justify-center text-center">
-                <div class="relative z-10 p-8 max-w-6xl mx-auto">
-                    <h1 class="text-6xl md:text-8xl font-black tracking-tight mb-8">
-                        <span class="hero-title">
-                            Computer Coding Club
-                        </span>
-                    </h1>
-                    <p class="max-w-3xl mx-auto text-xl md:text-2xl hero-description mb-12 leading-relaxed font-light">
-                        Devoted to <span id="typewriter" class="typewriter-text"></span><span class="typewriter-cursor">|</span>
-                    </p>
-                    
+    
+        <div class="relative min-h-screen flex items-center justify-center text-center overflow-hidden">
+            <!-- Subtle Animated Background -->
+            <div class="absolute inset-0">
+                <div class="absolute inset-0 hero-background"></div>
+                <div class="absolute inset-0 opacity-20">
+                    <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-gradient-to-r from-gray-500/10 to-slate-500/10 rounded-full filter blur-3xl animate-pulse"></div>
+                    <div class="absolute top-3/4 right-1/4 w-80 h-80 bg-gradient-to-r from-slate-500/10 to-gray-400/10 rounded-full filter blur-3xl animate-pulse delay-2000"></div>
                 </div>
+                
+                <img src="/cc-website/preview/images/hero-background.webp" alt="Hero Background" class="w-full h-full rounded-none object-cover object-center opacity-10">
+                
             </div>
-        
-
-        
-        
-        <div class="events-carousel-section">
-            <div class="events-intro-text">
-                <div class="events-section-title">Club Events</div>
-                <p class="events-section-subtitle">Participate in the thrill, earn the glory, and enjoy the vibe</p>
+            <div class="relative z-10 p-8 max-w-6xl mx-auto">
+                <h1 class="text-6xl md:text-8xl font-black tracking-tight mb-8">
+                    <span class="hero-title">
+                        Computer Coding Club
+                    </span>
+                </h1>
+                <p class="max-w-3xl mx-auto text-xl md:text-2xl hero-description mb-12 leading-relaxed font-light">
+                    🚀 Devoted to Programming, Innovation, and Computer Science
+                </p>
+                
             </div>
+        </div>
+    
 
-            <div class="events-grid">
+    
+
+<div class="events-carousel-section">
+    
+    <div class="events-bg-decoration"></div>
+    <div class="events-glow-orb events-glow-orb-1"></div>
+    <div class="events-glow-orb events-glow-orb-2"></div>
+
+    <div class="events-intro-text">
+        <div class="events-section-title">Club Events</div>
+        <p class="events-section-subtitle">Participate in the thrill, earn the glory, and enjoy the vibe</p>
+    </div>
+
+    <div class="events-grid">
         <div class="events-image-wrapper">
             <div class="events-image-frame">
                 <div class="events-image-container" id="eventsImageContainer"></div>
@@ -655,105 +663,102 @@ document.addEventListener('DOMContentLoaded', function() {
         ];
     </script>
 </div>
-        
 
-        
-        
-        
-        <div class="roadmaps-scroll-wrapper">
-            <div class="roadmaps-sticky-container">
-                <div class="roadmaps-intro-text">
-                    <div class="roadmaps-title">Learning Roadmaps</div>
-                    <p class="roadmaps-subtitle">Explore structured learning paths</p>
-                </div>
 
-                <div class="roadmaps-viewport">
-                    <div class="roadmaps-slider-track" id="roadmapsSliderTrack">
-                        
-                        
-                        <div class="roadmap-card">
-                            <img src="/cc-website/preview/images/roadmaps/web-development.webp" alt="Web Development">
-                            <div class="roadmap-card-content">
-                                <h3>Web Development</h3>
-                                <p>Become a full-stack developer with our comprehensive roadmap. Learn HTML, CSS, JavaScript, React, Node.js, databases, and deployment strategies step by step.</p>
-                                <a href="/cc-website/preview/roadmaps/web-development/" class="roadmap-btn-action">Start Learning</a>
-                            </div>
-                        </div>
-                        
-                        
-                        
-                        <div class="roadmap-card">
-                            <img src="/cc-website/preview/images/roadmaps/dsa-fundamentals.webp" alt="DSA Fundamentals">
-                            <div class="roadmap-card-content">
-                                <h3>DSA Fundamentals</h3>
-                                <p>Master data structures and algorithms from basics to competitive programming. Structured path covering arrays, trees, graphs, dynamic programming, and advanced algorithms.</p>
-                                <a href="/cc-website/preview/roadmaps/dsa/" class="roadmap-btn-action">Start Learning</a>
-                            </div>
-                        </div>
-                        
-                        
-                        
-                        <div class="roadmap-card">
-                            <img src="/cc-website/preview/images/roadmaps/machine-learning.webp" alt="Machine Learning">
-                            <div class="roadmap-card-content">
-                                <h3>Machine Learning</h3>
-                                <p>Journey from Python basics to building production ML models. Cover mathematics, algorithms, frameworks like TensorFlow and PyTorch, and real-world applications.</p>
-                                <a href="/cc-website/preview/roadmaps/machine-learning/" class="roadmap-btn-action">Start Learning</a>
-                            </div>
-                        </div>
-                        
-                        
-                        
-                        <div class="roadmap-card">
-                            <img src="/cc-website/preview/images/roadmaps/open-source.webp" alt="Open Source">
-                            <div class="roadmap-card-content">
-                                <h3>Open Source</h3>
-                                <p>Learn how to contribute to open source projects effectively. From finding good first issues to becoming a maintainer - practical guidance for your journey.</p>
-                                <a href="/cc-website/preview/roadmaps/open-source/" class="roadmap-btn-action">Start Learning</a>
-                            </div>
-                        </div>
-                        
-                        
-                        
-                        <div class="roadmap-card">
-                            <img src="/cc-website/preview/images/roadmaps/interview-prep.webp" alt="Interview Prep">
-                            <div class="roadmap-card-content">
-                                <h3>Interview Prep</h3>
-                                <p>Comprehensive preparation guide for technical interviews at top companies. Practice problems, system design, behavioral questions, and insider tips from alumni.</p>
-                                <a href="/cc-website/preview/roadmaps/interview-prep/" class="roadmap-btn-action">Start Learning</a>
-                            </div>
-                        </div>
-                        
-                        
-                        
-                        <div class="roadmap-card">
-                            <img src="/cc-website/preview/images/roadmaps/mobile-development.webp" alt="Mobile Development">
-                            <div class="roadmap-card-content">
-                                <h3>Mobile Development</h3>
-                                <p>Master iOS and Android development. Learn native development with Swift&#x2F;Kotlin or cross-platform with React Native and Flutter.</p>
-                                <a href="/cc-website/preview/roadmaps/mobile-development/" class="roadmap-btn-action">Start Learning</a>
-                            </div>
-                        </div>
-                        
-                        
-                        
-                        <div class="roadmap-card">
-                            <img src="/cc-website/preview/images/roadmaps/devops.webp" alt="DevOps &amp; Cloud">
-                            <div class="roadmap-card-content">
-                                <h3>DevOps &amp; Cloud</h3>
-                                <p>Learn DevOps practices, cloud platforms (AWS, Azure, GCP), Docker, Kubernetes, CI&#x2F;CD pipelines, and infrastructure as code.</p>
-                                <a href="/cc-website/preview/roadmaps/devops/" class="roadmap-btn-action">Start Learning</a>
-                            </div>
-                        </div>
-                        
-                        
-                    </div>
-                </div>
-
+    
+    
+    
+    <div class="roadmaps-scroll-wrapper">
+        <div class="roadmaps-sticky-container">
+            <div class="roadmaps-intro-text">
+                <div class="roadmaps-title">Learning Roadmaps</div>
+                <p class="roadmaps-subtitle">Explore structured learning paths</p>
             </div>
-        </div>
-        
 
+            <div class="roadmaps-viewport">
+                <div class="roadmaps-slider-track" id="roadmapsSliderTrack">
+                    
+                    
+                    <div class="roadmap-card">
+                        <img src="/cc-website/preview/images/roadmaps/web-development.webp" alt="Web Development">
+                        <div class="roadmap-card-content">
+                            <h3>Web Development</h3>
+                            <p>Become a full-stack developer with our comprehensive roadmap. Learn HTML, CSS, JavaScript, React, Node.js, databases, and deployment strategies step by step.</p>
+                            <a href="/cc-website/preview/roadmaps/web-development/" class="roadmap-btn-action">Start Learning</a>
+                        </div>
+                    </div>
+                    
+                    
+                    
+                    <div class="roadmap-card">
+                        <img src="/cc-website/preview/images/roadmaps/dsa-fundamentals.webp" alt="DSA Fundamentals">
+                        <div class="roadmap-card-content">
+                            <h3>DSA Fundamentals</h3>
+                            <p>Master data structures and algorithms from basics to competitive programming. Structured path covering arrays, trees, graphs, dynamic programming, and advanced algorithms.</p>
+                            <a href="/cc-website/preview/roadmaps/dsa/" class="roadmap-btn-action">Start Learning</a>
+                        </div>
+                    </div>
+                    
+                    
+                    
+                    <div class="roadmap-card">
+                        <img src="/cc-website/preview/images/roadmaps/machine-learning.webp" alt="Machine Learning">
+                        <div class="roadmap-card-content">
+                            <h3>Machine Learning</h3>
+                            <p>Journey from Python basics to building production ML models. Cover mathematics, algorithms, frameworks like TensorFlow and PyTorch, and real-world applications.</p>
+                            <a href="/cc-website/preview/roadmaps/machine-learning/" class="roadmap-btn-action">Start Learning</a>
+                        </div>
+                    </div>
+                    
+                    
+                    
+                    <div class="roadmap-card">
+                        <img src="/cc-website/preview/images/roadmaps/open-source.webp" alt="Open Source">
+                        <div class="roadmap-card-content">
+                            <h3>Open Source</h3>
+                            <p>Learn how to contribute to open source projects effectively. From finding good first issues to becoming a maintainer - practical guidance for your journey.</p>
+                            <a href="/cc-website/preview/roadmaps/open-source/" class="roadmap-btn-action">Start Learning</a>
+                        </div>
+                    </div>
+                    
+                    
+                    
+                    <div class="roadmap-card">
+                        <img src="/cc-website/preview/images/roadmaps/interview-prep.webp" alt="Interview Prep">
+                        <div class="roadmap-card-content">
+                            <h3>Interview Prep</h3>
+                            <p>Comprehensive preparation guide for technical interviews at top companies. Practice problems, system design, behavioral questions, and insider tips from alumni.</p>
+                            <a href="/cc-website/preview/roadmaps/interview-prep/" class="roadmap-btn-action">Start Learning</a>
+                        </div>
+                    </div>
+                    
+                    
+                    
+                    <div class="roadmap-card">
+                        <img src="/cc-website/preview/images/roadmaps/mobile-development.webp" alt="Mobile Development">
+                        <div class="roadmap-card-content">
+                            <h3>Mobile Development</h3>
+                            <p>Master iOS and Android development. Learn native development with Swift&#x2F;Kotlin or cross-platform with React Native and Flutter.</p>
+                            <a href="/cc-website/preview/roadmaps/mobile-development/" class="roadmap-btn-action">Start Learning</a>
+                        </div>
+                    </div>
+                    
+                    
+                    
+                    <div class="roadmap-card">
+                        <img src="/cc-website/preview/images/roadmaps/devops.webp" alt="DevOps &amp; Cloud">
+                        <div class="roadmap-card-content">
+                            <h3>DevOps &amp; Cloud</h3>
+                            <p>Learn DevOps practices, cloud platforms (AWS, Azure, GCP), Docker, Kubernetes, CI&#x2F;CD pipelines, and infrastructure as code.</p>
+                            <a href="/cc-website/preview/roadmaps/devops/" class="roadmap-btn-action">Start Learning</a>
+                        </div>
+                    </div>
+                    
+                    
+                </div>
+            </div>
+
+        </div>
     </div>
     
 
@@ -1693,7 +1698,7 @@ document.addEventListener('DOMContentLoaded', function() {
                                 
                                 
                                 <li>
-                                    <a  href="/cc-website/preview/contrihub/2025">ContriHub 2025</a>
+                                    <a  href="/cc-website/preview/contrihub/2024">ContriHub 2024</a>
                                 </li>
                             
                                 
@@ -1701,7 +1706,7 @@ document.addEventListener('DOMContentLoaded', function() {
                                 
                                 
                                 <li>
-                                    <a  href="/cc-website/preview/contrihub/2024">ContriHub 2024</a>
+                                    <a  href="/cc-website/preview/contrihub/2025">ContriHub 2025</a>
                                 </li>
                             
                         </ul>
@@ -1969,57 +1974,6 @@ document.addEventListener('DOMContentLoaded', function() {
     <script src="/cc-website/preview/js/events-carousel.js"></script>
     <!-- Roadmaps Scroll JavaScript -->
     <script src="/cc-website/preview/js/roadmaps-scroll.js"></script>
-
-    <!-- Typewriter Animation -->
-    <script>
-    (function() {
-        const words = ['Programming', 'Innovation', 'Computer Science'];
-        const typewriterEl = document.getElementById('typewriter');
-
-        if (!typewriterEl) return;
-
-        let wordIndex = 0;
-        let charIndex = 0;
-        let isDeleting = false;
-
-        const typeSpeed = 100;      // Speed of typing
-        const deleteSpeed = 50;     // Speed of deleting
-        const pauseAfterType = 2000; // Pause after typing complete word
-        const pauseAfterDelete = 500; // Pause after deleting
-
-        function type() {
-            const currentWord = words[wordIndex];
-
-            if (isDeleting) {
-                // Deleting characters
-                typewriterEl.textContent = currentWord.substring(0, charIndex - 1);
-                charIndex--;
-
-                if (charIndex === 0) {
-                    isDeleting = false;
-                    wordIndex = (wordIndex + 1) % words.length;
-                    setTimeout(type, pauseAfterDelete);
-                } else {
-                    setTimeout(type, deleteSpeed);
-                }
-            } else {
-                // Typing characters
-                typewriterEl.textContent = currentWord.substring(0, charIndex + 1);
-                charIndex++;
-
-                if (charIndex === currentWord.length) {
-                    isDeleting = true;
-                    setTimeout(type, pauseAfterType);
-                } else {
-                    setTimeout(type, typeSpeed);
-                }
-            }
-        }
-
-        // Start the animation
-        type();
-    })();
-    </script>
 
 </body>
 </html>
