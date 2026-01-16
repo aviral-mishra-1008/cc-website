@@ -528,19 +528,14 @@ document.addEventListener('DOMContentLoaded', function() {
                 <img src="/cc-website/preview/images/hero-background.webp" alt="Hero Background" class="w-full h-full rounded-none object-cover object-center opacity-10">
                 
             </div>
-            <div class="relative z-10 p-8 max-w-6xl mx-auto">
-                <div class="mb-8">
-                    <span class="inline-block px-6 py-2 rounded-full text-sm font-medium hero-badge mb-6">
-                        🚀 Devoted to Programming, Innovation, and Computer Science
-                    </span>
-                </div>
+            <div class="relative z-10 p-8 max-w-6xl mx-auto">            
                 <h1 class="text-6xl md:text-8xl font-black tracking-tight mb-8">
                     <span class="hero-title">
                         Computer Coding Club
                     </span>
                 </h1>
                 <p class="max-w-3xl mx-auto text-xl md:text-2xl hero-description mb-12 leading-relaxed font-light">
-                    We are an educational club at Motilal Nehru National Institute of Technology, Allahabad, Prayagraj—an Institute of National Importance. MNNIT Computer Coding Club is an official student organization under the Student Activity Centre (SAC) of our college. We host several events in Computer Science and Engineering, conduct regular classes, and foster active participation from students across all courses.
+                    Devoted to <span id="typewriter" class="typewriter-text"></span><span class="typewriter-cursor">|</span>
                 </p>
                 
             </div>
@@ -1979,6 +1974,57 @@ document.addEventListener('DOMContentLoaded', function() {
     <script src="/cc-website/preview/js/events-carousel.js"></script>
     <!-- Roadmaps Scroll JavaScript -->
     <script src="/cc-website/preview/js/roadmaps-scroll.js"></script>
+
+    <!-- Typewriter Animation -->
+    <script>
+    (function() {
+        const words = ['Programming', 'Innovation', 'Computer Science'];
+        const typewriterEl = document.getElementById('typewriter');
+
+        if (!typewriterEl) return;
+
+        let wordIndex = 0;
+        let charIndex = 0;
+        let isDeleting = false;
+
+        const typeSpeed = 100;      // Speed of typing
+        const deleteSpeed = 50;     // Speed of deleting
+        const pauseAfterType = 2000; // Pause after typing complete word
+        const pauseAfterDelete = 500; // Pause after deleting
+
+        function type() {
+            const currentWord = words[wordIndex];
+
+            if (isDeleting) {
+                // Deleting characters
+                typewriterEl.textContent = currentWord.substring(0, charIndex - 1);
+                charIndex--;
+
+                if (charIndex === 0) {
+                    isDeleting = false;
+                    wordIndex = (wordIndex + 1) % words.length;
+                    setTimeout(type, pauseAfterDelete);
+                } else {
+                    setTimeout(type, deleteSpeed);
+                }
+            } else {
+                // Typing characters
+                typewriterEl.textContent = currentWord.substring(0, charIndex + 1);
+                charIndex++;
+
+                if (charIndex === currentWord.length) {
+                    isDeleting = true;
+                    setTimeout(type, pauseAfterType);
+                } else {
+                    setTimeout(type, typeSpeed);
+                }
+            }
+        }
+
+        // Start the animation
+        type();
+    })();
+    </script>
 
 </body>
 </html>
