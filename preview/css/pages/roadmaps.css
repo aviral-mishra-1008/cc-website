@@ -215,13 +215,11 @@
 /* Light theme - Card border (blue) */
 [data-theme="night"] .roadmap-card-content {
     border-color: #ad7f13 !important;
-    border-width: 10px;
 }
 /* Light theme - Card border (blue) */
 [data-theme="light"] .roadmap-card-content,
 [data-theme="lofi"] .roadmap-card-content {
     border-color: #1976D2 !important;
-    border-width: 10px;
     box-shadow: 0 10px 30px rgba(25, 118, 210, 0.15), 0 0 0 2px rgba(25, 118, 210, 0.2);
 }
 
@@ -722,7 +720,6 @@
     /* Card content adjustment */
     .roadmap-card-content {
 padding: 12px 16px 16px 16px !important; /* Tightened top padding */
-        border-width: 10px !important;
     }
 
   .card-header {

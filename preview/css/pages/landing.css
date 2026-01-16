@@ -838,7 +838,7 @@
     }
 
     .events-grid {
-        gap: 40px;
+        gap: 32px
         grid-template-columns: 1fr;
     }
 
@@ -879,7 +879,9 @@
     .events-section-subtitle {
         font-size: 14px;
     }
-
+    .events-grid {
+        gap: 24px; /* Even tighter for small phones */
+    }
     .events-image-container {
         height: 100;
     }
