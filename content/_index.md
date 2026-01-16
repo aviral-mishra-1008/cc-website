@@ -11,8 +11,8 @@ version = "2025"
 [extra.hero]
 title = "Computer Coding Club"
 subtitle = "MNNIT Allahabad"
-badge = "🚀 Devoted to Programming, Innovation, and Computer Science"
-description = "We are an educational club at Motilal Nehru National Institute of Technology, Allahabad, Prayagraj—an Institute of National Importance. MNNIT Computer Coding Club is an official student organization under the Student Activity Centre (SAC) of our college. We host several events in Computer Science and Engineering, conduct regular classes, and foster active participation from students across all courses."
+badge = "Devoted to Programming, Innovation, and Computer Science"
+description = "Devoted to Programming, Innovation, and Computer Science"
 image = "hero-background.webp"
 
 # Events Carousel Section - Showcase CC Club MNNIT events
