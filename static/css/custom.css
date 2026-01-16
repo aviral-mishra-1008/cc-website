@@ -834,6 +834,242 @@
 }
 
 /* ============================================
+   BLOG CARDS - Minimal Professional Design
+   ============================================ */
+
+/* Blog page container */
+#default-blog-list .grid,
+#search-results-grid {
+  gap: 1.5rem;
+}
+
+/* Blog card styling */
+#default-blog-list article.card,
+#search-results-grid article.card {
+  background: rgba(255, 255, 255, 0.98);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+  transition: all 0.2s ease;
+  overflow: hidden;
+}
+
+#default-blog-list article.card:hover,
+#search-results-grid article.card:hover {
+  border-color: rgba(0, 0, 0, 0.1);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  transform: translateY(-2px);
+}
+
+/* Card body */
+#default-blog-list .card-body,
+#search-results-grid .card-body {
+  padding: 1.5rem;
+}
+
+/* Card title */
+#default-blog-list .card-title,
+#search-results-grid .card-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  letter-spacing: -0.02em;
+}
+
+#default-blog-list .card-title a,
+#search-results-grid .card-title a {
+  color: #1a1a1a;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+#default-blog-list .card-title a:hover,
+#search-results-grid .card-title a:hover {
+  color: #4169E1;
+}
+
+/* Meta info (date, reading time, author) */
+#default-blog-list .text-gray-500,
+#search-results-grid .text-gray-500 {
+  color: rgba(0, 0, 0, 0.45) !important;
+  font-size: 0.8rem;
+}
+
+/* Description text */
+#default-blog-list .text-base-content\/80,
+#search-results-grid .text-base-content\/80 {
+  color: rgba(0, 0, 0, 0.6);
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+/* Tags and badges */
+#default-blog-list .badge,
+#search-results-grid .badge {
+  font-size: 0.7rem;
+  font-weight: 500;
+  padding: 0.25rem 0.6rem;
+  border-radius: 4px;
+  text-transform: lowercase;
+}
+
+#default-blog-list .badge-primary {
+  background: rgba(65, 105, 225, 0.1);
+  color: #4169E1;
+  border: none;
+}
+
+#default-blog-list .badge-ghost {
+  background: transparent;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  color: rgba(0, 0, 0, 0.5);
+}
+
+#default-blog-list .badge-ghost:hover {
+  background: rgba(0, 0, 0, 0.05);
+  border-color: rgba(0, 0, 0, 0.2);
+  color: rgba(0, 0, 0, 0.7);
+}
+
+/* Read more button */
+#default-blog-list .btn-primary,
+#search-results-grid .btn-primary {
+  background: transparent;
+  color: #1a1a1a;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-radius: 6px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  text-transform: none;
+  transition: all 0.2s ease;
+}
+
+#default-blog-list .btn-primary:hover,
+#search-results-grid .btn-primary:hover {
+  background: rgba(0, 0, 0, 0.05);
+  border-color: rgba(0, 0, 0, 0.2);
+  color: #1a1a1a;
+}
+
+/* Search input */
+#blog-search-input {
+  background: rgba(0, 0, 0, 0.02);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  font-size: 0.9rem;
+  transition: all 0.2s ease;
+}
+
+#blog-search-input:focus {
+  background: #fff;
+  border-color: rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.05);
+  outline: none;
+}
+
+/* Pagination buttons */
+#blog-pagination .btn-outline {
+  background: transparent;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  color: rgba(0, 0, 0, 0.6);
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+#blog-pagination .btn-outline:hover {
+  background: rgba(0, 0, 0, 0.05);
+  border-color: rgba(0, 0, 0, 0.15);
+  color: #1a1a1a;
+}
+
+/* Dark theme blog cards */
+[data-theme="night"] #default-blog-list article.card,
+[data-theme="night"] #search-results-grid article.card {
+  background: rgba(18, 18, 20, 0.95);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.2);
+}
+
+[data-theme="night"] #default-blog-list article.card:hover,
+[data-theme="night"] #search-results-grid article.card:hover {
+  border-color: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+}
+
+[data-theme="night"] #default-blog-list .card-title a,
+[data-theme="night"] #search-results-grid .card-title a {
+  color: #ffffff;
+}
+
+[data-theme="night"] #default-blog-list .card-title a:hover,
+[data-theme="night"] #search-results-grid .card-title a:hover {
+  color: #FFC758;
+}
+
+[data-theme="night"] #default-blog-list .text-gray-500,
+[data-theme="night"] #search-results-grid .text-gray-500 {
+  color: rgba(255, 255, 255, 0.4) !important;
+}
+
+[data-theme="night"] #default-blog-list .text-base-content\/80,
+[data-theme="night"] #search-results-grid .text-base-content\/80 {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+[data-theme="night"] #default-blog-list .badge-primary {
+  background: rgba(255, 199, 88, 0.15);
+  color: #FFC758;
+}
+
+[data-theme="night"] #default-blog-list .badge-ghost {
+  border-color: rgba(255, 255, 255, 0.15);
+  color: rgba(255, 255, 255, 0.5);
+}
+
+[data-theme="night"] #default-blog-list .badge-ghost:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.2);
+  color: rgba(255, 255, 255, 0.7);
+}
+
+[data-theme="night"] #default-blog-list .btn-primary,
+[data-theme="night"] #search-results-grid .btn-primary {
+  background: transparent;
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+[data-theme="night"] #default-blog-list .btn-primary:hover,
+[data-theme="night"] #search-results-grid .btn-primary:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+[data-theme="night"] #blog-search-input {
+  background: rgba(255, 255, 255, 0.03);
+  border-color: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+}
+
+[data-theme="night"] #blog-search-input:focus {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.05);
+}
+
+[data-theme="night"] #blog-pagination .btn-outline {
+  border-color: rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.5);
+}
+
+[data-theme="night"] #blog-pagination .btn-outline:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.15);
+  color: #ffffff;
+}
+
+/* ============================================
    FOOTER STYLING - DARK THEME
    ============================================
 */
