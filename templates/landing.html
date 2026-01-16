@@ -22,7 +22,7 @@
                     </span>
                 </h1>
                 <p class="max-w-3xl mx-auto text-xl md:text-2xl hero-description mb-12 leading-relaxed font-light">
-                    {% if section.extra.hero.description %}{{ section.extra.hero.description }}{% else %}Inspired by the Korean word "Goyo" (고요), meaning calm or serene, Goyo is a Zola theme that aims for simplicity and clean documentation. With Goyo, you can easily create beautiful and practical documentation pages.{% endif %}
+                    Devoted to <span id="typewriter" class="typewriter-text"></span><span class="typewriter-cursor">|</span>
                 </p>
                 {% if section.extra.hero.cta_buttons %}
                     <div class="flex justify-center gap-6 flex-wrap">
@@ -346,4 +346,55 @@
     <script src="{{ get_url(path='js/events-carousel.js') | safe }}"></script>
     <!-- Roadmaps Scroll JavaScript -->
     <script src="{{ get_url(path='js/roadmaps-scroll.js') | safe }}"></script>
+
+    <!-- Typewriter Animation -->
+    <script>
+    (function() {
+        const words = ['Programming', 'Innovation', 'Computer Science'];
+        const typewriterEl = document.getElementById('typewriter');
+
+        if (!typewriterEl) return;
+
+        let wordIndex = 0;
+        let charIndex = 0;
+        let isDeleting = false;
+
+        const typeSpeed = 100;      // Speed of typing
+        const deleteSpeed = 50;     // Speed of deleting
+        const pauseAfterType = 2000; // Pause after typing complete word
+        const pauseAfterDelete = 500; // Pause after deleting
+
+        function type() {
+            const currentWord = words[wordIndex];
+
+            if (isDeleting) {
+                // Deleting characters
+                typewriterEl.textContent = currentWord.substring(0, charIndex - 1);
+                charIndex--;
+
+                if (charIndex === 0) {
+                    isDeleting = false;
+                    wordIndex = (wordIndex + 1) % words.length;
+                    setTimeout(type, pauseAfterDelete);
+                } else {
+                    setTimeout(type, deleteSpeed);
+                }
+            } else {
+                // Typing characters
+                typewriterEl.textContent = currentWord.substring(0, charIndex + 1);
+                charIndex++;
+
+                if (charIndex === currentWord.length) {
+                    isDeleting = true;
+                    setTimeout(type, pauseAfterType);
+                } else {
+                    setTimeout(type, typeSpeed);
+                }
+            }
+        }
+
+        // Start the animation
+        type();
+    })();
+    </script>
 {% endblock js_body %}

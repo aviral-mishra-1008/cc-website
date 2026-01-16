@@ -3036,3 +3036,38 @@ body.light {
         transform: none !important;
     }
 }
+
+/* ============================================
+   Typewriter Animation Styles
+   ============================================ */
+
+.typewriter-text {
+    color: #FFC758;
+    font-weight: 600;
+    display: inline;
+}
+
+.typewriter-cursor {
+    color: #FFC758;
+    font-weight: 300;
+    animation: blink 0.7s infinite;
+    margin-left: 2px;
+}
+
+@keyframes blink {
+    0%, 50% {
+        opacity: 1;
+    }
+    51%, 100% {
+        opacity: 0;
+    }
+}
+
+/* Light theme adjustments */
+[data-theme="light"] .typewriter-text {
+    color: #DA7138;
+}
+
+[data-theme="light"] .typewriter-cursor {
+    color: #DA7138;
+}
