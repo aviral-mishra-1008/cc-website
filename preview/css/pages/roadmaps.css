@@ -373,16 +373,15 @@
 
 /* Dark Theme - Start Learning Button (Golden with thick glowing border) */
 [data-theme="night"] .start-btn {
-    background: linear-gradient(135deg, #dca73d 0%, #e0b152 100%) !important;
+    background: linear-gradient(135deg, #b88a32 0%, #c99a3d 100%) !important;
     color: #0E0604 !important;
-    border: 3px solid #ebb343 !important;
-    box-shadow: 0 0 25px rgba(255, 199, 88, 0.6),
-        0 0 50px rgba(255, 199, 88, 0.4),
-        0 8px 20px rgba(255, 199, 88, 0.3),
-        inset 0 1px 0 rgba(255, 255, 255, 0.3) !important;
+    border: 2px solid #a67c2d !important; /* Thinner, darker border */
+    /* Reduced shadows and glow */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4), 
+                0 0 10px rgba(255, 199, 88, 0.2) !important;
     font-weight: 800 !important;
-    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    text-shadow: none;
+    transition: all 0.3s ease;
     position: relative;
     overflow: hidden;
 }
@@ -403,13 +402,10 @@
 }
 
 [data-theme="night"] .start-btn:hover {
-    transform: translateY(-4px) scale(1.05) !important;
-    box-shadow: 0 0 35px rgba(255, 199, 88, 0.8),
-        0 0 70px rgba(255, 199, 88, 0.5),
-        0 12px 30px rgba(255, 199, 88, 0.4),
-        inset 0 1px 0 rgba(255, 255, 255, 0.4) !important;
-    border-color: #FFD580 !important;
-    background: linear-gradient(135deg, #FFD580 0%, #FFECA5 100%) !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5), 
+                0 0 15px rgba(255, 199, 88, 0.3) !important;
+    background: linear-gradient(135deg, #dca73d 0%, #ebb343 100%) !important;
 }
 
 [data-theme="night"] .start-btn:active {
@@ -419,18 +415,13 @@
 /* Light Theme - Start Learning Button (Blue with thick glowing border) */
 [data-theme="light"] .start-btn,
 [data-theme="lofi"] .start-btn {
-    background: linear-gradient(135deg, #1976D2 0%, #2196F3 100%) !important;
+    background: linear-gradient(135deg, #1565C0 0%, #1976D2 100%) !important;
     color: #FFFFFF !important;
-    border: 3px solid #1976D2 !important;
-    box-shadow: 0 0 25px rgba(25, 118, 210, 0.6),
-        0 0 50px rgba(25, 118, 210, 0.4),
-        0 8px 20px rgba(25, 118, 210, 0.3),
-        inset 0 1px 0 rgba(255, 255, 255, 0.3) !important;
+    border: 2px solid #0D47A1 !important;
+    /* Reduced shadows */
+    box-shadow: 0 4px 12px rgba(25, 118, 210, 0.2) !important;
     font-weight: 800 !important;
-    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
-    transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
-    position: relative;
-    overflow: hidden;
+    transition: all 0.3s ease;
 }
 
 [data-theme="light"] .start-btn::before,
@@ -451,13 +442,16 @@
 
 [data-theme="light"] .start-btn:hover,
 [data-theme="lofi"] .start-btn:hover {
-    transform: translateY(-4px) scale(1.05) !important;
-    box-shadow: 0 0 35px rgba(25, 118, 210, 0.8),
-        0 0 70px rgba(25, 118, 210, 0.5),
-        0 12px 30px rgba(25, 118, 210, 0.4),
-        inset 0 1px 0 rgba(255, 255, 255, 0.4) !important;
-    border-color: #2196F3 !important;
-    background: linear-gradient(135deg, #2196F3 0%, #42A5F5 100%) !important;
+    /* Removed scale(1.05) to stop the aggressive pop-out effect */
+    transform: translateY(-2px) !important; 
+    
+    /* Clean, professional shadow instead of multiple neon glows */
+    box-shadow: 0 6px 15px rgba(25, 118, 210, 0.25),
+                inset 0 1px 0 rgba(255, 255, 255, 0.3) !important;
+                
+    /* Muted border and background */
+    border-color: #1976D2 !important;
+    background: linear-gradient(135deg, #1976D2 0%, #2196F3 100%) !important;
 }
 
 [data-theme="light"] .start-btn:active,
@@ -674,18 +668,35 @@
             inset 0 1px 0 rgba(255, 255, 255, 0.3) !important;
     }
 
-    [data-theme="night"] .difficulty-badge {
-        box-shadow: 0 0 15px rgba(255, 0, 0, 0.4),
-            0 0 30px rgba(194, 41, 61, 0.2),
-            inset 0 1px 0 rgba(255, 255, 255, 0.2) !important;
-    }
+/* Dark Theme - Muted Difficulty Badge */
+[data-theme="night"] .difficulty-badge {
+    background: linear-gradient(135deg, #a62233 0%, #7a0000 100%) !important;
+    color: #FFFFFF !important;
+    border: 1.5px solid rgba(255, 0, 0, 0.3) !important; /* Muted border */
+    /* Minimal shadow, no intense spread */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3) !important;
+    text-shadow: none;
+    font-weight: 700 !important;
+    padding: 6px 16px !important;
+    border-radius: 6px !important;
+    transition: all 0.3s ease;
+    animation: none !important; /* Stops the glowing pulse */
+}
 
-    [data-theme="light"] .difficulty-badge,
-    [data-theme="lofi"] .difficulty-badge {
-        box-shadow: 0 0 15px rgba(25, 118, 210, 0.4),
-            0 0 30px rgba(13, 71, 161, 0.2),
-            inset 0 1px 0 rgba(255, 255, 255, 0.2) !important;
-    }
+  /* Light Theme - Muted Difficulty Badge */
+[data-theme="light"] .difficulty-badge,
+[data-theme="lofi"] .difficulty-badge {
+    background: linear-gradient(135deg, #1976D2 0%, #0D47A1 100%) !important;
+    color: #FFFFFF !important;
+    border: 1.5px solid rgba(13, 71, 161, 0.2) !important;
+    /* Soft shadow instead of glow */
+    box-shadow: 0 4px 8px rgba(25, 118, 210, 0.15) !important;
+    text-shadow: none;
+    font-weight: 700 !important;
+    padding: 6px 16px !important;
+    border-radius: 6px !important;
+    transition: all 0.3s ease;
+    animation: none !important; /* Stops the glowing pulse */
 }
 
 /* Small mobile devices */
