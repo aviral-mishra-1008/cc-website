@@ -125,22 +125,6 @@
         <loc>/cc-website/preview/contact/</loc>
     </url>
     <url>
-        <loc>/cc-website/preview/contrihub/</loc>
-    </url>
-    <url>
-        <loc>/cc-website/preview/contrihub/2024/</loc>
-    </url>
-    <url>
-        <loc>/cc-website/preview/contrihub/2025/</loc>
-    </url>
-    <url>
-        <loc>/cc-website/preview/contrihub/2026/</loc>
-    </url>
-    <url>
-        <loc>/cc-website/preview/contrihub/how-to-participate/</loc>
-        <lastmod>2025-09-01</lastmod>
-    </url>
-    <url>
         <loc>/cc-website/preview/events/</loc>
     </url>
     <url>
@@ -173,10 +157,7 @@
         <lastmod>2026-01-05</lastmod>
     </url>
     <url>
-        <loc>/cc-website/preview/impact/</loc>
-    </url>
-    <url>
-        <loc>/cc-website/preview/impact/2024/</loc>
+        <loc>/cc-website/preview/projects/</loc>
     </url>
     <url>
         <loc>/cc-website/preview/resources/</loc>
