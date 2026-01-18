@@ -125,58 +125,10 @@
         <loc>/cc-website/contact/</loc>
     </url>
     <url>
-        <loc>/cc-website/contrihub/</loc>
-    </url>
-    <url>
-        <loc>/cc-website/contrihub/2024/</loc>
-    </url>
-    <url>
-        <loc>/cc-website/contrihub/2025/</loc>
-    </url>
-    <url>
-        <loc>/cc-website/contrihub/2026/</loc>
-    </url>
-    <url>
-        <loc>/cc-website/contrihub/how-to-participate/</loc>
-        <lastmod>2025-09-01</lastmod>
-    </url>
-    <url>
         <loc>/cc-website/events/</loc>
     </url>
     <url>
-        <loc>/cc-website/events/2024/</loc>
-    </url>
-    <url>
-        <loc>/cc-website/events/2024/intro-to-ai/</loc>
-        <lastmod>2024-03-15</lastmod>
-    </url>
-    <url>
-        <loc>/cc-website/events/2024/winter-code-fest/</loc>
-        <lastmod>2024-12-10</lastmod>
-    </url>
-    <url>
-        <loc>/cc-website/events/2025/</loc>
-    </url>
-    <url>
-        <loc>/cc-website/events/2025/summer-hackathon-2025/</loc>
-        <lastmod>2025-08-22</lastmod>
-    </url>
-    <url>
-        <loc>/cc-website/events/2025/winter-hackathon-2025/</loc>
-        <lastmod>2025-12-20</lastmod>
-    </url>
-    <url>
-        <loc>/cc-website/events/2026/</loc>
-    </url>
-    <url>
-        <loc>/cc-website/events/2026/docker-kubernetes-workshop/</loc>
-        <lastmod>2026-01-05</lastmod>
-    </url>
-    <url>
-        <loc>/cc-website/impact/</loc>
-    </url>
-    <url>
-        <loc>/cc-website/impact/2024/</loc>
+        <loc>/cc-website/projects/</loc>
     </url>
     <url>
         <loc>/cc-website/resources/</loc>
