@@ -74,7 +74,7 @@
 
 [data-theme="light"] .roadmaps-title,
 [data-theme="lofi"] .roadmaps-title {
-    background: linear-gradient(90deg, #003687 0%, #0052CC 25%, #0E3386 50%, #001C3E 75%, #4169E1 100%) !important;
+    background: linear-gradient(135deg, #000C40 0%, #1565C0 50%, #42A5F5 100%) !important;
     -webkit-background-clip: text !important;
     -webkit-text-fill-color: transparent !important;
     background-clip: text !important;
@@ -215,14 +215,15 @@
 /* Light theme - Card border (blue) */
 [data-theme="night"] .roadmap-card-content {
     border-color: #ad7f13 !important;
-        border-width: 10px;
+    border-width: 10px;
 }
+
 /* Light theme - Card border (blue) */
 [data-theme="light"] .roadmap-card-content,
 [data-theme="lofi"] .roadmap-card-content {
     border-color: #1976D2 !important;
     box-shadow: 0 10px 30px rgba(25, 118, 210, 0.15), 0 0 0 2px rgba(25, 118, 210, 0.2);
-        border-width: 10px;
+    border-width: 10px;
 }
 
 [data-theme="light"] .roadmap-card-link:hover .roadmap-card-content,
@@ -249,7 +250,7 @@
 
 [data-theme="light"] .roadmap-card-content h3,
 [data-theme="lofi"] .roadmap-card-content h3 {
-    background: linear-gradient(90deg, #003687 0%, #0052CC 25%, #0E3386 50%, #001C3E 75%, #4169E1 100%) !important;
+    background: linear-gradient(135deg, #000C40 0%, #1565C0 50%, #42A5F5 100%) !important;
     -webkit-background-clip: text !important;
     -webkit-text-fill-color: transparent !important;
     background-clip: text !important;
@@ -377,10 +378,11 @@
 [data-theme="night"] .start-btn {
     background: linear-gradient(135deg, #b88a32 0%, #c99a3d 100%) !important;
     color: #0E0604 !important;
-    border: 2px solid #a67c2d !important; /* Thinner, darker border */
+    border: 2px solid #a67c2d !important;
+    /* Thinner, darker border */
     /* Reduced shadows and glow */
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4), 
-                0 0 10px rgba(255, 199, 88, 0.2) !important;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4),
+        0 0 10px rgba(255, 199, 88, 0.2) !important;
     font-weight: 800 !important;
     text-shadow: none;
     transition: all 0.3s ease;
@@ -405,8 +407,8 @@
 
 [data-theme="night"] .start-btn:hover {
     transform: translateY(-2px) !important;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5), 
-                0 0 15px rgba(255, 199, 88, 0.3) !important;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5),
+        0 0 15px rgba(255, 199, 88, 0.3) !important;
     background: linear-gradient(135deg, #dca73d 0%, #ebb343 100%) !important;
 }
 
@@ -445,12 +447,12 @@
 [data-theme="light"] .start-btn:hover,
 [data-theme="lofi"] .start-btn:hover {
     /* Removed scale(1.05) to stop the aggressive pop-out effect */
-    transform: translateY(-2px) !important; 
-    
+    transform: translateY(-2px) !important;
+
     /* Clean, professional shadow instead of multiple neon glows */
     box-shadow: 0 6px 15px rgba(25, 118, 210, 0.25),
-                inset 0 1px 0 rgba(255, 255, 255, 0.3) !important;
-                
+        inset 0 1px 0 rgba(255, 255, 255, 0.3) !important;
+
     /* Muted border and background */
     border-color: #1976D2 !important;
     background: linear-gradient(135deg, #1976D2 0%, #2196F3 100%) !important;
@@ -670,264 +672,274 @@
             inset 0 1px 0 rgba(255, 255, 255, 0.3) !important;
     }
 
-/* Dark Theme - Muted Difficulty Badge */
-[data-theme="night"] .difficulty-badge {
-    background: linear-gradient(135deg, #a62233 0%, #7a0000 100%) !important;
-    color: #FFFFFF !important;
-    border: 1.5px solid rgba(255, 0, 0, 0.3) !important; /* Muted border */
-    /* Minimal shadow, no intense spread */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3) !important;
-    text-shadow: none;
-    font-weight: 700 !important;
-    padding: 6px 16px !important;
-    border-radius: 6px !important;
-    transition: all 0.3s ease;
-    animation: none !important; /* Stops the glowing pulse */
-}
-
-  /* Light Theme - Muted Difficulty Badge */
-[data-theme="light"] .difficulty-badge,
-[data-theme="lofi"] .difficulty-badge {
-    background: linear-gradient(135deg, #1976D2 0%, #0D47A1 100%) !important;
-    color: #FFFFFF !important;
-    border: 1.5px solid rgba(13, 71, 161, 0.2) !important;
-    /* Soft shadow instead of glow */
-    box-shadow: 0 4px 8px rgba(25, 118, 210, 0.15) !important;
-    text-shadow: none;
-    font-weight: 700 !important;
-    padding: 6px 16px !important;
-    border-radius: 6px !important;
-    transition: all 0.3s ease;
-    animation: none !important; /* Stops the glowing pulse */
-}
-
-/* Small mobile devices */
-@media (max-width: 480px) {
-    .roadmaps-title {
-        font-size: 28px;
-    }
-
-    .roadmaps-subtitle {
-        font-size: 14px;
-    }
-
-    .roadmap-card {
-        min-width: 260px;
-        max-width: 220px;
-    }
-
-    .roadmap-card img {
-        height: 160px;
-    }
-
-    .roadmap-card-content h3 {
-        font-size: 1.1rem;
-    }
-
-    .roadmap-card-content p {
-        font-size: 13px;
-        
-        margin-bottom: 12px;
-    }
-
-    /* Card content adjustment */
-    .roadmap-card-content {
-padding: 12px 16px 16px 16px !important; /* Tightened top padding */
-    }
-
-  .card-header {
-        margin-top: 0 !important;    /* Force title to the top */
-        margin-bottom: 8px !important; /* Tighten space below header */
-        gap: 8px !important;
-    }
-/* 3. Reduce gap between icon and heading */
-    .title-group {
-        gap: 8px !important;
-        margin-bottom: 0 !important;
-    }
-
-  .title-group h2 {
-        font-size: 1.4rem !important; /* Adjusted for better fit */
-        line-height: 1.1 !important;
-        margin: 0 !important;
-    }
-
-    .roadmap-icon {
-        font-size: 1.75rem !important;
-    }
-
-.time-badge {
-        padding: 8px 10px !important;
-        font-size: 0.75rem !important;
-        /* Increase distance from the title above it */
-        margin-top: 12px !important; 
-        /* Ensure it sits on its own line if the title is long */
-        display: inline-flex !important; 
-        align-self: flex-start !important;
-    }
-
-   /* 5. Pull description closer to header */
-    .description {
-        font-size: 0.85rem !important;
-        margin-top: 4px !important;   /* Reduce gap above description */
-        margin-bottom: 16px !important;
-    }
-
-    .card-footer {
-        gap: 10px !important;
-    }
-
-    .difficulty-group {
-        font-size: 0.85rem !important;
-        gap: 10px !important;
-        flex-direction: column;
-        align-items: flex-start !important;
-    }
-
-    .difficulty-group>span {
-        margin-bottom: 6px;
-    }
-
-    .difficulty-badge {
-        padding: 5px 14px !important;
-        font-size: 0.8rem !important;
-        border-radius: 6px !important;
-    }
-
-    .start-btn {
-        padding: 12px 20px !important;
-        font-size: 0.9rem !important;
-        border-width: 2px !important;
-    }
-
-    /* Further reduce animations on mobile for performance */
-    .wobble-outer,
-    .wobble-inner {
-        transition: transform 0.2s ease-out !important;
-    }
-
-    /* Disable pulse animations on mobile to save battery */
-    [data-theme="night"] .difficulty-badge,
-    [data-theme="light"] .difficulty-badge,
-    [data-theme="lofi"] .difficulty-badge {
-        animation: none !important;
-    }
-}
-
-/* Extra small phones (400px and below) */
-@media (max-width: 400px) {
-    .roadmap-card-content {
-        padding: 16px !important;
-    }
-
-    .title-group h2 {
-        font-size: 1.25rem !important;
-    }
-
-    .roadmap-icon {
-        font-size: 1.5rem !important;
-    }
-
-    .time-badge {
-        padding: 4px 8px !important;
-        font-size: 0.7rem !important;
-    }
-
-    .description {
-        font-size: 0.85rem !important;
-        margin-bottom: 16px !important;
-    }
-
-    .difficulty-group {
-        font-size: 0.8rem !important;
-    }
-
-    .difficulty-badge {
-        padding: 4px 12px !important;
-        font-size: 0.75rem !important;
-    }
-
-    .start-btn {
-        padding: 10px 16px !important;
-        font-size: 0.85rem !important;
-        gap: 6px !important;
-    }
-
-    .start-btn span:last-child {
-        font-size: 1.2rem;
-    }
-
-    /* Minimal shadows on very small screens */
-    [data-theme="night"] .start-btn {
-        box-shadow: 0 0 10px rgba(255, 199, 88, 0.4),
-            0 4px 10px rgba(255, 199, 88, 0.2) !important;
-    }
-
-    [data-theme="light"] .start-btn,
-    [data-theme="lofi"] .start-btn {
-        box-shadow: 0 0 10px rgba(25, 118, 210, 0.4),
-            0 4px 10px rgba(25, 118, 210, 0.2) !important;
-    }
-
+    /* Dark Theme - Muted Difficulty Badge */
     [data-theme="night"] .difficulty-badge {
-        box-shadow: 0 0 10px rgba(255, 0, 0, 0.3),
-            inset 0 1px 0 rgba(255, 255, 255, 0.15) !important;
+        background: linear-gradient(135deg, #a62233 0%, #7a0000 100%) !important;
+        color: #FFFFFF !important;
+        border: 1.5px solid rgba(255, 0, 0, 0.3) !important;
+        /* Muted border */
+        /* Minimal shadow, no intense spread */
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3) !important;
+        text-shadow: none;
+        font-weight: 700 !important;
+        padding: 6px 16px !important;
+        border-radius: 6px !important;
+        transition: all 0.3s ease;
+        animation: none !important;
+        /* Stops the glowing pulse */
     }
 
+    /* Light Theme - Muted Difficulty Badge */
     [data-theme="light"] .difficulty-badge,
     [data-theme="lofi"] .difficulty-badge {
-        box-shadow: 0 0 10px rgba(25, 118, 210, 0.3),
-            inset 0 1px 0 rgba(255, 255, 255, 0.15) !important;
-    }
-}
-
-/* Landscape orientation optimizations */
-@media (max-height: 600px) and (orientation: landscape) {
-    .roadmap-card-content {
-        padding: 16px !important;
-    }
-
-    .card-header {
-        margin-bottom: 12px !important;
-    }
-
-    .description {
-        margin-bottom: 16px !important;
-        line-height: 1.4 !important;
+        background: linear-gradient(135deg, #1976D2 0%, #0D47A1 100%) !important;
+        color: #FFFFFF !important;
+        border: 1.5px solid rgba(13, 71, 161, 0.2) !important;
+        /* Soft shadow instead of glow */
+        box-shadow: 0 4px 8px rgba(25, 118, 210, 0.15) !important;
+        text-shadow: none;
+        font-weight: 700 !important;
+        padding: 6px 16px !important;
+        border-radius: 6px !important;
+        transition: all 0.3s ease;
+        animation: none !important;
+        /* Stops the glowing pulse */
     }
 
-    .card-footer {
-        gap: 12px !important;
+    /* Small mobile devices */
+    @media (max-width: 480px) {
+        .roadmaps-title {
+            font-size: 28px;
+        }
+
+        .roadmaps-subtitle {
+            font-size: 14px;
+        }
+
+        .roadmap-card {
+            min-width: 260px;
+            max-width: 220px;
+        }
+
+        .roadmap-card img {
+            height: 160px;
+        }
+
+        .roadmap-card-content h3 {
+            font-size: 1.1rem;
+        }
+
+        .roadmap-card-content p {
+            font-size: 13px;
+
+            margin-bottom: 12px;
+        }
+
+        /* Card content adjustment */
+        .roadmap-card-content {
+            padding: 12px 16px 16px 16px !important;
+            /* Tightened top padding */
+        }
+
+        .card-header {
+            margin-top: 0 !important;
+            /* Force title to the top */
+            margin-bottom: 8px !important;
+            /* Tighten space below header */
+            gap: 8px !important;
+        }
+
+        /* 3. Reduce gap between icon and heading */
+        .title-group {
+            gap: 8px !important;
+            margin-bottom: 0 !important;
+        }
+
+        .title-group h2 {
+            font-size: 1.4rem !important;
+            /* Adjusted for better fit */
+            line-height: 1.1 !important;
+            margin: 0 !important;
+        }
+
+        .roadmap-icon {
+            font-size: 1.75rem !important;
+        }
+
+        .time-badge {
+            padding: 8px 10px !important;
+            font-size: 0.75rem !important;
+            /* Increase distance from the title above it */
+            margin-top: 12px !important;
+            /* Ensure it sits on its own line if the title is long */
+            display: inline-flex !important;
+            align-self: flex-start !important;
+        }
+
+        /* 5. Pull description closer to header */
+        .description {
+            font-size: 0.85rem !important;
+            margin-top: 4px !important;
+            /* Reduce gap above description */
+            margin-bottom: 16px !important;
+        }
+
+        .card-footer {
+            gap: 10px !important;
+        }
+
+        .difficulty-group {
+            font-size: 0.85rem !important;
+            gap: 10px !important;
+            flex-direction: column;
+            align-items: flex-start !important;
+        }
+
+        .difficulty-group>span {
+            margin-bottom: 6px;
+        }
+
+        .difficulty-badge {
+            padding: 5px 14px !important;
+            font-size: 0.8rem !important;
+            border-radius: 6px !important;
+        }
+
+        .start-btn {
+            padding: 12px 20px !important;
+            font-size: 0.9rem !important;
+            border-width: 2px !important;
+        }
+
+        /* Further reduce animations on mobile for performance */
+        .wobble-outer,
+        .wobble-inner {
+            transition: transform 0.2s ease-out !important;
+        }
+
+        /* Disable pulse animations on mobile to save battery */
+        [data-theme="night"] .difficulty-badge,
+        [data-theme="light"] .difficulty-badge,
+        [data-theme="lofi"] .difficulty-badge {
+            animation: none !important;
+        }
     }
 
-    /* Compact landscape style from line 2837 in source */
-    .roadmap-icon {
-        display: none;
+    /* Extra small phones (400px and below) */
+    @media (max-width: 400px) {
+        .roadmap-card-content {
+            padding: 16px !important;
+        }
+
+        .title-group h2 {
+            font-size: 1.25rem !important;
+        }
+
+        .roadmap-icon {
+            font-size: 1.5rem !important;
+        }
+
+        .time-badge {
+            padding: 4px 8px !important;
+            font-size: 0.7rem !important;
+        }
+
+        .description {
+            font-size: 0.85rem !important;
+            margin-bottom: 16px !important;
+        }
+
+        .difficulty-group {
+            font-size: 0.8rem !important;
+        }
+
+        .difficulty-badge {
+            padding: 4px 12px !important;
+            font-size: 0.75rem !important;
+        }
+
+        .start-btn {
+            padding: 10px 16px !important;
+            font-size: 0.85rem !important;
+            gap: 6px !important;
+        }
+
+        .start-btn span:last-child {
+            font-size: 1.2rem;
+        }
+
+        /* Minimal shadows on very small screens */
+        [data-theme="night"] .start-btn {
+            box-shadow: 0 0 10px rgba(255, 199, 88, 0.4),
+                0 4px 10px rgba(255, 199, 88, 0.2) !important;
+        }
+
+        [data-theme="light"] .start-btn,
+        [data-theme="lofi"] .start-btn {
+            box-shadow: 0 0 10px rgba(25, 118, 210, 0.4),
+                0 4px 10px rgba(25, 118, 210, 0.2) !important;
+        }
+
+        [data-theme="night"] .difficulty-badge {
+            box-shadow: 0 0 10px rgba(255, 0, 0, 0.3),
+                inset 0 1px 0 rgba(255, 255, 255, 0.15) !important;
+        }
+
+        [data-theme="light"] .difficulty-badge,
+        [data-theme="lofi"] .difficulty-badge {
+            box-shadow: 0 0 10px rgba(25, 118, 210, 0.3),
+                inset 0 1px 0 rgba(255, 255, 255, 0.15) !important;
+        }
     }
 
-    .description {
-        margin-bottom: 10px !important;
-        line-height: 1.2 !important;
-        display: -webkit-box;
-        -webkit-line-clamp: 2;
-        line-clamp: 2;
-        -webkit-box-orient: vertical;
-        overflow: hidden;
-    }
-}
+    /* Landscape orientation optimizations */
+    @media (max-height: 600px) and (orientation: landscape) {
+        .roadmap-card-content {
+            padding: 16px !important;
+        }
 
-/* Touch device optimizations */
-@media (hover: none) and (pointer: coarse) {
-    .start-btn:active {
-        transform: scale(0.98) !important;
+        .card-header {
+            margin-bottom: 12px !important;
+        }
+
+        .description {
+            margin-bottom: 16px !important;
+            line-height: 1.4 !important;
+        }
+
+        .card-footer {
+            gap: 12px !important;
+        }
+
+        /* Compact landscape style from line 2837 in source */
+        .roadmap-icon {
+            display: none;
+        }
+
+        .description {
+            margin-bottom: 10px !important;
+            line-height: 1.2 !important;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
     }
 
-    .difficulty-badge:active {
-        transform: scale(0.98) !important;
-    }
+    /* Touch device optimizations */
+    @media (hover: none) and (pointer: coarse) {
+        .start-btn:active {
+            transform: scale(0.98) !important;
+        }
 
-    /* Reduce hover effects on touch devices */
-    .roadmap-card-link:hover .roadmap-card-content {
-        transform: none !important;
+        .difficulty-badge:active {
+            transform: scale(0.98) !important;
+        }
+
+        /* Reduce hover effects on touch devices */
+        .roadmap-card-link:hover .roadmap-card-content {
+            transform: none !important;
+        }
     }
 }

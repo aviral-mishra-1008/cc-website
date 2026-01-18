@@ -139,7 +139,7 @@
 
 [data-theme="light"] .hero-title,
 [data-theme="lofi"] .hero-title {
-    background: linear-gradient(90deg, #003687 0%, #0052CC 25%, #0E3386 50%, #001C3E 75%, #4169E1 100%) !important;
+    background: linear-gradient(135deg, #000C40 0%, #1565C0 50%, #42A5F5 100%) !important;
     -webkit-background-clip: text !important;
     -webkit-text-fill-color: transparent !important;
     background-clip: text !important;
@@ -376,7 +376,7 @@
 
 [data-theme="light"] .events-section-title,
 [data-theme="lofi"] .events-section-title {
-    background: linear-gradient(90deg, #003687 0%, #0052CC 25%, #0E3386 50%, #001C3E 75%, #4169E1 100%) !important;
+    background: linear-gradient(135deg, #000C40 0%, #1565C0 50%, #42A5F5 100%) !important;
     -webkit-background-clip: text !important;
     -webkit-text-fill-color: transparent !important;
     background-clip: text !important;
@@ -828,7 +828,7 @@
         margin-bottom: 40px;
     }
 
-   
+
     .events-section-title {
         font-size: 40px;
         letter-spacing: -1px;
@@ -846,15 +846,18 @@
     .events-quote {
         font-size: 16px;
     }
+
     .events-grid {
-        gap: 32px; /* Fixed missing semicolon */
+        gap: 32px;
+        /* Fixed missing semicolon */
         grid-template-columns: 1fr;
     }
 
     .events-controls {
         padding-top: 24px;
         justify-content: center;
-        flex-wrap: nowrap !important; /* Force items to stay in one row */
+        flex-wrap: nowrap !important;
+        /* Force items to stay in one row */
     }
 
     /* Make buttons slightly smaller so they fit better */
@@ -877,9 +880,12 @@
     .events-section-subtitle {
         font-size: 14px;
     }
+
     .events-grid {
-        gap: 24px; /* Even tighter for small phones */
+        gap: 24px;
+        /* Even tighter for small phones */
     }
+
     .events-image-container {
         height: 100;
     }
@@ -898,12 +904,10 @@
     }
 }
 
-@charset "UTF-8";
 
 /* ============================================
    ROADMAPS SCROLL SECTION
-   ============================================
-*/
+   ============================================ */
 
 /* Wrapper and horizontal scroll */
 .lp-roadmaps-scroll-wrapper {
@@ -974,7 +978,7 @@
 
 [data-theme="light"] .lp-roadmaps-title,
 [data-theme="lofi"] .lp-roadmaps-title {
-    background: linear-gradient(90deg, #003687 0%, #0052CC 25%, #0E3386 50%, #001C3E 75%, #4169E1 100%) !important;
+    background: linear-gradient(135deg, #000C40 0%, #1565C0 50%, #42A5F5 100%) !important;
     -webkit-background-clip: text !important;
     -webkit-text-fill-color: transparent !important;
     background-clip: text !important;
@@ -1052,7 +1056,8 @@
     display: flex;
     flex-direction: column;
     overflow: hidden;
-    flex-direction: column; /* Stack image and content vertically */
+    flex-direction: column;
+    /* Stack image and content vertically */
 }
 
 
@@ -1073,12 +1078,15 @@
 /* --- BLUE GLOW ON HOVER: LIGHT THEME --- */
 [data-theme="light"] .lp-roadmap-card:hover,
 [data-theme="lofi"] .lp-roadmap-card:hover {
-    border-color: #1976D2 !important; /* Matches your light theme blue */
-    transform: translateY(-15px) scale(1.03); /* Subtle lift and scale */
+    border-color: #1976D2 !important;
+    /* Matches your light theme blue */
+    transform: translateY(-15px) scale(1.03);
+    /* Subtle lift and scale */
     /* Vibrant blue glow effect */
-    box-shadow: 0 20px 40px rgba(25, 118, 210, 0.25), 
-                0 0 30px rgba(25, 118, 210, 0.15) !important;
+    box-shadow: 0 20px 40px rgba(25, 118, 210, 0.25),
+        0 0 30px rgba(25, 118, 210, 0.15) !important;
 }
+
 /* Timeline connection point */
 .lp-roadmap-card::after {
     content: '';
@@ -1119,15 +1127,18 @@
 
 /* Card Content */
 .lp-roadmap-card-content {
-   /* Explicitly remove the 2px border/shadow causing the line */
+    /* Explicitly remove the 2px border/shadow causing the line */
     border: none !important;
     box-shadow: none !important;
     padding: 20px;
     margin: 0;
     display: flex;
-    flex-direction: column; /* Internal stacking for text and button */
-    flex-grow: 1; /* Occupies all leftover space below the image */
-    justify-content: space-between; /* Pushes button to bottom */
+    flex-direction: column;
+    /* Internal stacking for text and button */
+    flex-grow: 1;
+    /* Occupies all leftover space below the image */
+    justify-content: space-between;
+    /* Pushes button to bottom */
 }
 
 
@@ -1140,6 +1151,7 @@
 [data-theme="night"] .lp-roadmap-card-content {
     border-color: #ad7f13 !important;
 }
+
 /* Light theme - Card border (blue) */
 [data-theme="light"] .lp-roadmap-card-content,
 [data-theme="lofi"] .lp-roadmap-card-content {
@@ -1193,7 +1205,8 @@
 
 /* --- UPDATED ACTION BUTTON --- */
 .lp-roadmap-btn-action {
-    margin-top: auto; /* Forces button to the bottom */
+    margin-top: auto;
+    /* Forces button to the bottom */
     width: fit-content;
     padding: 12px 24px;
     /* Removed gradient for a flatter look to match your request */
@@ -1203,7 +1216,8 @@
     display: inline-block;
     transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
     font-size: 14px;
-    border: none !important; /* Strips the transparent border line */
+    border: none !important;
+    /* Strips the transparent border line */
     text-transform: uppercase;
     letter-spacing: 0.03em;
     box-shadow: none !important;
@@ -1213,6 +1227,7 @@
     transform: translateY(-2px);
     background: #5e0a0a !important;
 }
+
 [data-theme="light"] .lp-roadmap-btn-action,
 [data-theme="lofi"] .lp-roadmap-btn-action {
     background: linear-gradient(135deg, #1976D2 0%, #0D47A1 100%);
@@ -1363,9 +1378,10 @@
     /* Pure white text for maximum contrast against maroon */
     color: #FFFFFF !important;
     border: 1px solid #B03030 !important;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5), 
-                0 0 10px rgba(128, 0, 0, 0.2) !important;
-    font-weight: 900; /* Extra bold to ensure text is sharp */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5),
+        0 0 10px rgba(128, 0, 0, 0.2) !important;
+    font-weight: 900;
+    /* Extra bold to ensure text is sharp */
     border-radius: 12px;
     text-decoration: none;
     text-transform: uppercase;
@@ -1388,7 +1404,7 @@
     margin-top: auto;
     width: fit-content;
     padding: 12px 24px;
-    background: #1976D2 !important; 
+    background: #1976D2 !important;
     color: #FFFFFF !important;
     border-radius: 12px;
     font-weight: 900;

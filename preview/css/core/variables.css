@@ -52,8 +52,45 @@
     /* Green for success */
     --color-warning: oklch(0.80 0.15 75);
     /* Gold for warnings (matches primary) */
+    /* Red for errors (matches accent) */
     --color-error: oklch(0.55 0.20 20);
     /* Red for errors (matches accent) */
+}
+
+/* Light Theme Variables */
+[data-theme="light"],
+[data-theme="lofi"] {
+    /* PRIMARY COLOR - Blue (#1976D2) */
+    --color-primary: oklch(0.55 0.25 260);
+    --color-primary-content: oklch(1 0 0);
+
+    /* SECONDARY COLOR */
+    --color-secondary: oklch(0.60 0.20 300);
+    --color-secondary-content: oklch(1 0 0);
+
+    /* ACCENT COLOR */
+    --color-accent: oklch(0.55 0.20 20);
+    --color-accent-content: oklch(1 0 0);
+
+    /* NEUTRAL COLOR */
+    --color-neutral: oklch(0.90 0.05 260);
+    --color-neutral-content: oklch(0.20 0.05 260);
+
+    /* BACKGROUND COLORS */
+    --color-base-100: oklch(1 0 0);
+    /* White */
+    --color-base-200: oklch(0.96 0.01 260);
+    /* Very Light Gray */
+    --color-base-300: oklch(0.92 0.02 260);
+    /* Light Gray */
+    --color-base-content: oklch(0.15 0.02 260);
+    /* Dark Text */
+
+    /* STATE COLORS */
+    --color-info: oklch(0.65 0.15 240);
+    --color-success: oklch(0.65 0.15 140);
+    --color-warning: oklch(0.80 0.15 75);
+    --color-error: oklch(0.55 0.20 20);
 }
 
 /* Roadmap Variables */

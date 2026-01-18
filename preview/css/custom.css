@@ -23,6 +23,7 @@
 /* 3. Page-Specific Styles */
 @import url('pages/landing.css');
 @import url('pages/projects.css');
+@import url('pages/team.css');
 @import url('pages/roadmaps.css');
 
 /* End of Imports */

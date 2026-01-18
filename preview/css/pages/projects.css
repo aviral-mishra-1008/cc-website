@@ -20,6 +20,14 @@
     color: var(--color-base-content);
 }
 
+[data-theme="light"] .projects-title,
+[data-theme="lofi"] .projects-title {
+    background: linear-gradient(135deg, #000C40 0%, #1565C0 50%, #42A5F5 100%) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    background-clip: text !important;
+}
+
 .projects-subtitle {
     font-size: 1.25rem;
     color: var(--color-base-content);
