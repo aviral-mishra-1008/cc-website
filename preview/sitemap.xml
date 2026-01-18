@@ -83,12 +83,6 @@
         <lastmod>2025-06-18</lastmod>
     </url>
     <url>
-        <loc>/cc-website/preview/blog/page/1/</loc>
-    </url>
-    <url>
-        <loc>/cc-website/preview/blog/page/2/</loc>
-    </url>
-    <url>
         <loc>/cc-website/preview/categories/</loc>
     </url>
     <url>
@@ -440,12 +434,6 @@
         <loc>/cc-website/preview/tags/rest/page/1/</loc>
     </url>
     <url>
-        <loc>/cc-website/preview/tags/security/</loc>
-    </url>
-    <url>
-        <loc>/cc-website/preview/tags/security/page/1/</loc>
-    </url>
-    <url>
         <loc>/cc-website/preview/tags/terminal/</loc>
     </url>
     <url>
@@ -468,6 +456,12 @@
     </url>
     <url>
         <loc>/cc-website/preview/tags/web-development/page/1/</loc>
+    </url>
+    <url>
+        <loc>/cc-website/preview/tags/web/</loc>
+    </url>
+    <url>
+        <loc>/cc-website/preview/tags/web/page/1/</loc>
     </url>
     <url>
         <loc>/cc-website/preview/team/</loc>
