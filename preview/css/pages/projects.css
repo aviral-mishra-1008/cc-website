@@ -3,16 +3,16 @@
 .projects-container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 4rem 1.5rem;
+    padding: 40px 20px 80px;
 }
 
 .projects-header {
     text-align: center;
-    margin-bottom: 4rem;
+    margin-bottom: 2rem;
 }
 
 .projects-title {
-    font-size: 3rem;
+    font-size: 3.5rem;
     font-weight: 800;
     letter-spacing: -0.03em;
     margin-bottom: 1rem;

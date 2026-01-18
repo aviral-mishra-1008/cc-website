@@ -54,14 +54,14 @@
 .roadmaps-intro-text {
     text-align: center;
     z-index: 10;
-    margin-bottom: 50px;
+    margin-bottom: 2rem;
     padding: 0 20px;
     animation: slideUp 0.8s ease-out;
 }
 
 /* Titles and Text */
 .roadmaps-title {
-    font-size: 60px;
+    font-size: 3.5rem;
     font-weight: 800;
     margin-bottom: 10px;
     letter-spacing: -0.03em;
