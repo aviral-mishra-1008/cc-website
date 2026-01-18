@@ -83,89 +83,77 @@
     </div>
     {% endif %}
 
-    {# Section 3: Club Leads (Design & Marketing) #}
-    {% if data.design or data.marketing %}
+    {# Section 3: Design Team #}
+    {% if data.design %}
     <div class="team-section">
-        <h2 class="section-title">Club Leads</h2>
-        <div class="leads-grid-wrapper">
-
-            {% if data.design %}
-            <div class="sub-group">
-                <h3 class="sub-group-title">Design Team</h3>
-                <div class="team-grid small-grid">
-                    {% for member in data.design %}
-                    <div class="team-card lead-card">
-                        <div class="card-image-wrapper">
-                            <img src="{{ member.image }}" alt="{{ member.name }}" class="card-image">
-                        </div>
-                        <div class="card-content">
-                            <h3 class="member-name">{{ member.name }}</h3>
-                            <p class="member-role">{{ member.role }}</p>
-                            <div class="social-bar">
-                                {% if member.linkedin %}
-                                <a href="{{ member.linkedin }}" target="_blank" rel="noopener noreferrer"
-                                    class="social-link">
-                                    <i class="fa-brands fa-linkedin"></i>
-                                </a>
-                                {% endif %}
-                                {% if member.portfolio %}
-                                <a href="{{ member.portfolio }}" target="_blank" rel="noopener noreferrer"
-                                    class="social-link portfolio-link">
-                                    <i class="fa-solid fa-globe"></i>
-                                </a>
-                                {% endif %}
-                                {% if member.instagram %}
-                                <a href="{{ member.instagram }}" target="_blank" rel="noopener noreferrer"
-                                    class="social-link">
-                                    <i class="fa-brands fa-instagram"></i>
-                                </a>
-                                {% endif %}
-                            </div>
-                        </div>
+        <h2 class="section-title">Design Team</h2>
+        <div class="team-grid small-grid">
+            {% for member in data.design %}
+            <div class="team-card lead-card">
+                <div class="card-image-wrapper">
+                    <img src="{{ member.image }}" alt="{{ member.name }}" class="card-image">
+                </div>
+                <div class="card-content">
+                    <h3 class="member-name">{{ member.name }}</h3>
+                    <p class="member-role">{{ member.role }}</p>
+                    <div class="social-bar">
+                        {% if member.linkedin %}
+                        <a href="{{ member.linkedin }}" target="_blank" rel="noopener noreferrer" class="social-link">
+                            <i class="fa-brands fa-linkedin"></i>
+                        </a>
+                        {% endif %}
+                        {% if member.portfolio %}
+                        <a href="{{ member.portfolio }}" target="_blank" rel="noopener noreferrer"
+                            class="social-link portfolio-link">
+                            <i class="fa-solid fa-globe"></i>
+                        </a>
+                        {% endif %}
+                        {% if member.instagram %}
+                        <a href="{{ member.instagram }}" target="_blank" rel="noopener noreferrer" class="social-link">
+                            <i class="fa-brands fa-instagram"></i>
+                        </a>
+                        {% endif %}
                     </div>
-                    {% endfor %}
                 </div>
             </div>
-            {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+    {% endif %}
 
-            {% if data.marketing %}
-            <div class="sub-group">
-                <h3 class="sub-group-title">Marketing Team</h3>
-                <div class="team-flex-center">
-                    {% for member in data.marketing %}
-                    <div class="team-card lead-card">
-                        <div class="card-image-wrapper">
-                            <img src="{{ member.image }}" alt="{{ member.name }}" class="card-image">
-                        </div>
-                        <div class="card-content">
-                            <h3 class="member-name">{{ member.name }}</h3>
-                            <p class="member-role">{{ member.role }}</p>
-                            <div class="social-bar">
-                                {% if member.linkedin %}
-                                <a href="{{ member.linkedin }}" target="_blank" rel="noopener noreferrer"
-                                    class="social-link">
-                                    <i class="fa-brands fa-linkedin"></i>
-                                </a>
-                                {% endif %}
-                                {% if member.email %}
-                                <a href="mailto:{{ member.email }}" class="social-link">
-                                    <i class="fa-solid fa-envelope"></i>
-                                </a>
-                                {% endif %}
-                                {% if member.instagram %}
-                                <a href="{{ member.instagram }}" target="_blank" rel="noopener noreferrer"
-                                    class="social-link">
-                                    <i class="fa-brands fa-instagram"></i>
-                                </a>
-                                {% endif %}
-                            </div>
-                        </div>
+    {# Section 4: Marketing Team #}
+    {% if data.marketing %}
+    <div class="team-section">
+        <h2 class="section-title">Marketing Team</h2>
+        <div class="team-flex-center">
+            {% for member in data.marketing %}
+            <div class="team-card lead-card">
+                <div class="card-image-wrapper">
+                    <img src="{{ member.image }}" alt="{{ member.name }}" class="card-image">
+                </div>
+                <div class="card-content">
+                    <h3 class="member-name">{{ member.name }}</h3>
+                    <p class="member-role">{{ member.role }}</p>
+                    <div class="social-bar">
+                        {% if member.linkedin %}
+                        <a href="{{ member.linkedin }}" target="_blank" rel="noopener noreferrer" class="social-link">
+                            <i class="fa-brands fa-linkedin"></i>
+                        </a>
+                        {% endif %}
+                        {% if member.email %}
+                        <a href="mailto:{{ member.email }}" class="social-link">
+                            <i class="fa-solid fa-envelope"></i>
+                        </a>
+                        {% endif %}
+                        {% if member.instagram %}
+                        <a href="{{ member.instagram }}" target="_blank" rel="noopener noreferrer" class="social-link">
+                            <i class="fa-brands fa-instagram"></i>
+                        </a>
+                        {% endif %}
                     </div>
-                    {% endfor %}
                 </div>
             </div>
-            {% endif %}
-
+            {% endfor %}
         </div>
     </div>
     {% endif %}

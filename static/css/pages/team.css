@@ -97,22 +97,7 @@
     }
 }
 
-/* Sub-group layout */
-.leads-grid-wrapper {
-    display: flex;
-    flex-direction: column;
-    gap: 4rem;
-}
 
-.sub-group-title {
-    font-size: 1.2rem;
-    font-weight: 600;
-    color: var(--color-primary);
-    margin-bottom: 1.5rem;
-    text-align: center;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-}
 
 /* Card Styling */
 .team-card {
