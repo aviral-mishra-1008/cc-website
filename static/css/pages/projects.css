@@ -598,12 +598,14 @@
     font-weight: 700;
     color: var(--color-base-content);
     opacity: 0.5;
-    padding: 0.5rem 1rem;
+    padding: 0.55rem 1.1rem;
     background: transparent;
-    border: 1px solid transparent;
-    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 199, 88, 0.2);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     text-transform: uppercase;
     letter-spacing: 0.05em;
+    position: relative;
+    overflow: hidden;
     
     /* Angular button shape */
     clip-path: polygon(
@@ -611,15 +613,73 @@
     );
 }
 
+/* Shimmer effect background */
+.view-code::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent 0%,
+        rgba(255, 199, 88, 0.3) 50%,
+        transparent 100%
+    );
+    transition: left 0.5s ease;
+    z-index: -1;
+}
+
+/* Glow ring effect */
+.view-code::after {
+    content: '';
+    position: absolute;
+    inset: -2px;
+    background: linear-gradient(135deg, var(--color-primary), var(--color-accent));
+    opacity: 0;
+    z-index: -2;
+    transition: opacity 0.3s ease;
+    clip-path: polygon(
+        10px 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%, 0 10px
+    );
+}
+
+.view-code:hover {
+    opacity: 1;
+    color: var(--color-primary);
+    border-color: var(--color-primary);
+    transform: scale(1.05);
+    box-shadow: 0 5px 20px -5px rgba(255, 199, 88, 0.4);
+}
+
+.view-code:hover::before {
+    left: 100%;
+}
+
+.view-code:hover::after {
+    opacity: 0.15;
+}
+
 .project-card:hover .view-code {
     opacity: 1;
     color: var(--color-base-100);
     background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-accent) 100%);
     border-color: transparent;
+    box-shadow: 
+        0 8px 25px -5px rgba(255, 199, 88, 0.5),
+        0 0 20px -5px var(--color-primary);
+}
+
+.project-card:hover .view-code:hover {
+    transform: scale(1.08) translateX(3px);
+    box-shadow: 
+        0 10px 30px -5px rgba(255, 199, 88, 0.6),
+        0 0 30px -5px var(--color-primary);
 }
 
 .view-code i {
-    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     font-size: 0.9rem;
 }
 
@@ -627,11 +687,48 @@
     transform: translateX(5px);
 }
 
+.project-card:hover .view-code:hover i {
+    transform: translateX(8px);
+    animation: iconPulse 0.5s ease;
+}
+
 /* Light theme view code */
+[data-theme="light"] .view-code,
+[data-theme="lofi"] .view-code {
+    border-color: rgba(21, 101, 192, 0.2);
+}
+
+[data-theme="light"] .view-code::before,
+[data-theme="lofi"] .view-code::before {
+    background: linear-gradient(
+        90deg,
+        transparent 0%,
+        rgba(21, 101, 192, 0.2) 50%,
+        transparent 100%
+    );
+}
+
+[data-theme="light"] .view-code:hover,
+[data-theme="lofi"] .view-code:hover {
+    color: #1565C0;
+    border-color: #1565C0;
+    box-shadow: 0 5px 20px -5px rgba(21, 101, 192, 0.3);
+}
+
 [data-theme="light"] .project-card:hover .view-code,
 [data-theme="lofi"] .project-card:hover .view-code {
     background: linear-gradient(135deg, #1565C0 0%, #42A5F5 100%);
     color: white;
+    box-shadow: 
+        0 8px 25px -5px rgba(21, 101, 192, 0.4),
+        0 0 20px -5px #1565C0;
+}
+
+[data-theme="light"] .project-card:hover .view-code:hover,
+[data-theme="lofi"] .project-card:hover .view-code:hover {
+    box-shadow: 
+        0 10px 30px -5px rgba(21, 101, 192, 0.5),
+        0 0 30px -5px #1565C0;
 }
 
 /* ============================================
