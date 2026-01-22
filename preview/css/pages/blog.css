@@ -12,15 +12,18 @@
 /* --- Header --- */
 .blog-header {
     text-align: center;
-    margin-bottom: 3rem;
+    margin-bottom: 4rem;
+    position: relative;
+    z-index: 1;
 }
 
 .blog-title {
-    font-size: 3.5rem;
-    font-weight: 800;
+    font-size: clamp(2.5rem, 6vw, 4rem);
+    font-weight: 900;
     margin-bottom: 1rem;
-    letter-spacing: -0.02em;
+    letter-spacing: -0.04em;
     color: var(--color-base-content);
+    display: inline-block;
 }
 
 /* Premium Gradient Override */
@@ -33,19 +36,19 @@
 }
 
 [data-theme="night"] .blog-title {
-    background: linear-gradient(90deg, #DA7138 0%, #EC9E6E 33%, #ECB163 66%, #ECC475 100%);
+    background: linear-gradient(135deg, #FFC758 0%, #FFD700 50%, #FFA500 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+    text-shadow: 0 0 60px rgba(255, 199, 88, 0.3);
 }
 
 .blog-description {
     font-size: 1.2rem;
     color: var(--color-base-content);
-    opacity: 0.8;
-    line-height: 1.6;
+    opacity: 0.6;
+    line-height: 1.7;
     max-width: 600px;
-    margin: 0 auto;
     margin: 0 auto;
 }
 

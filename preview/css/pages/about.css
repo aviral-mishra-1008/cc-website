@@ -12,16 +12,27 @@
 
 .about-header {
     text-align: center;
-    margin-bottom: 2rem;
+    margin-bottom: 4rem;
+    position: relative;
+    z-index: 1;
 }
 
 .about-title {
-    font-size: 3.5rem;
-    font-weight: 800;
-    letter-spacing: -0.03em;
+    font-size: clamp(2.5rem, 6vw, 4rem);
+    font-weight: 900;
+    letter-spacing: -0.04em;
     margin-bottom: 1rem;
     font-family: var(--font-main);
     color: var(--color-base-content);
+    display: inline-block;
+}
+
+[data-theme="night"] .about-title {
+    background: linear-gradient(135deg, #FFC758 0%, #FFD700 50%, #FFA500 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-shadow: 0 0 60px rgba(255, 199, 88, 0.3);
 }
 
 [data-theme="light"] .about-title,
@@ -33,12 +44,12 @@
 }
 
 .about-subtitle {
-    font-size: 1.25rem;
+    font-size: 1.2rem;
     color: var(--color-base-content);
-    opacity: 0.7;
+    opacity: 0.6;
     max-width: 700px;
     margin: 0 auto;
-    line-height: 1.6;
+    line-height: 1.7;
 }
 
 /* Content Styling */

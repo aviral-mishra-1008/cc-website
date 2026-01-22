@@ -7,14 +7,42 @@
 
 /* Wrapper and horizontal scroll */
 .roadmaps-container {
-    max-width: 1200px;
+    max-width: 1400px;
     margin: 0 auto;
-    padding: 40px 20px 80px;
+    padding: 60px 24px 100px;
+    position: relative;
+}
+
+/* ============================================
+   GRID LAYOUT
+   ============================================ */
+
+.roadmaps-grid {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 2.5rem;
+    position: relative;
+    z-index: 1;
+}
+
+@media (min-width: 640px) {
+    .roadmaps-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1024px) {
+    .roadmaps-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2.5rem;
+    }
 }
 
 .roadmaps-header {
     text-align: center;
-    margin-bottom: 2rem;
+    margin-bottom: 4rem;
+    position: relative;
+    z-index: 1;
 }
 
 .roadmaps-scroll-wrapper {
@@ -72,15 +100,17 @@
 
 /* Titles and Text */
 .roadmaps-title {
-    font-size: 3.5rem;
-    font-weight: 800;
+    font-size: clamp(2.5rem, 6vw, 4rem);
+    font-weight: 900;
     margin-bottom: 1rem;
-    /* Match team.css */
-    letter-spacing: -0.03em;
-    background: linear-gradient(90deg, #DA7138 0%, #EC9E6E 33%, #ECB163 66%, #ECC475 100%) !important;
+    letter-spacing: -0.04em;
+    font-family: var(--font-main);
+    display: inline-block;
+    background: linear-gradient(135deg, #FFC758 0%, #FFD700 50%, #FFA500 100%) !important;
     -webkit-background-clip: text !important;
     -webkit-text-fill-color: transparent !important;
     background-clip: text !important;
+    text-shadow: 0 0 60px rgba(255, 199, 88, 0.3);
 }
 
 [data-theme="light"] .roadmaps-title,
@@ -92,11 +122,12 @@
 }
 
 .roadmaps-subtitle {
-    font-size: 1.25rem;
-    /* Match team.css (was 18px) */
+    font-size: 1.2rem;
     color: var(--color-base-content);
-    /* Match team.css structure */
-    opacity: 0.7;
+    opacity: 0.6;
+    max-width: 500px;
+    margin: 0 auto;
+    line-height: 1.7;
 }
 
 [data-theme="light"] .roadmaps-subtitle,
