@@ -525,7 +525,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         
         <div class="blog-card" data-title="getting started with react hooks: a complete guide"
-            data-tags="react javascript web-development frontend tutorial tutorial">
+            data-tags="react javascript web-development frontend tutorial">
             <div class="card-header-row">
                 
                 <span class="card-badge">NEW</span>
@@ -569,8 +569,6 @@ document.addEventListener('DOMContentLoaded', function() {
                     <button class="meta-tag filter-trigger" data-filter="web-development">#web-development</button>
                     
                     <button class="meta-tag filter-trigger" data-filter="frontend">#frontend</button>
-                    
-                    <button class="meta-tag filter-trigger" data-filter="tutorial">#tutorial</button>
                     
                     
                 </div>
@@ -1321,7 +1319,14 @@ document.addEventListener('DOMContentLoaded', function() {
     .filter-trigger {
         background: none;
         border: none;
-        padding: 0;
+        padding: 0px;
+        cursor: pointer;
+    }
+
+    .meta-tag {
+        background: none;
+        border: none;
+        padding: 5px;
         cursor: pointer;
     }
 
@@ -1347,6 +1352,7 @@ document.addEventListener('DOMContentLoaded', function() {
     .card-title a:hover {
         color: var(--color-primary);
     }
+
 </style>
 
 <script>
