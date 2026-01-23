@@ -96,6 +96,11 @@ h3,
     color: #FFFFFF !important;
 }
 
+.card-title:after {
+    display: none !important;
+}
+
+
 /* 6. Body Text */
 [data-theme="night"] p,
 [data-theme="night"] span,
