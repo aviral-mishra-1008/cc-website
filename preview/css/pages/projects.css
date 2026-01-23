@@ -498,6 +498,7 @@
 [data-theme="lofi"] .project-card:hover .tech-badge {
     box-shadow: 0 4px 15px -5px rgba(21, 101, 192, 0.3);
     border-color: #1565C0;
+    background: linear-gradient(135deg, rgba(21, 101, 192, 0.2) 0%, rgba(66, 165, 245, 0.15) 100%);
 }
 
 /* ============================================
@@ -560,6 +561,15 @@
 }
 
 .avatar-wrapper:first-child {
+    margin-left: 0;
+}
+
+/* Increased overlap for many contributors (more than 4) */
+.avatar-stack-many .avatar-wrapper {
+    margin-left: -16px;
+}
+
+.avatar-stack-many .avatar-wrapper:first-child {
     margin-left: 0;
 }
 
