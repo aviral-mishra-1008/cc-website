@@ -101,7 +101,6 @@ def main():
             f"I've scanned `{target_file.filename}` to save the team some time:\n\n"
             f"{analysis}\n\n"
             f"---\n"
-            f"*Generated via Gemini 1.5 Flash (Free Tier)*"
         )
         
         pr.create_issue_comment(comment_body)
