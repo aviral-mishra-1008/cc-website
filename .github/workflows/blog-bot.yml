@@ -1,7 +1,7 @@
 name: Blog Review Bot
 
 on:
-  pull_request:
+  pull_request_target:
     types: [opened, synchronize]
     paths:
       - 'content/blog/**.md'
@@ -14,21 +14,18 @@ jobs:
       contents: read       
 
     steps:
-      - name: Checkout Code
+      - name: Checkout Trusted Script
         uses: actions/checkout@v4
+        with:
+          persist-credentials: false
 
       - name: Set up Python
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v5 
         with:
           python-version: '3.10'
 
       - name: Install Dependencies
         run: pip install PyGithub google-generativeai
-
-      - name: Overwrite Script with Trusted Version
-        run: |
-          git fetch origin main
-          git checkout origin/main -- .github/scripts/summarize_pr.py
 
       - name: Run AI Summarizer
         env:

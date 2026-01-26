@@ -89,6 +89,26 @@ def main():
         print(f"Starting analysis for PR #{PR_NUMBER} in repo {REPO_NAME}...")
 
         files = pr.get_files()
+        
+        # --- SCOPE CHECK ---
+        # We strictly allow changes ONLY in 'content/blog/'.
+        # Any change outside this directory triggers a "Scope Warning" and we skip analysis.
+        non_blog_files = [f.filename for f in files if not f.filename.startswith('content/blog/')]
+
+        if non_blog_files:
+            print(f"Skipping AI analysis. Found changes outside 'content/blog/': {non_blog_files}")
+            msg = (
+                "## ⚠️ Scope Notice\n\n"
+                "This PR contains changes beyond the `content/blog/` directory. "
+                "The AI Blog Review Bot focuses on content only.\n\n"
+                "**Code Reviewer, please pay attention to changes in the following files:**\n"
+            )
+            for f in non_blog_files:
+                msg += f"- `{f}`\n"
+            
+            pr.create_issue_comment(msg)
+            return
+
         blog_files = [f for f in files if f.filename.startswith('content/blog/') and f.filename.endswith('.md') and f.status != 'removed']
 
         if not blog_files:
@@ -107,6 +127,7 @@ def main():
 
         for tf in target_files:
             try:
+                #never run a command here
                 raw_content = repo.get_contents(tf.filename, ref=pr.head.sha).decoded_content.decode()
                 word_count = len(raw_content.split())
                 total_word_count += word_count
