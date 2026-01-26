@@ -25,9 +25,15 @@ jobs:
       - name: Install Dependencies
         run: pip install PyGithub google-generativeai
 
+      - name: Overwrite Script with Trusted Version
+        run: |
+          git fetch origin main
+          git checkout origin/main -- .github/scripts/summarize_pr.py
+
       - name: Run AI Summarizer
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           PR_NUMBER: ${{ github.event.pull_request.number }}
+          PROD: ${{ vars.PROD || 'true' }}
         run: python .github/scripts/summarize_pr.py

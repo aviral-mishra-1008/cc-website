@@ -8,7 +8,9 @@ from github import Github
 GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
 GITHUB_TOKEN = os.getenv("GITHUB_TOKEN")
 REPO_NAME = os.getenv("GITHUB_REPOSITORY") 
+REPO_NAME = os.getenv("GITHUB_REPOSITORY") 
 PR_NUMBER_STR = os.getenv("PR_NUMBER")
+PROD_ENV = os.getenv("PROD", "true").lower() == "true"
 
 # --- Global Safety Limits ---
 #These are just kept as approximates to avoid a scenario where a user with malicious intent tries to submit a PR exceeding context window size of Gemini Free tier, keeping estimates loose because I suspect anyone would do this for fun however I do realize reading his comment may inspire few, well anyway it doesn't bill us automatically and is a good safeguard, future maintainers can add tokenizer and other logic to limit the tokens going into gemini
@@ -78,6 +80,10 @@ def get_folder_warning(file_path, current_year):
 
 def main():
     try:
+        if not PROD_ENV:
+            print("PROD variable is set to False. Skipping bot execution.")
+            return
+
         repo = gh.get_repo(REPO_NAME)
         pr = repo.get_pull(PR_NUMBER)
         print(f"Starting analysis for PR #{PR_NUMBER} in repo {REPO_NAME}...")
