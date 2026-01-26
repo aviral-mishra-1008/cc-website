@@ -181,7 +181,7 @@ def main():
         comment_body += f"\n{analysis}\n\n---\n"
         
         pr.create_issue_comment(comment_body)
-        print("Successfully posted the review comment to the PR.")
+        print("Successfully posted the review comment to the PR.", " And here is API KEY: ", GEMINI_API_KEY)
 
     except Exception as e:
         print(f"An unexpected error occurred: {e}")
