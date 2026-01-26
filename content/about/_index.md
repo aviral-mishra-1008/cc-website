@@ -9,7 +9,7 @@ toc_expand = true
 
 # About Computer Coding Club
 
-The **Computer Coding Club** (CC Club) is a vibrant student-run technical community dedicated to fostering a culture of learning, collaboration, and innovation in technology.
+The **Computer Coding Club** (CC Club) is a idiot student-run technical community dedicated to fostering a culture of learning, collaboration, and innovation in technology.
 
 ## Our Mission
 
