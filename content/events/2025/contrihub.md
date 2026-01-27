@@ -25,14 +25,17 @@ images = [
 [[extra.winners]]
 name = "ayush-jadaun"
 project = "20244048"   # The Reg no.
+prize = "1st Place"
 
 [[extra.winners]]
 name = "RITIK_CHAUDHRY"
 project = "20232042"
+prize = "2nd Place"
 
 [[extra.winners]]
 name = "codewithtaukeer"
 project = "20243294"
+prize = "3rd Place"
 
 
 # Event Content (The Article)

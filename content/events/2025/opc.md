@@ -23,23 +23,23 @@ images = [
 [[extra.winners]]
 name = "Kaustubh Miglani"
 Codeforces_Id = "Kira_1234"
-title = "Rank 1"
+prize = "Rank 1"
 
 [[extra.winners]]
 name = "Siddharth Joshi"
 Codeforces_Id = "SiddharthJoshi"
-title = "Rank 2"
+prize = "Rank 2"
 
 [[extra.winners]]
 name = "Grecil Unadkat"
 Codeforces_Id = "grecil"
-title = "Rank 3"       
+prize = "Rank 3"
 
 # Add more winners if needed (Honorable Mentions)...
 [[extra.winners]]
 name = "Anant Ojha"
 Codeforces_Id = "serialcomder"
-title = "Fastest Problem Solvers"
+prize = "Fastest Problem Solvers"
 
 +++
 

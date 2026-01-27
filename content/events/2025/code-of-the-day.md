@@ -27,26 +27,26 @@ images = [
 [[extra.winners]]
 name = "Surya Pratap Singh"
 Codeforces_Id = "late_night_dreams"
-title = "Rank 1"
+prize = "Rank 1"
 
 
 [[extra.winners]]
 name = "Shubhranshu Mishra"
 Codeforces_Id = "NPsolved.cpp"
-title = "Rank 2"
+prize = "Rank 2"
 
 
 [[extra.winners]]
 name = "Shaurya Pratap Singh"
 Codeforces_Id = "ChickenTamer"
-title = "Rank 3"
+prize = "Rank 3"
 
 # Add more winners if needed (Honorable Mentions)...
 
 [[extra.winners]]
 name = "Ravindra Rinwa"
 Codeforces_Id = "MCP_Server"
-title = "Special Mention"
+prize = "Special Mention"
 
 +++
 
