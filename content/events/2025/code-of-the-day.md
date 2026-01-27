@@ -22,7 +22,6 @@ images = [
 ]
 
 # --- Winners (The Podium) ---
-# List the Top 3 winners here. They appear in the "Winners" section at the top.
 
 [[extra.winners]]
 name = "Surya Pratap Singh"
@@ -41,7 +40,7 @@ name = "Shaurya Pratap Singh"
 Codeforces_Id = "ChickenTamer"
 prize = "Rank 3"
 
-# Add more winners if needed (Honorable Mentions)...
+# (Honorable Mentions)...
 
 [[extra.winners]]
 name = "Ravindra Rinwa"

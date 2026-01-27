@@ -26,7 +26,7 @@ images = [
 ]
 
 # --- Winners (The Podium) ---
-# List the Top 3 winners here. They appear in the "Winners" section at the top.
+
 # DEVJAM
 [[extra.winners]]
 name = "4 sum"
@@ -92,13 +92,6 @@ category = "CodeStart"
 
 
 # --- Featured Projects (The Showcase) ---
-# IMPORTANT: You must list the Top 3 projects here so they get a detailed card.
-# You can also add other cool projects that didn't win but are impressive.
-# LINK INSTRUCTIONS:
-# - You need AT LEAST ONE link for the project to look good.
-# - It can be `github`, `demo`, OR `devfolio`. You don't need all types.
-# - See the examples below for different combinations.
-
 
 [[extra.projects]]
 name = "Sign It or Miss It"

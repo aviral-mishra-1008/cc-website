@@ -32,7 +32,7 @@ images = [
 ]
 
 # --- Winners (The Podium) ---
-# List the Top 3 winners here. They appear in the "Winners" section at the top.
+
 [[extra.winners]]
 name = "Bayes Watch"
 project = "Obliviate"  
@@ -72,7 +72,6 @@ tech = ["MERN Stack", "MEAN Stack", "Web3 DApp Stack", "Prisma Stack"]
 github = "https://github.com/samudraneel05/Blackjack"
 award = "2nd Place"
 
-# Example 3: Has only Github
 [[extra.projects]]
 name = "Cybersecurity Architecture Platform"
 team = "INSIGHT-X"
@@ -85,7 +84,6 @@ demo = "https://www.youtube.com/watch?v=O0-yEVonWkw&t=299s"
 award = "3rd Place"
 
 
-# Example 4:
 [[extra.projects]]
 name = "MarlOS"
 team = "Tech Titans"

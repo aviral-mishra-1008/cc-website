@@ -21,7 +21,7 @@ images = [
 ]
 
 # --- Winners (The Podium) ---
-# List the Top 3 winners here. They appear in the "Winners" section at the top.
+
 [[extra.winners]]
 name = "ayush-jadaun"
 project = "20244048"   # The Reg no.
@@ -36,10 +36,6 @@ prize = "2nd Place"
 name = "codewithtaukeer"
 project = "20243294"
 prize = "3rd Place"
-
-
-# Event Content (The Article)
-
 
 +++
 

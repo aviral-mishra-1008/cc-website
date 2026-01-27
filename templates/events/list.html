@@ -99,6 +99,10 @@ Features:
                             {% if event.extra.status %}
                             <span class="hero-status-badge {{ event.extra.status }}">{{ event.extra.status }}</span>
                             {% endif %}
+                            {% if event.extra.badge %}
+                            <span class="hero-extra-badge {{ event.extra.badge | lower }}">{{ event.extra.badge
+                                }}</span>
+                            {% endif %}
                         </div>
 
                         {# Title #}
@@ -329,6 +333,9 @@ Features:
                     {% endif %}
                     {% if event.extra.status %}
                     <span class="event-card-status {{ event.extra.status }}">{{ event.extra.status }}</span>
+                    {% endif %}
+                    {% if event.extra.badge %}
+                    <span class="event-card-extra-badge {{ event.extra.badge | lower }}">{{ event.extra.badge }}</span>
                     {% endif %}
                 </div>
 

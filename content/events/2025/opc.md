@@ -35,7 +35,7 @@ name = "Grecil Unadkat"
 Codeforces_Id = "grecil"
 prize = "Rank 3"
 
-# Add more winners if needed (Honorable Mentions)...
+# (Honorable Mentions)...
 [[extra.winners]]
 name = "Anant Ojha"
 Codeforces_Id = "serialcomder"
