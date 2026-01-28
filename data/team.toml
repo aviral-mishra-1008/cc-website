@@ -6,6 +6,7 @@ name = "Dr. DKE"
 title = "Faculty In-Charge"
 image = "teams/dke.webp"
 email = "dke@mnnit.ac.in"
+profile_url = "https://mnnit.ac.in/prof_detail?id=123"
 
 # Group 2: CCRs (Computer Coding Club Representatives)
 [[ccrs]]
