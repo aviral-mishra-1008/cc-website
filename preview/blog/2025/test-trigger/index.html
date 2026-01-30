@@ -75,17 +75,19 @@
     </style>
 
     
-        <meta name="description" content="Official website of Computer Coding Club - Learn, Build, and Grow Together" />
+        
+            <meta name="description" content="Boost your React app&#x27;s performance with these proven optimization techniques including memoization, lazy loading, and more." />
+        
     
 
-    <title>Computer Coding Club</title>
+    <title>Optimizing React Performance: Tips and Tricks | Computer Coding Club</title>
 
     
     
 
       <!-- SEO: Open Graph / Twitter Card -->
-      <meta property="og:title" content="Computer Coding Club" />
-      <meta property="og:description" content="Official website of Computer Coding Club - Learn, Build, and Grow Together" />
+      <meta property="og:title" content="Optimizing React Performance: Tips and Tricks | Computer Coding Club" />
+      <meta property="og:description" content="Boost your React app&#x27;s performance with these proven optimization techniques including memoization, lazy loading, and more." />
       <meta property="og:url" content="/cc-website/preview/" />
       <meta property="og:type" content="website" />
       
@@ -93,8 +95,8 @@
       
 
       <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:title" content="Computer Coding Club" />
-      <meta name="twitter:description" content="Official website of Computer Coding Club - Learn, Build, and Grow Together" />
+      <meta name="twitter:title" content="Optimizing React Performance: Tips and Tricks" />
+      <meta name="twitter:description" content="Boost your React app&#x27;s performance with these proven optimization techniques including memoization, lazy loading, and more." />
       
       
       
@@ -540,83 +542,129 @@
                 <div class="w-full max-w-7xl lg:grid lg:grid-cols-[1fr_250px] lg:gap-8">
                     <main class="prose w-full">
                         
-    <div class="mb-12 pb-6 border-b border-gray-500/15">
-        <div class="flex items-center gap-3 mb-3">
-            <h1 class="flex items-center gap-3">
-                pwa
-                <span class="text-xs font-medium px-2.5 py-1 border border-gray-500/30 rounded uppercase tracking-wide">
-                    Tags
-                </span>
-            </h1>
-        </div>
-
-        
-            <p class="text-base text-base-content/70 mt-2">
-                1
-                
-                    document
-                
-                tagged with "pwa"
-            </p>
-        
+    <div class="mb-12 pb-4 border-b border-gray-500/15">
+        <h1 class="flex items-center gap-3">
+            Optimizing React Performance: Tips and Tricks
+            
+        </h1>
+        <p class="text-gray-500">Boost your React app&#x27;s performance with these proven optimization techniques including memoization, lazy loading, and more.</p>
     </div>
+    <h2 id="make-react-blazing-fast">Make React Blazing Fast</h2>
+<p>Slow React app? These optimization techniques will help you achieve better performance.</p>
+<h2 id="key-techniques">Key Techniques</h2>
+<h3 id="1-react-memo">1. React.memo</h3>
+<p>Prevent unnecessary re-renders:</p>
+<pre data-lang="javascript" style="background-color:#212733;color:#ccc9c2;" class="language-javascript "><code class="language-javascript" data-lang="javascript"><span style="color:#ffa759;">const </span><span>ExpensiveComponent </span><span style="color:#f29e74;">= </span><span>React</span><span style="color:#f29e74;">.</span><span style="color:#ffd580;">memo</span><span>(({ </span><span style="color:#ffcc66;">data </span><span>}) </span><span style="color:#ffa759;">=&gt; </span><span>{
+</span><span>  </span><span style="color:#ffa759;">return </span><span>&lt;</span><span style="color:#73d0ff;">div</span><span>&gt;{data}</span><span style="color:#f29e74;">&lt;/</span><span>div</span><span style="color:#f29e74;">&gt;</span><span style="color:#ccc9c2cc;">;
+</span><span>})</span><span style="color:#ccc9c2cc;">;
+</span></code></pre>
+<h3 id="2-usememo-usecallback">2. useMemo &amp; useCallback</h3>
+<p>Memoize expensive computations:</p>
+<pre data-lang="javascript" style="background-color:#212733;color:#ccc9c2;" class="language-javascript "><code class="language-javascript" data-lang="javascript"><span style="color:#ffa759;">const </span><span>memoizedValue </span><span style="color:#f29e74;">= </span><span style="color:#ffd580;">useMemo</span><span>(() </span><span style="color:#ffa759;">=&gt; </span><span style="color:#ffd580;">computeExpensive</span><span>(a</span><span style="color:#ccc9c2cc;">, </span><span>b)</span><span style="color:#ccc9c2cc;">, </span><span>[a</span><span style="color:#ccc9c2cc;">, </span><span>b])</span><span style="color:#ccc9c2cc;">;
+</span><span style="color:#ffa759;">const </span><span>memoizedCallback </span><span style="color:#f29e74;">= </span><span style="color:#ffd580;">useCallback</span><span>(() </span><span style="color:#ffa759;">=&gt; </span><span style="color:#ffd580;">doSomething</span><span>(a)</span><span style="color:#ccc9c2cc;">, </span><span>[a])</span><span style="color:#ccc9c2cc;">;
+</span></code></pre>
+<h3 id="3-code-splitting">3. Code Splitting</h3>
+<pre data-lang="javascript" style="background-color:#212733;color:#ccc9c2;" class="language-javascript "><code class="language-javascript" data-lang="javascript"><span style="color:#ffa759;">const </span><span>LazyComponent </span><span style="color:#f29e74;">= </span><span style="color:#ffd580;">lazy</span><span>(() </span><span style="color:#ffa759;">=&gt; </span><span style="color:#f29e74;">import</span><span>(</span><span style="color:#bae67e;">&#39;./LazyComponent&#39;</span><span>))</span><span style="color:#ccc9c2cc;">;
+</span></code></pre>
+<h3 id="4-virtual-lists">4. Virtual Lists</h3>
+<p>Use react-window for long lists.</p>
+<h2 id="profiling-tools">Profiling Tools</h2>
+<ul>
+<li>React DevTools Profiler</li>
+<li>Chrome Performance Tab</li>
+<li>Lighthouse</li>
+</ul>
+<h2 id="results">Results</h2>
+<p>Apply these and see 50-70% performance improvement!
+TESTING THE BOT AGAIN</p>
+
 
     
-        <div class="space-y-5">
+    
+    <div class="mt-8 pt-6 border-t border-gray-500/15 space-y-2 text-sm">
+        
+        <div class="flex flex-wrap items-center gap-2">
+            <div class="tooltip" data-tip="Categories">
+                <svg class="w-4 h-4 text-base-content/80" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2H5a2 2 0 00-2-2z"></path>
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 5a2 2 0 012-2h4a2 2 0 012 2v2H8V5z"></path>
+                </svg>
+            </div>
             
-                <article class="border border-gray-500/15 rounded-lg">
-                    <a href="/cc-website/preview/blog/2025/progressive-web-apps/" class="group block p-5">
-                        <div class="nav-button-content">
-                            <div class="nav-button-direction">
-                                <span class="nav-button-label">Read</span>
-                                <svg class="w-5 h-5 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-                                </svg>
-                            </div>
-                            <div class="nav-button-title">Building Progressive Web Apps (PWA) in 2025</div>
-                        </div>
-                    </a>
-                    
-                        <p class="text-sm text-base-content/70 mb-3 px-5">
-                            Create fast, reliable, and engaging web apps that work offline using modern PWA techniques.
-                        </p>
-                    
-                    <div class="flex flex-wrap items-center gap-3 text-xs text-base-content/60 px-5 pb-5">
-                        
-                            <div class="flex items-center gap-1.5">
-                                <span>2025-07-22</span>
-                            </div>
-                        
-                        
-                            <span class="h-4 w-px bg-gray-400/40"></span>
-                            <div class="flex flex-wrap items-center gap-1.5">
-                                
-                                    <a href="/cc-website/preview/tags/pwa/"
-                                       class="inline-flex items-center badge badge-dash text-xs border-gray-500/30 hover:border-gray-500/70 transition-colors">
-                                        pwa
-                                    </a>
-                                
-                                    <a href="/cc-website/preview/tags/javascript/"
-                                       class="inline-flex items-center badge badge-dash text-xs border-gray-500/30 hover:border-gray-500/70 transition-colors">
-                                        javascript
-                                    </a>
-                                
-                                    <a href="/cc-website/preview/tags/web-development/"
-                                       class="inline-flex items-center badge badge-dash text-xs border-gray-500/30 hover:border-gray-500/70 transition-colors">
-                                        web-development
-                                    </a>
-                                
-                                    <a href="/cc-website/preview/tags/mobile/"
-                                       class="inline-flex items-center badge badge-dash text-xs border-gray-500/30 hover:border-gray-500/70 transition-colors">
-                                        mobile
-                                    </a>
-                                
-                            </div>
-                        
-                    </div>
-                </article>
+            <a href="/cc-website/preview/categories/guide/"
+               class="inline-flex items-center badge badge-dash border-gray-500/30 text-xs hover:border-gray-500/70 transition-colors">
+                guide
+            </a>
             
         </div>
+        
+
+        
+        <div class="flex flex-wrap items-center gap-2 mt-2">
+            <div class="tooltip" data-tip="Tags">
+                <svg class="w-4 h-4 text-base-content/80" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z"></path>
+                </svg>
+            </div>
+            
+            <a href="/cc-website/preview/tags/react/"
+               class="inline-flex items-center badge badge-dash text-xs border-gray-500/30 hover:border-gray-500/70 transition-colors">
+                react
+            </a>
+            
+            <a href="/cc-website/preview/tags/performance/"
+               class="inline-flex items-center badge badge-dash text-xs border-gray-500/30 hover:border-gray-500/70 transition-colors">
+                performance
+            </a>
+            
+            <a href="/cc-website/preview/tags/javascript/"
+               class="inline-flex items-center badge badge-dash text-xs border-gray-500/30 hover:border-gray-500/70 transition-colors">
+                javascript
+            </a>
+            
+            <a href="/cc-website/preview/tags/optimization/"
+               class="inline-flex items-center badge badge-dash text-xs border-gray-500/30 hover:border-gray-500/70 transition-colors">
+                optimization
+            </a>
+            
+        </div>
+        
+    </div>
+    
+
+    
+    <div class="mt-8 pt-6 border-t border-gray-500/15">
+        <div class="flex flex-wrap items-center gap-4">
+            <a href="https:&#x2F;&#x2F;github.com&#x2F;Shanu-Kumawat&#x2F;cc-website&#x2F;edit&#x2F;main&#x2F;/content/blog&#x2F;2025&#x2F;test-trigger.md" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-sm text-base-content/60 hover:text-base-content transition-colors">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"></path>
+                </svg>
+                <span>Edit this page</span>
+            </a>
+            
+            
+            
+                
+                
+            
+            
+            <button onclick="navigator.clipboard.writeText(window.location.href).then(() => { this.innerHTML = this.innerHTML.replace('Copy URL', 'Copied!'); setTimeout(() => { this.innerHTML = this.innerHTML.replace('Copied!', 'Copy URL'); }, 2000); }).catch(() => { console.error('Failed to copy URL'); })" class="inline-flex items-center gap-2 text-sm text-base-content/60 hover:text-base-content transition-colors cursor-pointer">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
+                </svg>
+                <span>Copy URL</span>
+            </button>
+            
+            
+            <a href="https://twitter.com/intent/tweet?url=&#x2F;cc-website&#x2F;preview&#x2F;blog&#x2F;2025&#x2F;test-trigger&#x2F;&text=Optimizing%20React%20Performance%3A%20Tips%20and%20Tricks" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-sm text-base-content/60 hover:text-base-content transition-colors">
+                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path>
+                </svg>
+                <span>Share on X</span>
+            </a>
+            
+        </div>
+    </div>
     
 
 
@@ -628,13 +676,102 @@
                             <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                                 <div class="prev-nav-item">
                                     
+    
+        
+        <a class="nav-button nav-button-prev group" href="/cc-website/preview/blog/">
+            <div class="nav-button-content">
+                <div class="nav-button-direction">
+                    <svg class="w-5 h-5 transition-transform group-hover:-translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                    </svg>
+                    <span class="nav-button-label">Back to</span>
+                </div>
+                <div class="nav-button-title">Blog</div>
+            </div>
+        </a>
+    
+
                                 </div>
                                 <div class="next-nav-item">
                                     
+    
+        <a class="nav-button nav-button-next group" href="/cc-website/preview/blog/2025/cybersecurity-basics/">
+            <div class="nav-button-content">
+                <div class="nav-button-direction">
+                    <span class="nav-button-label">Next</span>
+                    <svg class="w-5 h-5 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                    </svg>
+                </div>
+                <div class="nav-button-title">Cybersecurity Basics Every Developer Should Know</div>
+            </div>
+        </a>
+    
+
                                 </div>
                             </div>
                         </nav>
                     </main>
+
+                    
+                        
+
+<div class="hidden lg:block" >
+    <div class="sticky top-20 px-4 py-2 border-l border-gray-500/15">
+        <h4 class="text-lg font-bold mb-1">ON THIS PAGE</h4>
+            <ul class="menu menu-sm toc-menu">
+            
+                <li>
+                    
+                    <a href="/cc-website/preview/blog/2025/test-trigger/#make-react-blazing-fast" class="toc-link">Make React Blazing Fast</a>
+                    
+                </li>
+            
+                <li>
+                    
+                    <details class="toc-details" >
+                        <summary>
+                            <a href="/cc-website/preview/blog/2025/test-trigger/#key-techniques" class="toc-link">Key Techniques</a>
+                        </summary>
+                        <ul>
+                            
+                                <li>
+                                    <a href="/cc-website/preview/blog/2025/test-trigger/#1-react-memo" class="toc-link">1. React.memo</a>
+                                </li>
+                            
+                                <li>
+                                    <a href="/cc-website/preview/blog/2025/test-trigger/#2-usememo-usecallback" class="toc-link">2. useMemo &amp; useCallback</a>
+                                </li>
+                            
+                                <li>
+                                    <a href="/cc-website/preview/blog/2025/test-trigger/#3-code-splitting" class="toc-link">3. Code Splitting</a>
+                                </li>
+                            
+                                <li>
+                                    <a href="/cc-website/preview/blog/2025/test-trigger/#4-virtual-lists" class="toc-link">4. Virtual Lists</a>
+                                </li>
+                            
+                        </ul>
+                    </details>
+                    
+                </li>
+            
+                <li>
+                    
+                    <a href="/cc-website/preview/blog/2025/test-trigger/#profiling-tools" class="toc-link">Profiling Tools</a>
+                    
+                </li>
+            
+                <li>
+                    
+                    <a href="/cc-website/preview/blog/2025/test-trigger/#results" class="toc-link">Results</a>
+                    
+                </li>
+            
+            </ul>
+    </div>
+</div>
+
 
                     
                     
@@ -842,10 +979,14 @@
 
 
 
-
-
-
     
+    
+        
+        
+    
+
+
+
 
 
 <label for="my-drawer-2" class="drawer-overlay"></label>
@@ -936,7 +1077,7 @@
     
     
     <div class="hidden lg:block px-4 py-2 font-bold text-lg border-b border-gray-500/10 mb-2">
-        <a href="&#x2F;cc-website&#x2F;preview&#x2F;" class="hover:text-primary transition-colors">Computer Coding Club</a>
+        <a href="&#x2F;cc-website&#x2F;preview&#x2F;blog&#x2F;" class="hover:text-primary transition-colors">Blog</a>
     </div>
 
     
@@ -944,274 +1085,49 @@
     <ul class="hidden lg:block menu w-full flex-grow">
         
         
+            <li ><a class="hover:no-underline" href="/cc-website/preview/blog/2025/react-hooks-guide">Getting Started with React Hooks: A Complete Guide</a></li>
+        
+            <li ><a class="hover:no-underline" href="/cc-website/preview/blog/2025/react-performance-optimization">Optimizing React Performance: Tips and Tricks</a></li>
+        
+            <li class="rounded bg-gray-500/15"><a class="hover:no-underline" href="/cc-website/preview/blog/2025/test-trigger">Optimizing React Performance: Tips and Tricks</a></li>
+        
+            <li ><a class="hover:no-underline" href="/cc-website/preview/blog/2025/cybersecurity-basics">Cybersecurity Basics Every Developer Should Know</a></li>
+        
+            <li ><a class="hover:no-underline" href="/cc-website/preview/blog/2025/summer-hackathon-recap">Summer Hackathon 2025: 48 Hours of Innovation and Collaboration</a></li>
+        
+            <li ><a class="hover:no-underline" href="/cc-website/preview/blog/2025/graphql-vs-rest">GraphQL vs REST: A Practical Comparison</a></li>
+        
+            <li ><a class="hover:no-underline" href="/cc-website/preview/blog/2025/progressive-web-apps">Building Progressive Web Apps (PWA) in 2025</a></li>
+        
+            <li ><a class="hover:no-underline" href="/cc-website/preview/blog/2025/typescript-why-care">TypeScript: Why JavaScript Developers Should Care</a></li>
+        
+            <li ><a class="hover:no-underline" href="/cc-website/preview/blog/2025/docker-for-beginners">Docker for Beginners: Containerize Your Apps</a></li>
+        
+            <li ><a class="hover:no-underline" href="/cc-website/preview/blog/2025/git-best-practices">Git Best Practices for Team Collaboration</a></li>
+        
+            <li ><a class="hover:no-underline" href="/cc-website/preview/blog/2025/intro-to-ml-python">Introduction to Machine Learning with Python</a></li>
+        
+            <li ><a class="hover:no-underline" href="/cc-website/preview/blog/2025/css-grid-vs-flexbox">CSS Grid vs Flexbox: When to Use Which</a></li>
+        
+            <li ><a class="hover:no-underline" href="/cc-website/preview/blog/2025/nodejs-rest-api">Building a REST API with Node.js and Express</a></li>
+        
+            <li ><a class="hover:no-underline" href="/cc-website/preview/blog/2024/competitive-programming-intro">Introduction to Competitive Programming</a></li>
+        
+            <li ><a class="hover:no-underline" href="/cc-website/preview/blog/2024/linux-commands">Linux Commands Every Developer Must Know</a></li>
+        
+            <li ><a class="hover:no-underline" href="/cc-website/preview/blog/2024/javascript-async-await">Understanding JavaScript Async&#x2F;Await</a></li>
+        
+            <li ><a class="hover:no-underline" href="/cc-website/preview/blog/2024/python-data-science">Getting Started with Python for Data Science</a></li>
         
         
         
-            
-            
-            
-            
-            <li>
-                <a  href="/cc-website/preview/projects">Projects</a>
-            </li>
-        
-            
-            
-            
-            
-            <li>
-                
-                    <details open>
-                        <summary ><a class="hover:no-underline" href="/cc-website/preview/blog">Blog</a></summary>
-                        <ul>
-                            
-                            
-                                <li ><a class="hover:no-underline" href="/cc-website/preview/blog/2025/react-hooks-guide">Getting Started with React Hooks: A Complete Guide</a></li>
-                            
-                                <li ><a class="hover:no-underline" href="/cc-website/preview/blog/2025/react-performance-optimization">Optimizing React Performance: Tips and Tricks</a></li>
-                            
-                                <li ><a class="hover:no-underline" href="/cc-website/preview/blog/2025/test-trigger">Optimizing React Performance: Tips and Tricks</a></li>
-                            
-                                <li ><a class="hover:no-underline" href="/cc-website/preview/blog/2025/cybersecurity-basics">Cybersecurity Basics Every Developer Should Know</a></li>
-                            
-                                <li ><a class="hover:no-underline" href="/cc-website/preview/blog/2025/summer-hackathon-recap">Summer Hackathon 2025: 48 Hours of Innovation and Collaboration</a></li>
-                            
-                                <li ><a class="hover:no-underline" href="/cc-website/preview/blog/2025/graphql-vs-rest">GraphQL vs REST: A Practical Comparison</a></li>
-                            
-                                <li ><a class="hover:no-underline" href="/cc-website/preview/blog/2025/progressive-web-apps">Building Progressive Web Apps (PWA) in 2025</a></li>
-                            
-                                <li ><a class="hover:no-underline" href="/cc-website/preview/blog/2025/typescript-why-care">TypeScript: Why JavaScript Developers Should Care</a></li>
-                            
-                                <li ><a class="hover:no-underline" href="/cc-website/preview/blog/2025/docker-for-beginners">Docker for Beginners: Containerize Your Apps</a></li>
-                            
-                                <li ><a class="hover:no-underline" href="/cc-website/preview/blog/2025/git-best-practices">Git Best Practices for Team Collaboration</a></li>
-                            
-                                <li ><a class="hover:no-underline" href="/cc-website/preview/blog/2025/intro-to-ml-python">Introduction to Machine Learning with Python</a></li>
-                            
-                                <li ><a class="hover:no-underline" href="/cc-website/preview/blog/2025/css-grid-vs-flexbox">CSS Grid vs Flexbox: When to Use Which</a></li>
-                            
-                                <li ><a class="hover:no-underline" href="/cc-website/preview/blog/2025/nodejs-rest-api">Building a REST API with Node.js and Express</a></li>
-                            
-                                <li ><a class="hover:no-underline" href="/cc-website/preview/blog/2024/competitive-programming-intro">Introduction to Competitive Programming</a></li>
-                            
-                                <li ><a class="hover:no-underline" href="/cc-website/preview/blog/2024/linux-commands">Linux Commands Every Developer Must Know</a></li>
-                            
-                                <li ><a class="hover:no-underline" href="/cc-website/preview/blog/2024/javascript-async-await">Understanding JavaScript Async&#x2F;Await</a></li>
-                            
-                                <li ><a class="hover:no-underline" href="/cc-website/preview/blog/2024/python-data-science">Getting Started with Python for Data Science</a></li>
-                            
-                            
-                                
-                                
-                                
-                                
-                                
-                                
-                        </ul>
-                    </details>
-                
-            </li>
         
             
             
             
             
-            <li>
-                <a  href="/cc-website/preview/team">Our Team</a>
-            </li>
-        
             
             
-            
-            
-            <li>
-                <a  href="/cc-website/preview/about">About Us</a>
-            </li>
-        
-            
-            
-            
-            
-            <li>
-                
-                    <details open>
-                        <summary ><a class="hover:no-underline" href="/cc-website/preview/events">Events</a></summary>
-                        <ul>
-                            
-                            
-                            
-                                
-                                
-                                
-                                
-                                <li>
-                                    
-                                        <details open>
-                                            <summary ><a class="hover:no-underline" href="/cc-website/preview/events/programs">Programs</a></summary>
-                                            <ul>
-                                                
-                                                
-                                                    <li ><a class="hover:no-underline" href="/cc-website/preview/events/programs/cc-classes">CC Classes</a></li>
-                                                
-                                                    <li ><a class="hover:no-underline" href="/cc-website/preview/events/programs/alumni-connect">Alumni Industry Connect</a></li>
-                                                
-                                                
-                                            </ul>
-                                        </details>
-                                    
-                                </li>
-                            
-                                
-                                
-                                
-                                
-                                <li>
-                                    
-                                        <details open>
-                                            <summary ><a class="hover:no-underline" href="/cc-website/preview/events/2026">Events 2026</a></summary>
-                                            <ul>
-                                                
-                                                
-                                                    <li ><a class="hover:no-underline" href="/cc-website/preview/events/2026/insomnia">Insomnia 2026</a></li>
-                                                
-                                                    <li ><a class="hover:no-underline" href="/cc-website/preview/events/2026/weekend-of-code">Weekend of Code 2026</a></li>
-                                                
-                                                
-                                            </ul>
-                                        </details>
-                                    
-                                </li>
-                            
-                                
-                                
-                                
-                                
-                                <li>
-                                    
-                                        <details open>
-                                            <summary ><a class="hover:no-underline" href="/cc-website/preview/events/2025">Events 2025</a></summary>
-                                            <ul>
-                                                
-                                                
-                                                    <li ><a class="hover:no-underline" href="/cc-website/preview/events/2025/opc">OPC</a></li>
-                                                
-                                                    <li ><a class="hover:no-underline" href="/cc-website/preview/events/2025/code-of-the-day">Code Of The Day</a></li>
-                                                
-                                                    <li ><a class="hover:no-underline" href="/cc-website/preview/events/2025/hack36">Hack36 9.0</a></li>
-                                                
-                                                    <li ><a class="hover:no-underline" href="/cc-website/preview/events/2025/codesangam">CodeSangam</a></li>
-                                                
-                                                    <li ><a class="hover:no-underline" href="/cc-website/preview/events/2025/contrihub">Contrihub</a></li>
-                                                
-                                                    <li ><a class="hover:no-underline" href="/cc-website/preview/events/2025/weekend-of-code">Weekend of Code</a></li>
-                                                
-                                                    <li ><a class="hover:no-underline" href="/cc-website/preview/events/2025/insomnia">Insomnia</a></li>
-                                                
-                                                
-                                            </ul>
-                                        </details>
-                                    
-                                </li>
-                            
-                        </ul>
-                    </details>
-                
-            </li>
-        
-            
-            
-            
-            
-            <li>
-                
-                    <details open>
-                        <summary ><a class="hover:no-underline" href="/cc-website/preview/roadmaps">Learning Roadmaps</a></summary>
-                        <ul>
-                            
-                            
-                                <li ><a class="hover:no-underline" href="/cc-website/preview/roadmaps/web-development">Web Development Roadmap</a></li>
-                            
-                                <li ><a class="hover:no-underline" href="/cc-website/preview/roadmaps/dsa">Data Structures &amp; Algorithms Roadmap</a></li>
-                            
-                                <li ><a class="hover:no-underline" href="/cc-website/preview/roadmaps/machine-learning">Machine Learning Roadmap</a></li>
-                            
-                                <li ><a class="hover:no-underline" href="/cc-website/preview/roadmaps/open-source">Open Source Contribution Roadmap</a></li>
-                            
-                                <li ><a class="hover:no-underline" href="/cc-website/preview/roadmaps/interview-prep">Technical Interview Preparation</a></li>
-                            
-                                <li ><a class="hover:no-underline" href="/cc-website/preview/roadmaps/mobile-development">Mobile App Development Roadmap</a></li>
-                            
-                                <li ><a class="hover:no-underline" href="/cc-website/preview/roadmaps/devops">DevOps &amp; Cloud Engineering Roadmap</a></li>
-                            
-                            
-                        </ul>
-                    </details>
-                
-            </li>
-        
-            
-            
-            
-            
-            <li>
-                
-                    <details open>
-                        <summary ><a class="hover:no-underline" href="/cc-website/preview/resources">Resources</a></summary>
-                        <ul>
-                            
-                            
-                                <li ><a class="hover:no-underline" href="/cc-website/preview/resources/cs-fundamentals">CS Fundamentals</a></li>
-                            
-                                <li ><a class="hover:no-underline" href="/cc-website/preview/resources/competitive-programming">Competitive Programming</a></li>
-                            
-                                <li ><a class="hover:no-underline" href="/cc-website/preview/resources/interview-preparation">Interview Preparation</a></li>
-                            
-                                <li ><a class="hover:no-underline" href="/cc-website/preview/resources/web-development">Web Development</a></li>
-                            
-                                <li ><a class="hover:no-underline" href="/cc-website/preview/resources/cloud-devops">Cloud &amp; DevOps</a></li>
-                            
-                                <li ><a class="hover:no-underline" href="/cc-website/preview/resources/machine-learning-ai">Machine Learning &amp; AI</a></li>
-                            
-                                <li ><a class="hover:no-underline" href="/cc-website/preview/resources/open-source">Open Source</a></li>
-                            
-                                <li ><a class="hover:no-underline" href="/cc-website/preview/resources/development-tools">Development Tools</a></li>
-                            
-                                <li ><a class="hover:no-underline" href="/cc-website/preview/resources/mobile-development">Mobile Development</a></li>
-                            
-                                <li ><a class="hover:no-underline" href="/cc-website/preview/resources/learning-platforms">Learning Platforms</a></li>
-                            
-                                <li ><a class="hover:no-underline" href="/cc-website/preview/resources/cybersecurity">Cybersecurity</a></li>
-                            
-                                <li ><a class="hover:no-underline" href="/cc-website/preview/resources/design-resources">Design Resources</a></li>
-                            
-                                <li ><a class="hover:no-underline" href="/cc-website/preview/resources/practice-projects">Practice Projects</a></li>
-                            
-                                <li ><a class="hover:no-underline" href="/cc-website/preview/resources/technical-reading">Technical Reading</a></li>
-                            
-                                <li ><a class="hover:no-underline" href="/cc-website/preview/resources/miscellaneous">Miscellaneous</a></li>
-                            
-                            
-                        </ul>
-                    </details>
-                
-            </li>
-        
-            
-            
-            
-            
-            <li>
-                <a  href="/cc-website/preview/alumni">CC Club Alumni</a>
-            </li>
-        
-            
-            
-            
-            
-            <li>
-                <a  href="/cc-website/preview/contact">Contact Us</a>
-            </li>
-        
     </ul>
     
 </div>
