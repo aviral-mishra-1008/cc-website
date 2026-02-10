@@ -1,393 +1,692 @@
-# Contributing to CC Club Website
+# Contributing to CC Club Website (Developer Guide)
 
-Thank you for your interest in contributing to the Computer Coding Club website! This guide will help you make contributions whether you're updating content, fixing bugs, or adding new features.
+> **📋 Note:** This guide is for **developers** working on website code, features, and bug fixes.  
+> **For blog post contributions**, see [CONTRIBUTING_BLOG.md](CONTRIBUTING_BLOG.md)  
+> **For content updates** (events, team, projects), contact CC Club maintainers.
+
+Thank you for your interest in contributing to the Computer Coding Club website! This guide will help you understand the technical architecture and contribute code effectively.
 
 ## Table of Contents
 
-- [Quick Start](#quick-start)
-- [How to Add Content](#how-to-add-content)
-  - [Adding a Blog Post](#adding-a-blog-post)
-  - [Adding an Event](#adding-an-event)
-  - [Updating Team Members](#updating-team-members)
-  - [Updating Alumni](#updating-alumni)
-  - [Adding Resources](#adding-resources)
-  - [Creating a Roadmap](#creating-a-roadmap)
-- [Using Goyo Theme Features](#using-goyo-theme-features)
-- [Markdown Syntax Guide](#markdown-syntax-guide)
-- [Working with Git](#working-with-git)
+- [Quick Start for Developers](#quick-start-for-developers)
+- [Understanding Zola](#understanding-zola)
+- [Project Architecture](#project-architecture)
+- [Working with Templates](#working-with-templates)
+- [Theme Development](#theme-development)
+- [Adding New Features](#adding-new-features)
+- [Debugging & Troubleshooting](#debugging--troubleshooting)
+- [Code Quality & Best Practices](#code-quality--best-practices)
+- [Development Workflow](#development-workflow)
+- [Testing](#testing)
 - [Pull Request Guidelines](#pull-request-guidelines)
-- [Getting Help](#getting-help)
+- [Resources & Documentation](#resources--documentation)
 
 ---
 
-## Quick Start
+## Quick Start for Developers
 
 ### Prerequisites
-- Git installed on your computer
-- Basic familiarity with Markdown
-- A GitHub account
-- (Optional) Zola installed for local testing
+
+- **Git** installed on your computer
+- **Zola v0.21** installed ([Download here](https://github.com/getzola/zola/releases/tag/v0.21.0))
+  - ⚠️ **Important:** Use exactly v0.21 - v0.22+ will break the build
+  - Avoid package managers (apt, brew) as they install incompatible versions
+- **Code editor** (VS Code recommended)
+- **GitHub account**
+- **Basic knowledge of:**
+  - HTML/CSS
+  - Git workflow
+  - Terminal/command line
 
 ### Setup Steps
-1. **Fork the repository** on GitHub
-2. **Clone your fork**:
+
+1. **Fork and clone the repository:**
    ```bash
-   git clone https://github.com/YOUR-USERNAME/cc-website.git
+   git clone --recursive https://github.com/YOUR-USERNAME/cc-website.git
    cd cc-website
    ```
-3. **Initialize theme submodule**:
+
+2. **Initialize theme submodule** (if not using `--recursive`):
    ```bash
    git submodule update --init --recursive
    ```
-4. **Make your changes** (see sections below)
-5. **Test locally** (optional, requires Zola):
+
+3. **Start development server:**
    ```bash
    zola serve
    # Visit http://127.0.0.1:1111
+   # Server will auto-reload on file changes
    ```
-6. **Commit and push**:
-   ```bash
-   git add .
-   git commit -m "Brief description of changes"
-   git push origin main
-   ```
-7. **Create a Pull Request** on GitHub
+
+4. **Make your changes** and test locally
+
+5. **Create a Pull Request** when ready
 
 ---
 
-## How to Add Content
+## Understanding Zola
 
-### Adding a Blog Post
+### What is Zola?
 
-Blog posts are stored in `content/blog/YEAR/`.
+[Zola](https://www.getzola.org/) is a fast static site generator written in Rust. It compiles your content (Markdown files) and templates into a static website.
 
-**Steps:**
+**Key Concepts:**
 
-1. **Create a new file** in the appropriate year folder:
-   ```
-   content/blog/2025/your-post-title.md
-   ```
+- **Static Site Generator**: Builds HTML files at build time, not runtime
+- **No Runtime Dependencies**: Generated site is just HTML/CSS/JS
+- **Fast Builds**: Rust-powered compilation
+- **Hot Reload**: Development server updates instantly on file changes
 
-2. **Use this template** for your blog post:
+### How Zola Works
 
-```markdown
-+++
-title = "Your Awesome Post Title"
-date = 2025-01-15
-description = "A brief summary of your post (1-2 sentences)"
+```
+Markdown Content + Templates + Data → Zola Build → Static HTML Site
+```
 
-[taxonomies]
-tags = ["tutorial", "web-development", "react"]
+1. **Content** (`content/*.md`) - Your pages and blog posts
+2. **Templates** (`templates/*.html`) - Page layouts using Tera syntax
+3. **Static Assets** (`static/`) - CSS, JS, images
+4. **Data** (`data/*.toml`) - Structured data (team, projects)
+5. **Config** (`config.toml`) - Site configuration
+
+**Build Process:**
+```bash
+zola build    # Compiles everything to public/
+zola serve    # Development server with hot reload
+zola check    # Validate content and links
+```
+
+### Directory Structure
+
+```
+cc-website/
+├── config.toml           # Site configuration
+├── content/              # Markdown content
+│   ├── _index.md        # Home page
+│   ├── blog/            # Blog posts
+│   ├── events/          # Events
+│   └── roadmaps/        # Learning roadmaps
+├── templates/            # Custom templates
+│   ├── index.html       # Homepage template
+│   ├── blog.html        # Blog listing
+│   └── team.html        # Team page
+├── static/               # Static assets
+│   ├── css/
+│   ├── images/
+│   └── js/
+├── data/                 # TOML data files
+│   ├── team.toml        # Team members
+│   └── projects.toml    # Projects
+└── themes/goyo/          # Goyo theme (submodule)
+```
+
+### Configuration (`config.toml`)
+
+The `config.toml` file controls site-wide settings:
+
+```toml
+base_url = "https://cc-club.in/"
+title = "Computer Coding Club"
+description = "Official website of Computer Coding Club - Learn, Build, and Grow Together"
+theme = "goyo"
+compile_sass = true
+build_search_index = true
+default_language = "en"
+generate_feeds = true
+generate_sitemap = true
+
+# Taxonomies for content organization
+taxonomies = [
+    {name = "tags", feed = true, paginate_by = 10},
+    {name = "categories", paginate_by = 10},
+]
+
+[markdown]
+highlight_code = true
+highlight_theme = "ayu-mirage"
 
 [extra]
-author = "Your Name"
-author_github = "yourgithub"
-author_linkedin = "yourlinkedin"
-reading_time = 8
-featured = false
-badge = "NEW"
-cover_image = "blog/your-post.jpg"
-+++
-
-# Introduction
-
-Your content starts here...
-
-## Section 1
-
-More content...
-
-## Conclusion
-
-Wrap up your post...
+# Theme settings
+[extra.theme]
+colorset = "dark"
+brightness = "normal"
+# ... more custom variables (see full config.toml)
 ```
 
-3. **Add images** (if needed):
-   - Place images in `static/images/blog/2025/`
-   - Reference in markdown: `{{ image(src="blog/2025/your-image.jpg", alt="Alt text") }}`
+**Important sections:**
+- `base_url` - Production URL (**critical for deployment**)
+- `theme` - Theme name (must match folder in `themes/`)
+- `[extra]` - Custom variables accessible in templates
+- `[extra.theme]` - Theme configuration
+- `taxonomies` - Content categorization (tags, categories)
+- `build_search_index` - Enables full-text search
 
-4. **Preview your post**:
-   - If you have Zola installed: `zola serve`
-   - Otherwise, just ensure the markdown looks good in your editor
+**⚠️ Critical: Using `get_url` for Links**
 
-5. **Commit and push**:
-   ```bash
-   git add content/blog/2025/your-post-title.md
-   git commit -m "Add blog post: Your Post Title"
-   git push origin main
-   ```
+Always use `get_url()` function for internal links in templates to prevent broken links in deployment:
 
-**Tips:**
-- Keep titles clear and descriptive
-- Use tags consistently (check existing posts for common tags: `react`, `python`, `tutorial`, `web-development`)
-- Tags go in `[taxonomies]` section, NOT `[extra]`
-- Include code examples where relevant
-- Proofread before committing!
-- Use `badge = "NEW"` for new posts, `"UPDATED"` for updated ones
-- Add cover images for better social media sharing
+```html
+<!-- ❌ WRONG - Will break in deployment -->
+<a href="/blog">Blog</a>
+<img src="/images/logo.webp">
+
+<!-- ✅ CORRECT - Works everywhere -->
+<a href="{{ get_url(path="@/blog/_index.md") }}">Blog</a>
+<img src="{{ get_url(path="logo.webp") }}">
+
+<!-- For static assets in static/ -->
+<img src="{{ get_url(path="images/logo.webp") }}">
+```
+
+**Why this matters:**
+- `get_url()` adapts to `base_url` automatically
+- Prevents broken links when deploying to subdirectories
+- Validates paths at build time (catches typos early)
+
+### Essential Zola Documentation
+
+- **[Zola Overview](https://www.getzola.org/documentation/getting-started/overview/)** - Core concepts
+- **[Directory Structure](https://www.getzola.org/documentation/getting-started/directory-structure/)** - File organization
+- **[Configuration](https://www.getzola.org/documentation/getting-started/configuration/)** - config.toml options
+- **[Templates](https://www.getzola.org/documentation/templates/overview/)** - Template system
+- **[Content](https://www.getzola.org/documentation/content/overview/)** - Writing content
+- **[Deployment](https://www.getzola.org/documentation/deployment/overview/)** - Deployment options
 
 ---
 
-### Adding an Event
+## Project Architecture
 
-Events are stored in year-based folders like `content/events/2025/`, `content/events/2024/`, etc.
+### Tech Stack
 
-**Steps:**
+- **[Zola](https://www.getzola.org/)** - Static site generator
+- **[Goyo Theme](https://github.com/hahwul/goyo)** - Base theme (git submodule)
+- **[Tera](https://tera.netlify.app/)** - Template engine (used by Zola)
+- **[Tailwind CSS](https://tailwindcss.com/)** - Utility-first CSS
+- **[DaisyUI](https://daisyui.com/)** - Component library
+- **[Font Awesome](https://fontawesome.com/)** - Icons
 
-1. **Create a new file**:
-   ```
-   content/events/2025/event-name.md
-   ```
+### Architecture Principles
 
-2. **Use this template**:
+1. **Extend, Don't Replace**: Custom templates extend Goyo, not replace it
+2. **Content in Markdown**: Non-developers can edit without touching code
+3. **Data in TOML**: Structured data separate from templates
+4. **Minimal JavaScript**: Server-side rendering, JS only for interactivity
+5. **Fast & Secure**: Static sites = no server vulnerabilities
 
-```markdown
-+++
-title = "Workshop: Your Event Title"
-date = 2025-02-10
-description = "One-line description of the event"
+### Custom Templates vs Goyo
 
-[extra]
-event_date = "February 10, 2025"
-event_time = "4:00 PM - 6:00 PM"
-venue = "Room 201, Academic Block"
-registration_link = "https://forms.gle/your-form"
-poster = "/images/events/2025/event-poster.jpg"
-badge = "UPCOMING"
-+++
+| Template | Source | Purpose | Why Custom? |
+|----------|--------|---------|-------------|
+| `blog.html` | Custom | Blog listing | Search functionality |
+| `team.html` | Custom | Team page | Renders from TOML data |
+| `events.html` | Custom | Events listing | Upcoming/past filtering |
+| `projects.html` | Custom | Projects showcase | TOML data integration |
+| `roadmaps.html` | Custom | Learning paths | Custom layout |
+| `base.html` | Goyo | Base template | Standard Goyo |
+| `page.html` | Goyo | Generic page | Standard Goyo |
 
-## About the Event
-
-Describe your event here...
-
-## What You'll Learn
-
-- Point 1
-- Point 2
-- Point 3
-
-## Prerequisites
-
-List any prerequisites...
-
-## Registration
-
-How to register (if not using registration_link above)
-```
-
-3. **Add poster** (recommended):
-   - Place in `static/images/events/2025/`
-   - Update `poster` field in frontmatter
-
-4. **After the event ends**:
-   - Move file from `upcoming/` to `past/`
-   - Update content with photos, attendance, outcomes
-
-**Event Status:**
-- Use `upcoming/` for future events
-- Use `past/` for completed events
+**Rule:** Only create custom templates when Goyo doesn't provide the needed functionality.
 
 ---
 
-### Updating Team Members
+## Working with Templates
 
-Team information is stored in `data/team.yaml`.
+### Tera Template Basics
 
-**Steps:**
+Zola uses the [Tera](https://tera.netlify.app/) template engine. Tera syntax is similar to Jinja2/Django templates.
 
-1. **Open the file**: `data/team.yaml`
-
-2. **Add a new member** to the appropriate section (faculty, coordinators, or executives):
-
-```yaml
-executives:
-  - name: "Your Name"
-    role: "Executive Member"
-    year: "2nd Year"
-    branch: "CSE"
-    image: "images/team/your-photo.jpg"
-    linkedin: "https://linkedin.com/in/yourprofile"
-    github: "https://github.com/yourusername"
-    bio: "Brief bio about yourself (2-3 lines)"
-    interests:
-      - "Web Development"
-      - "Machine Learning"
-      - "Competitive Programming"
+**Basic syntax:**
+```html
+{{ variable }}                    <!-- Output variable -->
+{% if condition %}...{% endif %}  <!-- Conditional -->
+{% for item in items %}...{% endfor %}  <!-- Loop -->
+{% extends "base.html" %}        <!-- Template inheritance -->
+{% block content %}...{% endblock %}    <!-- Define/override blocks -->
 ```
 
-3. **Add your photo**:
-   - Place in `static/images/team/`
-   - Use a professional photo (300x300px recommended)
-   - Name it consistently (e.g., `firstname-lastname.jpg`)
+**Common variables in Zola:**
+- `{{ config.title }}` - Site title from config.toml
+- `{{ page.title }}` - Current page title
+- `{{ page.content | safe }}` - Page content (markdown → HTML)
+- `{{ section.pages }}` - All pages in a section
+- `{{ load_data(path="data/team.toml") }}` - Load data files
 
-4. **Update existing members**:
-   - Change year if promoted
-   - Update role if changed
-   - Modify bio/interests as needed
+### Template Inheritance
 
-5. **Removing alumni**:
-   - Move their entry from `team.yaml` to `data/alumni.yaml`
-   - Update fields to match alumni structure
+Our templates extend Goyo's base templates:
 
-**Important:**
-- Maintain consistent formatting (indentation matters in YAML!)
-- Ensure all required fields are filled
-- Keep bios concise and professional
+```html
+<!-- templates/custom-page.html -->
+{% extends "goyo/templates/page.html" %}
 
----
-
-### Updating Alumni
-
-Alumni information is stored in `data/alumni.yaml`.
-
-**Steps:**
-
-1. **Open the file**: `data/alumni.yaml`
-
-2. **Add a new alumni entry**:
-
-```yaml
-alumni:
-  - name: "Alumni Name"
-    batch: "2022"
-    graduation_year: 2026
-    current_role: "Software Development Engineer"
-    company: "Company Name"
-    domain: "Software Development"
-    location: "City, Country"
-    image: "images/alumni/alumni-name.jpg"
-    linkedin: "https://linkedin.com/in/profile"
-    github: "https://github.com/username"  # Optional
-    message: "Optional message or quote about CC Club experience"  # Optional
+{% block content %}
+  <!-- Your custom content here -->
+  <div class="custom-section">
+    {{ page.content | safe }}
+  </div>
+{% endblock %}
 ```
 
-3. **Add photo**:
-   - Place in `static/images/alumni/`
-   - 300x300px recommended
-
-4. **Domains** (use consistently):
-   - Software Development
-   - Machine Learning
-   - Data Science
-   - Product Management
-   - DevOps
-   - Research
-   - Cybersecurity
-
-**Alumni Privacy:**
-- Only add with permission
-- LinkedIn is required, GitHub is optional
-- Message field is optional but encouraged
-
----
-
-### Adding Resources
-
-Resources are listed in `content/resources/_index.md`.
-
-**Steps:**
-
-1. **Open the file**: `content/resources/_index.md`
-
-2. **Add to appropriate category**:
-
-```markdown
-### Programming Languages
-
-**Python**
-- [Official Python Tutorial](https://docs.python.org/3/tutorial/) - Comprehensive beginner guide
-- [Real Python](https://realpython.com/) - High-quality Python tutorials
-- Your new resource here
+**Inheritance chain:**
+```
+base.html (Goyo)
+  └── page.html (Goyo)
+        └── custom-page.html (Ours)
 ```
 
-3. **Format**: `[Resource Name](URL) - Brief description`
+### Creating a New Template
 
-**Quality Guidelines:**
-- Link to high-quality, reliable resources
-- Prefer free resources over paid ones
-- Test links before adding
-- Keep descriptions brief (one line)
+1. **Identify the need**: Can Goyo's existing templates work?
+2. **Create the file**: `templates/your-template.html`
+3. **Extend Goyo**: Start with `{% extends "goyo/templates/page.html" %}`
+4. **Override blocks**: Use `{% block content %}` to customize
+5. **Reference in content**: Use `template = "your-template.html"` in frontmatter
 
----
+**Example - Custom event template:**
 
-### Creating a Roadmap
+```html
+{% extends "goyo/templates/page.html" %}
 
-Roadmaps are in `content/roadmaps/`.
+{% block content %}
+<article class="event-detail">
+  <h1>{{ page.title }}</h1>
+  
+  {% if page.extra.event_date %}
+    <div class="event-meta">
+      <span>📅 {{ page.extra.event_date }}</span>
+      <span>⏰ {{ page.extra.event_time }}</span>
+      <span>📍 {{ page.extra.venue }}</span>
+    </div>
+  {% endif %}
+  
+  {{ page.content | safe }}
+</article>
+{% endblock %}
+```
 
-**Steps:**
+### Loading Data Files
 
-1. **Create a new file**:
-   ```
-   content/roadmaps/your-domain.md
-   ```
+Use `load_data()` to access TOML/JSON files:
 
-2. **Use this structure**:
+```html
+{% set team = load_data(path="data/team.toml") %}
 
-```markdown
-+++
-title = "Your Domain Roadmap"
-description = "Structured learning path for Domain"
-date = 2025-01-15
+{% for member in team.ccrs %}
+  <div class="team-card">
+    <img src="/images/{{ member.image }}" alt="{{ member.name }}">
+    <h3>{{ member.name }}</h3>
+    <p>{{ member.role }}</p>
+  </div>
+{% endfor %}
+```
 
-[extra]
-tags = ["roadmap", "learning-path"]
-categories = ["Roadmaps"]
-+++
+### Useful Tera Filters
 
-# Introduction
-
-Brief overview of the domain...
-
-## Prerequisites
-
-What you should know before starting...
-
-## The Roadmap
-
-### Level 1: Foundation (2-3 months)
-
-**What you'll learn:**
-- Topic 1
-- Topic 2
+```html
+{{ page.content | safe }}           <!-- Don't escape HTML -->
+{{ page.title | lower }}            <!-- Lowercase -->
+{{ page.title | upper }}            <!-- Uppercase -->
+{{ page.title | truncate(length=50) }}  <!-- Truncate -->
+{{ page.date | date(format="%B %d, %Y") }}  <!-- Format date -->
+```
 
 **Resources:**
-- [Resource 1](URL)
-- [Resource 2](URL)
-
-**Practice Projects:**
-- Project idea 1
-- Project idea 2
+- [Tera Documentation](https://tera.netlify.app/docs/)
+- [Zola Templates](https://www.getzola.org/documentation/templates/overview/)
 
 ---
 
-### Level 2: Intermediate (3-4 months)
+## Theme Development
 
-[Same structure as Level 1]
+### Understanding the Goyo Theme
 
-[Continue with more levels...]
+Goyo is our base theme, managed as a git submodule.
+
+**Location:** `themes/goyo/`
+**GitHub:** https://github.com/hahwul/goyo
+
+**Key files in Goyo:**
+- `templates/` - Base templates
+- `static/css/` - Theme CSS
+- `sass/` - SCSS files
+- `theme.toml` - Theme configuration
+
+### Working with Submodules
+
+```bash
+# Update Goyo theme to latest version
+git submodule update --remote themes/goyo
+
+# Make changes to Goyo (for testing)
+cd themes/goyo
+git checkout -b my-changes
+# ... make changes ...
+
+# Submit PR to Goyo upstream if useful for everyone
 ```
 
-3. **Optional: Add a visual diagram** using Mermaid:
+### Custom CSS
 
-````markdown
-{% mermaid() %}
-graph TD
-    A[Start] --> B[Learn Basics]
-    B --> C[Build Projects]
-    C --> D[Advanced Topics]
-{% end %}
-````
+Add custom styles in `static/css/custom.css`:
 
-**Roadmap Guidelines:**
-- Break into logical levels/phases
-- Provide time estimates
-- Include both learning resources and practice projects
-- Keep it practical and actionable
-- Update based on feedback
+```css
+/* Our custom styles */
+.event-card {
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 1rem;
+}
+
+/* Override Goyo defaults (if needed) */
+.navbar {
+  background: var(--custom-bg);
+}
+```
+
+**Include in templates:**
+```html
+<link rel="stylesheet" href="/css/custom.css">
+```
+
+### Tailwind & DaisyUI
+
+Goyo includes Tailwind CSS and DaisyUI components.
+
+**Use utility classes:**
+```html
+<div class="card bg-base-100 shadow-xl">
+  <div class="card-body">
+    <h2 class="card-title">Event Title</h2>
+    <p>Event description</p>
+    <div class="card-actions justify-end">
+      <button class="btn btn-primary">Register</button>
+    </div>
+  </div>
+</div>
+```
+
+**Resources:**
+- [DaisyUI Components](https://daisyui.com/components/)
+- [Tailwind Docs](https://tailwindcss.com/docs)
+
+---
+
+## Adding New Features
+
+### Feature Development Workflow
+
+1. **Plan the feature**: What problem does it solve?
+2. **Design the solution**: Template? Data file? JS? All three?
+3. **Create a branch**: `git checkout -b feature/your-feature`
+4. **Implement incrementally**: Small commits
+5. **Test thoroughly**: Local testing + edge cases
+6. **Document**: Update README/guides if needed
+7. **Create PR**: Clear description of changes
+
+### Common Feature Patterns
+
+#### Adding a New Page Type
+
+**Example: Resource library page**
+
+1. **Create content file:**
+   ```markdown
+   <!-- content/resources/_index.md -->
+   +++
+   title = "Resources"
+   template = "resources.html"
+   +++
+   
+   Browse our curated learning resources.
+   ```
+
+2. **Create template:**
+   ```html
+   <!-- templates/resources.html -->
+   {% extends "goyo/templates/page.html" %}
+   
+   {% block content %}
+   <!-- Custom layout -->
+   {% endblock %}
+   ```
+
+#### Adding Data-Driven Content
+
+**Example: Alumni directory**
+
+1. **Create data file:**
+   ```toml
+   # data/alumni.toml
+   [[alumni]]
+   name = "John Doe"
+   batch = "2020"
+   company = "Google"
+   ```
+
+2. **Load in template:**
+   ```html
+   {% set alumni = load_data(path="data/alumni.toml") %}
+   {% for person in alumni.alumni %}
+     <!-- Render -->
+   {% endfor %}
+   ```
+
+#### Adding Interactive Features (JavaScript)
+
+**Example: Search functionality**
+
+1. **Create JS file:**
+   ```javascript
+   // static/js/search.js
+   document.addEventListener('DOMContentLoaded', () => {
+     // Search implementation
+   });
+   ```
+
+2. **Include in template:**
+   ```html
+   <script src="/js/search.js"></script>
+   ```
+
+---
+
+## Debugging & Troubleshooting
+
+### Common Zola Errors
+
+#### Build Errors
+
+**Error:** `Error: Failed to render 'template.html'`
+- **Cause:** Template syntax error
+- **Fix:** Check Tera syntax, ensure all `{% endif %}`, `{% endfor %}` are closed
+
+**Error:** `Error: Failed to load data from 'data/file.toml'`
+- **Cause:** Invalid TOML syntax
+- **Fix:** Validate TOML at https://www.toml-lint.com/
+
+**Error:** `Error: Asset not found`
+- **Cause:** Wrong path to static file
+- **Fix:** Paths are relative to `static/`, use `/images/file.jpg` not `static/images/file.jpg`
+
+#### Template Debugging
+
+**Print variables:**
+```html
+<!-- Debug output -->
+<pre>{{ page }}</pre>
+<pre>{{ config }}</pre>
+```
+
+**Check if variable exists:**
+```html
+{% if page.extra.custom_field %}
+  {{ page.extra.custom_field }}
+{% else %}
+  Field not set
+{% endif %}
+```
+
+### Useful Commands
+
+```bash
+# Check for errors without building
+zola check
+
+# Build with verbose output
+zola build --verbose
+
+# Serve drafts
+zola serve --drafts
+
+# Clear cache and rebuild
+rm -rf public && zola build
+```
+
+### Browser DevTools
+
+- **Console:** Check for JavaScript errors
+- **Network:** Verify assets are loading
+- **Elements:** Inspect generated HTML
+- **Lighthouse:** Performance/accessibility audit
+
+---
+
+## Code Quality & Best Practices
+
+### HTML Best Practices
+
+- ✅ **Semantic HTML:** Use `<article>`, `<section>`, `<nav>` appropriately
+- ✅ **Accessibility:** Add `alt` text to images, proper heading hierarchy
+- ✅ **Valid HTML:** Check with W3C validator
+- ✅ **Responsive:** Mobile-first design
+
+### CSS Organization
+
+```css
+/* 1. Variables */
+:root {
+  --primary-color: #1a73e8;
+}
+
+/* 2. Base styles */
+body { ... }
+
+/* 3. Components */
+.card { ... }
+
+/* 4. Utilities */
+.mt-4 { margin-top: 1rem; }
+```
+
+### Performance
+
+- ✅ **Optimize images:** Use WebP format
+- ✅ **Minify assets:** Use production builds
+- ✅ **Lazy load:** Images below the fold
+- ✅ **Cache headers:** Set in deployment
+
+### Accessibility
+
+- ✅ **Keyboard navigation:** All interactive elements focusable
+- ✅ **Color contrast:** WCAG AA minimum (4.5:1)
+- ✅ **ARIA labels:** When needed for screen readers
+- ✅ **Form labels:** Always associate labels with inputs
+
+---
+
+## Development Workflow
+
+### Branch Strategy
+
+```bash
+# Create feature branch
+git checkout -b feature/add-search
+
+# Make changes and commit
+git add .
+git commit -m "Add search functionality to blog"
+
+# Push to your fork
+git push origin feature/add-search
+
+# Create PR on GitHub
+```
+
+### Commit Messages
+
+**Format:** `<type>: <description>`
+
+**Types:**
+- `feat:` New feature
+- `fix:` Bug fix
+- `docs:` Documentation
+- `style:` Code style (formatting)
+- `refactor:` Code restructure
+- `test:` Tests
+- `chore:` Maintenance
+
+**Examples:**
+```
+feat: add search to blog listing
+fix: correct event date formatting
+docs: update template development guide
+refactor: simplify team page template
+```
+
+### Testing Checklist
+
+Before submitting PR:
+
+- [ ] `zola check` passes
+- [ ] `zola build` succeeds
+- [ ] Site works in browser (http://127.0.0.1:1111)
+- [ ] Tested on mobile viewport
+- [ ] No console errors
+- [ ] Links work
+- [ ] Images load
+- [ ] Responsive design works
+
+---
+
+## Testing
+
+### Local TestingRun the development server:
+```bash
+zola serve
+```
+
+**Test different scenarios:**
+- Homepage
+- Blog listing and individual posts
+- Events (upcoming/past)
+- Team/projects pages
+- Mobile viewport (DevTools responsive mode)
+- Dark/light theme (if applicable)
+
+### Content Validation
+
+```bash
+# Check all content and links
+zola check
+
+# Build to catch errors
+zola build
+```
+
+### Browser Testing
+
+Test in:
+- Chrome/Edge (Chromium)
+- Firefox
+- Safari (if on Mac)
+- Mobile browsers (iOS Safari, Chrome Android)
 
 ---
 
 ## Using Goyo Theme Features
+
+> **Note:** This section covers Goyo shortcodes useful for content contributors.  
+> For a full list, see the [Goyo documentation](https://github.com/hahwul/goyo#readme).
 
 Our website uses the [Goyo theme](https://github.com/hahwul/goyo) for Zola, which provides many built-in features and shortcodes.
 
@@ -495,30 +794,7 @@ sequenceDiagram
 
 [Learn more about Mermaid syntax](https://mermaid.js.org/)
 
-#### Image Gallery
 
-Create image carousels and galleries:
-
-```markdown
-{{ "{% carousel(images=[" }}
-    \"/images/event1.jpg\",
-    \"/images/event2.jpg\",
-    \"/images/event3.jpg\"
-]) %}"}}
-
-{{ "{% gallery(images=[" }}
-    \"/images/project1.jpg\",
-    \"/images/project2.jpg\"
-]) %}"}}
-```
-
-#### Before/After Images
-
-Show image comparisons:
-
-```markdown
-{{ "{% image_diff(src1=\"/images/before.jpg\" src2=\"/images/after.jpg\" alt=\"Comparison\") %}" }}
-```
 
 #### Embedded Content
 
@@ -538,24 +814,7 @@ Embed external content:
 {{ "{% asciinema(id=\"your-recording-id\") %}" }}
 ```
 
-#### Math Equations
 
-Render mathematical notation using KaTeX:
-
-```markdown
-{{ "{% math() %}" }}
-E = mc^2
-{{ "{% end %}" }}
-```
-
-Inline math: `$E = mc^2$`
-
-Block math:
-```markdown
-$$
-\int_{a}^{b} f(x)dx = F(b) - F(a)
-$$
-```
 
 #### Collapsible Sections
 
@@ -575,13 +834,7 @@ Create styled external link cards:
 {{ "{% pretty_link(url=\"https://example.com\" title=\"Example Site\" description=\"A great resource\") %}" }}
 ```
 
-#### Browser Mockup
 
-Show screenshots in a browser frame:
-
-```markdown
-{{ "{% browser(url=\"https://ccclub.edu\" image=\"/images/screenshot.jpg\") %}" }}
-```
 
 ### Page Configuration Options
 
@@ -822,7 +1075,7 @@ If the main repository has updates:
 
 ```bash
 # Add upstream remote (one-time setup)
-git remote add upstream https://github.com/ccc-lnmiit/cc-website.git
+git remote add upstream https://github.com/CC-MNNIT/cc-website.git
 
 # Fetch and merge updates
 git fetch upstream
@@ -849,6 +1102,127 @@ git log --oneline
 
 ---
 
+---
+
+## 🏗️ Site Architecture
+
+**This site follows Zola + Goyo best practices:**
+
+1. **Content in Markdown** - `content/` directory
+2. **Data in TOML** - `data/` directory  
+3. **Styling via DaisyUI/Tailwind** - Minimal custom CSS
+4. **Templates extend Goyo** - Not replace
+5. **Server-side rendering** - JavaScript only for interactivity
+
+**What makes this maintainable:**
+- Non-developers can edit Markdown/TOML without touching code
+- Custom templates are minimal and well-documented
+- Goyo theme updates are automatically inherited
+- Static site = fast, secure, cheap hosting
+
+### Custom Templates
+
+Custom templates (in `templates/`) are used only where Goyo doesn't provide the functionality:
+
+| Template | Purpose | Extends Goyo? |
+|----------|---------|---------------|
+| `alumni.html` | Alumni directory with filters | ✅ Yes (`page.html`) |
+| `blog.html` | Blog listing with search | ✅ Yes (`index.html`) |
+| `team.html` | Team member cards from TOML | ✅ Yes (`page.html`) |
+| `events.html` | Event listing (upcoming/past) | ✅ Yes (`index.html`) |
+| `contrihub_*.html` | ContriHub pages | ✅ Yes |
+| `impact.html` | Impact showcase | ✅ Yes |
+| `taxonomy_*.html` | Tag pages (required) | ✅ Yes |
+
+**Important:** These templates extend Goyo - they don't replace it. Goyo updates will still apply.
+
+---
+
+## 🎨 Customization
+
+### Theme Settings
+
+Edit `config.toml` to customize:
+
+```toml
+[extra.theme]
+colorset = "dark"              # "dark" or "light"
+brightness = "normal"          # "darker", "normal", "lighter"
+disable_toggle = false         # Hide theme toggle
+
+[extra.logo]
+text = "CC Club"
+image_path = "logo.png" # Add your logo (place in static/images/)
+
+[extra.sidebar]
+expand_depth = 2               # Sidebar auto-expansion depth
+```
+
+### Custom Styling
+
+Add custom CSS in `static/css/custom.css`:
+- File includes helpful comments and examples
+- Extends Goyo theme without overriding
+- Uses DaisyUI utilities
+
+---
+
+## 🛠️ Development Tools
+
+### Recommended Tools
+
+- **VS Code** with extensions:
+  - Markdown All in One
+  - TOML
+  - Better TOML
+
+- **Optional Git GUI**:
+  - GitHub Desktop (simplest)
+  - GitKraken
+  - SourceTree
+
+### Common Tasks
+
+**Adding images:**
+```bash
+# Place in static/images/
+cp photo.jpg static/images/team/yourname.jpg
+
+# Reference in markdown or TOML
+image: "/images/team/yourname.jpg"
+```
+
+**Working with drafts:**
+```markdown
++++
+draft = true  # Won't appear in production
++++
+```
+
+View drafts: `zola serve --drafts`
+
+**Testing before deploy:**
+```bash
+# Build and check for errors
+zola build
+
+# Check internal links
+zola check
+
+# Serve production build locally
+cd public && python3 -m http.server
+```
+
+---
+
+## 🚀 Deployment
+
+The site is deployed automatically via GitHub Actions when changes are pushed to the main branch. You don't need to worry about deployment as a contributor - just create your PR and maintainers will handle the rest.
+
+For maintainers interested in deployment setup, see the GitHub Actions workflow in `.github/workflows/deploy.yml`.
+
+---
+
 ## Pull Request Guidelines
 
 ### Before Creating a PR
@@ -858,13 +1232,13 @@ git log --oneline
 - [ ] No unrelated changes included
 - [ ] Markdown files have no syntax errors
 - [ ] Images are properly referenced and committed
-- [ ] YAML files are properly formatted (indentation!)
+- [ ] TOML files are properly formatted (indentation!)
 
 ### Creating a PR
 
 1. **Go to GitHub** and navigate to your fork
 2. **Click "Pull Request"**
-3. **Choose base repository**: `ccc-lnmiit/cc-website`
+3. **Choose base repository**: `CC-MNNIT/cc-website`
 4. **Choose base branch**: `main`
 5. **Fill in the PR template**:
 
@@ -975,7 +1349,52 @@ git push origin main
 
 ---
 
-## Thank You!
+---
+
+## Resources & Documentation
+
+### Zola Documentation
+
+- **[Getting Started](https://www.getzola.org/documentation/getting-started/overview/)** - Introduction to Zola
+- **[Installation](https://www.getzola.org/documentation/getting-started/installation/)** - Installing Zola
+- **[Directory Structure](https://www.getzola.org/documentation/getting-started/directory-structure/)** - Understanding the file layout
+- **[Configuration](https://www.getzola.org/documentation/getting-started/configuration/)** - config.toml reference
+- **[Templates](https://www.getzola.org/documentation/templates/overview/)** - Template system guide
+- **[Content](https://www.getzola.org/documentation/content/overview/)** - Writing content in Markdown
+- **[Deployment](https://www.getzola.org/documentation/deployment/overview/)** - Deployment options
+
+### Template Engine (Tera)
+
+- **[Tera Documentation](https://tera.netlify.app/docs/)** - Full Tera template reference
+- **[Tera Filters](https://tera.netlify.app/docs/#filters)** - Built-in filters
+- **[Tera Tests](https://tera.netlify.app/docs/#tests)** - Conditional tests
+
+### Goyo Theme
+
+- **[GitHub Repository](https://github.com/hahwul/goyo)** - Goyo source code
+- **[Theme Documentation](https://github.com/hahwul/goyo#readme)** - Usage guide
+- **[Shortcodes](https://github.com/hahwul/goyo#shortcodes)** - Available shortcodes
+
+### Styling Frameworks
+
+- **[Tailwind CSS Documentation](https://tailwindcss.com/docs)** - Utility classes
+- **[DaisyUI Components](https://daisyui.com/components/)** - Pre-built components
+- **[Font Awesome Icons](https://fontawesome.com/icons)** - Icon library
+
+### Web Standards
+
+- **[MDN Web Docs](https://developer.mozilla.org/)** - HTML/CSS/JS reference
+- **[Can I Use](https://caniuse.com/)** - Browser compatibility
+- **[W3C HTML Validator](https://validator.w3.org/)** - Validate HTML
+- **[WCAG Guidelines](https://www.w3.org/WAI/WCAG21/quickref/)** - Accessibility standards
+
+### Tools & Validators
+
+- **[TOML Lint](https://www.toml-lint.com/)** - Validate TOML syntax
+- **[JSON Formatter](https://jsonformatter.org/)** - Format/validate JSON
+- **[Lighthouse](https://developers.google.com/web/tools/lighthouse)** - Performance audit
+
+---
 
 Your contributions make the CC Club website better for everyone. Whether you're adding content, fixing typos, or building features, we appreciate your effort!
 

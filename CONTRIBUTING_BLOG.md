@@ -74,14 +74,29 @@ sudo rm /usr/local/bin/zola  # or wherever it's installed
 
 ## Step 1: Clone the Repository
 
-Clone the CC-MNNIT website repository to your local machine:
+Clone the CC-MNNIT website repository to your local machine.
+
+**For most contributors (recommended):**
+
+```bash
+git clone --depth=1 --recursive https://github.com/CC-MNNIT/cc-website.git
+cd cc-website
+```
+
+**If you need full git history:**
 
 ```bash
 git clone --recursive https://github.com/CC-MNNIT/cc-website.git
 cd cc-website
 ```
 
-> **Note:** The `--recursive` flag is important as it clones the theme submodule.
+**Optional fallback** (if you already cloned without submodules):
+
+```bash
+git submodule update --init --recursive --depth=1
+```
+
+> **Note:** The `--recursive` and `--depth=1` flags ensure faster cloning by getting only the latest commit and theme submodule.
 
 ---
 
@@ -152,6 +167,13 @@ If your post includes images:
    ```markdown
    ![Description](/images/blog/2026/your-post-slug/image.png)
    ```
+
+> **🎨 Automatic Image Optimization**  
+> Any images you add to `static/images/` are automatically converted to WebP format and compressed by our GitHub workflow when your PR is merged. This means:
+> - You can upload PNG, JPG, or other formats - they'll be optimized automatically
+> - No manual compression needed
+> - Faster website performance with smaller file sizes
+> - Original files are preserved alongside WebP versions
 
 ---
 
@@ -356,7 +378,7 @@ Here's the complete workflow in one view:
 
 ```bash
 # 1. Clone and setup
-git clone --recursive https://github.com/CC-MNNIT/cc-website.git
+git clone --depth=1 --recursive https://github.com/CC-MNNIT/cc-website.git
 cd cc-website
 
 # 2. Create your post
