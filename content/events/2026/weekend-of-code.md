@@ -10,7 +10,7 @@ event_type = "buildfest"
 status = "completed"
 external_link = "https://weekendofcode2k26.devfolio.co/overview"
 location = "MNNIT Allahabad"
-participants = "500"
+participants = "500+"
 banner_image = "events/2026/weekend-of-code/gallery-02.webp"
 show_banner = true
 
