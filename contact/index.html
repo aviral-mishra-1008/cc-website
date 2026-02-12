@@ -63,7 +63,7 @@
             
             @font-face {
                 font-family: "Pretendard-Regular";
-                src: url('/cc-website/fonts/Pretendard-Regular.woff') format("woff");
+                src: url('https://cc-club.in/fonts/Pretendard-Regular.woff') format("woff");
                 font-weight: 400;
                 font-style: normal;
                 font-display: swap;
@@ -78,23 +78,23 @@
         <meta name="description" content="Official website of Computer Coding Club - Learn, Build, and Grow Together" />
     
 
-    <title>Contact Us | Computer Coding Club</title>
+    <title>Get in Touch | Computer Coding Club</title>
 
     
     
 
       <!-- SEO: Open Graph / Twitter Card -->
-      <meta property="og:title" content="Contact Us | Computer Coding Club" />
-      <meta property="og:description" content="Get in touch with the Computer Coding Club team" />
-      <meta property="og:url" content="/cc-website/" />
+      <meta property="og:title" content="Get in Touch | Computer Coding Club" />
+      <meta property="og:description" content="We&#x27;d love to hear from you! Whether you have a question about our events, want to partner with us, or just want to say hi, here&#x27;s how you can reach us." />
+      <meta property="og:url" content="https://cc-club.in/" />
       <meta property="og:type" content="website" />
       
-      <meta property="og:image" content="/cc-website/cc-club-thumbnail.jpg" />
+      <meta property="og:image" content="https://cc-club.in/cc-club-thumbnail.webp" />
       
 
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:title" content="Computer Coding Club" />
-      <meta name="twitter:description" content="Get in touch with the Computer Coding Club team" />
+      <meta name="twitter:description" content="We&#x27;d love to hear from you! Whether you have a question about our events, want to partner with us, or just want to say hi, here&#x27;s how you can reach us." />
       
       
       
@@ -108,22 +108,29 @@
       <meta name="twitter:creator" content="@ccclub_mnnit" />
       
       
-      <meta name="twitter:image" content="/cc-website/cc-club-thumbnail.jpg" />
+      <meta name="twitter:image" content="https://cc-club.in/cc-club-thumbnail.webp" />
       
 
       <!-- Browser address bar color -->
       <meta name="theme-color" content="#0f172a">
 
+      <!-- Favicon -->
+      <link rel="icon" type="image/png" href="https://cc-club.in/icons/favicon-96x96.png" sizes="96x96" />
+      <link rel="icon" type="image/svg+xml" href="https://cc-club.in/icons/favicon.svg" />
+      <link rel="shortcut icon" href="https://cc-club.in/icons/favicon.ico" />
+      <link rel="apple-touch-icon" sizes="180x180" href="https://cc-club.in/icons/apple-touch-icon.png" />
+      <link rel="manifest" href="https://cc-club.in/icons/site.webmanifest" />
+
       <!-- CSS -->
-    <link rel="stylesheet" href="/cc-website/css/main.css">
-    <link rel="stylesheet" href="/cc-website/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cc-club.in/css/main.css">
+    <link rel="stylesheet" href="https://cc-club.in/css/font-awesome.min.css">
     
     <!-- Preload critical fonts -->
-    <link rel="preload" href="/cc-website/fonts/Pretendard-Regular.woff" as="font" type="font/woff" crossorigin>
+    <link rel="preload" href="https://cc-club.in/fonts/Pretendard-Regular.woff" as="font" type="font/woff" crossorigin>
 
     <!-- Defer non-critical scripts -->
-    <script defer src="/cc-website/js/copy_code.js"></script>
-    <script defer src="/cc-website/js/copy_heading_link.js"></script>
+    <script defer src="https://cc-club.in/js/copy_code.js"></script>
+    <script defer src="https://cc-club.in/js/copy_heading_link.js"></script>
     
     <!-- Lazy load Mermaid and KaTeX - only when needed -->
     <script>
@@ -140,12 +147,12 @@
                 // Load KaTeX CSS first
                 var katexCSS = document.createElement('link');
                 katexCSS.rel = 'stylesheet';
-                katexCSS.href = '/cc-website/css/katex.min.css';
+                katexCSS.href = 'https://cc-club.in/css/katex.min.css';
                 document.head.appendChild(katexCSS);
                 
                 // Load KaTeX JS
                 var katexScript = document.createElement('script');
-                katexScript.src = '/cc-website/js/katex.min.js';
+                katexScript.src = 'https://cc-club.in/js/katex.min.js';
                 katexScript.onload = function() {
                     // Render inline elements
                     katexInlineElements.forEach(function(elem) {
@@ -179,7 +186,7 @@
             // Load Mermaid if diagram elements are present
             if (hasMermaid) {
                 var mermaidScript = document.createElement('script');
-                mermaidScript.src = '/cc-website/js/mermaid.min.js';
+                mermaidScript.src = 'https://cc-club.in/js/mermaid.min.js';
                 mermaidScript.onload = function() {
                     // Initialize Mermaid after loading
                     if (typeof window.initMermaid === 'function') {
@@ -195,7 +202,7 @@
     
 
     
-    <link rel="stylesheet" href="/cc-website/css/custom.css">
+    <link rel="stylesheet" href="https://cc-club.in/css/custom.css">
 
     <style>
         /* Desktop Sidebar Animation */
@@ -274,205 +281,258 @@
 
 
 
-    
-    
-    
-    
-    
 
 
 
 
 
 
-    
+
+
+
+
+
+
 
 
 <div class="navbar opacity-95 fixed top-0 left-0 right-0 z-50 h-16 border-b border-gray-500/15 backdrop-blur-3xl">
     <!-- Mobile hamburger (and Desktop on Root Page) -->
     <div class="flex-none lg:hidden">
         <label for="my-drawer-2" class="btn btn-square btn-ghost">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="inline-block w-5 h-5 stroke-current"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                class="inline-block w-5 h-5 stroke-current">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16">
+                </path>
+            </svg>
         </label>
     </div>
     <!-- Desktop sidebar toggle -->
     
     <div class="flex-none hidden lg:block">
         <button id="desktop-sidebar-toggle" class="btn btn-square btn-ghost" aria-label="Toggle sidebar">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="inline-block w-5 h-5 stroke-current"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                class="inline-block w-5 h-5 stroke-current">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16">
+                </path>
+            </svg>
         </button>
     </div>
     
     <!-- Logo -->
     <div class="flex-1">
-        <a href="/cc-website" class="btn btn-ghost hover:animate-pulse hover:bg-transparent hover:border-transparent normal-case text-xl logo-link" style="background: linear-gradient(135deg, #9ca3af, #6b7280); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; font-weight: bold; font-size: 1.5rem;">
+        <a href="https://cc-club.in"
+            class="btn btn-ghost hover:animate-pulse hover:bg-transparent hover:border-transparent normal-case text-xl logo-link"
+            style="background: linear-gradient(135deg, #9ca3af, #6b7280); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; font-weight: bold; font-size: 1.5rem;">
             
-                <img 
-                    src="/cc-website/images/logo/cclogo.png" 
-                    alt="CC Club" 
-                    class="h-18 w-auto"
-                    style="padding: 10px;"
-                />
+            <img src="https://cc-club.in/images/logo/cclogo.webp" alt="CC Club"
+                class="h-18 w-auto" style="padding: 10px;"  />
             
         </a>
     </div>
-<!-- Desktop AND Mobile Menu - Theme toggle always visible -->
-<div class="flex-none flex lg:flex">
-    <ul class="menu menu-horizontal px-1 items-center">
-        <!-- Desktop navigation items (hidden on mobile) -->
-        <div class="hidden lg:flex lg:contents">
-            
-            
-            
+    <!-- Desktop AND Mobile Menu - Theme toggle always visible -->
+    <div class="flex-none flex lg:flex">
+        <ul class="menu menu-horizontal px-1 items-center">
+            <!-- Desktop navigation items (hidden on mobile) -->
+            <div class="hidden lg:flex lg:contents">
                 
+                
+                
+                
+                
+                
+                
+                
+                
+                <li>
                     
-                        
-                        
+                        <a class="btn btn-ghost hover:no-underline "
+                            href="https://cc-club.in/about">
                             
+                            <i class="fa-solid fa-circle-info"></i>
+                            About
+                        </a>
+                </li>
+                
+                
+                
+                
+                
+                
+                
+                <li>
+                    
+                        <a class="btn btn-ghost hover:no-underline "
+                            href="https://cc-club.in/blog">
+                            
+                            <i class="fa-solid fa-blog"></i>
+                            Blog
+                        </a>
+                </li>
+                
+                
+                
+                
+                
+                
+                
+                <li>
+                    
+                        <a class="btn btn-ghost hover:no-underline "
+                            href="https://cc-club.in/events">
+                            
+                            <i class="fa-solid fa-calendar-days"></i>
+                            Events
+                        </a>
+                </li>
+                
+                
+                
+                
+                
+                
+                
+                <li>
+                    
+                    <a class="btn btn-ghost hover:no-underline "
+                        href="https://drive.google.com/file/d/1f7eJdgjX0p9CanHlK5bGkmdARIa4ErHZ/view" target="_blank" rel="noopener noreferrer">
+                        
+                            <i class="fa-solid fa-calendar-check"></i>
+                            Calendar
+                        </a>
+                </li>
+                
+                
+                
+                
+                
+                
+                
+                <li>
+                    
+                        <a class="btn btn-ghost hover:no-underline "
+                            href="https://cc-club.in/projects">
+                            
+                            <i class="fa-solid fa-code-branch"></i>
+                            Projects
+                        </a>
+                </li>
+                
+                
+                
+                
+                
+                
+                
+                <li>
+                    
+                        <a class="btn btn-ghost hover:no-underline "
+                            href="https://cc-club.in/roadmaps">
+                            
+                            <i class="fa-solid fa-route"></i>
+                            Roadmaps
+                        </a>
+                </li>
+                
+                
+                
+                <li class="dropdown dropdown-end">
+                    <div tabindex="0" role="button" class="btn btn-ghost">
+                        <i class="fa-solid fa-users"></i>
+                        Community
+                        <svg class="inline w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7">
+                            </path>
+                        </svg>
+                    </div>
+                    <ul tabindex="0"
+                        class="dropdown-content menu bg-base-100 border border-gray-500/15 rounded-box z-1 p-2 shadow-sm">
+                        
                         
                         <li>
-                            <a class="btn btn-ghost hover:no-underline " href="/cc-website/about">
-                                <i class="fa-solid fa-circle-info"></i>
-                                About
-                            </a>
-                        </li>
-                    
-                
-                    
-                        
-                        
                             
-                        
-                        <li>
-                            <a class="btn btn-ghost hover:no-underline " href="/cc-website/blog">
-                                <i class="fa-solid fa-blog"></i>
-                                Blog
-                            </a>
-                        </li>
-                    
-                
-                    
-                        
-                        
-                            
-                        
-                        <li>
-                            <a class="btn btn-ghost hover:no-underline " href="/cc-website/events">
-                                <i class="fa-solid fa-calendar-days"></i>
-                                Events
-                            </a>
-                        </li>
-                    
-                
-                    
-                        
-                        
-                            
-                        
-                        <li>
-                            <a class="btn btn-ghost hover:no-underline " href="/cc-website/projects">
-                                <i class="fa-solid fa-code-branch"></i>
-                                Projects
-                            </a>
-                        </li>
-                    
-                
-                    
-                        
-                        
-                            
-                        
-                        <li>
-                            <a class="btn btn-ghost hover:no-underline " href="/cc-website/roadmaps">
-                                <i class="fa-solid fa-route"></i>
-                                Roadmaps
-                            </a>
-                        </li>
-                    
-                
-                    
-                        <li class="dropdown dropdown-end">
-                            <div tabindex="0" role="button" class="btn btn-ghost">
-                                <i class="fa-solid fa-users"></i>
-                                Community
-                                <svg class="inline w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-                            </div>
-                            <ul tabindex="0" class="dropdown-content menu bg-base-100 border border-gray-500/15 rounded-box z-1 p-2 shadow-sm">
-                                
+                                <a class="btn btn-ghost hover:no-underline "
+                                    href="https://cc-club.in/team">
                                     
-                                    <li>
-                                        <a class="btn btn-ghost hover:no-underline " href="/cc-website/team">
-                                            <i class="fa-solid fa-user-group"></i>
-                                            Current Team
-                                        </a>
-                                    </li>
-                                
-                            </ul>
+                                    <i class="fa-solid fa-user-group"></i>
+                                    Current Team
+                                </a>
                         </li>
-                    
+                        
+                    </ul>
+                </li>
                 
+                
+                
+                
+                
+                
+                
+                <li>
                     
-                        
-                        
+                        <a class="btn btn-ghost hover:no-underline "
+                            href="https://cc-club.in/contact">
                             
-                        
-                        <li>
-                            <a class="btn btn-ghost hover:no-underline " href="/cc-website/contact">
-                                <i class="fa-solid fa-envelope"></i>
-                                Contact
-                            </a>
-                        </li>
-                    
+                            <i class="fa-solid fa-envelope"></i>
+                            Contact
+                        </a>
+                </li>
                 
-            
+                
+                
+
+                
+            </div>
 
             
-        </div>
-
-        
             
-        
-        
-        <li class="flex items-center">
-            <label class="swap swap-rotate btn btn-ghost btn-circle">
-              <input type="checkbox" class="theme-controller" value="night" aria-labelledby="swap color"/>
-              <svg class="swap-off h-5 w-5 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M5.64,17l-.71.71a1,1,0,0,0,0,1.41,1,1,0,0,0,1.41,0l.71-.71A1,1,0,0,0,5.64,17ZM5,12a1,1,0,0,0-1-1H3a1,1,0,0,0,0,2H4A1,1,0,0,0,5,12Zm7-7a1,1,0,0,0,1-1V3a1,1,0,0,0-2,0V4A1,1,0,0,0,12,5ZM5.64,7.05a1,1,0,0,0,.7.29,1,1,0,0,0,.71-.29,1,1,0,0,0,0-1.41l-.71-.71A1,1,0,0,0,4.93,6.34Zm12,.29a1,1,0,0,0,.7-.29l.71-.71a1,1,0,1,0-1.41-1.41L17,5.64a1,1,0,0,0,0,1.41A1,1,0,0,0,17.66,7.34ZM21,11H20a1,1,0,0,0,0,2h1a1,1,0,0,0,0-2Zm-9,8a1,1,0,0,0-1,1v1a1,1,0,0,0,2,0V20A1,1,0,0,0,12,19ZM18.36,17A1,1,0,0,0,17,18.36l.71.71a1,1,0,0,0,1.41,0,1,1,0,0,0,0-1.41ZM12,6.5A5.5,5.5,0,1,0,17.5,12,5.51,5.51,0,0,0,12,6.5Zm0,9A3.5,3.5,0,1,1,15.5,12,3.5,3.5,0,0,1,12,15.5Z" /></svg>
-              <svg class="swap-on h-5 w-5 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21.64,13a1,1,0,0,0-1.05-.14,8.05,8.05,0,0,1-3.37.73A8.15,8.15,0,0,1,9.08,5.49a8.59,8.59,0,0,1,.25-2A1,1,0,0,0,8,2.36,10.14,10.14,0,1,0,22,14.05,1,1,0,0,0,21.64,13Zm-9.5,6.69A8.14,8.14,0,0,1,7.08,5.22v.27A10.15,10.15,0,0,0,17.22,15.63a9.79,9.79,0,0,0,2.1-.22A8.11,8.11,0,0,1,12.14,19.73Z" /></svg>
-            </label>
-        </li>
-        
-    </ul>
-</div>
+            
+            
+            <li class="flex items-center">
+                <label class="swap swap-rotate btn btn-ghost btn-circle">
+                    <input type="checkbox" class="theme-controller" value="night" aria-labelledby="swap color" />
+                    <svg class="swap-off h-5 w-5 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path
+                            d="M5.64,17l-.71.71a1,1,0,0,0,0,1.41,1,1,0,0,0,1.41,0l.71-.71A1,1,0,0,0,5.64,17ZM5,12a1,1,0,0,0-1-1H3a1,1,0,0,0,0,2H4A1,1,0,0,0,5,12Zm7-7a1,1,0,0,0,1-1V3a1,1,0,0,0-2,0V4A1,1,0,0,0,12,5ZM5.64,7.05a1,1,0,0,0,.7.29,1,1,0,0,0,.71-.29,1,1,0,0,0,0-1.41l-.71-.71A1,1,0,0,0,4.93,6.34Zm12,.29a1,1,0,0,0,.7-.29l.71-.71a1,1,0,1,0-1.41-1.41L17,5.64a1,1,0,0,0,0,1.41A1,1,0,0,0,17.66,7.34ZM21,11H20a1,1,0,0,0,0,2h1a1,1,0,0,0,0-2Zm-9,8a1,1,0,0,0-1,1v1a1,1,0,0,0,2,0V20A1,1,0,0,0,12,19ZM18.36,17A1,1,0,0,0,17,18.36l.71.71a1,1,0,0,0,1.41,0,1,1,0,0,0,0-1.41ZM12,6.5A5.5,5.5,0,1,0,17.5,12,5.51,5.51,0,0,0,12,6.5Zm0,9A3.5,3.5,0,1,1,15.5,12,3.5,3.5,0,0,1,12,15.5Z" />
+                    </svg>
+                    <svg class="swap-on h-5 w-5 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path
+                            d="M21.64,13a1,1,0,0,0-1.05-.14,8.05,8.05,0,0,1-3.37.73A8.15,8.15,0,0,1,9.08,5.49a8.59,8.59,0,0,1,.25-2A1,1,0,0,0,8,2.36,10.14,10.14,0,1,0,22,14.05,1,1,0,0,0,21.64,13Zm-9.5,6.69A8.14,8.14,0,0,1,7.08,5.22v.27A10.15,10.15,0,0,0,17.22,15.63a9.79,9.79,0,0,0,2.1-.22A8.11,8.11,0,0,1,12.14,19.73Z" />
+                    </svg>
+                </label>
+            </li>
+            
+        </ul>
+    </div>
 </div>
 
 
 <script>
-document.addEventListener('DOMContentLoaded', function() {
-    const currentPath = window.location.pathname;
-    
-    const navLinks = document.querySelectorAll('.navbar a[href]:not(.logo-link)');
-    
-    navLinks.forEach(link => {
-        const linkPath = new URL(link.href).pathname;
-                if (link.classList.contains('active-nav')) {
-            return;
-        }
-        
-        let isActive = false;
-        
-        if (linkPath === '/') {
-            isActive = (currentPath === '/' || currentPath === '');
-        } else {
-            isActive = currentPath.startsWith(linkPath);
-        }
-        
-        if (isActive) {
-            link.classList.add('active-nav');
-        } else {
-            link.classList.remove('active-nav');
-        }
+    document.addEventListener('DOMContentLoaded', function () {
+        const currentPath = window.location.pathname;
+
+        const navLinks = document.querySelectorAll('.navbar a[href]:not(.logo-link)');
+
+        navLinks.forEach(link => {
+            const linkPath = new URL(link.href).pathname;
+            if (link.classList.contains('active-nav')) {
+                return;
+            }
+
+            let isActive = false;
+
+            if (linkPath === '/') {
+                isActive = (currentPath === '/' || currentPath === '');
+            } else {
+                isActive = currentPath.startsWith(linkPath);
+            }
+
+            if (isActive) {
+                link.classList.add('active-nav');
+            } else {
+                link.classList.remove('active-nav');
+            }
+        });
     });
-});
 </script>
 
 
@@ -489,47 +549,37 @@ document.addEventListener('DOMContentLoaded', function() {
                         
     <div class="mb-12 pb-4 border-b border-gray-500/15">
         <h1 class="flex items-center gap-3">
-            Contact Us
+            Get in Touch
             
         </h1>
-        <p class="text-gray-500">Get in touch with the Computer Coding Club team</p>
+        <p class="text-gray-500">We&#x27;d love to hear from you! Whether you have a question about our events, want to partner with us, or just want to say hi, here&#x27;s how you can reach us.</p>
     </div>
-    <h1 id="get-in-touch">Get in Touch</h1>
-<p>We'd love to hear from you! Whether you have a question about our events, want to partner with us, or just want to say hi, here's how you can reach us.</p>
-<h2 id="contact-information">Contact Information</h2>
+    <h2 id="contact-information">Contact Information</h2>
 <h3 id="general-inquiries">General Inquiries</h3>
-<p><strong>Email</strong>: info@ccclub.edu<br />
-<strong>Phone</strong>: +91-XXXX-XXXXXX</p>
-<h3 id="event-partnerships">Event Partnerships</h3>
-<p><strong>Email</strong>: events@ccclub.edu</p>
-<h3 id="technical-support">Technical Support</h3>
-<p><strong>Email</strong>: tech@ccclub.edu</p>
+<p><strong>Email</strong>: <a href="mailto:computer.club@mnnit.ac.in">computer.club@mnnit.ac.in</a></p>
+<h3 id="visit-us">Visit Us</h3>
+<p><strong>Department</strong>: Computer Science &amp; Engineering Department<br />
+<strong>Address</strong>: MNNIT Allahabad, Teliarganj, Prayagraj, Uttar Pradesh 211004</p>
 <hr />
 <h2 id="connect-online">Connect Online</h2>
-<h3 id="discord">Discord</h3>
-<p><a href="https://discord.gg/ccclub">Join our server</a> - This is where our community lives!</p>
-<h3 id="social-media">Social Media</h3>
+<p>Stay updated with our latest events and announcements:</p>
 <ul>
-<li><strong>Instagram</strong>: <a href="https://instagram.com/ccclub_official">@ccclub_official</a></li>
-<li><strong>LinkedIn</strong>: <a href="https://linkedin.com/company/ccclub">Computer Coding Club</a></li>
-<li><strong>Twitter</strong>: <a href="https://twitter.com/ccclub_official">@ccclub_official</a></li>
-<li><strong>GitHub</strong>: <a href="https://github.com/ccclub-org">@ccclub-org</a></li>
-<li><strong>YouTube</strong>: <a href="https://youtube.com/@ccclub">CC Club Channel</a></li>
+<li><strong>LinkedIn</strong>: <a href="https://www.linkedin.com/company/computer-coding-club-mnnit/">Computer Coding Club</a></li>
+<li><strong>Instagram</strong>: <a href="https://www.instagram.com/cc.club.mnnit/">@cc.club.mnnit</a></li>
+<li><strong>GitHub</strong>: <a href="https://github.com/CC-MNNIT">CC-MNNIT</a></li>
+<li><strong>Discord</strong>: <a href="https://discord.gg/EDv6fM5yUm">Join our Community</a></li>
 </ul>
 <hr />
-<h2 id="visit-us">Visit Us</h2>
-<p><strong>Office</strong>: Room 203, Computer Science Department<br />
-<strong>Meeting Times</strong>: Every Saturday, 4:00 PM - 6:00 PM<br />
-<strong>Campus</strong>: [Your College Name], [City]</p>
-<div class="map-container" style="margin-top: 2rem; border-radius: 0.5rem; overflow: hidden;">
-    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3502.066632023506!2d77.22732101508245!3d28.62779318241964!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cfd37b741d057%3A0xcdee88e47393c3f1!2sConnaught%20Place%2C%20New%20Delhi%2C%20Delhi%20110001!5e0!3m2!1sen!2sin!4v1623456789012!5m2!1sen!2sin" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+<h2 id="find-us">Find Us</h2>
+<div class="map-container" style="margin-top: 2rem; border-radius: 0.5rem; overflow: hidden; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7624.810026895653!2d81.86090651444827!3d25.492160594064142!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x399aca789e0c84a5%3A0x2c27733a7529bf08!2sMNNIT%20Allahabad%20Campus%2C%20Teliarganj%2C%20Prayagraj%2C%20Uttar%20Pradesh%20211004!5e1!3m2!1sen!2sin!4v1770117751120!5m2!1sen!2sin" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 </div>
 
 
     
     <div class="mt-8 pt-6 border-t border-gray-500/15">
         <div class="flex flex-wrap items-center gap-4">
-            <a href="https:&#x2F;&#x2F;github.com&#x2F;Shanu-Kumawat&#x2F;cc-website&#x2F;edit&#x2F;main&#x2F;/content/contact&#x2F;_index.md" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-sm text-base-content/60 hover:text-base-content transition-colors">
+            <a href="https:&#x2F;&#x2F;github.com&#x2F;CC-MNNIT&#x2F;cc-website&#x2F;edit&#x2F;main&#x2F;/content/contact&#x2F;_index.md" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-sm text-base-content/60 hover:text-base-content transition-colors">
                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"></path>
                 </svg>
@@ -550,7 +600,7 @@ document.addEventListener('DOMContentLoaded', function() {
             </button>
             
             
-            <a href="https://twitter.com/intent/tweet?url=&#x2F;cc-website&#x2F;contact&#x2F;&text=Contact%20Us" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-sm text-base-content/60 hover:text-base-content transition-colors">
+            <a href="https://twitter.com/intent/tweet?url=https%3A&#x2F;&#x2F;cc-club.in&#x2F;contact&#x2F;&text=Get%20in%20Touch" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-sm text-base-content/60 hover:text-base-content transition-colors">
                 <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
                     <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path>
                 </svg>
@@ -582,7 +632,8 @@ document.addEventListener('DOMContentLoaded', function() {
         
             
                 
-                    <a class="nav-button nav-button-prev group" href="/cc-website/alumni/">
+                    
+                    <a class="nav-button nav-button-prev group" href="https://cc-club.in/roadmaps/competitive-programming/">
                         <div class="nav-button-content">
                             <div class="nav-button-direction">
                                 <svg class="w-5 h-5 transition-transform group-hover:-translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -590,21 +641,11 @@ document.addEventListener('DOMContentLoaded', function() {
                                 </svg>
                                 <span class="nav-button-label">Previous</span>
                             </div>
-                            <div class="nav-button-title">CC Club Alumni</div>
+                            <div class="nav-button-title">Competitive Programming Mastery Roadmap</div>
                         </div>
                     </a>
                 
                 
-            
-        
-    
-        
-        
-            
-        
-    
-        
-        
             
         
     
@@ -668,14 +709,6 @@ document.addEventListener('DOMContentLoaded', function() {
             
             
             
-        
-            
-            
-            
-        
-            
-            
-            
                 
             
         
@@ -699,24 +732,32 @@ document.addEventListener('DOMContentLoaded', function() {
                     
                     <details class="toc-details" open>
                         <summary>
-                            <a href="/cc-website/contact/#get-in-touch" class="toc-link">Get in Touch</a>
+                            <a href="https://cc-club.in/contact/#contact-information" class="toc-link">Contact Information</a>
                         </summary>
                         <ul>
                             
                                 <li>
-                                    <a href="/cc-website/contact/#contact-information" class="toc-link">Contact Information</a>
+                                    <a href="https://cc-club.in/contact/#general-inquiries" class="toc-link">General Inquiries</a>
                                 </li>
                             
                                 <li>
-                                    <a href="/cc-website/contact/#connect-online" class="toc-link">Connect Online</a>
-                                </li>
-                            
-                                <li>
-                                    <a href="/cc-website/contact/#visit-us" class="toc-link">Visit Us</a>
+                                    <a href="https://cc-club.in/contact/#visit-us" class="toc-link">Visit Us</a>
                                 </li>
                             
                         </ul>
                     </details>
+                    
+                </li>
+            
+                <li>
+                    
+                    <a href="https://cc-club.in/contact/#connect-online" class="toc-link">Connect Online</a>
+                    
+                </li>
+            
+                <li>
+                    
+                    <a href="https://cc-club.in/contact/#find-us" class="toc-link">Find Us</a>
                     
                 </li>
             
@@ -800,7 +841,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 <div class="footer-col space-y-4">
                     <div class="footer-logo-container">
                         
-                        <img src="/cc-website/images/logo/cclogo.png" alt="Logo" class="footer-logo">
+                        <img src="https://cc-club.in/images/logo/cclogo.webp" alt="Logo" class="footer-logo">
                         
                         <h3>
                             CC Club MNNIT
@@ -830,7 +871,7 @@ document.addEventListener('DOMContentLoaded', function() {
                             </li>
                             
                             <li>
-                                <a href="contrihub">
+                                <a href="projects">
                                     Projects
                                 </a>
                             </li>
@@ -864,28 +905,25 @@ document.addEventListener('DOMContentLoaded', function() {
                     <div class="social-links">
                         
                             
-                            <a href="https:&#x2F;&#x2F;youtube.com&#x2F;@ccclub" aria-label="YouTube">
-                                <i class="fab fa-youtube"></i>
-                            </a>
                             
-                            
-                            <a href="https:&#x2F;&#x2F;instagram.com&#x2F;ccclub_mnnit" aria-label="Instagram">
+                            <a href="https:&#x2F;&#x2F;www.instagram.com&#x2F;cc.club.mnnit&#x2F;" aria-label="Instagram">
                                 <i class="fab fa-instagram"></i>
                             </a>
                             
                             
-                            <a href="https:&#x2F;&#x2F;twitter.com&#x2F;ccclub_mnnit" aria-label="Twitter/X">
-                                <i class="fab fa-twitter"></i>
-                            </a>
                             
-                            
-                            <a href="https:&#x2F;&#x2F;linkedin.com&#x2F;company&#x2F;ccclub-mnnit" aria-label="LinkedIn">
+                            <a href="https:&#x2F;&#x2F;www.linkedin.com&#x2F;company&#x2F;computer-coding-club-mnnit&#x2F;" aria-label="LinkedIn">
                                 <i class="fab fa-linkedin"></i>
                             </a>
                             
                             
-                            <a href="https:&#x2F;&#x2F;github.com&#x2F;cc-mnnit" aria-label="GitHub">
+                            <a href="https:&#x2F;&#x2F;github.com&#x2F;CC-MNNIT" aria-label="GitHub">
                                 <i class="fab fa-github"></i>
+                            </a>
+                            
+                            
+                            <a href="https:&#x2F;&#x2F;discord.gg&#x2F;EDv6fM5yUm" aria-label="Discord">
+                                <i class="fab fa-discord"></i>
                             </a>
                             
                         
@@ -962,35 +1000,60 @@ document.addEventListener('DOMContentLoaded', function() {
             
                 
                     
-                        <li><a href="/cc-website/about" class="text-sm">
+                        <li>
+                            
+                                <a href="https://cc-club.in/about" class="text-sm">
+                            
                             <i class="fa-solid fa-circle-info mr-2"></i>
                             About
                         </a></li>
                     
                 
                     
-                        <li><a href="/cc-website/blog" class="text-sm">
+                        <li>
+                            
+                                <a href="https://cc-club.in/blog" class="text-sm">
+                            
                             <i class="fa-solid fa-blog mr-2"></i>
                             Blog
                         </a></li>
                     
                 
                     
-                        <li><a href="/cc-website/events" class="text-sm">
+                        <li>
+                            
+                                <a href="https://cc-club.in/events" class="text-sm">
+                            
                             <i class="fa-solid fa-calendar-days mr-2"></i>
                             Events
                         </a></li>
                     
                 
                     
-                        <li><a href="/cc-website/projects" class="text-sm">
+                        <li>
+                            
+                                <a href="https://drive.google.com/file/d/1f7eJdgjX0p9CanHlK5bGkmdARIa4ErHZ/view" class="text-sm" target="_blank" rel="noopener noreferrer">
+                            
+                            <i class="fa-solid fa-calendar-check mr-2"></i>
+                            Calendar
+                        </a></li>
+                    
+                
+                    
+                        <li>
+                            
+                                <a href="https://cc-club.in/projects" class="text-sm">
+                            
                             <i class="fa-solid fa-code-branch mr-2"></i>
                             Projects
                         </a></li>
                     
                 
                     
-                        <li><a href="/cc-website/roadmaps" class="text-sm">
+                        <li>
+                            
+                                <a href="https://cc-club.in/roadmaps" class="text-sm">
+                            
                             <i class="fa-solid fa-route mr-2"></i>
                             Roadmaps
                         </a></li>
@@ -998,7 +1061,10 @@ document.addEventListener('DOMContentLoaded', function() {
                 
                     
                         
-                            <li><a href="/cc-website/team" class="text-sm">
+                            <li>
+                                
+                                    <a href="https://cc-club.in/team" class="text-sm">
+                                
                                 <i class="fa-solid fa-user-group mr-2"></i>
                                 Current Team
                             </a></li>
@@ -1006,7 +1072,10 @@ document.addEventListener('DOMContentLoaded', function() {
                     
                 
                     
-                        <li><a href="/cc-website/contact" class="text-sm">
+                        <li>
+                            
+                                <a href="https://cc-club.in/contact" class="text-sm">
+                            
                             <i class="fa-solid fa-envelope mr-2"></i>
                             Contact
                         </a></li>
@@ -1021,7 +1090,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     
     <div class="hidden lg:block px-4 py-2 font-bold text-lg border-b border-gray-500/10 mb-2">
-        <a href="&#x2F;cc-website&#x2F;contact&#x2F;" class="hover:text-primary transition-colors">Contact Us</a>
+        <a href="https:&#x2F;&#x2F;cc-club.in&#x2F;contact&#x2F;" class="hover:text-primary transition-colors">Get in Touch</a>
     </div>
 
     
@@ -1034,64 +1103,50 @@ document.addEventListener('DOMContentLoaded', function() {
         
             
             
-                <li><a href="/cc-website/blog" class="hover:no-underline">
-                    Blog
-                </a></li>
-            
-        
-            
-            
-                <li><a href="/cc-website/projects" class="hover:no-underline">
-                    Projects
-                </a></li>
-            
-        
-            
-            
-                <li><a href="/cc-website/team" class="hover:no-underline">
+                <li><a href="https://cc-club.in/team" class="hover:no-underline">
                     Our Team
                 </a></li>
             
         
             
             
-                <li><a href="/cc-website/about" class="hover:no-underline">
-                    About Computer Coding Club
+                <li><a href="https://cc-club.in/blog" class="hover:no-underline">
+                    Blog
                 </a></li>
             
         
             
             
-                <li><a href="/cc-website/events" class="hover:no-underline">
+                <li><a href="https://cc-club.in/projects" class="hover:no-underline">
+                    Projects
+                </a></li>
+            
+        
+            
+            
+                <li><a href="https://cc-club.in/about" class="hover:no-underline">
+                    About Us
+                </a></li>
+            
+        
+            
+            
+                <li><a href="https://cc-club.in/events" class="hover:no-underline">
                     Events
                 </a></li>
             
         
             
             
-                <li><a href="/cc-website/roadmaps" class="hover:no-underline">
+                <li><a href="https://cc-club.in/roadmaps" class="hover:no-underline">
                     Learning Roadmaps
                 </a></li>
             
         
             
             
-                <li><a href="/cc-website/resources" class="hover:no-underline">
-                    Resources
-                </a></li>
-            
-        
-            
-            
-                <li><a href="/cc-website/alumni" class="hover:no-underline">
-                    CC Club Alumni
-                </a></li>
-            
-        
-            
-            
-                <li><a href="/cc-website/contact" class="hover:no-underline">
-                    Contact Us
+                <li><a href="https://cc-club.in/contact" class="hover:no-underline">
+                    Get in Touch
                 </a></li>
             
         
@@ -1117,7 +1172,7 @@ document.addEventListener('DOMContentLoaded', function() {
     </div>
 
     
-        <script type="text/javascript" src="/cc-website/goyo.js"></script>
+        <script type="text/javascript" src="https://cc-club.in/goyo.js"></script>
         
         <!-- Lazy load search functionality -->
         <script>
@@ -1147,12 +1202,12 @@ document.addEventListener('DOMContentLoaded', function() {
                 
                 // Load Fuse.js
                 var fuseScript = document.createElement('script');
-                fuseScript.src = '/cc-website/fuse.min.js';
+                fuseScript.src = 'https://cc-club.in/fuse.min.js';
                 
                 // Load search index after Fuse.js
                 fuseScript.onload = function() {
                     var searchIndexScript = document.createElement('script');
-                    searchIndexScript.src = '/cc-website/search_index.en.js';
+                    searchIndexScript.src = 'https://cc-club.in/search_index.en.js';
                     searchIndexScript.onload = function() {
                         // Re-enable search input
                         if (searchInput) {

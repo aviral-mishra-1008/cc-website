@@ -63,7 +63,7 @@
             
             @font-face {
                 font-family: "Pretendard-Regular";
-                src: url('/cc-website/fonts/Pretendard-Regular.woff') format("woff");
+                src: url('https://cc-club.in/fonts/Pretendard-Regular.woff') format("woff");
                 font-weight: 400;
                 font-style: normal;
                 font-display: swap;
@@ -88,10 +88,10 @@
       <!-- SEO: Open Graph / Twitter Card -->
       <meta property="og:title" content="Open Source Contribution Roadmap | Computer Coding Club" />
       <meta property="og:description" content="Learn to contribute to open source projects and become a maintainer" />
-      <meta property="og:url" content="/cc-website/" />
+      <meta property="og:url" content="https://cc-club.in/" />
       <meta property="og:type" content="website" />
       
-      <meta property="og:image" content="/cc-website/cc-club-thumbnail.jpg" />
+      <meta property="og:image" content="https://cc-club.in/cc-club-thumbnail.webp" />
       
 
       <meta name="twitter:card" content="summary_large_image" />
@@ -110,22 +110,29 @@
       <meta name="twitter:creator" content="@ccclub_mnnit" />
       
       
-      <meta name="twitter:image" content="/cc-website/cc-club-thumbnail.jpg" />
+      <meta name="twitter:image" content="https://cc-club.in/cc-club-thumbnail.webp" />
       
 
       <!-- Browser address bar color -->
       <meta name="theme-color" content="#0f172a">
 
+      <!-- Favicon -->
+      <link rel="icon" type="image/png" href="https://cc-club.in/icons/favicon-96x96.png" sizes="96x96" />
+      <link rel="icon" type="image/svg+xml" href="https://cc-club.in/icons/favicon.svg" />
+      <link rel="shortcut icon" href="https://cc-club.in/icons/favicon.ico" />
+      <link rel="apple-touch-icon" sizes="180x180" href="https://cc-club.in/icons/apple-touch-icon.png" />
+      <link rel="manifest" href="https://cc-club.in/icons/site.webmanifest" />
+
       <!-- CSS -->
-    <link rel="stylesheet" href="/cc-website/css/main.css">
-    <link rel="stylesheet" href="/cc-website/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cc-club.in/css/main.css">
+    <link rel="stylesheet" href="https://cc-club.in/css/font-awesome.min.css">
     
     <!-- Preload critical fonts -->
-    <link rel="preload" href="/cc-website/fonts/Pretendard-Regular.woff" as="font" type="font/woff" crossorigin>
+    <link rel="preload" href="https://cc-club.in/fonts/Pretendard-Regular.woff" as="font" type="font/woff" crossorigin>
 
     <!-- Defer non-critical scripts -->
-    <script defer src="/cc-website/js/copy_code.js"></script>
-    <script defer src="/cc-website/js/copy_heading_link.js"></script>
+    <script defer src="https://cc-club.in/js/copy_code.js"></script>
+    <script defer src="https://cc-club.in/js/copy_heading_link.js"></script>
     
     <!-- Lazy load Mermaid and KaTeX - only when needed -->
     <script>
@@ -142,12 +149,12 @@
                 // Load KaTeX CSS first
                 var katexCSS = document.createElement('link');
                 katexCSS.rel = 'stylesheet';
-                katexCSS.href = '/cc-website/css/katex.min.css';
+                katexCSS.href = 'https://cc-club.in/css/katex.min.css';
                 document.head.appendChild(katexCSS);
                 
                 // Load KaTeX JS
                 var katexScript = document.createElement('script');
-                katexScript.src = '/cc-website/js/katex.min.js';
+                katexScript.src = 'https://cc-club.in/js/katex.min.js';
                 katexScript.onload = function() {
                     // Render inline elements
                     katexInlineElements.forEach(function(elem) {
@@ -181,7 +188,7 @@
             // Load Mermaid if diagram elements are present
             if (hasMermaid) {
                 var mermaidScript = document.createElement('script');
-                mermaidScript.src = '/cc-website/js/mermaid.min.js';
+                mermaidScript.src = 'https://cc-club.in/js/mermaid.min.js';
                 mermaidScript.onload = function() {
                     // Initialize Mermaid after loading
                     if (typeof window.initMermaid === 'function') {
@@ -197,7 +204,7 @@
     
 
     
-    <link rel="stylesheet" href="/cc-website/css/custom.css">
+    <link rel="stylesheet" href="https://cc-club.in/css/custom.css">
 
     <style>
         /* Desktop Sidebar Animation */
@@ -276,205 +283,258 @@
 
 
 
-    
-    
-    
-    
-    
 
 
 
 
 
 
-    
+
+
+
+
+
+
 
 
 <div class="navbar opacity-95 fixed top-0 left-0 right-0 z-50 h-16 border-b border-gray-500/15 backdrop-blur-3xl">
     <!-- Mobile hamburger (and Desktop on Root Page) -->
     <div class="flex-none lg:hidden">
         <label for="my-drawer-2" class="btn btn-square btn-ghost">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="inline-block w-5 h-5 stroke-current"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                class="inline-block w-5 h-5 stroke-current">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16">
+                </path>
+            </svg>
         </label>
     </div>
     <!-- Desktop sidebar toggle -->
     
     <div class="flex-none hidden lg:block">
         <button id="desktop-sidebar-toggle" class="btn btn-square btn-ghost" aria-label="Toggle sidebar">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="inline-block w-5 h-5 stroke-current"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                class="inline-block w-5 h-5 stroke-current">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16">
+                </path>
+            </svg>
         </button>
     </div>
     
     <!-- Logo -->
     <div class="flex-1">
-        <a href="/cc-website" class="btn btn-ghost hover:animate-pulse hover:bg-transparent hover:border-transparent normal-case text-xl logo-link" style="background: linear-gradient(135deg, #9ca3af, #6b7280); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; font-weight: bold; font-size: 1.5rem;">
+        <a href="https://cc-club.in"
+            class="btn btn-ghost hover:animate-pulse hover:bg-transparent hover:border-transparent normal-case text-xl logo-link"
+            style="background: linear-gradient(135deg, #9ca3af, #6b7280); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; font-weight: bold; font-size: 1.5rem;">
             
-                <img 
-                    src="/cc-website/images/logo/cclogo.png" 
-                    alt="CC Club" 
-                    class="h-18 w-auto"
-                    style="padding: 10px;"
-                />
+            <img src="https://cc-club.in/images/logo/cclogo.webp" alt="CC Club"
+                class="h-18 w-auto" style="padding: 10px;"  />
             
         </a>
     </div>
-<!-- Desktop AND Mobile Menu - Theme toggle always visible -->
-<div class="flex-none flex lg:flex">
-    <ul class="menu menu-horizontal px-1 items-center">
-        <!-- Desktop navigation items (hidden on mobile) -->
-        <div class="hidden lg:flex lg:contents">
-            
-            
-            
+    <!-- Desktop AND Mobile Menu - Theme toggle always visible -->
+    <div class="flex-none flex lg:flex">
+        <ul class="menu menu-horizontal px-1 items-center">
+            <!-- Desktop navigation items (hidden on mobile) -->
+            <div class="hidden lg:flex lg:contents">
                 
+                
+                
+                
+                
+                
+                
+                
+                
+                <li>
                     
-                        
-                        
+                        <a class="btn btn-ghost hover:no-underline "
+                            href="https://cc-club.in/about">
                             
+                            <i class="fa-solid fa-circle-info"></i>
+                            About
+                        </a>
+                </li>
+                
+                
+                
+                
+                
+                
+                
+                <li>
+                    
+                        <a class="btn btn-ghost hover:no-underline "
+                            href="https://cc-club.in/blog">
+                            
+                            <i class="fa-solid fa-blog"></i>
+                            Blog
+                        </a>
+                </li>
+                
+                
+                
+                
+                
+                
+                
+                <li>
+                    
+                        <a class="btn btn-ghost hover:no-underline "
+                            href="https://cc-club.in/events">
+                            
+                            <i class="fa-solid fa-calendar-days"></i>
+                            Events
+                        </a>
+                </li>
+                
+                
+                
+                
+                
+                
+                
+                <li>
+                    
+                    <a class="btn btn-ghost hover:no-underline "
+                        href="https://drive.google.com/file/d/1f7eJdgjX0p9CanHlK5bGkmdARIa4ErHZ/view" target="_blank" rel="noopener noreferrer">
+                        
+                            <i class="fa-solid fa-calendar-check"></i>
+                            Calendar
+                        </a>
+                </li>
+                
+                
+                
+                
+                
+                
+                
+                <li>
+                    
+                        <a class="btn btn-ghost hover:no-underline "
+                            href="https://cc-club.in/projects">
+                            
+                            <i class="fa-solid fa-code-branch"></i>
+                            Projects
+                        </a>
+                </li>
+                
+                
+                
+                
+                
+                
+                
+                <li>
+                    
+                        <a class="btn btn-ghost hover:no-underline "
+                            href="https://cc-club.in/roadmaps">
+                            
+                            <i class="fa-solid fa-route"></i>
+                            Roadmaps
+                        </a>
+                </li>
+                
+                
+                
+                <li class="dropdown dropdown-end">
+                    <div tabindex="0" role="button" class="btn btn-ghost">
+                        <i class="fa-solid fa-users"></i>
+                        Community
+                        <svg class="inline w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7">
+                            </path>
+                        </svg>
+                    </div>
+                    <ul tabindex="0"
+                        class="dropdown-content menu bg-base-100 border border-gray-500/15 rounded-box z-1 p-2 shadow-sm">
+                        
                         
                         <li>
-                            <a class="btn btn-ghost hover:no-underline " href="/cc-website/about">
-                                <i class="fa-solid fa-circle-info"></i>
-                                About
-                            </a>
-                        </li>
-                    
-                
-                    
-                        
-                        
                             
-                        
-                        <li>
-                            <a class="btn btn-ghost hover:no-underline " href="/cc-website/blog">
-                                <i class="fa-solid fa-blog"></i>
-                                Blog
-                            </a>
-                        </li>
-                    
-                
-                    
-                        
-                        
-                            
-                        
-                        <li>
-                            <a class="btn btn-ghost hover:no-underline " href="/cc-website/events">
-                                <i class="fa-solid fa-calendar-days"></i>
-                                Events
-                            </a>
-                        </li>
-                    
-                
-                    
-                        
-                        
-                            
-                        
-                        <li>
-                            <a class="btn btn-ghost hover:no-underline " href="/cc-website/projects">
-                                <i class="fa-solid fa-code-branch"></i>
-                                Projects
-                            </a>
-                        </li>
-                    
-                
-                    
-                        
-                        
-                            
-                        
-                        <li>
-                            <a class="btn btn-ghost hover:no-underline " href="/cc-website/roadmaps">
-                                <i class="fa-solid fa-route"></i>
-                                Roadmaps
-                            </a>
-                        </li>
-                    
-                
-                    
-                        <li class="dropdown dropdown-end">
-                            <div tabindex="0" role="button" class="btn btn-ghost">
-                                <i class="fa-solid fa-users"></i>
-                                Community
-                                <svg class="inline w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-                            </div>
-                            <ul tabindex="0" class="dropdown-content menu bg-base-100 border border-gray-500/15 rounded-box z-1 p-2 shadow-sm">
-                                
+                                <a class="btn btn-ghost hover:no-underline "
+                                    href="https://cc-club.in/team">
                                     
-                                    <li>
-                                        <a class="btn btn-ghost hover:no-underline " href="/cc-website/team">
-                                            <i class="fa-solid fa-user-group"></i>
-                                            Current Team
-                                        </a>
-                                    </li>
-                                
-                            </ul>
+                                    <i class="fa-solid fa-user-group"></i>
+                                    Current Team
+                                </a>
                         </li>
-                    
+                        
+                    </ul>
+                </li>
                 
+                
+                
+                
+                
+                
+                
+                <li>
                     
-                        
-                        
+                        <a class="btn btn-ghost hover:no-underline "
+                            href="https://cc-club.in/contact">
                             
-                        
-                        <li>
-                            <a class="btn btn-ghost hover:no-underline " href="/cc-website/contact">
-                                <i class="fa-solid fa-envelope"></i>
-                                Contact
-                            </a>
-                        </li>
-                    
+                            <i class="fa-solid fa-envelope"></i>
+                            Contact
+                        </a>
+                </li>
                 
-            
+                
+                
+
+                
+            </div>
 
             
-        </div>
-
-        
             
-        
-        
-        <li class="flex items-center">
-            <label class="swap swap-rotate btn btn-ghost btn-circle">
-              <input type="checkbox" class="theme-controller" value="night" aria-labelledby="swap color"/>
-              <svg class="swap-off h-5 w-5 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M5.64,17l-.71.71a1,1,0,0,0,0,1.41,1,1,0,0,0,1.41,0l.71-.71A1,1,0,0,0,5.64,17ZM5,12a1,1,0,0,0-1-1H3a1,1,0,0,0,0,2H4A1,1,0,0,0,5,12Zm7-7a1,1,0,0,0,1-1V3a1,1,0,0,0-2,0V4A1,1,0,0,0,12,5ZM5.64,7.05a1,1,0,0,0,.7.29,1,1,0,0,0,.71-.29,1,1,0,0,0,0-1.41l-.71-.71A1,1,0,0,0,4.93,6.34Zm12,.29a1,1,0,0,0,.7-.29l.71-.71a1,1,0,1,0-1.41-1.41L17,5.64a1,1,0,0,0,0,1.41A1,1,0,0,0,17.66,7.34ZM21,11H20a1,1,0,0,0,0,2h1a1,1,0,0,0,0-2Zm-9,8a1,1,0,0,0-1,1v1a1,1,0,0,0,2,0V20A1,1,0,0,0,12,19ZM18.36,17A1,1,0,0,0,17,18.36l.71.71a1,1,0,0,0,1.41,0,1,1,0,0,0,0-1.41ZM12,6.5A5.5,5.5,0,1,0,17.5,12,5.51,5.51,0,0,0,12,6.5Zm0,9A3.5,3.5,0,1,1,15.5,12,3.5,3.5,0,0,1,12,15.5Z" /></svg>
-              <svg class="swap-on h-5 w-5 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21.64,13a1,1,0,0,0-1.05-.14,8.05,8.05,0,0,1-3.37.73A8.15,8.15,0,0,1,9.08,5.49a8.59,8.59,0,0,1,.25-2A1,1,0,0,0,8,2.36,10.14,10.14,0,1,0,22,14.05,1,1,0,0,0,21.64,13Zm-9.5,6.69A8.14,8.14,0,0,1,7.08,5.22v.27A10.15,10.15,0,0,0,17.22,15.63a9.79,9.79,0,0,0,2.1-.22A8.11,8.11,0,0,1,12.14,19.73Z" /></svg>
-            </label>
-        </li>
-        
-    </ul>
-</div>
+            
+            
+            <li class="flex items-center">
+                <label class="swap swap-rotate btn btn-ghost btn-circle">
+                    <input type="checkbox" class="theme-controller" value="night" aria-labelledby="swap color" />
+                    <svg class="swap-off h-5 w-5 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path
+                            d="M5.64,17l-.71.71a1,1,0,0,0,0,1.41,1,1,0,0,0,1.41,0l.71-.71A1,1,0,0,0,5.64,17ZM5,12a1,1,0,0,0-1-1H3a1,1,0,0,0,0,2H4A1,1,0,0,0,5,12Zm7-7a1,1,0,0,0,1-1V3a1,1,0,0,0-2,0V4A1,1,0,0,0,12,5ZM5.64,7.05a1,1,0,0,0,.7.29,1,1,0,0,0,.71-.29,1,1,0,0,0,0-1.41l-.71-.71A1,1,0,0,0,4.93,6.34Zm12,.29a1,1,0,0,0,.7-.29l.71-.71a1,1,0,1,0-1.41-1.41L17,5.64a1,1,0,0,0,0,1.41A1,1,0,0,0,17.66,7.34ZM21,11H20a1,1,0,0,0,0,2h1a1,1,0,0,0,0-2Zm-9,8a1,1,0,0,0-1,1v1a1,1,0,0,0,2,0V20A1,1,0,0,0,12,19ZM18.36,17A1,1,0,0,0,17,18.36l.71.71a1,1,0,0,0,1.41,0,1,1,0,0,0,0-1.41ZM12,6.5A5.5,5.5,0,1,0,17.5,12,5.51,5.51,0,0,0,12,6.5Zm0,9A3.5,3.5,0,1,1,15.5,12,3.5,3.5,0,0,1,12,15.5Z" />
+                    </svg>
+                    <svg class="swap-on h-5 w-5 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path
+                            d="M21.64,13a1,1,0,0,0-1.05-.14,8.05,8.05,0,0,1-3.37.73A8.15,8.15,0,0,1,9.08,5.49a8.59,8.59,0,0,1,.25-2A1,1,0,0,0,8,2.36,10.14,10.14,0,1,0,22,14.05,1,1,0,0,0,21.64,13Zm-9.5,6.69A8.14,8.14,0,0,1,7.08,5.22v.27A10.15,10.15,0,0,0,17.22,15.63a9.79,9.79,0,0,0,2.1-.22A8.11,8.11,0,0,1,12.14,19.73Z" />
+                    </svg>
+                </label>
+            </li>
+            
+        </ul>
+    </div>
 </div>
 
 
 <script>
-document.addEventListener('DOMContentLoaded', function() {
-    const currentPath = window.location.pathname;
-    
-    const navLinks = document.querySelectorAll('.navbar a[href]:not(.logo-link)');
-    
-    navLinks.forEach(link => {
-        const linkPath = new URL(link.href).pathname;
-                if (link.classList.contains('active-nav')) {
-            return;
-        }
-        
-        let isActive = false;
-        
-        if (linkPath === '/') {
-            isActive = (currentPath === '/' || currentPath === '');
-        } else {
-            isActive = currentPath.startsWith(linkPath);
-        }
-        
-        if (isActive) {
-            link.classList.add('active-nav');
-        } else {
-            link.classList.remove('active-nav');
-        }
+    document.addEventListener('DOMContentLoaded', function () {
+        const currentPath = window.location.pathname;
+
+        const navLinks = document.querySelectorAll('.navbar a[href]:not(.logo-link)');
+
+        navLinks.forEach(link => {
+            const linkPath = new URL(link.href).pathname;
+            if (link.classList.contains('active-nav')) {
+                return;
+            }
+
+            let isActive = false;
+
+            if (linkPath === '/') {
+                isActive = (currentPath === '/' || currentPath === '');
+            } else {
+                isActive = currentPath.startsWith(linkPath);
+            }
+
+            if (isActive) {
+                link.classList.add('active-nav');
+            } else {
+                link.classList.remove('active-nav');
+            }
+        });
     });
-});
 </script>
 
 
@@ -498,188 +558,265 @@ document.addEventListener('DOMContentLoaded', function() {
         </h1>
         <p class="text-gray-500">Learn to contribute to open source projects and become a maintainer</p>
     </div>
-    <h1 id="open-source-contribution-roadmap">Open Source Contribution Roadmap</h1>
-<p>Your complete guide to becoming an active open source contributor and eventually a project maintainer.</p>
-<h2 id="why-open-source">Why Open Source?</h2>
-<ul>
-<li>Build real-world experience</li>
-<li>Network with developers globally</li>
-<li>Get noticed by employers</li>
-<li>Give back to the community</li>
-<li>Improve your coding skills</li>
-</ul>
-<hr />
-<h2 id="level-1-getting-started-2-3-weeks">Level 1: Getting Started (2-3 weeks)</h2>
-<h3 id="git-github-fundamentals">Git &amp; GitHub Fundamentals</h3>
-<ul>
-<li>Git basics (clone, commit, push, pull)</li>
-<li>Branching and merging</li>
-<li>Pull requests</li>
-<li>Code reviews</li>
-<li>GitHub profile optimization</li>
-</ul>
-<h3 id="finding-projects">Finding Projects</h3>
-<ul>
-<li>GitHub Explore</li>
-<li>Good First Issue labels</li>
-<li>Up For Grabs</li>
-<li>CodeTriage</li>
-<li>First Timers Only</li>
-</ul>
-<p><strong>Resources</strong>:</p>
-<ul>
-<li>📚 Git Book (free)</li>
-<li>🎥 GitHub Learning Lab</li>
-<li>💻 Practice: Fork and modify a project</li>
-</ul>
-<hr />
-<h2 id="level-2-making-your-first-contribution-3-4-weeks">Level 2: Making Your First Contribution (3-4 weeks)</h2>
-<h3 id="types-of-contributions">Types of Contributions</h3>
-<ul>
-<li>Documentation fixes</li>
-<li>Bug reports</li>
-<li>Code contributions</li>
-<li>Tests</li>
-<li>Translations</li>
-</ul>
-<h3 id="contribution-workflow">Contribution Workflow</h3>
+    <h2 id="phase-1-the-mindset-preparation">Phase 1: The Mindset &amp; Preparation</h2>
+<p><em>Before you write a single line of code, you must understand the landscape.</em></p>
+<h3 id="1-1-what-is-open-source">1.1 What is Open Source?</h3>
+<p>Open source is defined by three pillars:</p>
 <ol>
-<li>Find an issue</li>
-<li>Comment and ask to be assigned</li>
-<li>Fork the repository</li>
-<li>Create a feature branch</li>
-<li>Make changes</li>
-<li>Write tests</li>
-<li>Submit PR</li>
-<li>Address review comments</li>
+<li><strong>License</strong>: Legal permission to use, modify, and distribute.</li>
+<li><strong>Community</strong>: The people (maintainers, contributors, users) collaborating.</li>
+<li><strong>Culture</strong>: Transparency, asynchronous collaboration, and meritocracy.</li>
 </ol>
-<p><strong>First Contribution Checklist</strong>:</p>
+<h3 id="1-2-the-reality-check-expectations-vs-reality">1.2 The Reality Check (Expectations vs. Reality)</h3>
+<table><thead><tr><th style="text-align: left">Expectation</th><th style="text-align: left">Reality</th></tr></thead><tbody>
+<tr><td style="text-align: left">"I'll get hired immediately."</td><td style="text-align: left">Contribution build a portfolio over <em>time</em>. It's a marathon.</td></tr>
+<tr><td style="text-align: left">"My code will merge in 2 days."</td><td style="text-align: left">Reviews take 1-3 weeks. Patience is key.</td></tr>
+<tr><td style="text-align: left">"Maintainers will mentor me."</td><td style="text-align: left">Maintainers are busy volunteers. Research first, then ask.</td></tr>
+<tr><td style="text-align: left">"I need to be an expert."</td><td style="text-align: left">You can start with docs, tests, and small fixes.</td></tr>
+</tbody></table>
+<blockquote>
+<p><strong>The 1% Rule</strong>: After 2 years, only ~1% of starters become maintainers. The differentiator is <strong>resiliency</strong> and <strong>consistency</strong>, not raw coding talent.</p>
+</blockquote>
+<hr />
+<h2 id="phase-2-setting-up-your-forge">Phase 2: Setting Up Your Forge</h2>
+<p><em>A professional setup signals competence to maintainers.</em></p>
+<h3 id="2-1-git-github-essentials">2.1 Git &amp; GitHub Essentials</h3>
+<p>You cannot contribute effectively without mastering these basics:</p>
 <ul>
-<li>✅ Read CONTRIBUTING.md</li>
-<li>✅ Follow code style</li>
-<li>✅ Write clear commit messages</li>
-<li>✅ Add tests if needed</li>
-<li>✅ Update documentation</li>
+<li><strong>The Big 3 Commands</strong>: <code>git add</code>, <code>git commit</code>, <code>git push</code>.</li>
+<li><strong>Branching</strong>: Never commit to <code>main</code>. Use <code>feature/my-cool-feature</code>.</li>
+<li><strong>Syncing</strong>: Learn to keep your fork updated (<code>git pull upstream main</code>) to avoid conflicts.</li>
+<li><strong>Safety</strong>: Use <code>--force-with-lease</code> instead of <code>--force</code> if you must rewrite history.</li>
+</ul>
+<h3 id="2-2-environment-setup">2.2 Environment Setup</h3>
+<ul>
+<li><strong>Editor</strong>: VS Code is the standard. Extensions like <strong>GitLens</strong> and <strong>Error Lens</strong> are highly recommended.</li>
+<li><strong>Authentication</strong>: Set up <strong>SSH keys</strong> for GitHub (password auth is dead).</li>
+<li><strong>Dependencies</strong>: Know your runtime (Node.js, Python, etc.) and how to install project deps (<code>npm install</code>, <code>pip install</code>).</li>
+</ul>
+<h3 id="2-3-the-trust-based-profile">2.3 The Trust-Based Profile</h3>
+<p>Maintainers judge you by your profile in 3 seconds.</p>
+<ul>
+<li>✅ Real name/username</li>
+<li>✅ Clear profile picture</li>
+<li>✅ Informative Bio</li>
+<li>✅ Pinned repositories (show your best work)</li>
+<li>❌ Default egg avatar = "Spam account"</li>
 </ul>
 <hr />
-<h2 id="level-3-regular-contributor-2-3-months">Level 3: Regular Contributor (2-3 months)</h2>
-<h3 id="building-reputation">Building Reputation</h3>
+<h2 id="phase-3-finding-your-battlefield">Phase 3: Finding Your Battlefield</h2>
+<p><em>Don't just pick a random repo. Pick one you can survive in.</em></p>
+<h3 id="3-1-the-healthy-project-checklist">3.1 The "Healthy Project" Checklist</h3>
+<p>Use the <strong>6-Point Health Check</strong> before investing time:</p>
+<ol>
+<li><input disabled="" type="checkbox"/>
+<strong>Recent Commits</strong>: Last commit &lt; 2 weeks ago?</li>
+<li><input disabled="" type="checkbox"/>
+<strong>Responsiveness</strong>: Are issues/PRs replied to within a week?</li>
+<li><input disabled="" type="checkbox"/>
+<strong>Documentation</strong>: Does it have a good README and CONTRIBUTING.md?</li>
+<li><input disabled="" type="checkbox"/>
+<strong>Labels</strong>: Are there <code>good first issue</code> or <code>help wanted</code> labels?</li>
+<li><input disabled="" type="checkbox"/>
+<strong>CI/CD</strong>: Do they have automated tests running?</li>
+<li><input disabled="" type="checkbox"/>
+<strong>Community</strong>: Is there a Discord/Slack/Discussions tab?</li>
+</ol>
+<h3 id="3-2-where-to-look">3.2 Where to Look</h3>
 <ul>
-<li>Consistent contributions</li>
-<li>Help others in issues</li>
-<li>Participate in discussions</li>
-<li>Review pull requests</li>
-<li>Report bugs with reproductions</li>
-</ul>
-<h3 id="technical-skills">Technical Skills</h3>
-<ul>
-<li>Writing clean, maintainable code</li>
-<li>Following project conventions</li>
-<li>Writing comprehensive tests</li>
-<li>Documentation best practices</li>
-</ul>
-<p><strong>Target</strong>: 10+ merged PRs</p>
-<hr />
-<h2 id="level-4-core-contributor-3-6-months">Level 4: Core Contributor (3-6 months)</h2>
-<h3 id="advanced-contributions">Advanced Contributions</h3>
-<ul>
-<li>Major features</li>
-<li>Refactoring</li>
-<li>Performance improvements</li>
-<li>Architecture decisions</li>
-</ul>
-<h3 id="community-engagement">Community Engagement</h3>
-<ul>
-<li>Mentor new contributors</li>
-<li>Triage issues</li>
-<li>Help with releases</li>
-<li>Speak at meetups</li>
-</ul>
-<p><strong>Target</strong>: Become a trusted contributor</p>
-<hr />
-<h2 id="level-5-maintainer-6-months">Level 5: Maintainer (6+ months)</h2>
-<h3 id="responsibilities">Responsibilities</h3>
-<ul>
-<li>Review pull requests</li>
-<li>Manage issues</li>
-<li>Plan roadmap</li>
-<li>Release management</li>
-<li>Community moderation</li>
-</ul>
-<h3 id="skills-needed">Skills Needed</h3>
-<ul>
-<li>Project management</li>
-<li>Technical leadership</li>
-<li>Communication</li>
-<li>Decision making</li>
-</ul>
-<p><strong>Goal</strong>: Start or maintain your own project</p>
-<hr />
-<h2 id="best-practices">Best Practices</h2>
-<h3 id="do-s">Do's</h3>
-<p>✅ Read documentation first
-✅ Start with small contributions
-✅ Communicate clearly
-✅ Be patient and respectful
-✅ Follow project guidelines</p>
-<h3 id="don-ts">Don'ts</h3>
-<p>❌ Submit without testing
-❌ Ignore review feedback
-❌ Make breaking changes without discussion
-❌ Spam maintainers
-❌ Give up after first rejection</p>
-<hr />
-<h2 id="recommended-projects-for-beginners">Recommended Projects for Beginners</h2>
-<h3 id="documentation-friendly">Documentation-Friendly</h3>
-<ul>
-<li>freeCodeCamp</li>
-<li>The Odin Project</li>
-<li>MDN Web Docs</li>
-</ul>
-<h3 id="beginner-friendly-code">Beginner-Friendly Code</h3>
-<ul>
-<li>First Contributions</li>
-<li>Exercism</li>
-<li>Public APIs</li>
-</ul>
-<h3 id="cc-club-projects">CC Club Projects</h3>
-<ul>
-<li>Check our GitHub organization</li>
-<li>ContriHub event projects</li>
-<li>Club website</li>
+<li><strong>GitHub Explore</strong>: Tailored recommendations.</li>
+<li><strong>GoodFirstIssue.dev</strong>: Curated beginner issues.</li>
+<li><strong>CodeTriage</strong>: Subscribe to repos to get issue alerts.</li>
+<li><strong>Your Dependency Tree</strong>: Contribute to libraries you already use.</li>
 </ul>
 <hr />
-<h2 id="tools-resources">Tools &amp; Resources</h2>
-<p><strong>Essential Tools</strong>:</p>
+<h2 id="phase-4-the-first-strike-your-contribution">Phase 4: The First Strike (Your Contribution)</h2>
+<p><em>Execution matters more than intent.</em></p>
+<h3 id="4-1-the-golden-workflow">4.1 The Golden Workflow</h3>
+<pre style="background-color:#212733;color:#ccc9c2;"><code><span>┌─────────────────────────────────────────────────────────────────────────────┐
+</span><span>│                       GIT BRANCH WORKFLOW &amp; PR PROCESS                      │
+</span><span>├─────────────────────────────────────────────────────────────────────────────┤
+</span><span>│                                                                             │
+</span><span>│   [Fork &amp; Clone]                                                            │
+</span><span>│         │                                                                   │
+</span><span>│         │ Create local copy of repository                                   │
+</span><span>│         ▼                                                                   │
+</span><span>│   ┌─────────────────┐                                                       │
+</span><span>│   │ Create Branch   │                                                       │
+</span><span>│   │ (feature/fix)   │                                                       │
+</span><span>│   └────────┬────────┘                                                       │
+</span><span>│            │                                                                │
+</span><span>│            │ Branch off from main                                           │
+</span><span>│            ▼                                                                │
+</span><span>│   ┌─────────────────────┐                                                   │
+</span><span>│   │ Write Code &amp; Test   │ ◄──┐                                              │
+</span><span>│   │ (Development cycle) │    │                                              │
+</span><span>│   └──────────┬──────────┘    │                                              │
+</span><span>│              │                │                                             │
+</span><span>│              │ Code complete  │ Request Changes                             │
+</span><span>│              ▼                │                                             │
+</span><span>│   ┌─────────────────┐        │                                              │
+</span><span>│   │ Push to Origin  │        │                                              │
+</span><span>│   │ (Remote branch) │        │                                              │
+</span><span>│   └────────┬────────┘        │                                              │
+</span><span>│            │                  │                                             │
+</span><span>│            │ Push complete    │                                             │
+</span><span>│            ▼                  │                                             │
+</span><span>│   ┌──────────────────┐       │                                              │
+</span><span>│   │ Open Pull Request│       │                                              │
+</span><span>│   │ (PR to main)     │       │                                              │
+</span><span>│   └────────┬─────────┘       │                                              │
+</span><span>│            │                  │                                             │
+</span><span>│            │ PR opened        │                                             │
+</span><span>│            ▼                  │                                             │
+</span><span>│        ╔═══════════════════╗ │                                              │
+</span><span>│        ║ Review Decision   ║ │                                              │
+</span><span>│        ║ (Code review)     ║─┘                                              │
+</span><span>│        ╚════════┬══════════╝                                                │
+</span><span>│                 │                                                           │
+</span><span>│        ┌────────┴────────┐                                                  │
+</span><span>│        │                 │                                                  │
+</span><span>│   Approved          Closed/Rejected                                         │
+</span><span>│        │                 │                                                  │
+</span><span>│        ▼                 ▼                                                  │
+</span><span>│   ┌─────────┐      ┌─────────┐                                              │
+</span><span>│   │ Merged  │      │   End   │                                              │
+</span><span>│   │ (Success)│      │ (Close) │                                             │
+</span><span>│   └─────────┘      └─────────┘                                              │
+</span><span>│                                                                             │
+</span><span>└─────────────────────────────────────────────────────────────────────────────┘
+</span></code></pre>
+<ol>
+<li><strong>Fork</strong> the repository to your account.</li>
+<li><strong>Clone</strong> your fork locally.</li>
+<li><strong>Add Upstream</strong> remote (<code>git remote add upstream [original-repo-url]</code>).</li>
+<li><strong>Create Branch</strong> (<code>git checkout -b fix/issue-123</code>).</li>
+<li><strong>Code &amp; Test</strong> locally.</li>
+<li><strong>Push</strong> to your fork.</li>
+<li><strong>Open PR</strong> to the original repo.</li>
+</ol>
+<h3 id="4-2-reading-code">4.2 Reading Code</h3>
+<p>Don't read line-by-line. Use the <strong>Bird's Eye Method</strong>:</p>
+<ol>
+<li>Read <code>package.json</code> / <code>requirements.txt</code> (Dependencies).</li>
+<li>Identify Entry Points (<code>index.js</code>, <code>main.py</code>).</li>
+<li>Map the Folder Structure.</li>
+<li>Trace one feature from UI to Database.</li>
+</ol>
+<h3 id="4-3-claiming-issues">4.3 Claiming Issues</h3>
 <ul>
-<li>Git &amp; GitHub/GitLab</li>
-<li>VS Code with extensions</li>
-<li>GitHub CLI</li>
-<li>Issue trackers</li>
-</ul>
-<p><strong>Learning Resources</strong>:</p>
-<ul>
-<li>📚 "How to Contribute to Open Source" (Open Source Guides)</li>
-<li>💻 GitHub Skills</li>
-<li>🎥 YouTube: "First Contributions Tutorial"</li>
+<li><strong>Don't</strong> just say "I'll do it".</li>
+<li><strong>Do</strong> say: "Hi, I'd like to help. My plan is to modify <code>X</code> function in <code>Y</code> file to handle <code>Z</code> case. Does that sound right?"</li>
+<li><em>Why?</em> It proves you read the code and saves everyone time if you're wrong.</li>
 </ul>
 <hr />
-<h2 id="success-stories">Success Stories</h2>
-<p>Many CC Club alumni got their first tech job through their open source work:</p>
+<h2 id="phase-5-navigating-issues-prs">Phase 5: Navigating Issues &amp; PRs</h2>
+<p><em>This is where most people fail. Communication is the bottleneck.</em></p>
+<h3 id="5-1-writing-perfection-issues">5.1 Writing Perfection Issues</h3>
+<p><strong>The 5-Minute Rule</strong>: If a maintainer can't reproduce your bug in 5 minutes, they will close it.</p>
 <ul>
-<li>Priya: Contributor → Maintainer → Google SWE</li>
-<li>Rahul: 100+ PRs → Microsoft internship</li>
-<li>Ananya: Created popular library → Startup founder</li>
+<li><strong>Template</strong>:
+<ul>
+<li><strong>Environment</strong>: OS, Version, Browser.</li>
+<li><strong>Steps to Reproduce</strong>: 1, 2, 3...</li>
+<li><strong>Expected vs Actual</strong>: Clear contrast.</li>
+<li><strong>Logs/Screenshots</strong>: Evidence.</li>
+</ul>
+</li>
+</ul>
+<h3 id="5-2-the-perfect-pr-description">5.2 The Perfect PR Description</h3>
+<p>Pass the <strong>3-Second Test</strong> (Title + Files Changed + Description).</p>
+<ul>
+<li><strong>Title</strong>: Use conventional commits (<code>fix(auth): handle null token</code>).</li>
+<li><strong>Body</strong>:
+<ul>
+<li><strong>Problem</strong>: What was broken? (Link issue #123)</li>
+<li><strong>Solution</strong>: How did you fix it?</li>
+<li><strong>Testing</strong>: How did you verify it? (Screenshots for UI).</li>
+</ul>
+</li>
+</ul>
+<h3 id="5-3-review-etiquette">5.3 Review Etiquette</h3>
+<ul>
+<li><strong>Code Review is a Gift</strong>: It's free mentorship.</li>
+<li><strong>Handling Nits</strong>: Just fix them. Don't argue about commas.</li>
+<li><strong>Handling Blocks</strong>: Ask clarifying questions. "I chose X because Y. Does that align with your goal?"</li>
+<li><strong>The Iteration Loop</strong>: Batch your fixes. Don't push 1 commit per comment. Push a set of fixes and reply "Ready for re-review".</li>
 </ul>
 <hr />
-<h2 id="join-our-community">Join Our Community</h2>
+<h2 id="phase-6-the-human-element-communication">Phase 6: The Human Element (Communication)</h2>
+<p><em>Open source is 10% code, 90% communication.</em></p>
+<h3 id="6-1-async-mastery">6.1 Async Mastery</h3>
 <ul>
-<li>ContriHub: Annual open source event</li>
-<li>Weekly contribution drives</li>
-<li>Maintainer mentorship program</li>
-<li>Showcase your contributions</li>
+<li><strong>No "Hi"</strong>: Don't just say "Hi" and wait. State your question immediately.</li>
+<li><strong>No "ASAP"</strong>: Everyone is a volunteer. Expect 24-48h delays.</li>
+<li><strong>Public Default</strong>: Keep discussions in Issues/PRs, not DMs. It helps others learn.</li>
 </ul>
-<p><strong>Start contributing today! The community is waiting for you. 🚀</strong></p>
+<h3 id="6-2-asking-for-help-the-smart-way">6.2 Asking for Help (The Smart Way)</h3>
+<p>Don't ask "It's broken, help."
+<strong>Do ask</strong>:</p>
+<blockquote>
+<p>"I'm trying to do X. I tried approach A and got error B. I looked at docs section C but it didn't help. My environment is D. What am I missing?"</p>
+</blockquote>
+<h3 id="6-3-handling-rejection">6.3 Handling Rejection</h3>
+<p>It happens to everyone (even Linus Torvalds).</p>
+<ul>
+<li><strong>Soft Close</strong>: "Not in roadmap." -&gt; Move on.</li>
+<li><strong>Rework Needed</strong>: "Change approach." -&gt; Great learning opportunity.</li>
+<li><strong>Your Response</strong>: "Thanks for the feedback. I understand. I'll close this." (Professionalism &gt; Ego).</li>
+</ul>
+<hr />
+<h2 id="phase-7-the-long-game">Phase 7: The Long Game</h2>
+<p><em>From Contributor to Maintainer.</em></p>
+<h3 id="7-1-the-30-day-action-plan">7.1 The 30-Day Action Plan</h3>
+<ul>
+<li><strong>Week 1</strong>: Research, Setup, Exploration.</li>
+<li><strong>Week 2</strong>: Join Community, Deep Dive into Code.</li>
+<li><strong>Week 3</strong>: Find "Good First Issue", Write Solution.</li>
+<li><strong>Week 4</strong>: Submit PR, Iterate on Feedback, Merge.</li>
+</ul>
+<h3 id="7-2-traits-of-the-top-1">7.2 Traits of the Top 1%</h3>
+<ol>
+<li><strong>Long-term thinking</strong>: They stick around for years.</li>
+<li><strong>Generosity</strong>: They help newcomers in chats.</li>
+<li><strong>Quality over Quantity</strong>: 5 solid PRs &gt; 50 typo fixes.</li>
+<li><strong>Ownership</strong>: They fix bugs they didn't create.</li>
+</ol>
+<h3 id="7-3-avoiding-burnout">7.3 Avoiding Burnout</h3>
+<ul>
+<li>Set boundaries (e.g., "I contribute on Tuesdays").</li>
+<li>It's okay to say "I can't finish this".</li>
+<li>Pick projects you actually use.</li>
+</ul>
+<hr />
+<blockquote>
+<p><strong>Final Thought</strong>: The hardest part is the first PR. The second hardest is the first rejection. Once you conquer those, you are unstoppable. Good luck!</p>
+</blockquote>
+<h2 id="phase-8-the-accelerators-open-source-programs">Phase 8: The Accelerators (Open Source Programs)</h2>
+<p><em>Paid, structured mentorship programs that fast-track your career.</em></p>
+<h3 id="8-1-program-landscape">8.1 Program Landscape</h3>
+<p>Don't just rely on serendipity. These programs offer stipends and guaranteed mentorship.</p>
+<table><thead><tr><th style="text-align: left">Program</th><th style="text-align: left">Stipend</th><th style="text-align: left">Duration</th><th style="text-align: left">Eligibility</th><th style="text-align: left">Competition</th><th style="text-align: left">Best For</th></tr></thead><tbody>
+<tr><td style="text-align: left"><strong>GSoC</strong></td><td style="text-align: left">$750 - $3000</td><td style="text-align: left">10-22 wks</td><td style="text-align: left">Students 18+</td><td style="text-align: left">High (20%)</td><td style="text-align: left">Prestige &amp; Students</td></tr>
+<tr><td style="text-align: left"><strong>LFX</strong></td><td style="text-align: left">$3000</td><td style="text-align: left">12-24 wks</td><td style="text-align: left">Everyone</td><td style="text-align: left">Medium (25%)</td><td style="text-align: left">Enterprise/Cloud</td></tr>
+<tr><td style="text-align: left"><strong>Outreachy</strong></td><td style="text-align: left">$7k</td><td style="text-align: left">13 wks</td><td style="text-align: left">Underrepresented</td><td style="text-align: left">High (10%)</td><td style="text-align: left">Diversity &amp; Support</td></tr>
+<tr><td style="text-align: left"><strong>C4GT</strong></td><td style="text-align: left">₹50k - ₹1L</td><td style="text-align: left">10-12 wks</td><td style="text-align: left">India Students</td><td style="text-align: left">Medium</td><td style="text-align: left">India Civic Tech</td></tr>
+</tbody></table>
+<h3 id="8-2-which-one-for-you">8.2 Which One For You?</h3>
+<ul>
+<li><strong>Google Summer of Code (GSoC)</strong>: The gold standard. Best if you are a student and want maximum resume value. Hardest to get into.</li>
+<li><strong>LFX Mentorship (Linux Foundation)</strong>: Excellent for "real world" cloud/infrastructure projects (Kubernetes, CNCF). Open to non-students.</li>
+<li><strong>Outreachy</strong>: The highest stipend and best mentorship structure. Specifically for women and underrepresented groups in tech.</li>
+</ul>
+<h3 id="8-3-strategic-timeline">8.3 Strategic Timeline</h3>
+<ul>
+<li><strong>Jan-Mar</strong>: Application Period (GSoC, Outreachy).</li>
+<li><strong>May-Aug</strong>: Coding Period (GSoC, Outreachy).</li>
+<li><strong>Year-round</strong>: LFX (Spring, Summer, Fall terms).</li>
+</ul>
+<blockquote>
+<p><strong>Pro Tip</strong>: Start contributing 3 months <em>before</em> applications open. 90% of selected candidates were already active in the community.</p>
+</blockquote>
 
 
     
@@ -688,7 +825,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     <div class="mt-8 pt-6 border-t border-gray-500/15">
         <div class="flex flex-wrap items-center gap-4">
-            <a href="https:&#x2F;&#x2F;github.com&#x2F;Shanu-Kumawat&#x2F;cc-website&#x2F;edit&#x2F;main&#x2F;/content/roadmaps&#x2F;open-source.md" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-sm text-base-content/60 hover:text-base-content transition-colors">
+            <a href="https:&#x2F;&#x2F;github.com&#x2F;CC-MNNIT&#x2F;cc-website&#x2F;edit&#x2F;main&#x2F;/content/roadmaps&#x2F;open-source.md" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-sm text-base-content/60 hover:text-base-content transition-colors">
                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"></path>
                 </svg>
@@ -709,7 +846,7 @@ document.addEventListener('DOMContentLoaded', function() {
             </button>
             
             
-            <a href="https://twitter.com/intent/tweet?url=&#x2F;cc-website&#x2F;roadmaps&#x2F;open-source&#x2F;&text=Open%20Source%20Contribution%20Roadmap" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-sm text-base-content/60 hover:text-base-content transition-colors">
+            <a href="https://twitter.com/intent/tweet?url=https%3A&#x2F;&#x2F;cc-club.in&#x2F;roadmaps&#x2F;open-source&#x2F;&text=Open%20Source%20Contribution%20Roadmap" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-sm text-base-content/60 hover:text-base-content transition-colors">
                 <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
                     <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path>
                 </svg>
@@ -731,7 +868,7 @@ document.addEventListener('DOMContentLoaded', function() {
                                     
     
         
-        <a class="nav-button nav-button-prev group" href="/cc-website/roadmaps/">
+        <a class="nav-button nav-button-prev group" href="https://cc-club.in/roadmaps/">
             <div class="nav-button-content">
                 <div class="nav-button-direction">
                     <svg class="w-5 h-5 transition-transform group-hover:-translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -748,7 +885,7 @@ document.addEventListener('DOMContentLoaded', function() {
                                 <div class="next-nav-item">
                                     
     
-        <a class="nav-button nav-button-next group" href="/cc-website/roadmaps/interview-prep/">
+        <a class="nav-button nav-button-next group" href="https://cc-club.in/roadmaps/devops/">
             <div class="nav-button-content">
                 <div class="nav-button-direction">
                     <span class="nav-button-label">Next</span>
@@ -756,7 +893,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
                     </svg>
                 </div>
-                <div class="nav-button-title">Technical Interview Preparation</div>
+                <div class="nav-button-title">DevOps Roadmap</div>
             </div>
         </a>
     
@@ -778,52 +915,187 @@ document.addEventListener('DOMContentLoaded', function() {
                     
                     <details class="toc-details" >
                         <summary>
-                            <a href="/cc-website/roadmaps/open-source/#open-source-contribution-roadmap" class="toc-link">Open Source Contribution Roadmap</a>
+                            <a href="https://cc-club.in/roadmaps/open-source/#phase-1-the-mindset-preparation" class="toc-link">Phase 1: The Mindset &amp; Preparation</a>
                         </summary>
                         <ul>
                             
                                 <li>
-                                    <a href="/cc-website/roadmaps/open-source/#why-open-source" class="toc-link">Why Open Source?</a>
+                                    <a href="https://cc-club.in/roadmaps/open-source/#1-1-what-is-open-source" class="toc-link">1.1 What is Open Source?</a>
                                 </li>
                             
                                 <li>
-                                    <a href="/cc-website/roadmaps/open-source/#level-1-getting-started-2-3-weeks" class="toc-link">Level 1: Getting Started (2-3 weeks)</a>
+                                    <a href="https://cc-club.in/roadmaps/open-source/#1-2-the-reality-check-expectations-vs-reality" class="toc-link">1.2 The Reality Check (Expectations vs. Reality)</a>
+                                </li>
+                            
+                        </ul>
+                    </details>
+                    
+                </li>
+            
+                <li>
+                    
+                    <details class="toc-details" >
+                        <summary>
+                            <a href="https://cc-club.in/roadmaps/open-source/#phase-2-setting-up-your-forge" class="toc-link">Phase 2: Setting Up Your Forge</a>
+                        </summary>
+                        <ul>
+                            
+                                <li>
+                                    <a href="https://cc-club.in/roadmaps/open-source/#2-1-git-github-essentials" class="toc-link">2.1 Git &amp; GitHub Essentials</a>
                                 </li>
                             
                                 <li>
-                                    <a href="/cc-website/roadmaps/open-source/#level-2-making-your-first-contribution-3-4-weeks" class="toc-link">Level 2: Making Your First Contribution (3-4 weeks)</a>
+                                    <a href="https://cc-club.in/roadmaps/open-source/#2-2-environment-setup" class="toc-link">2.2 Environment Setup</a>
                                 </li>
                             
                                 <li>
-                                    <a href="/cc-website/roadmaps/open-source/#level-3-regular-contributor-2-3-months" class="toc-link">Level 3: Regular Contributor (2-3 months)</a>
+                                    <a href="https://cc-club.in/roadmaps/open-source/#2-3-the-trust-based-profile" class="toc-link">2.3 The Trust-Based Profile</a>
+                                </li>
+                            
+                        </ul>
+                    </details>
+                    
+                </li>
+            
+                <li>
+                    
+                    <details class="toc-details" >
+                        <summary>
+                            <a href="https://cc-club.in/roadmaps/open-source/#phase-3-finding-your-battlefield" class="toc-link">Phase 3: Finding Your Battlefield</a>
+                        </summary>
+                        <ul>
+                            
+                                <li>
+                                    <a href="https://cc-club.in/roadmaps/open-source/#3-1-the-healthy-project-checklist" class="toc-link">3.1 The &quot;Healthy Project&quot; Checklist</a>
                                 </li>
                             
                                 <li>
-                                    <a href="/cc-website/roadmaps/open-source/#level-4-core-contributor-3-6-months" class="toc-link">Level 4: Core Contributor (3-6 months)</a>
+                                    <a href="https://cc-club.in/roadmaps/open-source/#3-2-where-to-look" class="toc-link">3.2 Where to Look</a>
+                                </li>
+                            
+                        </ul>
+                    </details>
+                    
+                </li>
+            
+                <li>
+                    
+                    <details class="toc-details" >
+                        <summary>
+                            <a href="https://cc-club.in/roadmaps/open-source/#phase-4-the-first-strike-your-contribution" class="toc-link">Phase 4: The First Strike (Your Contribution)</a>
+                        </summary>
+                        <ul>
+                            
+                                <li>
+                                    <a href="https://cc-club.in/roadmaps/open-source/#4-1-the-golden-workflow" class="toc-link">4.1 The Golden Workflow</a>
                                 </li>
                             
                                 <li>
-                                    <a href="/cc-website/roadmaps/open-source/#level-5-maintainer-6-months" class="toc-link">Level 5: Maintainer (6+ months)</a>
+                                    <a href="https://cc-club.in/roadmaps/open-source/#4-2-reading-code" class="toc-link">4.2 Reading Code</a>
                                 </li>
                             
                                 <li>
-                                    <a href="/cc-website/roadmaps/open-source/#best-practices" class="toc-link">Best Practices</a>
+                                    <a href="https://cc-club.in/roadmaps/open-source/#4-3-claiming-issues" class="toc-link">4.3 Claiming Issues</a>
+                                </li>
+                            
+                        </ul>
+                    </details>
+                    
+                </li>
+            
+                <li>
+                    
+                    <details class="toc-details" >
+                        <summary>
+                            <a href="https://cc-club.in/roadmaps/open-source/#phase-5-navigating-issues-prs" class="toc-link">Phase 5: Navigating Issues &amp; PRs</a>
+                        </summary>
+                        <ul>
+                            
+                                <li>
+                                    <a href="https://cc-club.in/roadmaps/open-source/#5-1-writing-perfection-issues" class="toc-link">5.1 Writing Perfection Issues</a>
                                 </li>
                             
                                 <li>
-                                    <a href="/cc-website/roadmaps/open-source/#recommended-projects-for-beginners" class="toc-link">Recommended Projects for Beginners</a>
+                                    <a href="https://cc-club.in/roadmaps/open-source/#5-2-the-perfect-pr-description" class="toc-link">5.2 The Perfect PR Description</a>
                                 </li>
                             
                                 <li>
-                                    <a href="/cc-website/roadmaps/open-source/#tools-resources" class="toc-link">Tools &amp; Resources</a>
+                                    <a href="https://cc-club.in/roadmaps/open-source/#5-3-review-etiquette" class="toc-link">5.3 Review Etiquette</a>
+                                </li>
+                            
+                        </ul>
+                    </details>
+                    
+                </li>
+            
+                <li>
+                    
+                    <details class="toc-details" >
+                        <summary>
+                            <a href="https://cc-club.in/roadmaps/open-source/#phase-6-the-human-element-communication" class="toc-link">Phase 6: The Human Element (Communication)</a>
+                        </summary>
+                        <ul>
+                            
+                                <li>
+                                    <a href="https://cc-club.in/roadmaps/open-source/#6-1-async-mastery" class="toc-link">6.1 Async Mastery</a>
                                 </li>
                             
                                 <li>
-                                    <a href="/cc-website/roadmaps/open-source/#success-stories" class="toc-link">Success Stories</a>
+                                    <a href="https://cc-club.in/roadmaps/open-source/#6-2-asking-for-help-the-smart-way" class="toc-link">6.2 Asking for Help (The Smart Way)</a>
                                 </li>
                             
                                 <li>
-                                    <a href="/cc-website/roadmaps/open-source/#join-our-community" class="toc-link">Join Our Community</a>
+                                    <a href="https://cc-club.in/roadmaps/open-source/#6-3-handling-rejection" class="toc-link">6.3 Handling Rejection</a>
+                                </li>
+                            
+                        </ul>
+                    </details>
+                    
+                </li>
+            
+                <li>
+                    
+                    <details class="toc-details" >
+                        <summary>
+                            <a href="https://cc-club.in/roadmaps/open-source/#phase-7-the-long-game" class="toc-link">Phase 7: The Long Game</a>
+                        </summary>
+                        <ul>
+                            
+                                <li>
+                                    <a href="https://cc-club.in/roadmaps/open-source/#7-1-the-30-day-action-plan" class="toc-link">7.1 The 30-Day Action Plan</a>
+                                </li>
+                            
+                                <li>
+                                    <a href="https://cc-club.in/roadmaps/open-source/#7-2-traits-of-the-top-1" class="toc-link">7.2 Traits of the Top 1%</a>
+                                </li>
+                            
+                                <li>
+                                    <a href="https://cc-club.in/roadmaps/open-source/#7-3-avoiding-burnout" class="toc-link">7.3 Avoiding Burnout</a>
+                                </li>
+                            
+                        </ul>
+                    </details>
+                    
+                </li>
+            
+                <li>
+                    
+                    <details class="toc-details" >
+                        <summary>
+                            <a href="https://cc-club.in/roadmaps/open-source/#phase-8-the-accelerators-open-source-programs" class="toc-link">Phase 8: The Accelerators (Open Source Programs)</a>
+                        </summary>
+                        <ul>
+                            
+                                <li>
+                                    <a href="https://cc-club.in/roadmaps/open-source/#8-1-program-landscape" class="toc-link">8.1 Program Landscape</a>
+                                </li>
+                            
+                                <li>
+                                    <a href="https://cc-club.in/roadmaps/open-source/#8-2-which-one-for-you" class="toc-link">8.2 Which One For You?</a>
+                                </li>
+                            
+                                <li>
+                                    <a href="https://cc-club.in/roadmaps/open-source/#8-3-strategic-timeline" class="toc-link">8.3 Strategic Timeline</a>
                                 </li>
                             
                         </ul>
@@ -912,7 +1184,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 <div class="footer-col space-y-4">
                     <div class="footer-logo-container">
                         
-                        <img src="/cc-website/images/logo/cclogo.png" alt="Logo" class="footer-logo">
+                        <img src="https://cc-club.in/images/logo/cclogo.webp" alt="Logo" class="footer-logo">
                         
                         <h3>
                             CC Club MNNIT
@@ -942,7 +1214,7 @@ document.addEventListener('DOMContentLoaded', function() {
                             </li>
                             
                             <li>
-                                <a href="contrihub">
+                                <a href="projects">
                                     Projects
                                 </a>
                             </li>
@@ -976,28 +1248,25 @@ document.addEventListener('DOMContentLoaded', function() {
                     <div class="social-links">
                         
                             
-                            <a href="https:&#x2F;&#x2F;youtube.com&#x2F;@ccclub" aria-label="YouTube">
-                                <i class="fab fa-youtube"></i>
-                            </a>
                             
-                            
-                            <a href="https:&#x2F;&#x2F;instagram.com&#x2F;ccclub_mnnit" aria-label="Instagram">
+                            <a href="https:&#x2F;&#x2F;www.instagram.com&#x2F;cc.club.mnnit&#x2F;" aria-label="Instagram">
                                 <i class="fab fa-instagram"></i>
                             </a>
                             
                             
-                            <a href="https:&#x2F;&#x2F;twitter.com&#x2F;ccclub_mnnit" aria-label="Twitter/X">
-                                <i class="fab fa-twitter"></i>
-                            </a>
                             
-                            
-                            <a href="https:&#x2F;&#x2F;linkedin.com&#x2F;company&#x2F;ccclub-mnnit" aria-label="LinkedIn">
+                            <a href="https:&#x2F;&#x2F;www.linkedin.com&#x2F;company&#x2F;computer-coding-club-mnnit&#x2F;" aria-label="LinkedIn">
                                 <i class="fab fa-linkedin"></i>
                             </a>
                             
                             
-                            <a href="https:&#x2F;&#x2F;github.com&#x2F;cc-mnnit" aria-label="GitHub">
+                            <a href="https:&#x2F;&#x2F;github.com&#x2F;CC-MNNIT" aria-label="GitHub">
                                 <i class="fab fa-github"></i>
+                            </a>
+                            
+                            
+                            <a href="https:&#x2F;&#x2F;discord.gg&#x2F;EDv6fM5yUm" aria-label="Discord">
+                                <i class="fab fa-discord"></i>
                             </a>
                             
                         
@@ -1074,35 +1343,60 @@ document.addEventListener('DOMContentLoaded', function() {
             
                 
                     
-                        <li><a href="/cc-website/about" class="text-sm">
+                        <li>
+                            
+                                <a href="https://cc-club.in/about" class="text-sm">
+                            
                             <i class="fa-solid fa-circle-info mr-2"></i>
                             About
                         </a></li>
                     
                 
                     
-                        <li><a href="/cc-website/blog" class="text-sm">
+                        <li>
+                            
+                                <a href="https://cc-club.in/blog" class="text-sm">
+                            
                             <i class="fa-solid fa-blog mr-2"></i>
                             Blog
                         </a></li>
                     
                 
                     
-                        <li><a href="/cc-website/events" class="text-sm">
+                        <li>
+                            
+                                <a href="https://cc-club.in/events" class="text-sm">
+                            
                             <i class="fa-solid fa-calendar-days mr-2"></i>
                             Events
                         </a></li>
                     
                 
                     
-                        <li><a href="/cc-website/projects" class="text-sm">
+                        <li>
+                            
+                                <a href="https://drive.google.com/file/d/1f7eJdgjX0p9CanHlK5bGkmdARIa4ErHZ/view" class="text-sm" target="_blank" rel="noopener noreferrer">
+                            
+                            <i class="fa-solid fa-calendar-check mr-2"></i>
+                            Calendar
+                        </a></li>
+                    
+                
+                    
+                        <li>
+                            
+                                <a href="https://cc-club.in/projects" class="text-sm">
+                            
                             <i class="fa-solid fa-code-branch mr-2"></i>
                             Projects
                         </a></li>
                     
                 
                     
-                        <li><a href="/cc-website/roadmaps" class="text-sm">
+                        <li>
+                            
+                                <a href="https://cc-club.in/roadmaps" class="text-sm">
+                            
                             <i class="fa-solid fa-route mr-2"></i>
                             Roadmaps
                         </a></li>
@@ -1110,7 +1404,10 @@ document.addEventListener('DOMContentLoaded', function() {
                 
                     
                         
-                            <li><a href="/cc-website/team" class="text-sm">
+                            <li>
+                                
+                                    <a href="https://cc-club.in/team" class="text-sm">
+                                
                                 <i class="fa-solid fa-user-group mr-2"></i>
                                 Current Team
                             </a></li>
@@ -1118,7 +1415,10 @@ document.addEventListener('DOMContentLoaded', function() {
                     
                 
                     
-                        <li><a href="/cc-website/contact" class="text-sm">
+                        <li>
+                            
+                                <a href="https://cc-club.in/contact" class="text-sm">
+                            
                             <i class="fa-solid fa-envelope mr-2"></i>
                             Contact
                         </a></li>
@@ -1133,7 +1433,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     
     <div class="hidden lg:block px-4 py-2 font-bold text-lg border-b border-gray-500/10 mb-2">
-        <a href="&#x2F;cc-website&#x2F;roadmaps&#x2F;" class="hover:text-primary transition-colors">Learning Roadmaps</a>
+        <a href="https:&#x2F;&#x2F;cc-club.in&#x2F;roadmaps&#x2F;" class="hover:text-primary transition-colors">Learning Roadmaps</a>
     </div>
 
     
@@ -1141,19 +1441,15 @@ document.addEventListener('DOMContentLoaded', function() {
     <ul class="hidden lg:block menu w-full flex-grow">
         
         
-            <li ><a class="hover:no-underline" href="/cc-website/roadmaps/web-development">Web Development Roadmap</a></li>
+            <li ><a class="hover:no-underline" href="https://cc-club.in/roadmaps/web-development">Web Development Roadmap</a></li>
         
-            <li ><a class="hover:no-underline" href="/cc-website/roadmaps/dsa">Data Structures &amp; Algorithms Roadmap</a></li>
+            <li ><a class="hover:no-underline" href="https://cc-club.in/roadmaps/machine-learning">Machine Learning Roadmap</a></li>
         
-            <li ><a class="hover:no-underline" href="/cc-website/roadmaps/machine-learning">Machine Learning Roadmap</a></li>
+            <li class="rounded bg-gray-500/15"><a class="hover:no-underline" href="https://cc-club.in/roadmaps/open-source">Open Source Contribution Roadmap</a></li>
         
-            <li class="rounded bg-gray-500/15"><a class="hover:no-underline" href="/cc-website/roadmaps/open-source">Open Source Contribution Roadmap</a></li>
+            <li ><a class="hover:no-underline" href="https://cc-club.in/roadmaps/devops">DevOps Roadmap</a></li>
         
-            <li ><a class="hover:no-underline" href="/cc-website/roadmaps/interview-prep">Technical Interview Preparation</a></li>
-        
-            <li ><a class="hover:no-underline" href="/cc-website/roadmaps/mobile-development">Mobile App Development Roadmap</a></li>
-        
-            <li ><a class="hover:no-underline" href="/cc-website/roadmaps/devops">DevOps &amp; Cloud Engineering Roadmap</a></li>
+            <li ><a class="hover:no-underline" href="https://cc-club.in/roadmaps/competitive-programming">Competitive Programming Mastery Roadmap</a></li>
         
         
         
@@ -1180,7 +1476,7 @@ document.addEventListener('DOMContentLoaded', function() {
     </div>
 
     
-        <script type="text/javascript" src="/cc-website/goyo.js"></script>
+        <script type="text/javascript" src="https://cc-club.in/goyo.js"></script>
         
         <!-- Lazy load search functionality -->
         <script>
@@ -1210,12 +1506,12 @@ document.addEventListener('DOMContentLoaded', function() {
                 
                 // Load Fuse.js
                 var fuseScript = document.createElement('script');
-                fuseScript.src = '/cc-website/fuse.min.js';
+                fuseScript.src = 'https://cc-club.in/fuse.min.js';
                 
                 // Load search index after Fuse.js
                 fuseScript.onload = function() {
                     var searchIndexScript = document.createElement('script');
-                    searchIndexScript.src = '/cc-website/search_index.en.js';
+                    searchIndexScript.src = 'https://cc-club.in/search_index.en.js';
                     searchIndexScript.onload = function() {
                         // Re-enable search input
                         if (searchInput) {

@@ -89,12 +89,17 @@ h3,
 }
 
 [data-theme="night"] .card-title {
-    background: linear-gradient(90deg, #DA7138 0%, #EC9E6E 33%, #ECB163 66%, #ECC475 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    color: transparent;
+    background: none;
+    -webkit-background-clip: unset;
+    -webkit-text-fill-color: unset;
+    background-clip: unset;
+    color: #FFFFFF !important;
 }
+
+.card-title:after {
+    display: none !important;
+}
+
 
 /* 6. Body Text */
 [data-theme="night"] p,
@@ -116,4 +121,31 @@ h3,
 /* Text with primary color class */
 [data-theme="night"] .text-primary {
     color: #FFC758 !important;
+}
+
+/* Firefox text selection compatibility fix */
+@-moz-document url-prefix() {
+
+  h1::selection,
+  h2::selection,
+  h3::selection,
+  h4::selection,
+  h5::selection,
+  h6::selection,
+  .hero-title::selection,
+  .section-title::selection,
+  .events-section-title::selection,
+  .roadmaps-title::selection {
+      -webkit-text-fill-color: initial !important;
+      color: inherit !important;
+      background: color-mix(in srgb, var(--color-primary) 45%, transparent) !important;
+  }
+
+  .card-title::selection,
+  p::selection,
+  span::selection,
+  div::selection {
+      color: inherit !important;
+      background: color-mix(in srgb, var(--color-primary) 45%, transparent) !important;
+  }
 }
