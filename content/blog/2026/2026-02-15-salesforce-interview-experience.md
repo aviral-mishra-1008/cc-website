@@ -117,15 +117,7 @@ I delivered two projects during my internship:
 1. An **MCP Server** for realtime Jenkins Build Monitoring and Bug-Fixes
 2. A distributed multi-threaded priority based **Gateway Service** to deliver webhooks.
 
-{% mermaid() %}
-graph TD
-    A["Gateway Service"] -->|"Priority Based Delivery"| B["Jenkins Controller 1"]
-    A --> C["Jenkins Controller 2"]
-    D["MCP Server"] -->|"Monitors"| B
-    D -->|"Monitors"| C
-    style A fill:#f9f,stroke:#333,stroke-width:2px
-    style D fill:#bbf,stroke:#333,stroke-width:2px
-{% end %}
+
 
 ### Final Advice
 
