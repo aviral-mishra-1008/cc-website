@@ -68,6 +68,7 @@ name = "Neural Minds"
 project = "Sanskar Gupta, Rishabh Agarwal, Prashant Bansal, Adarsh Pandey"
 prize = "Best First Year Team"
 category = "Turing's Playground"
+highlight = true
 
 # DevJam
 [[extra.winners]]
